@@ -1,85 +1,629 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="The Inner Planets: Compare Mercury, Venus, Earth, and Mars—four worlds revealing planetary formation, evolution, and what makes Earth uniquely habitable.">
-    <title>Chapter - Space Safari</title>
+        content="Kapitel 4: Operatorer och beräkningar - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 4 - Operatorer och beräkningar</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 4: Operatorer och beräkningar</h1>
+                <p class="subtitle">I detta kapitel lär du dig aritmetiska, jämförande och logiska operatorer samt hur
+                    du bygger enklare beräkningsprogram.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s41">4.1 Aritmetiska operatorer</a></li>
+                    <li><a href="#s42">4.2 Jämförelseoperatorer</a></li>
+                    <li><a href="#s43">4.3 Logiska operatorer</a></li>
+                    <li><a href="#s44">4.4 Matematiska uttryck</a></li>
+                    <li><a href="#s45">4.5 Beräkningsprogram</a></li>
+                    <li><a href="#s46">4.6 Vanliga fel</a></li>
+                    <li><a href="#s47">4.7 Övningar</a></li>
+                    <li><a href="#s48">4.8 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s40">
+                <p>Program behöver ofta räkna ut saker. I Python görs beräkningar med hjälp av operatorer.</p>
+                <p>Operatorer används för att göra matematiska beräkningar, jämföra värden och arbeta med variabler.</p>
+                <p>I detta kapitel börjar vi med aritmetiska operatorer, alltså operatorer som används för matematik.
+                </p>
+            </section>
 
-        <section id="chapter-summary"></section>
+            <section class="content-section" id="s41">
+                <h2>4.1 Aritmetiska operatorer</h2>
+                <p>Aritmetiska operatorer används för vanliga matematiska beräkningar.</p>
+                <p>De vanligaste operatorerna är:</p>
+                <ul>
+                    <li><code>+</code> addition</li>
+                    <li><code>-</code> subtraktion</li>
+                    <li><code>*</code> multiplikation</li>
+                    <li><code>/</code> division</li>
+                    <li><code>//</code> heltalsdivision</li>
+                </ul>
 
-        <section id="chapter-sections"></section>
+                <h3>Addition</h3>
+                <p>Addition används för att lägga ihop tal.</p>
+                <pre><code>a = 5
+b = 3
+result = a + b
+print(result)</code></pre>
+                <p>Programmet skriver ut 8.</p>
 
-        <section id="chapter-videos"></section>
+                <h3>Subtraktion</h3>
+                <p>Subtraktion används för att dra bort ett tal från ett annat.</p>
+                <pre><code>a = 10
+b = 4
+result = a - b
+print(result)</code></pre>
+                <p>Programmet skriver ut 6.</p>
 
-        <section id="chapter-resources"></section>
+                <h3>Multiplikation</h3>
+                <p>Multiplikation används för att multiplicera tal.</p>
+                <pre><code>a = 6
+b = 7
+result = a * b
+print(result)</code></pre>
+                <p>Programmet skriver ut 42.</p>
 
-        <div class="chapter-nav"></div>
+                <h3>Division</h3>
+                <p>Division används för att dela ett tal med ett annat.</p>
+                <pre><code>a = 10
+b = 2
+result = a / b
+print(result)</code></pre>
+                <p>Programmet skriver ut 5.0.</p>
+                <p>När man använder <code>/</code> i Python blir resultatet ofta ett decimaltal, även om divisionen går
+                    jämnt ut.</p>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Heltalsdivision</h3>
+                <p>Heltalsdivision används när man vill ha ett heltal som resultat.</p>
+                <pre><code>a = 10
+b = 3
+result = a // b
+print(result)</code></pre>
+                <p>Programmet skriver ut 3.</p>
+                <p>Här delas 10 med 3. Svaret blir egentligen 3.333..., men med <code>//</code> tar Python bara
+                    heltalsdelen.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Operatorer och variabler</h3>
+                <p>Operatorer används ofta tillsammans med variabler.</p>
+                <pre><code>price = 50
+amount = 3
+total = price * amount
+print(f"Totalt pris är {total}")</code></pre>
+                <p>Programmet räknar ut det totala priset genom att multiplicera priset med antalet.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Aritmetiska operatorer används för matematiska beräkningar i program.</p>
+                <p>De vanligaste är <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> och <code>//</code>.
+                </p>
+                <p>Genom att kombinera operatorer och variabler kan program göra beräkningar och lösa olika problem.</p>
+
+                <h3>Övningar 4.1 Aritmetiska operatorer</h3>
+                <p>Skriv varje program i en egen <code>.py</code>-fil eller fortsätt i samma fil.</p>
+
+                <h4>Övning 1 Addition</h4>
+                <p>Skapa två variabler med talen 8 och 5. Räkna ut summan och skriv ut resultatet.</p>
+                <p>Exempel på resultat: Summan är 13.</p>
+
+                <h4>Övning 2 Subtraktion</h4>
+                <p>Skapa två variabler med talen 20 och 7. Räkna ut skillnaden mellan talen och skriv ut resultatet.</p>
+
+                <h4>Övning 3 Multiplikation</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>price = 25
+amount = 4</code></pre>
+                <p>Räkna ut det totala priset och skriv ut resultatet.</p>
+                <p>Exempel på resultat: Totalt pris är 100.</p>
+
+                <h4>Övning 4 Division</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>a = 20
+b = 4</code></pre>
+                <p>Dela talen med operatorn <code>/</code> och skriv ut resultatet.</p>
+                <p>Fundera på varför resultatet blir ett decimaltal.</p>
+
+                <h4>Övning 5 Heltalsdivision</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>a = 17
+b = 5</code></pre>
+                <p>Använd operatorn <code>//</code> och skriv ut resultatet.</p>
+
+                <h4>Övning 6 Eget räkneprogram</h4>
+                <p>Skriv ett program som frågar användaren efter två tal. Programmet ska skriva ut summan, skillnaden
+                    och produkten.</p>
+                <p>Tips: använd <code>int(input())</code> för att läsa in talen.</p>
+            </section>
+
+            <section class="content-section" id="s42">
+                <h2>4.2 Jämförelseoperatorer</h2>
+                <p>I programmering behöver man ofta jämföra värden. Python använder då jämförelseoperatorer.</p>
+                <p>En jämförelseoperator jämför två värden och resultatet blir antingen <code>True</code> eller
+                    <code>False</code>.</p>
+                <p>Det betyder att uttrycket är sant eller falskt.</p>
+                <p>De vanligaste jämförelseoperatorerna är:</p>
+                <ul>
+                    <li><code>==</code> lika med</li>
+                    <li><code>!=</code> inte lika med</li>
+                    <li><code>&lt;</code> mindre än</li>
+                    <li><code>&gt;</code> större än</li>
+                </ul>
+
+                <h3>Lika med</h3>
+                <p>Operatorn <code>==</code> används för att kontrollera om två värden är lika.</p>
+                <pre><code>a = 5
+b = 5
+print(a == b)</code></pre>
+                <p>Programmet skriver ut True eftersom värdena är lika.</p>
+
+                <h3>Inte lika med</h3>
+                <p>Operatorn <code>!=</code> används för att kontrollera om två värden är olika.</p>
+                <pre><code>a = 5
+b = 3
+print(a != b)</code></pre>
+                <p>Programmet skriver ut True eftersom värdena är olika.</p>
+
+                <h3>Mindre än</h3>
+                <p>Operatorn <code>&lt;</code> används för att kontrollera om ett värde är mindre än ett annat.</p>
+                <pre><code>a = 4
+b = 10
+print(a &lt; b)</code></pre>
+                <p>Programmet skriver ut True eftersom 4 är mindre än 10.</p>
+
+                <h3>Större än</h3>
+                <p>Operatorn <code>&gt;</code> används för att kontrollera om ett värde är större än ett annat.</p>
+                <pre><code>a = 12
+b = 7
+print(a &gt; b)</code></pre>
+                <p>Programmet skriver ut True eftersom 12 är större än 7.</p>
+
+                <h3>Jämförelser i variabler</h3>
+                <p>Man kan också spara resultatet av en jämförelse i en variabel.</p>
+                <pre><code>age = 18
+adult = age &gt;= 18
+print(adult)</code></pre>
+                <p>Programmet skriver ut True eftersom åldern är minst 18.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Jämförelseoperatorer används för att jämföra värden.</p>
+                <p>Resultatet blir alltid True eller False.</p>
+                <p>De operatorer du har lärt dig är <code>==</code>, <code>!=</code>, <code>&lt;</code> och
+                    <code>&gt;</code>.</p>
+                <p>Dessa operatorer används ofta tillsammans med if-satser, som vi kommer att arbeta mer med i nästa
+                    kapitel.</p>
+
+                <h3>Övningar 4.2 Jämförelseoperatorer</h3>
+                <p>Skriv programmen i Python och kör dem för att se vad som händer.</p>
+
+                <h4>Övning 1 Lika eller inte</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>a = 10
+b = 10</code></pre>
+                <p>Skriv ut resultatet av jämförelsen <code>a == b</code>. Fundera på varför resultatet blir det som det
+                    blir.</p>
+
+                <h4>Övning 2 Olika tal</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>a = 7
+b = 3</code></pre>
+                <p>Skriv ut resultatet av <code>a != b</code>.</p>
+
+                <h4>Övning 3 Mindre än</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>x = 4
+y = 9</code></pre>
+                <p>Skriv ut resultatet av <code>x &lt; y</code>.</p>
+
+                <h4>Övning 4 Större än</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>x = 15
+y = 8</code></pre>
+                <p>Skriv ut resultatet av <code>x &gt; y</code>.</p>
+
+                <h4>Övning 5 Jämför två tal från användaren</h4>
+                <p>Skriv ett program som läser in två tal från användaren, jämför talen och skriver ut resultatet av
+                    jämförelsen.</p>
+                <p>Programmet ska skriva ut om talen är lika, om talen är olika och om det första talet är större än det
+                    andra.</p>
+                <p>Tips: använd <code>int(input())</code> för att läsa in talen.</p>
+
+                <h4>Övning 6 Testa olika värden</h4>
+                <p>Skriv ett program där du jämför följande värden. Tänk först vad det blir innan du testar:</p>
+                <pre><code>5 == 5
+5 != 5
+3 &lt; 7
+10 &gt; 20</code></pre>
+                <p>Skriv ut resultatet av varje jämförelse.</p>
+            </section>
+
+            <section class="content-section" id="s43">
+                <h2>4.3 Logiska operatorer</h2>
+                <p>I programmering behöver man ibland kombinera flera villkor. För att göra detta används logiska
+                    operatorer.</p>
+                <p>Logiska operatorer arbetar med värden som är True eller False.</p>
+                <p>De tre vanligaste logiska operatorerna i Python är <code>and</code>, <code>or</code> och
+                    <code>not</code>.</p>
+
+                <h3>Operatorn and</h3>
+                <p>Operatorn <code>and</code> används när båda villkoren måste vara sanna.</p>
+                <pre><code>age = 20
+print(age &gt; 18 and age &lt; 30)</code></pre>
+                <p>Programmet skriver ut True eftersom båda villkoren är sanna.</p>
+
+                <h3>Operatorn or</h3>
+                <p>Operatorn <code>or</code> används när minst ett av villkoren måste vara sant.</p>
+                <pre><code>age = 15
+print(age &lt; 18 or age &gt; 65)</code></pre>
+                <p>Programmet skriver ut True eftersom personen är yngre än 18.</p>
+
+                <h3>Operatorn not</h3>
+                <p>Operatorn <code>not</code> används för att vända ett värde.</p>
+                <p>Om något är sant blir det falskt, och om något är falskt blir det sant.</p>
+                <pre><code>is_student = True
+print(not is_student)</code></pre>
+                <p>Programmet skriver ut False.</p>
+
+                <h3>Exempel med flera villkor</h3>
+                <p>Logiska operatorer används ofta när program behöver kontrollera flera saker samtidigt.</p>
+                <pre><code>age = 22
+has_ticket = True
+print(age &gt;= 18 and has_ticket)</code></pre>
+                <p>Programmet kontrollerar om personen är minst 18 år och har biljett.</p>
+                <p>Om båda villkoren är sanna blir resultatet sant.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Logiska operatorer används för att kombinera villkor.</p>
+                <ul>
+                    <li><code>and</code> - båda villkoren måste vara sanna</li>
+                    <li><code>or</code> - minst ett villkor måste vara sant</li>
+                    <li><code>not</code> - vänder ett villkor</li>
+                </ul>
+                <p>De används ofta tillsammans med jämförelseoperatorer och if-satser.</p>
+
+                <h3>Övningar 4.3 Logiska operatorer</h3>
+                <p>Skriv programmen i Python och testa vad som skrivs ut.</p>
+
+                <h4>Övning 1 Operatorn and</h4>
+                <p>Skapa en variabel:</p>
+                <pre><code>age = 20</code></pre>
+                <p>Skriv ut resultatet av:</p>
+                <pre><code>age &gt; 18 and age &lt; 30</code></pre>
+                <p>Fundera på varför resultatet blir sant eller falskt.</p>
+
+                <h4>Övning 2 Operatorn or</h4>
+                <p>Skapa en variabel:</p>
+                <pre><code>age = 15</code></pre>
+                <p>Skriv ut resultatet av:</p>
+                <pre><code>age &lt; 18 or age &gt; 65</code></pre>
+                <p>Fundera på varför resultatet blir sant eller falskt.</p>
+
+                <h4>Övning 3 Operatorn not</h4>
+                <p>Skapa en variabel:</p>
+                <pre><code>is_student = True</code></pre>
+                <p>Skriv ut resultatet av:</p>
+                <pre><code>not is_student</code></pre>
+
+                <h4>Övning 4 Flera villkor</h4>
+                <p>Skapa två variabler:</p>
+                <pre><code>age = 25
+has_ticket = True</code></pre>
+                <p>Skriv ut resultatet av:</p>
+                <pre><code>age &gt;= 18 and has_ticket</code></pre>
+
+                <h4>Övning 5 Jämför två tal</h4>
+                <p>Skriv ett program som frågar användaren efter två tal.</p>
+                <p>Programmet ska skriva ut om båda talen är större än 10.</p>
+                <p>Tips: använd <code>and</code>.</p>
+
+                <h4>Övning 6 Ett av två villkor</h4>
+                <p>Skriv ett program som frågar användaren efter sin ålder.</p>
+                <p>Programmet ska kontrollera om personen är yngre än 18 eller äldre än 65.</p>
+                <p>Skriv ut resultatet av jämförelsen.</p>
+                <p>Tips: använd <code>or</code>.</p>
+
+                <h4>Övning 7 Vänd ett värde</h4>
+                <p>Skapa en variabel:</p>
+                <pre><code>logged_in = False</code></pre>
+                <p>Skriv ut resultatet av:</p>
+                <pre><code>not logged_in</code></pre>
+                <p>Fundera på varför resultatet blir det som det blir.</p>
+            </section>
+
+            <section class="content-section" id="s44">
+                <h2>4.4 Matematiska uttryck</h2>
+                <p>I Python kan man kombinera tal, variabler och operatorer för att skapa matematiska uttryck.</p>
+                <p>Ett matematiskt uttryck fungerar på samma sätt som i vanlig matematik. Python räknar då ut ett
+                    resultat.</p>
+
+                <p>Ett enkelt exempel är:</p>
+                <pre><code>result = 5 + 3
+print(result)</code></pre>
+                <p>Programmet skriver ut 8.</p>
+
+                <p>Matematiska uttryck används ofta tillsammans med variabler.</p>
+                <pre><code>a = 10
+b = 4
+result = a + b
+print(result)</code></pre>
+
+                <h3>Flera operatorer i samma uttryck</h3>
+                <p>Man kan använda flera operatorer i samma uttryck.</p>
+                <pre><code>result = 5 + 3 * 2
+print(result)</code></pre>
+                <p>Python följer samma prioriteringsregler som i matematik.</p>
+                <p>Multiplikation och division räknas före addition och subtraktion. I detta fall blir resultatet 11.
+                </p>
+
+                <h3>Använda parenteser</h3>
+                <p>Man kan använda parenteser för att bestämma vilken beräkning som ska göras först.</p>
+                <pre><code>result = (5 + 3) * 2
+print(result)</code></pre>
+                <p>Nu räknas additionen först. Resultatet blir 16.</p>
+
+                <h3>Matematiska uttryck med variabler</h3>
+                <pre><code>price = 50
+amount = 3
+total = price * amount
+print(total)</code></pre>
+                <p>Programmet räknar ut det totala priset.</p>
+
+                <h3>Exempel med flera beräkningar</h3>
+                <pre><code>a = 10
+b = 5
+c = 2
+result = a + b * c
+print(result)</code></pre>
+                <p>Python räknar först multiplikationen och sedan additionen.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Matematiska uttryck består av tal, variabler och operatorer.</p>
+                <p>Python följer samma prioriteringsregler som i matematik: multiplikation och division räknas först,
+                    addition och subtraktion efteråt.</p>
+                <p>Med parenteser kan man ändra ordningen på beräkningarna.</p>
+
+                <h3>Övningar 4.4 Matematiska uttryck</h3>
+                <h4>Övning 1 Enkel beräkning</h4>
+                <p>Skapa ett program som räknar ut <code>5 + 7</code> och skriv ut resultatet.</p>
+
+                <h4>Övning 2 Flera operatorer</h4>
+                <p>Skriv ett program som räknar ut <code>10 + 4 * 3</code>.</p>
+                <p>Skriv ut resultatet och fundera på varför resultatet blir som det blir.</p>
+
+                <h4>Övning 3 Parenteser</h4>
+                <p>Skriv ett program som räknar ut <code>(10 + 4) * 3</code>.</p>
+                <p>Jämför resultatet med övning 2.</p>
+
+                <h4>Övning 4 Beräkning med variabler</h4>
+                <p>Skapa tre variabler:</p>
+                <pre><code>a = 8
+b = 6
+c = 2</code></pre>
+                <p>Beräkna <code>a + b * c</code> och skriv ut resultatet.</p>
+
+                <h4>Övning 5 Medelvärde</h4>
+                <p>Skapa tre variabler:</p>
+                <pre><code>x = 10
+y = 20
+z = 30</code></pre>
+                <p>Räkna ut medelvärdet.</p>
+                <p>Tips: medelvärde = summan av talen delat med antalet tal.</p>
+
+                <h4>Övning 6 Räkna ut area</h4>
+                <p>Skriv ett program som räknar ut arean av en rektangel.</p>
+                <p>Skapa två variabler:</p>
+                <pre><code>length = 8
+width = 5</code></pre>
+                <p>Formel: area = längd * bredd.</p>
+            </section>
+
+            <section class="content-section" id="s45">
+                <h2>4.5 Beräkningsprogram</h2>
+                <p>Nu ska vi kombinera det vi har lärt oss i detta kapitel. Med variabler, operatorer och matematiska
+                    uttryck kan vi skapa enkla beräkningsprogram.</p>
+                <p>Ett beräkningsprogram är ett program som läser in värden, gör beräkningar och skriver ut resultatet.
+                </p>
+                <p>Sådana program används överallt, till exempel i kalkylatorer, spel, ekonomiprogram och vetenskapliga
+                    beräkningar.</p>
+
+                <h3>Exempel 1 Enkel miniräknare</h3>
+                <pre><code>number1 = float(input("Skriv första talet: "))
+number2 = float(input("Skriv andra talet: "))
+summa = number1 + number2
+print(f"Summan är {summa}")</code></pre>
+                <p>Programmet läser in två tal, lägger ihop talen och skriver ut resultatet.</p>
+
+                <h3>Exempel 2 Beräkna pris</h3>
+                <pre><code>price = float(input("Pris per vara: "))
+amount = int(input("Antal varor: "))
+total = price * amount
+print(f"Totalt pris är {total}")</code></pre>
+                <p>Programmet multiplicerar priset med antalet varor.</p>
+
+                <h3>Exempel 3 Temperaturberäkning</h3>
+                <pre><code>celsius = float(input("Temperatur i Celsius: "))
+fahrenheit = celsius * 9 / 5 + 32
+print(f"Temperaturen i Fahrenheit är {fahrenheit}")</code></pre>
+
+                <h3>Hur man bygger ett beräkningsprogram</h3>
+                <p>När man skriver ett beräkningsprogram är det vanligt att följa dessa steg:</p>
+                <ol>
+                    <li>läs in värden från användaren</li>
+                    <li>spara värdena i variabler</li>
+                    <li>gör beräkningen</li>
+                    <li>skriv ut resultatet</li>
+                </ol>
+                <p>Detta arbetssätt gör programmen tydliga och lätta att förstå.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Beräkningsprogram använder variabler, operatorer och matematiska uttryck.</p>
+                <p>Genom att kombinera dessa kan man skapa program som löser många olika typer av problem.</p>
+            </section>
+
+            <section class="content-section" id="s46">
+                <h2>4.6 Vanliga fel</h2>
+                <p>När man arbetar med operatorer och beräkningar i Python är det vanligt att göra vissa misstag. Dessa
+                    fel är normala när man lär sig programmera.</p>
+                <p>Genom att känna till de vanligaste felen blir det lättare att hitta och rätta dem.</p>
+
+                <h3>Glömda parenteser</h3>
+                <p>En vanlig miss är att glömma parenteser i funktioner.</p>
+                <p>Fel kod:</p>
+                <pre><code>print 5 + 3</code></pre>
+                <p>Rätt kod:</p>
+                <pre><code>print(5 + 3)</code></pre>
+                <p>I Python måste <code>print()</code> alltid ha parenteser.</p>
+
+                <h3>Fel operator</h3>
+                <p>Ett annat vanligt misstag är att använda fel operator.</p>
+                <p>Fel kod:</p>
+                <pre><code>result = 5 x 3</code></pre>
+                <p>Rätt kod:</p>
+                <pre><code>result = 5 * 3</code></pre>
+                <p>I Python används <code>*</code> för multiplikation.</p>
+
+                <h3>Förväxla = och ==</h3>
+                <p>Många nybörjare blandar ihop <code>=</code> och <code>==</code>.</p>
+                <p><code>=</code> används för att tilldela ett värde till en variabel.</p>
+                <p><code>==</code> används för att jämföra två värden.</p>
+                <pre><code>a = 5
+print(a == 5)</code></pre>
+
+                <h3>Fel datatyp</h3>
+                <p>När man använder <code>input()</code> får man alltid text. Om man försöker göra en beräkning direkt
+                    kan det bli fel.</p>
+                <p>Fel kod:</p>
+                <pre><code>age = input("Hur gammal är du? ")
+print(age + 5)</code></pre>
+                <p>Rätt kod:</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+
+                <h3>Fel ordning i beräkningar</h3>
+                <p>Om man inte använder parenteser kan resultatet bli annorlunda än man tänkt.</p>
+                <pre><code>result = 10 + 4 * 3
+print(result)</code></pre>
+                <p>Python räknar först multiplikationen.</p>
+                <p>Om man vill räkna additionen först måste man använda parenteser.</p>
+                <pre><code>result = (10 + 4) * 3
+print(result)</code></pre>
+
+                <h3>Sammanfattning</h3>
+                <p>Vanliga fel i beräkningsprogram är glömda parenteser, fel operator, förväxling av <code>=</code> och
+                    <code>==</code>, fel datatyp från <code>input()</code> och fel ordning i matematiska uttryck.</p>
+                <p>Genom att läsa felmeddelanden och kontrollera koden noggrant kan man oftast snabbt hitta problemet.
+                </p>
+            </section>
+
+            <section class="content-section" id="s47">
+                <h2>4.7 Övningar</h2>
+                <p>I dessa övningar ska du använda operatorer och matematiska uttryck för att skapa olika
+                    beräkningsprogram.</p>
+
+                <h3>Övning 1 Enkel beräkning</h3>
+                <p>Skriv ett program som läser in två tal från användaren.</p>
+                <p>Programmet ska skriva ut summan, skillnaden och produkten.</p>
+                <p>Tips: använd <code>int(input())</code>.</p>
+
+                <h3>Övning 2 Medelvärde</h3>
+                <p>Skriv ett program som läser in tre tal från användaren.</p>
+                <p>Programmet ska räkna ut medelvärdet och skriva ut resultatet.</p>
+                <p>Tips: medelvärde = summan av talen delat med antalet tal.</p>
+
+                <h3>Övning 3 Räkna ut area</h3>
+                <p>Skriv ett program som frågar efter längd och bredd.</p>
+                <p>Programmet ska räkna ut arean av en rektangel.</p>
+                <p>Formel: area = längd * bredd.</p>
+
+                <h3>Övning 4 Temperatur</h3>
+                <p>Skriv ett program som läser in en temperatur i Celsius.</p>
+                <p>Programmet ska räkna om temperaturen till Fahrenheit.</p>
+                <p>Formel: F = C * 9 / 5 + 32.</p>
+
+                <h3>Övning 5 Dubbel kontroll</h3>
+                <p>Skriv ett program som frågar efter ett tal.</p>
+                <p>Programmet ska skriva ut om talet är större än 10 och mindre än 100.</p>
+                <p>Tips: använd <code>and</code>.</p>
+
+                <h3>Övning 6 Största talet</h3>
+                <p>Skriv ett program som läser in två tal.</p>
+                <p>Programmet ska skriva ut vilket tal som är störst.</p>
+                <p>Tips: använd <code>if</code>.</p>
+            </section>
+
+            <section class="content-section" id="s48">
+                <h2>4.8 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är en operator i programmering?</li>
+                    <li>Vad används aritmetiska operatorer till?</li>
+                    <li>Ge exempel på tre aritmetiska operatorer i Python.</li>
+                    <li>Vad är skillnaden mellan <code>/</code> och <code>//</code> i Python?</li>
+                    <li>Vad gör en jämförelseoperator?</li>
+                    <li>Vad blir resultatet av en jämförelse i Python?</li>
+                    <li>När använder man logiska operatorer som <code>and</code>, <code>or</code> och <code>not</code>?
+                    </li>
+                    <li>Varför är parenteser ibland viktiga i matematiska uttryck?</li>
+                    <li>Vad gör funktionen <code>input()</code> i ett beräkningsprogram?</li>
+                    <li>Varför är det viktigt att kontrollera datatyper när man gör beräkningar i Python?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-3.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Problemlösning i programmering</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-5.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Villkor</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>
