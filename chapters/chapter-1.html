@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kapitel 1: Vad är programmering - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 1 - Vad är programmering</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 1: Vad är programmering</h1>
+                <p class="subtitle">Detta kapitel introducerar programmeringens grunder, hur datorn kör kod, samt hur du
+                    kommer igång med Python och VS Code.</p>
+            </header>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s11">1.1 Vad är ett program</a></li>
+                    <li><a href="#s12">1.2 Vad är programmering</a></li>
+                    <li><a href="#s13">1.3 Datorns funktionssätt och programmeringens möjligheter</a></li>
+                    <li><a href="#s14">1.4 Programspråk</a></li>
+                    <li><a href="#s15">1.5 Hur ett program körs</a></li>
+                    <li><a href="#s16">1.6 Kompilerade och interpreterade programspråk</a></li>
+                    <li><a href="#s17">1.7 Installera Python på macOS</a></li>
+                    <li><a href="#s18">1.8 Skriva och köra program i IDLE</a></li>
+                    <li><a href="#s19">1.9 Installera Visual Studio Code</a></li>
+                    <li><a href="#s110">1.10 Programmera i VS Code med Python</a></li>
+                    <li><a href="#s111">1.11 Syntax och noggrannhet i kod</a></li>
+                    <li><a href="#s112">1.12 Text, radbrytningar och specialtecken i Python</a></li>
+                    <li><a href="#s113">1.13 Programmering i vardagen</a></li>
+                    <li><a href="#s114">1.14 Att tänka som en programmerare</a></li>
+                    <li><a href="#s115">1.15 Övningar</a></li>
+                    <li><a href="#s116">1.16 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s11">
+                <h2>1.1 Vad är ett program</h2>
+                <p>Ett program är en serie instruktioner som en dator följer steg för steg. Datorn gör exakt det som
+                    står i koden.</p>
+                <p>Program finns överallt, till exempel i mobilappar, spel, bankappar, webbplatser, bilar, trafiksystem
+                    och medicinsk utrustning.</p>
+            </section>
+
+            <section class="content-section" id="s12">
+                <h2>1.2 Vad är programmering</h2>
+                <p>Programmering är processen att skapa program. Arbetet innehåller att analysera problem, planera
+                    lösning, skriva kod, testa och förbättra.</p>
+                <ol>
+                    <li>Analysera ett problem</li>
+                    <li>Planera en lösning</li>
+                    <li>Skriva kod</li>
+                    <li>Testa programmet</li>
+                    <li>Förbättra programmet</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s13">
+                <h2>1.3 Datorns funktionssätt och programmeringens möjligheter</h2>
+                <p>Datorn tänker inte själv, den följer instruktioner exakt. Det ger stora möjligheter men också tydliga
+                    begränsningar.</p>
+                <h3>Datorn följer instruktioner</h3>
+                <pre><code>tal1 = 5
+tal2 = 3
+summa = tal1 + tal2
+print(summa)</code></pre>
+                <h3>Möjligheter</h3>
+                <ul>
+                    <li>Räkna ut resultat snabbt</li>
+                    <li>Hantera stora mängder information</li>
+                    <li>Styra tekniska system</li>
+                    <li>Automatisera uppgifter</li>
+                </ul>
+                <h3>Begränsningar</h3>
+                <p>Datorn förstår inte vad du menar, bara vad du skriver. Därför måste kod vara tydlig, korrekt och
+                    testad.</p>
+            </section>
+
+            <section class="content-section" id="s14">
+                <h2>1.4 Programspråk</h2>
+                <p>För att skriva program använder man programspråk. I kursen används Python eftersom det är lättläst
+                    och tydligt för nybörjare.</p>
+                <ul>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C#</li>
+                    <li>JavaScript</li>
+                    <li>C++</li>
+                </ul>
+                <h3>Varför Python</h3>
+                <p>Python används inom webbutveckling, dataanalys, AI, automatisering och forskning.</p>
+            </section>
+
+            <section class="content-section" id="s15">
+                <h2>1.5 Hur ett program körs</h2>
+                <p>När du kör ett program samverkar programkoden, Python-tolken, operativsystemet och hårdvaran.</p>
+                <ol>
+                    <li>Du skriver kod i en fil</li>
+                    <li>Operativsystemet startar Python</li>
+                    <li>Python läser koden</li>
+                    <li>Instruktionerna körs steg för steg</li>
+                    <li>Resultatet visas för användaren</li>
+                </ol>
+                <pre><code>namn = input("Vad heter du? ")
+print(f"Hej {namn}")</code></pre>
+            </section>
+
+            <section class="content-section" id="s16">
+                <h2>1.6 Kompilerade och interpreterade programspråk</h2>
+                <p>Datorn kan bara köra maskinkod. Därför måste programkod översättas.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kompilerade språk</th>
+                            <th>Interpreterade språk</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hela programmet översätts först</td>
+                            <td>Koden körs rad för rad</td>
+                        </tr>
+                        <tr>
+                            <td>Exempel: C, C++, Rust, Go</td>
+                            <td>Exempel: Python, JavaScript, Ruby</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Python är ett interpreterat språk.</p>
+            </section>
+
+            <section class="content-section" id="s17">
+                <h2>1.7 Installera Python på macOS</h2>
+                <p>För att kunna skriva och köra Pythonprogram behöver Python vara installerat på datorn. De flesta
+                    Mac-datorer har redan en version av Python installerad, men ofta är den äldre och används av
+                    operativsystemet. I denna kurs använder vi Python 3, därför installerar vi den senaste versionen.
+                </p>
+
+                <h3>Steg 1 - Ladda ner Python</h3>
+                <ol>
+                    <li>Öppna en webbläsare.</li>
+                    <li>Gå till <a href="https://www.python.org" target="_blank"
+                            rel="noopener noreferrer">python.org</a>.</li>
+                    <li>Klicka på Downloads.</li>
+                    <li>Klicka på knappen Download Python 3.x.x.</li>
+                </ol>
+                <p>Python uppdateras hela tiden, så versionen kan vara senare än i boken.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image1.png" alt="Python.org nedladdningssida för macOS">
+                    <figcaption>Nedladdningssidan väljer automatiskt rätt version för macOS.</figcaption>
+                </figure>
+
+                <h3>Steg 2 - Installera Python</h3>
+                <ol>
+                    <li>Öppna filen som laddades ner.</li>
+                    <li>Starta installationsprogrammet.</li>
+                    <li>Klicka på Continue i varje steg.</li>
+                    <li>Slutför installationen.</li>
+                </ol>
+                <p>När installationen är klar finns Python installerat på datorn. Samtidigt installeras även IDLE,
+                    som är en enkel miljö för att skriva och köra Pythonkod.</p>
+
+                <h3>Steg 3 - Kontrollera installationen</h3>
+                <p>Det är bra att kontrollera att Python fungerar.</p>
+                <ol>
+                    <li>Öppna programmet Terminal.</li>
+                    <li>Skriv kommandot nedan.</li>
+                    <li>Tryck Enter.</li>
+                </ol>
+                <pre><code>python3 --version</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image2.png" alt="Terminal med kommandot python3 --version">
+                    <figcaption>Om allt fungerar visas installerad Python-version.</figcaption>
+                </figure>
+                <p>Om installationen fungerar visas ett meddelande som liknar Python 3.14.3. Det kan vara en senare
+                    version när du installerar.</p>
+
+                <h3>Hitta Python på din Mac</h3>
+                <p>När Python installeras skapas flera filer på datorn. Ibland kan det vara bra att veta var Python
+                    finns installerat. Det enklaste sättet är att använda Finder.</p>
+                <ol>
+                    <li>Öppna Finder.</li>
+                    <li>Gå till mappen Applications (Program).</li>
+                    <li>Leta efter mappen Python 3.x (eller senare version).</li>
+                </ol>
+                <p>I denna mapp finns bland annat:</p>
+                <ul>
+                    <li>IDLE</li>
+                    <li>Python Launcher</li>
+                    <li>Install Certificates.command</li>
+                    <li>dokumentation för Python</li>
+                </ul>
+                <figure>
+                    <img src="../assets/images/ch1/image3.png" alt="Python-mapp i Applications på macOS">
+                    <figcaption>Härifrån kan du starta IDLE direkt.</figcaption>
+                </figure>
+                <p>Om du installerat Python från python.org finns programmen vanligtvis i mappen Applications ->
+                    Python 3.x.</p>
+                <p>Du kan också hitta Python via Spotlight: tryck Cmd + mellanslag, skriv Python eller IDLE och starta
+                    programmet därifrån.</p>
+
+                <h3>Vanliga problem</h3>
+                <p>Om Terminalen visar ett felmeddelande kan det bero på att Python inte installerades korrekt. Försök
+                    i så fall installera om från python.org.</p>
+
+                <h3>Nästa steg</h3>
+                <p>Nu när Python är installerat ska vi lära oss att skriva och köra Pythonprogram i programmet IDLE.
+                    Det gör vi i nästa avsnitt.</p>
+            </section>
+
+            <section class="content-section" id="s18">
+                <h2>1.8 Skriva och köra program i IDLE</h2>
+                <p>När Python installeras följer programmet IDLE med. IDLE är en enkel utvecklingsmiljö där du kan
+                    skriva och köra Pythonkod. Den är särskilt bra när man börjar lära sig programmering.</p>
+
+                <p>I detta avsnitt lär du dig:</p>
+                <ul>
+                    <li>hur du startar IDLE</li>
+                    <li>hur du skriver ett Pythonprogram</li>
+                    <li>hur du sparar programmet</li>
+                    <li>hur du kör programmet</li>
+                </ul>
+
+                <h3>Starta IDLE</h3>
+                <p>För att starta IDLE på macOS gör du så här:</p>
+                <ol>
+                    <li>Öppna Spotlight genom att trycka Cmd + mellanslag.</li>
+                    <li>Skriv IDLE.</li>
+                    <li>Starta programmet IDLE (Python 3).</li>
+                </ol>
+                <p>När IDLE startar öppnas ett fönster som kallas Python Shell.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image4.png" alt="IDLE Shell på macOS">
+                    <figcaption>I Python Shell kan du skriva Pythonkod direkt och köra den direkt.</figcaption>
+                </figure>
+
+                <h3>Python Shell</h3>
+                <p>Python Shell fungerar ungefär som en räknare för Python. Du skriver en instruktion och Python kör
+                    den direkt.</p>
+                <p>Prova att skriva:</p>
+                <pre><code>print("Hej")</code></pre>
+                <p>Tryck sedan Enter. Python skriver då ut Hej. Detta visar att Python fungerar.</p>
+
+                <h3>Skapa ett Pythonprogram</h3>
+                <p>Även om man kan skriva kod direkt i Python Shell är det vanligaste att man skriver program i en
+                    fil.</p>
+                <ol>
+                    <li>Klicka på File i menyn.</li>
+                    <li>Välj New File.</li>
+                </ol>
+                <p>Ett nytt fönster öppnas. Detta fönster används för att skriva programkod.</p>
+
+                <h3>Skriv ditt program</h3>
+                <p>Skriv följande kod i det nya fönstret:</p>
+                <pre><code>print("Hej världen")</code></pre>
+                <p>Detta är ett mycket enkelt Pythonprogram som skriver ut en text på skärmen.</p>
+
+                <h3>Spara programmet</h3>
+                <p>Innan programmet kan köras måste det sparas.</p>
+                <ol>
+                    <li>Klicka på File.</li>
+                    <li>Välj Save.</li>
+                    <li>Ge filen ett namn, till exempel <code>hej.py</code>.</li>
+                </ol>
+
+                <p>Skapa gärna en tydlig mappstruktur under Dokument på din Mac, till exempel en mapp för kursen
+                    Programmering 1 och en undermapp för kapitel 1.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image5.png" alt="Mappstruktur i Finder med Programmering 1">
+                    <figcaption>Exempel på kursmapp i Finder.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../assets/images/ch1/image6.png" alt="Mapp Kap 1 med filen hej.py">
+                    <figcaption>Exempel på undermapp för kapitel 1 med programfilen hej.py.</figcaption>
+                </figure>
+                <p>Pythonprogram sparas alltid med filändelsen .py.</p>
+
+                <h3>Kör programmet</h3>
+                <p>När programmet är sparat kan det köras:</p>
+                <ol>
+                    <li>Klicka på Run i menyn.</li>
+                    <li>Välj Run Module.</li>
+                </ol>
+                <p>Du kan också använda kortkommandot F5. På Mac kan du behöva hålla ned fn-tangenten för att F5 ska
+                    fungera.</p>
+                <p>Programmet körs då och resultatet visas i Python Shell. Du ska nu se texten Hej världen.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image7.png"
+                        alt="Kört Pythonprogram i IDLE med utskriften Hej världen">
+                    <figcaption>Resultatet visas i Python Shell efter att du kört programmet.</figcaption>
+                </figure>
+
+                <h3>Ändra programmet</h3>
+                <p>Prova att ändra texten i programmet:</p>
+                <pre><code>print("Jag lär mig Python")</code></pre>
+                <p>Spara programmet igen och kör det en gång till.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>I detta avsnitt har du lärt dig att:</p>
+                <ul>
+                    <li>starta IDLE</li>
+                    <li>skriva Pythonkod</li>
+                    <li>spara ett program</li>
+                    <li>köra ett program</li>
+                </ul>
+                <p>I nästa avsnitt ska vi fortsätta med programmering i Visual Studio Code.</p>
+            </section>
+
+            <section class="content-section" id="s19">
+                <h2>1.9 Installera Visual Studio Code</h2>
+                <p>Visual Studio Code (VS Code) är ett program där man kan skriva och köra kod. Det används av många
+                    programmerare eftersom det är snabbt, enkelt att använda och fungerar med många olika
+                    programspråk.</p>
+                <p>Om du redan har VS Code installerat på din dator behöver du inte installera det igen. Du kan då gå
+                    vidare till nästa avsnitt.</p>
+
+                <h3>Installera VS Code</h3>
+                <ol>
+                    <li>Öppna en webbläsare.</li>
+                    <li>Gå till <a href="https://code.visualstudio.com" target="_blank"
+                            rel="noopener noreferrer">code.visualstudio.com</a>.</li>
+                    <li>Klicka på Download for macOS.</li>
+                    <li>När filen laddats ner, öppna den.</li>
+                    <li>Dra Visual Studio Code till mappen Applications (Program).</li>
+                </ol>
+                <p>Starta sedan programmet från Applications eller genom Spotlight (Cmd + mellanslag och skriv VS
+                    Code).</p>
+            </section>
+
+            <section class="content-section" id="s110">
+                <h2>1.10 Programmera i VS Code med Python</h2>
+                <p>För att kunna skriva Pythonkod i VS Code behöver man installera ett Python-tillägg.</p>
+
+                <h3>Installera Python-tillägget</h3>
+                <ol>
+                    <li>Starta VS Code.</li>
+                    <li>Klicka på Extensions i vänstermenyn (ikonen med fyra rutor).</li>
+                    <li>Skriv Python i sökfältet.</li>
+                    <li>Installera tillägget Python från Microsoft.</li>
+                </ol>
+                <figure>
+                    <img src="../assets/images/ch1/image8.png" alt="Python-tillägget i VS Code Extensions">
+                    <figcaption>Installera Python-tillägget från Microsoft.</figcaption>
+                </figure>
+                <p>När tillägget är installerat kan VS Code arbeta med Pythonprogram.</p>
+
+                <h3>Välj Python-version</h3>
+                <p>VS Code behöver veta vilken Python-installation som ska användas.</p>
+                <ol>
+                    <li>Tryck Cmd + Shift + P.</li>
+                    <li>Skriv Python: Select Interpreter.</li>
+                    <li>Välj den Python-version som installerades tidigare, till exempel Python 3.14.3.</li>
+                </ol>
+                <figure>
+                    <img src="../assets/images/ch1/image9.png" alt="Command Palette med Python Select Interpreter">
+                    <figcaption>Välj rätt Python-interpreter i VS Code.</figcaption>
+                </figure>
+
+                <p>Dra mappen Kap 1 från Finder in i VS Code-fönstret.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image10.png" alt="Kap 1-mapp öppnad i VS Code">
+                    <figcaption>Öppna kapitelmappen i VS Code.</figcaption>
+                </figure>
+
+                <h3>Kör programmet</h3>
+                <p>Det finns flera sätt att köra programmet. Det enklaste är att klicka på Run-knappen uppe till
+                    höger i VS Code.</p>
+                <p>Programmet körs då i terminalen och resultatet visas längst ner i fönstret. Du ska då se Hej
+                    världen.</p>
+                <p>Nu kan du skriva och köra Pythonprogram direkt i VS Code.</p>
+
+                <h3>Använda extensions</h3>
+                <p>I boken rekommenderas tillägget indent-rainbow. Det gör indragen med tab tydliga.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image11.png" alt="Tillägget indent-rainbow i VS Code">
+                    <figcaption>Installera indent-rainbow för tydligare indrag i kod.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../assets/images/ch1/image12.png" alt="Kod med färgade indrag via indent-rainbow">
+                    <figcaption>Färgade indrag hjälper dig läsa kodstrukturen.</figcaption>
+                </figure>
+            </section>
+
+            <section class="content-section" id="s111">
+                <h2>1.11 Syntax och noggrannhet i kod</h2>
+                <p>När man programmerar är det viktigt att skriva koden precis rätt. Datorn kan inte tolka vad vi
+                    menar om koden är felaktig. Den följer bara de instruktioner som står i programmet.</p>
+                <p>Därför måste programmerare vara noggranna när de skriver kod.</p>
+
+                <h3>Vad är syntax</h3>
+                <p>Syntax är reglerna för hur kod ska skrivas i ett programspråk. Varje programspråk har sina egna
+                    regler. Om syntaxen är fel kan programmet inte köras.</p>
+
+                <p>Till exempel är detta korrekt Pythonkod:</p>
+                <pre><code>print("Hej världen")</code></pre>
+
+                <p>Om man glömmer citattecken blir det fel:</p>
+                <pre><code>print(Hej världen)</code></pre>
+                <p>Python förstår då inte vad texten betyder och visar ett felmeddelande.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image13.png"
+                        alt="SyntaxError i terminal när citattecken saknas i print">
+                    <figcaption>Felmeddelande när syntaxen är felaktig.</figcaption>
+                </figure>
+
+                <h3>Indrag i Python</h3>
+                <p>I många programspråk används klamrar för att visa vilka instruktioner som hör ihop. I Python
+                    används istället indrag.</p>
+                <p>Till exempel:</p>
+                <pre><code>if True:
+    print("Detta skrivs ut")</code></pre>
+                <p>Indraget visar att raden hör till instruktionen ovanför. Gör indraget med tab-tangenten.</p>
+                <p>Om indraget saknas eller är fel kan Python visa ett felmeddelande.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image14.png" alt="IndentationError i terminal vid fel indrag">
+                    <figcaption>Felmeddelande när indrag saknas efter if-sats.</figcaption>
+                </figure>
+
+                <h3>Vanliga misstag</h3>
+                <p>Små misstag kan göra att programmet inte fungerar. Några vanliga exempel är:</p>
+                <ul>
+                    <li>glömda citattecken</li>
+                    <li>felstavade kommandon</li>
+                    <li>saknade parenteser</li>
+                    <li>felaktiga indrag</li>
+                </ul>
+                <p>Till exempel:</p>
+                <pre><code>prin("Hej")</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image15.png" alt="NameError för felstavat print-kommandot">
+                    <figcaption>Här är kommandot print felstavat och programmet fungerar inte.</figcaption>
+                </figure>
+
+                <h3>Felmeddelanden</h3>
+                <p>När något är fel i koden visar Python ett felmeddelande. Felmeddelandet hjälper dig att hitta
+                    problemet. Det visar ofta:</p>
+                <ul>
+                    <li>vilken rad som innehåller felet</li>
+                    <li>vilken typ av fel det är</li>
+                </ul>
+                <p>Det är därför viktigt att läsa felmeddelanden noggrant.</p>
+
+                <h3>Var noggrann när du skriver kod</h3>
+                <p>När du programmerar är det viktigt att:</p>
+                <ul>
+                    <li>skriva kommandon korrekt</li>
+                    <li>använda rätt citattecken och parenteser</li>
+                    <li>använda rätt indrag</li>
+                    <li>läsa felmeddelanden</li>
+                </ul>
+                <p>Att vara noggrann gör det mycket lättare att hitta och lösa problem i program.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Syntax är reglerna för hur kod ska skrivas i ett programspråk. Om syntaxen är fel kan programmet
+                    inte köras. I Python är det särskilt viktigt att skriva kommandon korrekt, använda rätt
+                    parenteser/citattecken och ha rätt indrag.</p>
+            </section>
+
+            <section class="content-section" id="s112">
+                <h2>1.12 Text, radbrytningar och specialtecken i Python</h2>
+                <p>När man skriver text i Python använder man oftast <code>print()</code>. Det gör att texten visas i
+                    terminalen.</p>
+                <pre><code>print("Hej världen")</code></pre>
+                <p>Det som står mellan citattecknen skrivs ut exakt som text.</p>
+
+                <h3>Vanliga specialtecken</h3>
+                <p>I Python finns några tecken som används för att påverka formateringen av text. De kallas ofta
+                    escape-tecken eller specialtecken.</p>
+
+                <h3>\n - ny rad</h3>
+                <p><code>\n</code> betyder att texten fortsätter på nästa rad.</p>
+                <p>Exempel:</p>
+                <pre><code>print("Hej\nvärlden")</code></pre>
+                <p>Det skrivs ut så här:</p>
+                <pre><code>Hej
+världen</code></pre>
+
+                <h3>\t - tab</h3>
+                <p><code>\t</code> betyder tabbtecken. Det används för att skapa ett mellanrum som är större än ett
+                    vanligt mellanslag.</p>
+                <p>Exempel:</p>
+                <pre><code>print("Namn\tÅlder")
+print("Anna\t16")</code></pre>
+                <p>Det kan skrivas ut ungefär så här:</p>
+                <pre><code>Namn        Ålder
+Anna        16</code></pre>
+                <p>Det är användbart när man vill göra enkel uppradning av text.</p>
+
+                <h3>\" - citattecken i text</h3>
+                <p>Om du vill skriva ut citattecken inne i en textsträng kan du använda <code>\"</code>.</p>
+                <p>Exempel:</p>
+                <pre><code>print("Han sa: \"Hej!\"")</code></pre>
+                <p>Utskrift:</p>
+                <pre><code>Han sa: "Hej!"</code></pre>
+
+                <h3>\\ - backslash</h3>
+                <p>Om du vill skriva ut ett vanligt omvänt snedstreck använder du <code>\\</code>.</p>
+                <p>Exempel:</p>
+                <pre><code>print("C:\\Python\\MinaFiler")</code></pre>
+                <p>Utskrift:</p>
+                <pre><code>C:\Python\MinaFiler</code></pre>
+
+                <h3>Exempel med flera specialtecken</h3>
+                <pre><code>print("Övning 1 - Skriv ut text")
+print("Hej världen")
+print("Hej\nigen")
+print("Namn\tKlass")
+print("Paul\tTE23")
+print("Han sa: \"Python är kul\"")</code></pre>
+
+                <h3>Viktigt att tänka på</h3>
+                <p>Specialtecken fungerar bara inne i textsträngar, alltså mellan citattecken. Om du skriver fel kan
+                    programmet ge ett felmeddelande eller skriva ut något annat än du tänkt.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Några vanliga specialtecken i Python är:</p>
+                <ul>
+                    <li><code>\n</code> = ny rad</li>
+                    <li><code>\t</code> = tab</li>
+                    <li><code>\"</code> = citattecken</li>
+                    <li><code>\\</code> = backslash</li>
+                </ul>
+                <p>De används för att styra hur text visas när programmet körs.</p>
+            </section>
+
+            <section class="content-section" id="s113">
+                <h2>1.13 Programmering i vardagen</h2>
+                <p>Programmering finns i många delar av samhället och i många av de saker vi använder varje dag. Många
+                    av de tjänster och appar som människor använder bygger på program som någon har skrivit.</p>
+
+                <p><strong>Programmering används till exempel i</strong></p>
+                <ul>
+                    <li>mobilappar</li>
+                    <li>webbsidor</li>
+                    <li>datorspel</li>
+                    <li>banktjänster</li>
+                    <li>sociala medier</li>
+                    <li>navigationssystem</li>
+                    <li>smarta hem</li>
+                </ul>
+
+                <p>När du använder en app på din telefon eller en tjänst på internet är det alltid ett program som
+                    ligger bakom.</p>
+
+                <h3>Programmering i appar och webbtjänster</h3>
+                <p>Många av de appar vi använder varje dag är byggda med hjälp av programmering. Till exempel behöver en
+                    app kunna</p>
+                <ul>
+                    <li>visa information</li>
+                    <li>ta emot inmatning från användaren</li>
+                    <li>spara data</li>
+                    <li>kommunicera med servrar</li>
+                </ul>
+                <p>Till exempel använder en väderapp program som hämtar data från vädertjänster och visar prognoser.</p>
+
+                <h3>Programmering i spel</h3>
+                <p>Datorspel är också ett tydligt exempel på programmering. I ett spel används programkod för att styra
+                </p>
+                <ul>
+                    <li>hur figurer rör sig</li>
+                    <li>hur poäng räknas</li>
+                    <li>hur spelvärlden fungerar</li>
+                    <li>hur spelaren kan interagera med spelet</li>
+                </ul>
+                <p>Många elever möter programmering första gången genom spelutveckling.</p>
+
+                <h3>Programmering i teknik och maskiner</h3>
+                <p>Programmering används också i många tekniska system. Exempel är</p>
+                <ul>
+                    <li>robotar i fabriker</li>
+                    <li>trafikljus</li>
+                    <li>bilar</li>
+                    <li>medicinsk utrustning</li>
+                    <li>flygplan</li>
+                </ul>
+                <p>I dessa system används program för att styra hur maskiner ska bete sig.</p>
+
+                <h3>Programmering och automatisering</h3>
+                <p>Ett viktigt användningsområde för programmering är <strong>automatisering</strong>. Det innebär att
+                    datorer utför uppgifter automatiskt istället för att människor gör dem manuellt.</p>
+                <p><strong>Exempel på automatisering är</strong></p>
+                <ul>
+                    <li>sortering av paket</li>
+                    <li>analys av data</li>
+                    <li>bokningssystem</li>
+                    <li>tradingbotar</li>
+                    <li>rekommendationer i streamingtjänster</li>
+                </ul>
+                <p>Automatisering kan göra arbete snabbare och mer effektivt.</p>
+
+                <h3>Programmering och samhället</h3>
+                <p>Programmering påverkar också samhället på många sätt. Algoritmer används till exempel för att</p>
+                <ul>
+                    <li>rekommendera filmer och musik</li>
+                    <li>visa annonser</li>
+                    <li>sortera information</li>
+                    <li>analysera stora datamängder</li>
+                </ul>
+                <p>Detta kan ha både positiva och negativa effekter. Därför är det viktigt att förstå hur programmerade
+                    system fungerar.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Programmering används i många delar av vardagen. Den finns i appar, spel, webbtjänster och tekniska
+                    system.</p>
+                <p>Genom att lära sig programmering får man en bättre förståelse för hur många av de digitala system som
+                    används i samhället fungerar.</p>
+            </section>
+
+            <section class="content-section" id="s114">
+                <h2>1.14 Att tänka som en programmerare</h2>
+                <p>Att programmera handlar inte bara om att skriva kod. Det handlar också om att <strong>tänka på ett
+                        särskilt sätt</strong> när man löser problem. Programmerare måste kunna analysera problem, dela
+                    upp dem i mindre delar och beskriva lösningar steg för steg.</p>
+                <p>Detta sätt att tänka kallas ibland <strong>algoritmiskt tänkande</strong>.</p>
+
+                <h3>Dela upp problem</h3>
+                <p>Stora problem kan ofta vara svåra att lösa direkt. Därför brukar programmerare dela upp problemet i
+                    <strong>mindre delar</strong>.
+                </p>
+                <p>Till exempel kan ett program som räknar ut ett medelvärde delas upp i flera steg</p>
+                <ol>
+                    <li>läsa in tal</li>
+                    <li>lägga ihop talen</li>
+                    <li>räkna hur många tal som finns</li>
+                    <li>dela summan med antalet</li>
+                    <p>I dessa övningar ska du skriva enkla Pythonprogram. Målet är att öva på att skriva kod, köra
+                        program och vara noggrann med syntax.</p>
+                    <p><strong>Skriv varje program i en egen .py-fil i din projektmapp.</strong></p>
+
+                    <h3>Övning 1 – Skriv ut text</h3>
+                    <p>Skriv ett program som skriver ut texten</p>
+                    <pre><code>Hej världen</code></pre>
+                    <p>Kör programmet och kontrollera att texten visas i terminalen.</p>
+
+                    <h3>Övning 2 – Flera rader</h3>
+                    <p>Skriv ett program som skriver ut tre rader</p>
+                    <pre><code>Hej
+Jag lär mig Python
+Det är roligt att programmera</code></pre>
+                    p>Reflektera över frågorna nedan. Diskutera gärna med en klasskamrat eller skriv ner dina svar.</p>
+
+                    <h3>1 – Vad är ett program? Beskriv med egna ord.</h3>
+                    <p></p>
+
+                    <h3>2 – Varför måste man vara noggrann när man skriver kod?</h3>
+                    <p></p>
+
+                    <h3>3 – Vad menas med syntax i ett programspråk?</h3>
+                    <p></p>
+
+                    <h3>4 – Vad är skillnaden mellan ett kompilerat och ett interpreterat programspråk?</h3>
+                    <p></p>
+
+                    <h3>5 – Ge tre exempel på var programmering används i vardagen.</h3>
+                    <p></p>
+
+                    <h3>6 – Varför är det viktigt att läsa felmeddelanden när ett program inte fungerar?</h3>
+                    <p></p>
+
+                    <h3>7 – Vad menas med att tänka steg för steg när man programmerar?</h3>
+                    <p></p>
+
+                    <h3>8 – Varför är det viktigt att förstå koden även om man använder AI-verktyg?</h3>
+                    <p></p>
+
+                    <h3>9 – Vilka saker har du lärt dig i detta kapitel som du inte visste innan?</h3>
+                    <p></p><code>Jag tycker om programmering
+Jag tycker om musik
+Jag tycker om spel</code></pre>
+
+                    <h3>Övning 5 – Använd flera print</h3>
+                    <p>Skriv ett program som använder flera <strong>print()</strong> för att skriva ut följande</p>
+                    <pre><code>Python
+är
+Roligt</code></pre>
+
+                    <h3>Övning 6 – Gör ett fel</h3>
+                    <p>Skriv följande kod</p>
+                    <pre><code>print("Hej världen"</code></pre>
+                    <p>Kör programmet.</p>
+                    <p><strong>Vad händer?</strong></p>
+                    <p>Läs felmeddelandet och fundera på vad som är fel.</p>
+
+                    <h3>Övning 7 – Rätta felet</h3>
+                    <p>Rätta felet i programmet från övning 6 så att programmet fungerar igen.</p<li>vad ska hända sedan
+                        </li>
+                        <li>vad ska hända sist</li>
+                        </ul>
+                    <p><strong>Till exempel</strong></p>
+                    <ol>
+                        <li>fråga användaren efter ett namn</li>
+                        <li>spara namnet i en variabel</li>
+                        <li>skriva ut en hälsning</li>
+                    </ol>
+
+                    <h3>Testa och förbättra</h3>
+                    <p>När man programmerar fungerar inte allt rätt direkt. Det är normalt att behöva testa sitt program
+                        och ändra koden flera gånger.</p>
+                    <p>Programmerare arbetar därför ofta i en process där man</p>
+                    <ul>
+                        <li>skriver kod</li>
+                        <li>testar programmet</li>
+                        <li>hittar fel</li>
+                        <li>förbättrar lösningen</li>
+                    </ul>
+
+                    <h3>Vara noggrann</h3>
+                    <p>Eftersom datorer följer instruktioner exakt måste programmerare vara noggranna. Små misstag kan
+                        göra att programmet inte fungerar.</p>
+                    <p>Det är därför viktigt att</p>
+                    <ul>
+                        <li>skriva kod tydligt</li>
+                        <li>använda bra namn på variabler</li>
+                        <li>testa programmet ofta</li>
+                    </ul>
+
+                    <h3>Sammanfattning</h3>
+                    <p>Att tänka som en programmerare innebär att</p>
+                    <ul>
+                        <li>dela upp problem i mindre delar</li>
+                        <li>tänka steg för steg</li>
+                        <li>testa och förbättra lösningar</li>
+                        <li>vara noggrann när man skriver kod</li>
+                    </ul>
+                    <p>Dessa arbetssätt hjälper programmerare att skapa program som fungerar och är lätta att förstå.
+                    </p>
+            </section>
+
+            <section class="content-section" id="s115">
+                <h2>1.15 Övningar</h2>
+                <ol>
+                    <li>Skriv ut texten Hej världen</li>
+                    <li>Skriv ut flera rader med print</li>
+                    <li>Ändra text till ditt namn</li>
+                    <li>Skriv ut tre saker du tycker om</li>
+                    <li>Använd flera print-rader</li>
+                    <li>Skapa ett syntaxfel och läs felmeddelandet</li>
+                    <li>Rätta felet</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s116">
+                <h2>1.16 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är ett program med egna ord?</li>
+                    <li>Varför måste man vara noggrann i kod?</li>
+                    <li>Vad menas med syntax?</li>
+                    <li>Skillnad mellan kompilerat och interpreterat?</li>
+                    <li>Tre exempel på programmering i vardagen?</li>
+                    <li>Varför läsa felmeddelanden noggrant?</li>
+                    <li>Vad betyder att tänka steg för steg?</li>
+                    <li>Varför förstå kod även med AI-verktyg?</li>
+                    <li>Vad lärde du dig i detta kapitel?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-2.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Variabler, datatyper och input</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

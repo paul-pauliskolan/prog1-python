@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kapitel 2: Variabler, datatyper och input - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 2 - Variabler, datatyper och input</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 2: Variabler, datatyper och input</h1>
+                <p class="subtitle">Detta kapitel visar hur program lagrar information, hur man tar emot input från
+                    användaren och hur man omvandlar datatyper.</p>
+            </header>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s21">2.1 Vad är en variabel</a></li>
+                    <li><a href="#s22">2.2 Tilldela värden</a></li>
+                    <li><a href="#s23">2.3 Datatyper</a></li>
+                    <li><a href="#s24">2.4 Skriva ut variabler</a></li>
+                    <li><a href="#s25">2.5 Input från användaren</a></li>
+                    <li><a href="#s26">2.6 Typomvandling</a></li>
+                    <li><a href="#s27">2.7 Vanliga nybörjarfel</a></li>
+                    <li><a href="#s28">2.8 Övningar</a></li>
+                    <li><a href="#s29">2.9 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s21">
+                <h2>2.1 Vad är en variabel</h2>
+                <p>När ett program körs behöver det kunna lagra information. Den informationen sparas i något som kallas
+                    variabler.</p>
+                <p>En variabel är en plats i datorns minne där ett värde lagras. Variabeln har ett namn så att
+                    programmet kan använda värdet senare.</p>
+                <p>Man kan tänka på en variabel som en låda med en etikett. Etiketten är variabelns namn och i lådan
+                    ligger värdet.</p>
+                <pre><code>name = "Anna"</code></pre>
+                <p>Här skapas en variabel som heter <code>name</code>. Värdet som lagras i variabeln är texten
+                    <code>"Anna"</code>.</p>
+                <p>Programmet kan sedan använda variabeln senare i koden.</p>
+                <p>Variabler gör det möjligt att</p>
+                <ul>
+                    <li>lagra information</li>
+                    <li>ändra värden</li>
+                    <li>använda värden flera gånger i ett program</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s22">
+                <h2>2.2 Tilldela värden</h2>
+                <p>När man ger en variabel ett värde kallas det att tilldela ett värde.</p>
+                <p>Det görs med likhetstecknet <code>=</code>.</p>
+                <pre><code>name = "Anna"
+age = 17</code></pre>
+                <p>Här skapas två variabler.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variabel</th>
+                            <th>Värde</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>name</code></td>
+                            <td><code>Anna</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>age</code></td>
+                            <td><code>17</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Programmet kan nu använda dessa värden i senare instruktioner.</p>
+                <p>Det är viktigt att komma ihåg att <code>=</code> i programmering betyder tilldela ett värde, inte
+                    matematiskt lika med.</p>
+                <p>Testa nu att skriva in dessa koder i IDLE eller VS Code. I fortsättningen kommer jag skriva din
+                    kodeditor, editor eller IDE.</p>
+                <p>Skapa en ny mapp som heter kap 2 och i den skapa en fil du kallar <a
+                        href="http://namn.py">namn.py</a>.</p>
+                <p>En ny mapp gör du genom att två fingerklicka på macplattan eller högerklicka på datormusen. På
+                    svenska heter det sekundärklick på engelska <em>context click</em>.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image16.png" alt="Skapa en ny mapp i Finder på macOS">
+                    <figcaption>Skapa en ny projektmapp för kapitel 2.</figcaption>
+                </figure>
+                <p>I den skriver du till exempel</p>
+                <pre><code>name = "Pelle"
+age = 18
+print(name)
+print(age)</code></pre>
+                <p>Och kör programmet.</p>
+                <p>För att rensa i Terminalen skriv <code>clear</code> och klicka på Enter.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image17.png" alt="Terminal med kommandot clear">
+                    <figcaption>Kommandot clear rensar terminalfönstret.</figcaption>
+                </figure>
+            </section>
+
+            <section class="content-section" id="s23">
+                <h2>2.3 Datatyper</h2>
+                <p>Information som lagras i variabler kan ha olika <strong>datatyper</strong>. Datatypen beskriver
+                    vilken typ av värde som lagras.</p>
+                <p>De vanligaste datatyperna i Python är:</p>
+                <ul>
+                    <li><strong>int</strong> - heltal</li>
+                    <li><strong>float</strong> - decimaltal</li>
+                    <li><strong>str</strong> - text</li>
+                    <li><strong>bool</strong> - sant eller falskt</li>
+                </ul>
+                <p>Exempel:</p>
+                <pre><code>age = 17
+temperature = 21.5
+name = "Anna"
+student = True</code></pre>
+                <p>Datatyper är viktiga eftersom Python behöver veta hur värden ska behandlas.</p>
+
+                <h3>Övning 1</h3>
+                <p>Skapa en ny fil i din projektmapp. Filen ska heta <code>datatyper.py</code>.</p>
+                <p>Skriv följande kod i filen.</p>
+                <pre><code>age = 17
+temperature = 21.5
+name = "Anna"
+student = True
+
+print(type(age))
+print(type(temperature))
+print(type(name))
+print(type(student))</code></pre>
+                <p>Kör programmet. Du kommer att se vilken datatyp varje variabel har.</p>
+                <pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'bool'&gt;</code></pre>
+
+                <h3>Övning 2</h3>
+                <p>Skapa fyra nya variabler i din fil.</p>
+                <p>En variabel för ditt namn, din ålder, din längd och om du är student (True eller False).</p>
+                <p>Skriv sedan ut datatyperna med <code>type()</code>.</p>
+
+                <h3>Fler exempel med type()</h3>
+                <p>Testa att skriva följande kod.</p>
+                <pre><code>print(type(10))
+print(type(3.14))
+print(type("Hej"))
+print(type(True))</code></pre>
+                <p>Som du har sett kan man i Python kontrollera vilken datatyp ett värde har med funktionen
+                    <code>type()</code>.</p>
+                <pre><code>age = 17
+print(type(age))</code></pre>
+                <p>Det betyder att variabeln innehåller ett heltal.</p>
+                <p>Att använda <code>type()</code> är mycket användbart när man lär sig programmering. Det hjälper dig
+                    att förstå vilken datatyp ett värde har, kontrollera att ett program fungerar som du tänkt och hitta
+                    fel i din kod.</p>
+            </section>
+
+            <section class="content-section" id="s24">
+                <h2>2.4 Skriva ut variabler</h2>
+                <p>När man programmerar behöver man ofta visa information på skärmen. I Python görs detta med funktionen
+                    <code>print()</code>.</p>
+                <p>Funktionen <code>print()</code> används för att skriva ut text eller värden i terminalen.</p>
+                <p>Exempel:</p>
+                <pre><code>name = "Anna"
+print(name)</code></pre>
+                <p>Programmet skriver då ut:</p>
+                <pre><code>Anna</code></pre>
+                <p>Här händer två saker:</p>
+                <ol>
+                    <li>Variabeln <code>name</code> skapas och får värdet <code>"Anna"</code>.</li>
+                    <li>Funktionen <code>print()</code> skriver ut värdet som finns i variabeln.</li>
+                </ol>
+
+                <h3>Skriva ut text och variabler tillsammans</h3>
+                <p>Man kan också skriva ut text tillsammans med variabler.</p>
+                <pre><code>name = "Anna"
+print("Hej", name)</code></pre>
+                <p>Programmet skriver då ut:</p>
+                <pre><code>Hej Anna</code></pre>
+                <p>Python sätter automatiskt ett mellanslag mellan värdena som skrivs ut.</p>
+
+                <h3>Skriva ut flera variabler</h3>
+                <p>Man kan skriva ut flera variabler samtidigt.</p>
+                <pre><code>name = "Anna"
+age = 17
+print(name, age)</code></pre>
+                <p>Resultat:</p>
+                <pre><code>Anna 17</code></pre>
+
+                <h3>F-strängar</h3>
+                <p>Ett annat sätt att skriva ut variabler tillsammans med text är att använda
+                    <strong>f-strängar</strong>.</p>
+                <p>En f-sträng börjar med bokstaven <strong>f</strong> före citattecknen.</p>
+                <pre><code>name = "Anna"
+print(f"Hej {name}")</code></pre>
+                <p>Programmet skriver ut:</p>
+                <pre><code>Hej Anna</code></pre>
+                <p>Variabeln placeras mellan <strong>{ }</strong> i texten.</p>
+                <p>Man kan också använda flera variabler.</p>
+                <pre><code>name = "Anna"
+age = 17
+print(f"{name} är {age} år gammal")</code></pre>
+                <p>Resultat:</p>
+                <pre><code>Anna är 17 år gammal</code></pre>
+                <p>F-strängar gör ofta koden tydligare och lättare att läsa, därför används de ofta i Python.</p>
+
+                <h3>Övning 1 - F-strängar</h3>
+                <p>Skapa en ny Pythonfil i din mapp. Filen kan till exempel heta <code>fstring.py</code>.</p>
+                <p>Skriv följande kod.</p>
+                <pre><code>name = "Alex"
+age = 16
+print(f"Hej {name}")
+print(f"{name} är {age} år gammal")</code></pre>
+                <p>Kör programmet.</p>
+
+                <h3>Övning 2 - F-strängar</h3>
+                <p>Ändra programmet så att det använder dina egna uppgifter.</p>
+                <p>Programmet ska skriva ut något i stil med:</p>
+                <pre><code>Hej Maria
+Maria är 17 år gammal</code></pre>
+
+                <h3>Extra uppgift</h3>
+                <p>Lägg till en ny variabel som innehåller namnet på din favoritmat.</p>
+                <pre><code>food = "pizza"
+print(f"Min favoritmat är {food}")</code></pre>
+            </section>
+
+            <section class="content-section" id="s25">
+                <h2>2.5 Input från användaren</h2>
+                <p>Hittills har våra program bara skrivit ut information. Men program kan också <strong>ta emot
+                        information från användaren</strong>. Detta gör program mer interaktiva.</p>
+                <p>I Python används funktionen <strong><code>input()</code></strong> för att läsa in text från
+                    användaren.</p>
+                <pre><code>name = input("Vad heter du? ")</code></pre>
+                <p>När programmet körs visas frågan:</p>
+                <pre><code>Vad heter du?</code></pre>
+                <p>Programmet väntar då på att användaren ska skriva något och trycka på Enter.</p>
+                <p>Om användaren skriver <strong>Erik</strong> sparas texten i variabeln <code>name</code>.</p>
+
+                <h3>Använda input tillsammans med print</h3>
+                <p>När informationen har sparats i en variabel kan den användas senare i programmet.</p>
+                <pre><code>name = input("Vad heter du? ")
+print(f"Hej {name}")</code></pre>
+                <p>Om användaren skriver Anna skriver programmet ut:</p>
+                <pre><code>Hej Anna</code></pre>
+
+                <h3>Flera frågor</h3>
+                <p>Ett program kan också ställa flera frågor.</p>
+                <pre><code>name = input("Vad heter du? ")
+city = input("Vilken stad bor du i? ")
+print(f"Hej {name}")
+print(f"Du bor i {city}")</code></pre>
+                <p>Programmet läser först in namnet och sedan staden.</p>
+
+                <h3>Viktigt att veta</h3>
+                <p>Information som kommer från <code>input()</code> är alltid <strong>text</strong>. Det betyder att
+                    värdet sparas som datatypen <strong>str</strong>.</p>
+                <p>Senare i kapitlet kommer vi att se hur man kan omvandla text till tal.</p>
+
+                <h3>Testa själv</h3>
+                <p>Skapa en ny fil i din projektmapp som heter <code>input_test.py</code>.</p>
+                <p>Skriv följande kod.</p>
+                <pre><code>name = input("Vad heter du? ")
+age = input("Hur gammal är du? ")
+print(f"Hej {name}")
+print(f"Du är {age} år gammal")</code></pre>
+                <p>Kör programmet och svara på frågorna.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar användaren efter namn och favoritfärg.</p>
+                <p>Programmet ska sedan skriva ut en mening med hjälp av en f-sträng.</p>
+                <pre><code>Hej Erik
+Din favoritfärg är blå</code></pre>
+            </section>
+
+            <section class="content-section" id="s26">
+                <h2>2.6 Typomvandling</h2>
+                <p>I avsnittet om <code>input()</code> såg vi att program kan ta emot information från användaren. Men
+                    det finns en viktig sak att känna till.</p>
+                <p>All information som kommer från <code>input()</code> sparas som <strong>text</strong>. Datatypen blir
+                    alltså <strong>str</strong>.</p>
+                <pre><code>age = input("Hur gammal är du? ")
+print(type(age))</code></pre>
+                <p>Om användaren skriver 17 kommer programmet att visa <code>&lt;class 'str'&gt;</code>. Det betyder att
+                    värdet 17 sparas som text, inte som ett tal.</p>
+                <p>Det kan skapa problem om man vill göra beräkningar.</p>
+                <pre><code>age = input("Hur gammal är du? ")
+print(age + 5)</code></pre>
+                <p>Detta ger ett TypeError eftersom Python inte kan lägga ihop text och tal.</p>
+
+                <h3>Omvandla text till tal</h3>
+                <p>För att lösa detta använder man <strong>typomvandling</strong>. Typomvandling betyder att man ändrar
+                    en datatyp till en annan.</p>
+                <p>De vanligaste funktionerna är:</p>
+                <ul>
+                    <li><code>int()</code> - omvandlar till heltal</li>
+                    <li><code>float()</code> - omvandlar till decimaltal</li>
+                    <li><code>str()</code> - omvandlar till text</li>
+                </ul>
+
+                <h3>Exempel med heltal</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+                <p>Här händer tre saker:</p>
+                <ol>
+                    <li>Programmet läser in text från användaren.</li>
+                    <li>Texten omvandlas till ett heltal med <code>int()</code>.</li>
+                    <li>Värdet sparas i variabeln <code>age</code>.</li>
+                </ol>
+                <p>Nu fungerar beräkningen.</p>
+                <p>Om användaren skriver 17 skriver programmet ut 22.</p>
+
+                <h3>Exempel med decimaltal</h3>
+                <pre><code>temperature = float(input("Vad är temperaturen? "))
+print(temperature + 1)</code></pre>
+                <p>Här omvandlas texten till ett decimaltal.</p>
+
+                <h3>Kontrollera datatypen</h3>
+                <p>Man kan använda <code>type()</code> för att kontrollera datatypen.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(type(age))</code></pre>
+                <p>Resultatet blir <code>&lt;class 'int'&gt;</code>.</p>
+
+                <h3>Testa själv</h3>
+                <p>Skapa en ny fil som heter <code>typomvandling.py</code>.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(f"Om fem år är du {age + 5} år gammal")</code></pre>
+                <p>Kör programmet och testa olika värden.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar användaren efter längd i centimeter.</p>
+                <p>Programmet ska sedan skriva ut:</p>
+                <pre><code>Din längd är ___ cm
+Om du växer 10 cm blir din längd ___ cm</code></pre>
+                <p>Tips: använd <code>int()</code> för att omvandla värdet till ett tal.</p>
+            </section>
+
+            <section class="content-section" id="s27">
+                <h2>2.7 Vanliga nybörjarfel</h2>
+                <p>Vi har redan tagit upp delar av detta, men det är så viktigt att vi repeterar lite igen och tar med
+                    några nya saker att tänka på.</p>
+                <p>När man börjar programmera är det vanligt att göra små misstag i koden. Det är helt normalt. Alla
+                    programmerare gör fel ibland. Det viktiga är att lära sig <strong>hur man hittar och förstår
+                        felen</strong>.</p>
+
+                <h3>Glömda citattecken</h3>
+                <p>Text i Python måste stå inom citattecken.</p>
+                <p>Rätt kod:</p>
+                <pre><code>print("Hej världen")</code></pre>
+                <p>Fel kod:</p>
+                <pre><code>print(Hej världen)</code></pre>
+                <p>I den felaktiga koden förstår Python inte vad texten betyder eftersom citattecknen saknas.</p>
+
+                <h3>Felstavade kommandon</h3>
+                <p>Python känner bara igen kommandon som är stavade exakt rätt.</p>
+                <p>Rätt kod:</p>
+                <pre><code>print("Hej")</code></pre>
+                <p>Fel kod:</p>
+                <pre><code>prin("Hej")</code></pre>
+                <p>Om ett kommando är felstavat visar Python ett felmeddelande.</p>
+
+                <h3>Saknade parenteser</h3>
+                <p>Många funktioner i Python använder parenteser.</p>
+                <p>Rätt kod:</p>
+                <pre><code>print("Hej")</code></pre>
+                <p>Fel kod:</p>
+                <pre><code>print "Hej"</code></pre>
+                <p>Python kräver parenteser runt det som ska skrivas ut.</p>
+
+                <h3>Fel datatyp</h3>
+                <p>Ett annat vanligt fel är att försöka använda text som ett tal.</p>
+                <p>Fel kod:</p>
+                <pre><code>age = input("Hur gammal är du? ")
+print(age + 5)</code></pre>
+                <p>Här sparas värdet från <code>input()</code> som text. Python kan därför inte lägga till talet 5.</p>
+                <p>Rätt kod:</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+                <p>Här omvandlas texten till ett heltal.</p>
+
+                <h3>Felmeddelanden</h3>
+                <p>När något är fel i ett program visar Python ett <strong>felmeddelande</strong>. Felmeddelandet
+                    berättar ofta vilken rad felet finns på och vilken typ av fel det är.</p>
+                <p>Det är därför viktigt att <strong>läsa felmeddelandet noggrant</strong>.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Några vanliga nybörjarfel är glömda citattecken, felstavade kommandon, saknade parenteser och fel
+                    datatyp.</p>
+                <p>Genom att läsa felmeddelanden och kontrollera koden noggrant kan man oftast hitta och rätta felet
+                    snabbt.</p>
+            </section>
+
+            <section class="content-section" id="s28">
+                <h2>2.8 Övningar</h2>
+                <p>I dessa övningar ska du använda det du har lärt dig i kapitel 1 och kapitel 2.</p>
+                <p>Du kommer att öva på <code>print()</code>, variabler, datatyper, <code>type()</code>,
+                    <code>input()</code>, typomvandling och f-strängar.</p>
+                <p>Skriv varje program i en egen <code>.py</code>-fil i din projektmapp.</p>
+
+                <h3>Övning 1 - Presentera dig</h3>
+                <p>Skriv ett program som skriver ut "Hej jag heter ditt namn". Skapa först en variabel med ditt namn och
+                    använd sedan <code>print()</code>.</p>
+                <pre><code>name = "Anna"
+print(f"Hej jag heter {name}")</code></pre>
+
+                <h3>Övning 2 - Datatyper</h3>
+                <p>Skapa fyra variabler: namn, ålder, längd och student (True eller False). Skriv sedan ut datatypen för
+                    varje variabel med <code>type()</code>.</p>
+                <pre><code>name = "Anna"
+age = 17
+height = 170
+student = True
+print(type(name))
+print(type(age))
+print(type(height))
+print(type(student))</code></pre>
+
+                <h3>Övning 3 - Fråga efter namn</h3>
+                <p>Skriv ett program som frågar användaren efter sitt namn och skriver ut en hälsning.</p>
+                <p>Programmet ska skriva ut:</p>
+                <pre><code>Hej ditt namn</code></pre>
+
+                <h3>Övning 4 - Ålder</h3>
+                <p>Skriv ett program som frågar användaren efter sin ålder.</p>
+                <p>Programmet ska skriva ut:</p>
+                <pre><code>Du är ett antal år gammal
+Om fem år är du ett antal år gammal</code></pre>
+                <p>Tips: använd <code>int()</code>.</p>
+
+                <h3>Övning 5 - Längd</h3>
+                <p>Skriv ett program som frågar användaren efter sin längd i centimeter.</p>
+                <p>Programmet ska skriva ut:</p>
+                <pre><code>Din längd är ett antal centimeter
+Om du växer tio centimeter blir din längd ett antal centimeter</code></pre>
+
+                <h3>Övning 6 - Favoritfilm</h3>
+                <p>Skriv ett program som frågar användaren efter namn och favoritfilm.</p>
+                <p>Programmet ska skriva ut:</p>
+                <pre><code>Hej ditt namn
+Din favoritfilm är filmens namn</code></pre>
+
+                <h3>Övning 7 - Kontrollera datatyper</h3>
+                <p>Skriv ett program som innehåller följande värden: 10, 3.14, "Hej" och True.</p>
+                <p>Använd <code>type()</code> för att skriva ut vilken datatyp varje värde har.</p>
+
+                <h3>Övning 8 - Tre frågor</h3>
+                <p>Skriv ett program som frågar användaren efter namn, stad och favoritmat.</p>
+                <p>Programmet ska sedan skriva ut en kort presentation.</p>
+                <pre><code>Hej Erik
+Du bor i Malmö
+Din favoritmat är pizza</code></pre>
+            </section>
+
+            <section class="content-section" id="s29">
+                <h2>2.9 Reflektionsfrågor</h2>
+                <p>Fundera på frågorna nedan. Du kan diskutera dem med en klasskamrat eller skriva ner dina svar.</p>
+                <ol>
+                    <li>Vad är en variabel? Förklara med egna ord.</li>
+                    <li>Varför använder man variabler i program?</li>
+                    <li>Vad är en datatyp?</li>
+                    <li>Ge exempel på fyra vanliga datatyper i Python.</li>
+                    <li>Vad gör funktionen <code>type()</code>?</li>
+                    <li>Vad gör funktionen <code>input()</code>?</li>
+                    <li>Varför behöver man ibland använda <code>int()</code> när man använder <code>input()</code>?</li>
+                    <li>Vad är en f-sträng och varför är den användbar?</li>
+                    <li>Ge ett exempel på ett enkelt program som använder variabler.</li>
+                    <li>Varför är det viktigt att läsa felmeddelanden när ett program inte fungerar?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-1.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Vad är programmering</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-3.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Problemlösning i programmering</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

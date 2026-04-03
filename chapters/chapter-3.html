@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kapitel 3: Problemlösning i programmering - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 3 - Problemlösning i programmering</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 3: Problemlösning i programmering</h1>
+                <p class="subtitle">Detta kapitel visar hur programmerare arbetar när de löser problem, planerar
+                    lösningar och omvandlar idéer till fungerande program.</p>
+            </header>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s31">3.1 Vad är ett programmeringsproblem</a></li>
+                    <li><a href="#s32">3.2 Algoritmer</a></li>
+                    <li><a href="#s33">3.3 Dela upp problem</a></li>
+                    <li><a href="#s34">3.4 Pseudokod</a></li>
+                    <li><a href="#s35">3.5 Flödesscheman</a></li>
+                    <li><a href="#s36">3.6 Från idé till program</a></li>
+                    <li><a href="#s37">3.7 Exempel: temperaturprogram</a></li>
+                    <li><a href="#s38">3.8 Övningar</a></li>
+                    <li><a href="#s39">3.9 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s31">
+                <h2>3.1 Vad är ett programmeringsproblem</h2>
+                <p>Ett programmeringsproblem är en uppgift som kan lösas med hjälp av ett program.</p>
+                <p>Programmet ska ta emot information, göra något med informationen och sedan ge ett resultat.</p>
+                <p>Ett enkelt exempel kan vara ett program som räknar ut hur gammal en person är om fem år.</p>
+                <p>Problemet kan beskrivas så här som pseudokod:</p>
+                <pre><code>Fråga användaren efter sin ålder
+Räkna ut åldern om fem år
+Skriv ut resultatet</code></pre>
+                <p>Detta problem kan lösas med ett program.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(f"Om fem år är du {age + 5} år gammal")</code></pre>
+                <p>Programmeringsproblem finns i många olika områden.</p>
+                <p><strong>Exempel</strong></p>
+                <ul>
+                    <li>beräkna resultat i ett spel</li>
+                    <li>sortera information i en databas</li>
+                    <li>räkna ut priser i en webbshop</li>
+                    <li>analysera data</li>
+                </ul>
+                <p>När programmerare arbetar börjar de nästan alltid med att <strong>förstå problemet</strong> innan de
+                    börjar skriva kod.</p>
+                <p>Ett bra sätt att tänka är att ställa frågor som:</p>
+                <ul>
+                    <li>Vad ska programmet göra?</li>
+                    <li>Vilken information behövs?</li>
+                    <li>Vad ska programmet skriva ut?</li>
+                </ul>
+                <p>Genom att förstå problemet tydligt blir det mycket lättare att skriva ett program som fungerar.</p>
+            </section>
+
+            <section class="content-section" id="s32">
+                <h2>3.2 Algoritmer</h2>
+                <p>När man löser ett programmeringsproblem behöver man bestämma <strong>vilka steg som ska
+                        utföras</strong> för att nå en lösning. Denna stegvisa beskrivning kallas en
+                    <strong>algoritm</strong>.</p>
+                <p>En algoritm är alltså en <strong>tydlig serie instruktioner som beskriver hur ett problem ska
+                        lösas</strong>.</p>
+                <p>Algoritmer används inte bara i programmering. De finns även i vardagliga situationer där man följer
+                    en serie steg.</p>
+                <p><strong>Exempel är</strong></p>
+                <ul>
+                    <li>ett recept i matlagning</li>
+                    <li>instruktioner för att bygga en möbel</li>
+                    <li>vägbeskrivningar</li>
+                </ul>
+                <p>Alla dessa beskriver vilka steg som ska göras och i vilken ordning.</p>
+
+                <h3>Exempel på en enkel algoritm</h3>
+                <p>Tänk dig ett program som ska räkna ut hur gammal en person är om fem år.</p>
+                <p>Algoritmen kan beskrivas så här:</p>
+                <pre><code>fråga användaren efter ålder
+spara åldern i en variabel
+lägg till 5
+skriv ut resultatet</code></pre>
+                <p>När algoritmen är tydlig kan den enkelt omvandlas till ett program.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(f"Om fem år är du {age + 5} år gammal")</code></pre>
+
+                <h3>Varför algoritmer är viktiga</h3>
+                <p>Algoritmer hjälper programmerare att planera en lösning innan de skriver kod, förstå hur ett problem
+                    ska lösas och strukturera sina program.</p>
+                <p>Om man börjar skriva kod direkt utan att tänka igenom algoritmen kan programmet lätt bli svårt att
+                    förstå eller innehålla fel.</p>
+
+                <h3>Egenskaper hos en bra algoritm</h3>
+                <p>En bra algoritm ska vara tydlig, stegvis, logisk och möjlig att följa.</p>
+                <p>Varje steg ska vara enkelt att förstå och utföra.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>En algoritm är en steg-för-steg-beskrivning av hur ett problem ska lösas.</p>
+                <p>Genom att först formulera en algoritm blir det mycket lättare att skriva ett fungerande program.</p>
+            </section>
+
+            <section class="content-section" id="s33">
+                <h2>3.3 Dela upp problem</h2>
+                <p>Många programmeringsproblem kan vara svåra att lösa direkt. Ett vanligt arbetssätt i programmering är
+                    därför att <strong>dela upp problemet i mindre delar</strong>.</p>
+                <p>När ett stort problem delas upp i mindre delar blir det lättare att förstå och lösa.</p>
+                <p>Detta arbetssätt används av nästan alla programmerare.</p>
+
+                <h3>Exempel</h3>
+                <p>Tänk dig att du ska skriva ett program som räknar ut medelvärdet av flera tal.</p>
+                <p>Om man försöker lösa hela problemet direkt kan det kännas svårt. Men om man delar upp problemet i
+                    mindre steg blir det enklare.</p>
+                <p>Problemet kan delas upp så här:</p>
+                <pre><code>fråga användaren efter ett tal
+fråga efter nästa tal
+lägg ihop talen
+räkna hur många tal som finns
+dela summan med antalet
+skriv ut resultatet</code></pre>
+                <p>När problemet är uppdelat i steg blir det mycket lättare att skriva programmet.</p>
+
+                <h3>Mindre delar i program</h3>
+                <p>I programmering kan man ofta dela upp problem i delar som att läsa in information, göra beräkningar,
+                    fatta beslut och skriva ut resultat.</p>
+                <p>Om man arbetar steg för steg blir programmet ofta lättare att förstå, lättare att testa och lättare
+                    att ändra.</p>
+
+                <h3>Exempel i Python</h3>
+                <p>Här är ett enkelt program där problemet har delats upp i tydliga steg.</p>
+                <pre><code>number1 = int(input("Skriv ett tal: "))
+number2 = int(input("Skriv ett tal till: "))
+summa = number1 + number2
+print(f"Summan är {summa}")</code></pre>
+                <p>Programmet läser in två tal, lägger ihop talen och skriver ut resultatet.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Att dela upp problem är ett viktigt arbetssätt i programmering.</p>
+                <p>Genom att dela upp ett problem i mindre delar blir det lättare att förstå problemet, lättare att
+                    skriva programmet och lättare att hitta fel i koden.</p>
+            </section>
+
+            <section class="content-section" id="s34">
+                <h2>3.4 Pseudokod</h2>
+                <p>Innan man börjar skriva kod kan det vara bra att planera lösningen. Ett vanligt sätt att göra detta
+                    är att använda <strong>pseudokod</strong>.</p>
+                <p>Pseudokod är ett sätt att beskriva ett program med vanliga ord och enkla instruktioner istället för
+                    riktig kod.</p>
+                <p>Det liknar programmering, men man behöver inte följa exakt syntax som i ett programspråk.</p>
+                <p>Syftet med pseudokod är att planera lösningen på ett problem, tänka igenom vilka steg programmet ska
+                    göra och göra det lättare att skriva koden senare.</p>
+
+                <h3>Exempel</h3>
+                <p>Anta att vi vill skriva ett program som frågar användaren efter ett tal och säger om talet är stort
+                    eller litet.</p>
+                <p>Pseudokoden kan se ut så här:</p>
+                <pre><code>läs in ett tal
+om talet är större än 10
+    skriv ut stort tal
+annars
+    skriv ut litet tal</code></pre>
+                <p>När lösningen är planerad kan man skriva programmet i Python.</p>
+                <pre><code>number = int(input("Skriv ett tal: "))
+if number > 10:
+    print("Stort tal")
+else:
+    print("Litet tal")</code></pre>
+                <p>Gör indraget med tab-tangenten. Det är mycket viktigt att du kommer ihåg indraget med tab på nästa
+                    rad efter <code>if</code>.</p>
+
+                <h3>Varför pseudokod är användbart</h3>
+                <p>Pseudokod hjälper programmerare att fokusera på lösningen istället för syntax, förstå programmet
+                    innan de skriver koden och planera större program.</p>
+                <p>Det gör också att andra personer lättare kan förstå hur ett program är tänkt att fungera.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Pseudokod är en enkel beskrivning av ett program i steg.</p>
+                <p>Man använder vanliga ord istället för riktig kod, men strukturen liknar ett program. När pseudokoden
+                    är klar blir det ofta mycket lättare att skriva själva programmet.</p>
+            </section>
+
+            <section class="content-section" id="s35">
+                <h2>3.5 Flödesscheman</h2>
+                <p>Ett flödesschema är en grafisk bild av ett program. Det visar programmets steg med hjälp av symboler
+                    och pilar.</p>
+                <p>Flödesscheman används för att planera program, förstå hur ett program fungerar, förklara lösningar
+                    för andra och hitta fel i programlogik.</p>
+                <p>Flödesscheman är en form av diagramteknik för problemlösning.</p>
+
+                <h3>Sekvens</h3>
+                <p>Sekvens betyder att instruktioner utförs i ordning, steg för steg.</p>
+                <p>Exempel:</p>
+                <pre><code>läs in namn
+skriv ut namn
+skriv ut "Välkommen"</code></pre>
+                <p>I ett flödesschema visas sekvens som flera steg efter varandra med pilar mellan.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image18.png" alt="Flödesschema som visar sekvens">
+                    <figcaption>Flödesschema för sekvens.</figcaption>
+                </figure>
+
+                <h3>Villkor</h3>
+                <p>Villkor betyder att programmet måste göra ett val.</p>
+                <p>Programmet kontrollerar om något är sant eller falskt och väljer sedan väg.</p>
+                <p>Exempel:</p>
+                <pre><code>om tal &gt; 10
+    skriv ut "Stort tal"
+annars
+    skriv ut "Litet tal"</code></pre>
+                <p>I ett flödesschema visas detta med en beslutssymbol.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image19.png" alt="Flödesschema som visar ett villkor">
+                    <figcaption>Flödesschema för ett villkor.</figcaption>
+                </figure>
+
+                <h3>Iteration</h3>
+                <p>Iteration betyder att något upprepas flera gånger.</p>
+                <p>Det kan vara en loop som fortsätter tills ett villkor är uppfyllt.</p>
+                <p>Exempel:</p>
+                <pre><code>så länge talet inte är 0
+    skriv ut talet
+    läs in nytt tal</code></pre>
+                <p>I ett flödesschema visas iteration genom att en pil går tillbaka till ett tidigare steg.</p>
+                <figure>
+                    <img src="../assets/images/ch1/image20.png" alt="Flödesschema som visar iteration">
+                    <figcaption>Flödesschema för iteration.</figcaption>
+                </figure>
+
+                <p>Ett flödesschema beskriver samma sak som pseudokod, men i bildform istället för text.</p>
+                <p>Vanliga symboler i flödesscheman visar start/slut, inmatning/utskrift, bearbetning, beslut och pilar
+                    som visar i vilken ordning stegen utförs.</p>
+                <p>Nedan finns pseudokod som kan omvandlas till flödesscheman.</p>
+
+                <h3>Exempel 1 - Hälsningsprogram</h3>
+                <p>Pseudokod:</p>
+                <pre><code>start
+fråga efter namn
+spara namnet
+skriv ut "Hej namn"
+slut</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image18.png" alt="Flödesschema för hälsningsprogram">
+                    <figcaption>Exempel på ett enkelt hälsningsprogram.</figcaption>
+                </figure>
+
+                <h3>Exempel 2 - Räkna ut summan av två tal</h3>
+                <p>Pseudokod:</p>
+                <pre><code>start
+läs in tal1
+läs in tal2
+summa = tal1 + tal2
+skriv ut summa
+slut</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image21.png" alt="Flödesschema för summan av två tal">
+                    <figcaption>Flödesschema för att räkna ut summan av två tal.</figcaption>
+                </figure>
+
+                <h3>Exempel 3 - Stort eller litet tal</h3>
+                <p>Pseudokod:</p>
+                <pre><code>start
+läs in tal
+om tal &gt; 10
+    skriv ut "Stort tal"
+annars
+    skriv ut "Litet tal"
+slut</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image22.png" alt="Flödesschema för stort eller litet tal">
+                    <figcaption>Beslutspunkt i ett flödesschema.</figcaption>
+                </figure>
+                <p>Här används en beslutspunkt i flödesschemat.</p>
+
+                <h3>Exempel 4 - Ålder om fem år</h3>
+                <p>Pseudokod:</p>
+                <pre><code>start
+fråga efter ålder
+ålderOmFemÅr = ålder + 5
+skriv ut ålderOmFemÅr
+slut</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image23.png" alt="Flödesschema för ålder om fem år">
+                    <figcaption>Flödesschema för ett program som räknar ut åldern om fem år.</figcaption>
+                </figure>
+
+                <h3>Exempel 5 - Enkel meny</h3>
+                <p>Pseudokod:</p>
+                <pre><code>start
+skriv ut "1 Spela"
+skriv ut "2 Avsluta"
+läs in val
+om val = 1
+    skriv ut "Spelet startar"
+annars
+    skriv ut "Programmet avslutas"
+slut</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image24.png" alt="Flödesschema för enkel meny">
+                    <figcaption>Flödesschema för en enkel meny.</figcaption>
+                </figure>
+
+                <h3>Exempel 6 - Iteration (Loop / Nedräkning)</h3>
+                <p>Pseudokod:</p>
+                <pre><code>start
+sätt räknare = 3
+medan räknare &gt; 0
+    skriv ut räknare
+    räknare = räknare - 1
+skriv ut "Klar!"
+slut</code></pre>
+                <figure>
+                    <img src="../assets/images/ch1/image25.png" alt="Flödesschema för loop och nedräkning">
+                    <figcaption>Flödesschema för en enkel loop.</figcaption>
+                </figure>
+
+                <h3>Sammanfattning</h3>
+                <p>Flödesscheman hjälper programmerare att planera program, förstå programlogik och visualisera
+                    algoritmer.</p>
+                <p>I praktiken gör man ofta först Problem, Algoritm, Pseudokod, Flödesschema och sedan Kod.</p>
+                <p>Det gör det lättare att skapa program som fungerar korrekt.</p>
+            </section>
+
+            <section class="content-section" id="s36">
+                <h2>3.6 Från idé till program</h2>
+                <p>När programmerare skapar ett program börjar de sällan direkt med att skriva kod. Istället arbetar de
+                    steg för steg från en idé till ett färdigt program.</p>
+                <p>Detta arbetssätt gör det lättare att förstå problemet och skapa ett program som fungerar.</p>
+                <p>Ett vanligt arbetssätt kan beskrivas i följande steg: förstå problemet, planera lösningen, beskriva
+                    lösningen, skriva programmet och testa programmet.</p>
+
+                <h3>Steg 1 - Förstå problemet</h3>
+                <p>Först måste man förstå vad programmet ska göra.</p>
+                <p>Exempel: Ett program ska fråga användaren efter sin ålder och sedan skriva ut hur gammal personen är
+                    om tio år.</p>
+                <p>Frågor man kan ställa är: Vilken information behöver programmet? Vad ska programmet räkna ut? Vad ska
+                    programmet skriva ut?</p>
+
+                <h3>Steg 2 - Planera lösningen</h3>
+                <p>Nästa steg är att planera hur problemet ska lösas.</p>
+                <p>Man kan till exempel skriva ner de viktigaste stegen.</p>
+                <pre><code>fråga efter ålder
+spara åldern
+lägg till 10
+skriv ut resultatet</code></pre>
+
+                <h3>Steg 3 - Beskriva lösningen</h3>
+                <p>Nu kan man beskriva lösningen mer tydligt med pseudokod.</p>
+                <pre><code>start
+läs in ålder
+ålderOmTioÅr = ålder + 10
+skriv ut ålderOmTioÅr
+slut</code></pre>
+                <p>Man skulle också kunna rita ett flödesschema som visar samma steg.</p>
+
+                <h3>Steg 4 - Skriva programmet</h3>
+                <p>När lösningen är planerad kan man skriva programmet i Python.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+future_age = age + 10
+print(f"Om tio år är du {future_age} år gammal")</code></pre>
+
+                <h3>Steg 5 - Testa programmet</h3>
+                <p>När programmet är skrivet måste det testas.</p>
+                <p>Man kan till exempel testa med olika värden. Om användaren skriver 15 ska programmet skriva ut
+                    <code>Om tio år är du 25 år gammal</code>.</p>
+                <p>Om något inte fungerar måste programmet ändras tills det fungerar korrekt.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Program utvecklas ofta i flera steg: idé, problem, algoritm, pseudokod, program och testning.</p>
+                <p>Genom att arbeta på detta sätt blir det lättare att skapa program som fungerar och är lätta att
+                    förstå.</p>
+            </section>
+
+            <section class="content-section" id="s37">
+                <h2>3.7 Exempel: temperaturprogram</h2>
+                <p>Nu ska vi se ett exempel på hur man kan gå från ett problem till ett färdigt program.</p>
+                <p>Problemet är att skapa ett program som frågar användaren efter en temperatur i grader Celsius och
+                    sedan skriver ut temperaturen i grader Fahrenheit.</p>
+
+                <h3>Steg 1 - Förstå problemet</h3>
+                <p>Programmet ska fråga efter en temperatur i Celsius, räkna om temperaturen till Fahrenheit och skriva
+                    ut resultatet.</p>
+                <p>Formeln för att omvandla Celsius till Fahrenheit är <code>F = C × 9 / 5 + 32</code>.</p>
+
+                <h3>Steg 2 - Algoritm</h3>
+                <p>Algoritmen kan beskrivas så här:</p>
+                <pre><code>läs in temperaturen i Celsius
+räkna ut temperaturen i Fahrenheit
+skriv ut resultatet</code></pre>
+
+                <h3>Steg 3 - Pseudokod</h3>
+                <pre><code>start
+läs in temperatur i Celsius
+fahrenheit = celsius × 9 / 5 + 32
+skriv ut temperaturen i Fahrenheit
+slut</code></pre>
+
+                <h3>Steg 4 - Pythonprogram</h3>
+                <pre><code>celsius = float(input("Skriv en temperatur i Celsius: "))
+fahrenheit = celsius * 9 / 5 + 32
+print(f"Temperaturen i Fahrenheit är {fahrenheit}")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <p>Programmet läser in temperaturen från användaren, omvandlar temperaturen till ett decimaltal, räknar
+                    ut temperaturen i Fahrenheit och skriver ut resultatet.</p>
+                <p>Om användaren skriver 20 ska programmet skriva ut <code>Temperaturen i Fahrenheit är 68.0</code>.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>I detta exempel har vi gått igenom hela processen: problem, algoritm, pseudokod och program.</p>
+                <p>Detta är ett vanligt arbetssätt när programmerare utvecklar program.</p>
+            </section>
+
+            <section class="content-section" id="s38">
+                <h2>3.8 Övningar</h2>
+                <p>I dessa övningar ska du arbeta med problemlösning i programmering. Försök att först tänka igenom
+                    lösningen innan du börjar skriva kod.</p>
+                <p>Arbeta gärna i följande steg: förstå problemet, skriv en enkel algoritm, skriv pseudokod, skriv
+                    programmet i Python.</p>
+
+                <h3>Övning 1 - Hälsningsprogram</h3>
+                <p>Skriv ett program som frågar användaren efter sitt namn och skriver ut en hälsning.</p>
+                <p>Programmet ska skriva ut:</p>
+                <pre><code>Hej namn</code></pre>
+                <p>Fundera först på vilken information programmet behöver och vad programmet ska skriva ut.</p>
+
+                <h3>Övning 2 - Ålder om tio år</h3>
+                <p>Skriv ett program som frågar användaren efter sin ålder, räknar ut hur gammal personen är om tio år
+                    och skriver ut resultatet.</p>
+
+                <h3>Övning 3 - Summan av två tal</h3>
+                <p>Skriv ett program som läser in två tal från användaren, räknar ut summan och skriver ut resultatet.
+                </p>
+                <p>Exempel på resultat:</p>
+                <pre><code>Summan är 25</code></pre>
+
+                <h3>Övning 4 - Temperaturprogram</h3>
+                <p>Skriv ett program som läser in en temperatur i Celsius, räknar om temperaturen till Fahrenheit och
+                    skriver ut resultatet.</p>
+                <p>Tips: Formeln är <code>F = C × 9 / 5 + 32</code>.</p>
+
+                <h3>Övning 5 - Medelvärde</h3>
+                <p>Skriv ett program som läser in tre tal, räknar ut medelvärdet och skriver ut resultatet.</p>
+                <p>Tips: Medelvärde = summan av talen delat med antalet tal.</p>
+
+                <h3>Övning 6 - Största talet</h3>
+                <p>Skriv ett program som läser in två tal, avgör vilket tal som är störst och skriver ut resultatet.</p>
+                <p>Tips: Du kan använda <code>if</code> i programmet.</p>
+            </section>
+
+            <section class="content-section" id="s39">
+                <h2>3.9 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är ett programmeringsproblem?</li>
+                    <li>Varför är det viktigt att förstå problemet innan man börjar skriva kod?</li>
+                    <li>Vad är en algoritm?</li>
+                    <li>Ge ett exempel på en algoritm i vardagen.</li>
+                    <li>Varför är det ofta bra att dela upp ett stort problem i mindre delar?</li>
+                    <li>Vad är pseudokod?</li>
+                    <li>Varför kan pseudokod göra det lättare att skriva ett program?</li>
+                    <li>Vad är ett flödesschema?</li>
+                    <li>Vilken skillnad finns mellan pseudokod och ett flödesschema?</li>
+                    <li>Vilka steg brukar programmerare följa när de går från en idé till ett färdigt program?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-2.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Variabler, datatyper och input</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-4.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Operatorer och beräkningar</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

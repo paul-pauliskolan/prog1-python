@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel - Programmering nivå 1 med Python</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="../index.html" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1><a href="../index.html">🐍 Python</a></h1>
+                <p class="subtitle">Läs kapitlet, följ övningarna och håll reda på koden i en smal parallell vy.</p>
+            </header>
+
+            <div class="chapter-header"></div>
+
+            <section id="chapter-summary"></section>
+            <section id="chapter-sections"></section>
+            <section id="chapter-videos"></section>
+            <section id="chapter-resources"></section>
+
+            <div class="chapter-nav"></div>
+        </article>
+
+        <aside class="chapter-aside">
+            <section class="aside-card">
+                <p class="eyebrow">Kodläge</p>
+                <h2>Håll VS Code öppet bredvid</h2>
+                <p>Den här sidopanelen är gjord för elever som arbetar med ett smalt fönster. Stäng menyn när du behöver
+                    mer plats för editorn.</p>
+            </section>
+            <section class="aside-card">
+                <h3>Snabbt stöd</h3>
+                <ul>
+                    <li>Läs avsnittet.</li>
+                    <li>Kör exemplet i Python.</li>
+                    <li>Gå sedan direkt till övningen.</li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
+        if (match) {
+            const chapterNumber = parseInt(match[1], 10)
+            const interval = setInterval(() => {
+                if (window.pythonbook && window.pythonbook.getChapter(chapterNumber)) {
+                    clearInterval(interval)
+                    window.pythonbook.renderChapterPage(chapterNumber)
+                }
+            }, 100)
+        }
+    </script>
+</body>
+
+</html>

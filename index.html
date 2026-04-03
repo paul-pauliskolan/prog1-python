@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Programmering nivå 1 med Python är en kursbok med kapitel, övningar och ett läsläge som fungerar i smalt fönster bredvid VS Code.">
+    <title>Programmering nivå 1 med Python</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="index.html" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <div class="container home-page">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Gymnasiekursen Programmering 1</p>
+                <h1>Programmering nivå 1 med Python</h1>
+                <p class="subtitle">En kursbok byggd för läsning, övning och kodning sida vid sida med VS Code.</p>
+                <div class="hero-actions">
+                    <a class="primary-link" href="preview.html">Öppna kapitelöversikt</a>
+                    <a class="secondary-link" href="#kom-igang">Se upplägget</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <p class="hero-card-label">Läsläge</p>
+                <h2>Smal vy för klassrummet</h2>
+                <p>Layouten är gjord för att fungera i ett smalt fönster, så eleven kan läsa på ena sidan och koda i den
+                    andra.</p>
+                <ul>
+                    <li>Kapitel med tydlig navigering</li>
+                    <li>Övningar och sammanfattningar samlade</li>
+                    <li>Mobilvänligt och snabbt att navigera</li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="page-stack">
+            <section class="feature-grid" id="kom-igang">
+                <article class="feature-card">
+                    <h2>Så är boken byggd</h2>
+                    <p>Markdown-filen används som huvudkälla, och kapitlen kan sedan visas som webbsidor med
+                        ankarlänkar, övningar och översikter.</p>
+                </article>
+                <article class="feature-card">
+                    <h2>För smalt fönster</h2>
+                    <p>Sidbredden hålls begränsad, navigeringen är hopfällbar och extra paneler kan döljas när eleverna
+                        behöver mer plats för kod.</p>
+                </article>
+                <article class="feature-card">
+                    <h2>För eleverna</h2>
+                    <p>Varje kapitel kan kompletteras med kodexempel, uppgifter och en tydlig nästa steg-ruta som gör
+                        det lätt att arbeta självständigt.</p>
+                </article>
+            </section>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Innehåll</p>
+                        <h2>Alla kapitel</h2>
+                    </div>
+                    <p class="section-note">Kapitellistan läses in automatiskt från metadata-filen.</p>
+                </div>
+                <nav class="chapter-menu chapter-menu-home" id="chapters-menu-homepage"></nav>
+            </section>
+
+            <section class="split-mode">
+                <div class="split-mode-copy">
+                    <p class="eyebrow">Kombinerat läge</p>
+                    <h2>Läs och koda samtidigt</h2>
+                    <p>Den här sajten är tänkt att ligga öppet bredvid VS Code. Därför är texten smal, rubrikerna
+                        tydliga och menyerna lätta att stänga när fokus ska ligga på kod.</p>
+                </div>
+                <div class="split-mode-panel">
+                    <h3>Rekommenderat arbetssätt</h3>
+                    <ol>
+                        <li>Öppna kapitlet du arbetar med.</li>
+                        <li>Ha VS Code bredvid i samma fönsterbredd.</li>
+                        <li>Växla mellan teori, exempel och övning utan att lämna sidan.</li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© Paul Belfrage. Anpassad för Programmering 1 med Python.</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

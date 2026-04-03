@@ -1,0 +1,432 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "number": 1,
+      "title": "Vad är programmering",
+      "description": "En första introduktion till vad ett program är och varför Python används i kursen.",
+      "sections": [
+        "Vad är ett program",
+        "Vad är programmering",
+        "Datorns funktionssätt och programmeringens möjligheter",
+        "Programspråk",
+        "Hur ett program körs",
+        "Syntax och noggrannhet i kod",
+        "Övningar",
+        "Reflektionsfrågor"
+      ],
+      "summary": "Det här kapitlet förklarar grunderna: vad programmering är, hur datorer följer instruktioner och varför noggrann kod är viktig. Eleverna får också en första bild av Python som programspråk och hur de kommer att arbeta i kursen.",
+      "keyTopics": ["program", "syntax", "Python", "körning", "felsökning"],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "title": "Variabler, datatyper och input",
+      "description": "Bygg de viktigaste verktygen för att lagra och läsa in data.",
+      "sections": [
+        "Vad är en variabel",
+        "Tilldela värden",
+        "Datatyper",
+        "Skriva ut variabler",
+        "Input från användaren",
+        "Typomvandling",
+        "Vanliga nybörjarfel",
+        "Övningar"
+      ],
+      "summary": "Här lär sig eleverna hur värden lagras i variabler, hur olika datatyper fungerar och hur program kan fråga användaren om information. Kapitlet lägger grunden för nästan all fortsatta Pythonkodning.",
+      "keyTopics": [
+        "variabler",
+        "datatyper",
+        "input",
+        "typomvandling",
+        "print"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "title": "Problemlösning i programmering",
+      "description": "Träna på att dela upp problem och planera lösningar innan kod skrivs.",
+      "sections": [
+        "Vad är ett programmeringsproblem",
+        "Algoritmer",
+        "Pseudokod",
+        "Flödesscheman",
+        "Från idé till program",
+        "Exempel: temperaturprogram",
+        "Övningar",
+        "Reflektionsfrågor"
+      ],
+      "summary": "Kapitlet visar hur man tänker steg för steg när ett problem ska lösas med kod. Eleverna får arbeta med algoritmer, pseudokod och enkla flödesscheman innan de skriver Pythonprogram.",
+      "keyTopics": [
+        "algoritmer",
+        "pseudokod",
+        "flödesschema",
+        "planering",
+        "testning"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 4,
+      "number": 4,
+      "title": "Operatorer och beräkningar",
+      "description": "Räkna, jämför och uttryck logik i Python.",
+      "sections": [
+        "Aritmetiska operatorer",
+        "Jämförelseoperatorer",
+        "Logiska uttryck",
+        "Prioriteringsregler",
+        "Matematiska exempel",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Eleverna lär sig hur Python räknar med tal och jämför värden. Kapitlet hjälper dem förstå hur kod kan fatta enkla beslut och utföra beräkningar på rätt sätt.",
+      "keyTopics": [
+        "operatorer",
+        "beräkningar",
+        "jämförelser",
+        "prioritet",
+        "uttryck"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 5,
+      "number": 5,
+      "title": "Villkor",
+      "description": "Låt program fatta beslut med if-satser och logik.",
+      "sections": [
+        "if",
+        "elif",
+        "else",
+        "Nästlade villkor",
+        "Jämförelser i praktiken",
+        "Övningar",
+        "Reflektion"
+      ],
+      "summary": "Det här kapitlet visar hur program kan reagera olika beroende på indata och villkor. Det är ett centralt steg mot mer användbara och interaktiva Pythonprogram.",
+      "keyTopics": ["if-satser", "logik", "beslut", "grenad kod", "villkor"],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 6,
+      "number": 6,
+      "title": "Loopar",
+      "description": "Upprepa kod effektivt med for- och while-loopar.",
+      "sections": [
+        "for-loopen",
+        "while-loopen",
+        "range",
+        "räknare",
+        "eviga loopar",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Här lär sig eleverna upprepning, räknare och hur samma kod kan köras många gånger på ett kontrollerat sätt. Loopar är en av de viktigaste byggstenarna i programmering.",
+      "keyTopics": ["for", "while", "upprepning", "räknare", "range"],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 7,
+      "number": 7,
+      "title": "Listor",
+      "description": "Samla flera värden i en struktur som går att sortera och bearbeta.",
+      "sections": [
+        "Skapa listor",
+        "Index",
+        "Lägga till och ta bort",
+        "Loopa igenom listor",
+        "Nästlade listor",
+        "Övningar",
+        "Reflektionsfrågor"
+      ],
+      "summary": "Listor gör det möjligt att arbeta med många värden samtidigt. Det här kapitlet visar hur eleverna kan lagra, läsa, ändra och bearbeta samlingar av data.",
+      "keyTopics": [
+        "listor",
+        "index",
+        "iteration",
+        "sortering",
+        "datastrukturer"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 8,
+      "number": 8,
+      "title": "Funktioner",
+      "description": "Dela upp program i återanvändbara delar.",
+      "sections": [
+        "Definiera funktioner",
+        "Parametrar",
+        "Returvärden",
+        "Lokala variabler",
+        "Anropa funktioner",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Eleverna lär sig hur kod kan delas upp i mindre delar som går att återanvända. Funktioner gör program lättare att läsa, testa och bygga vidare på.",
+      "keyTopics": [
+        "funktioner",
+        "parametrar",
+        "returvärden",
+        "återanvändning",
+        "struktur"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 9,
+      "number": 9,
+      "title": "Felsökning",
+      "description": "Lär dig hitta, förstå och rätta fel i kod.",
+      "sections": [
+        "Vanliga fel",
+        "Felmeddelanden",
+        "Print-debugging",
+        "Stegvis felsökning",
+        "Testa små delar",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Kapitlet tränar eleverna i att läsa felmeddelanden och metodiskt hitta orsaken till problem. Det är viktigt både för nybörjare och för mer avancerat arbete senare i kursen.",
+      "keyTopics": [
+        "felsökning",
+        "debuggning",
+        "felmeddelanden",
+        "testning",
+        "noggrannhet"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 10,
+      "number": 10,
+      "title": "Undantagshantering",
+      "description": "Gör program robustare med try och except.",
+      "sections": [
+        "Vad är ett undantag",
+        "try och except",
+        "Flera feltyper",
+        "Felhantering i praktiken",
+        "Användarvänliga meddelanden",
+        "Övningar",
+        "Reflektion"
+      ],
+      "summary": "Här lär sig eleverna att hantera oväntade situationer så att program inte kraschar i onödan. Det skapar stabilare och mer användarvänliga lösningar.",
+      "keyTopics": ["undantag", "try", "except", "robusthet", "felhantering"],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 11,
+      "number": 11,
+      "title": "Struktur och läsbar kod",
+      "description": "Skriv kod som andra och du själv kan förstå senare.",
+      "sections": [
+        "Indrag",
+        "Namngivning",
+        "Kommentarer",
+        "Delning i delar",
+        "Ren kod",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Kapitlet handlar om kodkvalitet, tydlighet och arbetssätt. Eleverna får verktyg för att skriva kod som är enkel att läsa, förstå och vidareutveckla.",
+      "keyTopics": ["läsbarhet", "struktur", "namn", "kommentarer", "stil"],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 12,
+      "number": 12,
+      "title": "Användargränssnitt",
+      "description": "Skapa enkla program med grafiska gränssnitt och bättre användarflöde.",
+      "sections": [
+        "Vad är ett GUI",
+        "Tkinter",
+        "Knapp och textfält",
+        "Händelser",
+        "Layout",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Eleverna får en första introduktion till grafiska gränssnitt och hur program kan bli mer användarvänliga. Kapitlet är användbart inför projekt med tydligt gränssnitt.",
+      "keyTopics": [
+        "GUI",
+        "Tkinter",
+        "händelser",
+        "layout",
+        "användargränssnitt"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 13,
+      "number": 13,
+      "title": "Programmering, användare och framtid",
+      "description": "Reflektera över hur programmering påverkar människor och samhälle.",
+      "sections": [
+        "Program och användare",
+        "Tillgänglighet",
+        "Automatisering",
+        "AI och programmering",
+        "Ansvar",
+        "Övningar",
+        "Reflektionsfrågor"
+      ],
+      "summary": "Det här kapitlet knyter ihop tekniken med människan. Eleverna diskuterar användarbehov, tillgänglighet, automatisering och programmeringens roll i framtiden.",
+      "keyTopics": [
+        "användare",
+        "tillgänglighet",
+        "automatisering",
+        "AI",
+        "etik"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 14,
+      "number": 14,
+      "title": "Projekt",
+      "description": "Planera och genomför större arbetsuppgifter i Python.",
+      "sections": [
+        "Välja projekt",
+        "Planering",
+        "Delmål",
+        "Testa och förbättra",
+        "Redovisa",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Projektkapitlet stödjer eleverna i att arbeta mer självständigt med större uppgifter. Fokus ligger på planering, genomförande, testning och tydlig dokumentation.",
+      "keyTopics": [
+        "projekt",
+        "planering",
+        "testning",
+        "redovisning",
+        "arbetsprocess"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 15,
+      "number": 15,
+      "title": "Programmering i samhället",
+      "description": "Se hur kod påverkar vardag, jobb och samhällsstruktur.",
+      "sections": [
+        "Program i vardagen",
+        "Samhällspåverkan",
+        "Data och integritet",
+        "Automatisering",
+        "Yrken",
+        "Övningar",
+        "Reflektion"
+      ],
+      "summary": "Eleverna ser hur programmering används i olika delar av samhället och hur deras kod kan påverka människor. Kapitlet stärker förståelsen för teknikens konsekvenser.",
+      "keyTopics": [
+        "samhälle",
+        "integritet",
+        "data",
+        "automatisering",
+        "yrken"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 16,
+      "number": 16,
+      "title": "Versionshantering och GitHub",
+      "description": "Arbeta säkert med Git och dela kod via GitHub.",
+      "sections": [
+        "Vad är versionshantering",
+        "Git basics",
+        "Commit",
+        "Push och pull",
+        "Grenar",
+        "GitHub",
+        "Övningar"
+      ],
+      "summary": "Kapitlet introducerar hur elever kan spara, versionera och dela sitt arbete på ett professionellt sätt. Det passar särskilt bra när flera arbetar med samma projekt.",
+      "keyTopics": ["git", "GitHub", "commit", "branch", "versionshantering"],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 17,
+      "number": 17,
+      "title": "Gör en Tkinter-app till en Mac-app med PyInstaller",
+      "description": "Packa ett Pythonprogram så det kan köras som ett fristående program.",
+      "sections": [
+        "Vad PyInstaller gör",
+        "Installera verktyget",
+        "Bygg appen",
+        "Testa resultatet",
+        "Felsökning",
+        "Övningar",
+        "Sammanfattning"
+      ],
+      "summary": "Det här kapitlet visar hur elever kan förvandla en Tkinter-app till ett körbart program. Det knyter ihop programmering, distribution och användning i praktiken.",
+      "keyTopics": [
+        "PyInstaller",
+        "Tkinter",
+        "paketering",
+        "app",
+        "distribution"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 18,
+      "number": 18,
+      "title": "Arbetssätt i projekt kopplat till Teknik 2",
+      "description": "Knyt ihop programmering med projektarbete och teknikdidaktik.",
+      "sections": [
+        "Arbetssätt",
+        "Roller och ansvar",
+        "Planering",
+        "Dokumentation",
+        "Utvärdering",
+        "Övningar",
+        "Reflektion"
+      ],
+      "summary": "Kapitlet stöttar ett mer projektbaserat arbetssätt och passar bra när programmering kopplas till större teknikuppgifter. Här blir struktur, ansvar och dokumentation viktiga delar.",
+      "keyTopics": [
+        "projektarbete",
+        "teknik 2",
+        "planering",
+        "dokumentation",
+        "utvärdering"
+      ],
+      "videoSuggestions": [],
+      "resources": []
+    },
+    {
+      "id": 19,
+      "number": 19,
+      "title": "Appendix - förslag till projekt",
+      "description": "En samling projektidéer på E-, C- och A-nivå.",
+      "sections": ["E-nivå", "C-nivå", "A-nivå", "Välja projekt", "Nästa steg"],
+      "summary": "Bilagan samlar projektidéer som eleverna kan använda när de vill arbeta vidare på olika nivåer. Det gör det enklare att hitta ett projekt som passar både ambition och tid.",
+      "keyTopics": ["projektidéer", "nivåer", "fördjupning", "val", "bilaga"],
+      "videoSuggestions": [],
+      "resources": []
+    }
+  ]
+}
