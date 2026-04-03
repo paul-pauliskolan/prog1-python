@@ -1,85 +1,534 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The Asteroid Belt: Explore millions of rocky remnants between Mars and Jupiter, their role in planetary formation, and potential as resources and threats.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 5: Villkor - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 5 - Villkor</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 5: Villkor</h1>
+                <p class="subtitle">I detta kapitel lär du dig hur program fattar beslut med if, elif, else och logiska uttryck.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s51">5.1 Beslut i program</a></li>
+                    <li><a href="#s52">5.2 if</a></li>
+                    <li><a href="#s53">5.3 if else</a></li>
+                    <li><a href="#s54">5.4 elif</a></li>
+                    <li><a href="#s55">5.5 Nästlade villkor</a></li>
+                    <li><a href="#s56">5.6 Logiska uttryck</a></li>
+                    <li><a href="#s57">5.7 Program med beslut</a></li>
+                    <li><a href="#s58">5.8 Övningar</a></li>
+                    <li><a href="#s59">5.9 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s51">
+                <h2>5.1 Beslut i program</h2>
+                <p>Hittills har våra program utfört instruktioner rad för rad uppifrån och ner. Alla instruktioner har körts varje gång programmet startar.</p>
+                <p>I många program behöver datorn däremot fatta beslut. Programmet måste kunna göra olika saker beroende på vad användaren skriver in eller vilka värden som finns i programmet.</p>
+                <p>Detta kallas villkor.</p>
 
-        <section id="chapter-summary"></section>
+                <h3>Exempel på beslut i program</h3>
+                <p>Ett program kan till exempel behöva kontrollera om en person är myndig, om ett tal är större än ett annat eller om en användare har skrivit rätt lösenord.</p>
+                <p>Programmet kan då fatta ett beslut och göra olika saker beroende på resultatet.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+if age >= 18:
+    print("Du är myndig")</code></pre>
+                <p>Tips: tryck Enter efter <code>:</code> så att VS Code gör indraget direkt.</p>
+                <p>I detta exempel händer följande:</p>
+                <ol>
+                    <li>Programmet läser in åldern från användaren.</li>
+                    <li>Programmet kontrollerar om åldern är större än eller lika med 18.</li>
+                    <li>Om villkoret är sant skrivs ett meddelande ut.</li>
+                </ol>
 
-        <section id="chapter-videos"></section>
+                <h3>Vad betyder if</h3>
+                <p>Ordet <strong>if</strong> betyder <strong>om</strong>.</p>
+                <p>Programmet tolkar koden ungefär så här:</p>
+                <pre><code>Om åldern är minst 18
+Då skriv ut texten "Du är myndig"</code></pre>
 
-        <section id="chapter-resources"></section>
+                <h3>Villkor ger True eller False</h3>
+                <p>Jämförelser ger alltid resultatet True eller False.</p>
+                <pre><code>age = 20
+print(age >= 18)</code></pre>
+                <p>När vi använder if kontrollerar Python om uttrycket är True.</p>
+                <p>Om det är True körs koden som hör till villkoret.</p>
 
-        <div class="chapter-nav"></div>
+                <h3>Indrag i Python</h3>
+                <p>Python använder indrag för att visa vilken kod som hör till ett villkor. Raden med print körs bara om villkoret är sant.</p>
+                <p>Om indraget saknas kommer Python att ge ett fel.</p>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Sammanfattning</h3>
+                <p>Med hjälp av if kan ett program kontrollera ett villkor, avgöra om något är sant eller falskt, och köra kod bara när villkoret är sant.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Enkel övning</h3>
+                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut ett meddelande om talet är större än 10.</p>
+                <pre><code>number = int(input("Skriv ett tal: "))
+if number > 10:
+    print("Talet är större än 10")</code></pre>
+            </section>
+
+            <section class="content-section" id="s52">
+                <h2>5.2 if</h2>
+                <p>I Python används if för att kontrollera ett villkor och fatta ett beslut i ett program.</p>
+                <p>Programmet kontrollerar om ett villkor är sant. Om villkoret är sant körs koden som hör till villkoret.</p>
+
+                <h3>Grundstruktur</h3>
+                <pre><code>if villkor:
+    kod som ska köras</code></pre>
+                <p>Efter villkoret finns ett kolon <code>:</code>. På nästa rad skrivs koden som ska köras, och den raden måste vara indragen.</p>
+
+                <h3>Exempel</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+if age >= 18:
+    print("Du är myndig")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <ol>
+                    <li>Programmet frågar användaren efter ålder.</li>
+                    <li>Åldern sparas i variabeln age.</li>
+                    <li>Programmet kontrollerar villkoret age &gt;= 18.</li>
+                    <li>Om villkoret är sant skrivs texten ut.</li>
+                </ol>
+
+                <h3>Exempel på körning</h3>
+                <pre><code>Hur gammal är du? 20
+Du är myndig</code></pre>
+                <p>Om användaren istället skriver 15 kommer inget meddelande att skrivas ut eftersom villkoret inte är sant.</p>
+
+                <h3>Villkor i if</h3>
+                <p>Villkoret i ett if-uttryck är ofta en jämförelse, till exempel:</p>
+                <pre><code>age >= 18
+score > 50
+temperature < 0</code></pre>
+                <p>Dessa uttryck ger alltid True eller False.</p>
+
+                <h3>Viktigt med kolon och indrag</h3>
+                <p>Ett if-uttryck måste innehålla ett kolon efter villkoret och indrag på raden under.</p>
+                <p>Om kolon eller indrag saknas kommer Python att visa ett felmeddelande.</p>
+
+                <h3>Flera rader kod</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+if age >= 18:
+    print("Du är myndig")
+    print("Du får rösta i Sverige")</code></pre>
+                <p>Alla indragna rader körs om villkoret är sant.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut ett meddelande om talet är större än 100.</p>
+                <pre><code>number = int(input("Skriv ett tal: "))
+if number > 100:
+    print("Talet är större än 100")</code></pre>
+            </section>
+
+            <section class="content-section" id="s53">
+                <h2>5.3 if else</h2>
+                <p>Med if kan ett program kontrollera om ett villkor är sant. Men ibland vill man också göra något om villkoret inte är sant.</p>
+                <p>Då använder man else. Ordet else betyder annars.</p>
+
+                <h3>Grundstruktur</h3>
+                <pre><code>if villkor:
+    kod som körs om villkoret är sant
+else:
+    kod som körs om villkoret är falskt</code></pre>
+
+                <h3>Exempel</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+
+if age >= 18:
+    print("Du är myndig")
+else:
+    print("Du är inte myndig")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <ol>
+                    <li>Programmet frågar efter ålder.</li>
+                    <li>Åldern sparas i variabeln age.</li>
+                    <li>Programmet kontrollerar villkoret age &gt;= 18.</li>
+                    <li>Om villkoret är sant skrivs ett meddelande ut.</li>
+                    <li>Annars skrivs ett annat meddelande ut.</li>
+                </ol>
+
+                <h3>Exempel på körning</h3>
+                <pre><code>Hur gammal är du? 20
+Du är myndig
+
+Hur gammal är du? 15
+Du är inte myndig</code></pre>
+
+                <h3>Indrag i if else</h3>
+                <pre><code>number = int(input("Skriv ett tal: "))
+if number > 0:
+    print("Talet är positivt")
+else:
+    print("Talet är noll eller negativt")</code></pre>
+                <p>Alla rader som är indragna efter if körs om villkoret är sant. Alla rader som är indragna efter else körs annars.</p>
+
+                <h3>Operatorn %</h3>
+                <p>I Python finns operatorn <code>%</code>. Den kallas modulooperatorn och används för att räkna ut resten vid en division.</p>
+                <pre><code>print(10 % 3)</code></pre>
+                <p>Resultat: 1</p>
+                <p>Därför används % ofta för att kontrollera om ett tal är jämnt eller udda.</p>
+                <pre><code>print(8 % 2)</code></pre>
+                <p>Resultat: 0 (eftersom 8 är jämnt delbart med 2).</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut om talet är jämnt eller udda.</p>
+                <pre><code>number = int(input("Skriv ett tal: "))
+
+if number % 2 == 0:
+    print("Talet är jämnt")
+else:
+    print("Talet är udda")</code></pre>
+            </section>
+
+            <section class="content-section" id="s54">
+                <h2>5.4 elif</h2>
+                <p>Ibland behöver ett program kontrollera flera olika villkor. Då används elif, som betyder annars om.</p>
+                <p>Programmet kontrollerar villkoren i tur och ordning tills ett av dem är sant.</p>
+
+                <h3>Grundstruktur</h3>
+                <pre><code>if villkor:
+    kod som ska köras
+elif annat villkor:
+    kod som ska köras
+else:
+    kod som körs om inget villkor är sant</code></pre>
+
+                <h3>Exempel</h3>
+                <pre><code>temperature = int(input("Ange temperatur: "))
+if temperature < 10:
+    print("Det är kallt")
+elif temperature <= 20:
+    print("Det är lagom")
+else:
+    print("Det är varmt")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <ol>
+                    <li>Programmet frågar användaren efter temperatur.</li>
+                    <li>Temperaturen sparas i variabeln temperature.</li>
+                    <li>Programmet kontrollerar först om temperaturen är under 10.</li>
+                    <li>Om inte, kontrolleras om temperaturen är 20 eller lägre.</li>
+                    <li>Om inget av villkoren är sant körs koden under else.</li>
+                </ol>
+
+                <h3>Exempel på körning</h3>
+                <pre><code>Ange temperatur: 5
+Det är kallt
+
+Ange temperatur: 15
+Det är lagom
+
+Ange temperatur: 27
+Det är varmt</code></pre>
+
+                <h3>Viktigt att tänka på</h3>
+                <p>Villkoren kontrolleras uppifrån och ner. Därför är ordningen viktig.</p>
+                <pre><code>score = int(input("Hur många poäng fick du? "))
+if score >= 80:
+    print("Du fick ett högt resultat")
+elif score >= 50:
+    print("Du klarade provet")
+else:
+    print("Du klarade inte provet")</code></pre>
+                <p>Om poängen är 85 körs bara den första delen eftersom villkoret redan är sant.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar efter en persons ålder.</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Barn om åldern är under 13</li>
+                    <li>Tonåring om åldern är mellan 13 och 19</li>
+                    <li>Vuxen om åldern är 20 eller mer</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s55">
+                <h2>5.5 Nästlade villkor</h2>
+                <p>Ibland behöver ett program kontrollera ett villkor inuti ett annat villkor. Detta kallas nästlade villkor.</p>
+                <p>Det betyder att en if-sats ligger inuti en annan if-sats.</p>
+
+                <h3>Grundstruktur</h3>
+                <pre><code>if villkor1:
+    if villkor2:
+        kod som ska köras</code></pre>
+
+                <h3>Exempel</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+citizen = input("Är du svensk medborgare (ja/nej)? ")
+
+if age >= 18:
+    if citizen == "ja":
+        print("Du får rösta i svenska val")
+    else:
+        print("Du är myndig men får inte rösta")
+else:
+    print("Du är inte myndig ännu")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <ol>
+                    <li>Programmet frågar efter ålder.</li>
+                    <li>Programmet frågar om personen är svensk medborgare.</li>
+                    <li>Programmet kontrollerar först om åldern är minst 18.</li>
+                    <li>Om personen är myndig kontrolleras också medborgarskapet.</li>
+                    <li>Programmet skriver ut ett meddelande beroende på resultatet.</li>
+                </ol>
+
+                <h3>Exempel på körning</h3>
+                <pre><code>Hur gammal är du? 20
+Är du svensk medborgare (ja/nej)? ja
+Du får rösta i svenska val
+
+Hur gammal är du? 20
+Är du svensk medborgare (ja/nej)? nej
+Du är myndig men får inte rösta
+
+Hur gammal är du? 15
+Du är inte myndig ännu</code></pre>
+
+                <h3>Viktigt att tänka på</h3>
+                <p>När villkor ligger inuti andra villkor blir indragen extra viktiga. Indragen visar vilken kod som hör till vilket villkor.</p>
+                <p>Varje nytt villkor inuti ett annat villkor behöver ytterligare ett indrag.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar efter ålder och om personen har körkort (ja eller nej).</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Du får köra bil om personen är minst 18 och har körkort</li>
+                    <li>Du har inte körkort om personen är minst 18 men saknar körkort</li>
+                    <li>Du är för ung för att köra bil om personen är under 18</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s56">
+                <h2>5.6 Logiska uttryck</h2>
+                <p>I många program behöver man kontrollera flera villkor samtidigt. Då används logiska operatorer.</p>
+                <p>De tre vanligaste logiska operatorerna i Python är <code>and</code>, <code>or</code> och <code>not</code>.</p>
+
+                <h3>Operatorn and</h3>
+                <p>Operatorn and betyder att båda villkoren måste vara sanna.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+if age >= 18 and age <= 65:
+    print("Du är i arbetsför ålder")</code></pre>
+
+                <h3>Operatorn or</h3>
+                <p>Operatorn or betyder att minst ett av villkoren måste vara sant.</p>
+                <pre><code>day = input("Vilken dag är det? ")
+if day == "lördag" or day == "söndag":
+    print("Det är helg")</code></pre>
+
+                <h3>Operatorn not</h3>
+                <p>Operatorn not betyder inte. Den används för att vända ett villkor.</p>
+                <pre><code>logged_in = False
+if not logged_in:
+    print("Du måste logga in först")</code></pre>
+
+                <h3>Kombinera logiska operatorer</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+has_ticket = input("Har du biljett (ja/nej)? ")
+
+if age >= 18 and has_ticket == "ja":
+    print("Du får gå in")
+else:
+    print("Du får inte gå in")</code></pre>
+                <p>Programmet kräver att personen är minst 18 år och har biljett.</p>
+
+                <h3>Viktigt att tänka på</h3>
+                <p>Logiska operatorer gör det möjligt att skriva mer avancerade villkor.</p>
+                <p>De används ofta när man behöver kontrollera flera värden samtidigt, flera alternativ eller om något inte är sant.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar efter ålder och om personen har studentkort (ja eller nej).</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Rabatt beviljad om personen är under 20 eller har studentkort</li>
+                    <li>Ingen rabatt annars</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s57">
+                <h2>5.7 Program med beslut</h2>
+                <p>Nu har du lärt dig flera sätt att låta ett program fatta beslut.</p>
+                <p>Med hjälp av if, elif, else och logiska operatorer kan programmet välja olika vägar beroende på användarens inmatning.</p>
+                <p>Program som använder villkor kallas ofta program med beslut.</p>
+
+                <h3>Exempel: biljettpris</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+if age < 12:
+    print("Biljettpris: 50 kr")
+elif age < 18:
+    print("Biljettpris: 80 kr")
+else:
+    print("Biljettpris: 120 kr")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <ol>
+                    <li>Programmet frågar efter användarens ålder.</li>
+                    <li>Åldern sparas i variabeln age.</li>
+                    <li>Programmet kontrollerar först om åldern är under 12.</li>
+                    <li>Om inte, kontrolleras om åldern är under 18.</li>
+                    <li>Om inget av dessa villkor är sant används else.</li>
+                </ol>
+
+                <h3>Exempel: jämnt eller udda tal</h3>
+                <pre><code>number = int(input("Skriv ett tal: "))
+if number % 2 == 0:
+    print("Talet är jämnt")
+else:
+    print("Talet är udda")</code></pre>
+                <p>Operatorn % kallas modulo och används för att ta fram resten i en division. Om resten blir 0 är talet jämnt.</p>
+
+                <h3>Exempel: tillgång till ett konto</h3>
+                <pre><code>password = input("Skriv lösenord: ")
+if password == "python123":
+    print("Inloggning lyckades")
+else:
+    print("Fel lösenord")</code></pre>
+
+                <h3>Varför beslut är viktiga</h3>
+                <p>Utan villkor skulle alla program göra samma sak varje gång. Med beslut kan programmet anpassa sig efter användaren, hantera olika situationer och lösa mer avancerade problem.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som frågar efter ett tal.</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Positivt tal om talet är större än 0</li>
+                    <li>Noll om talet är 0</li>
+                    <li>Negativt tal om talet är mindre än 0</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s58">
+                <h2>5.8 Övningar</h2>
+                <p>I dessa övningar ska du använda det du har lärt dig i kapitlet om villkor.</p>
+                <p>Du ska använda if, elif, else, logiska operatorer, modulo <code>%</code> och f-strängar för utskrift.</p>
+
+                <h3>Övning 1</h3>
+                <p>Skriv ett program som frågar efter en persons ålder.</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Barn om åldern är under 13</li>
+                    <li>Tonåring om åldern är mellan 13 och 19</li>
+                    <li>Vuxen om åldern är 20 eller mer</li>
+                </ul>
+
+                <h3>Övning 2</h3>
+                <p>Skriv ett program som frågar efter ett tal och avgör om talet är positivt, negativt eller noll.</p>
+
+                <h3>Övning 3</h3>
+                <p>Skriv ett program som frågar efter ett tal och avgör om talet är jämnt eller udda.</p>
+                <p>Tips: använd operatorn <code>%</code>.</p>
+
+                <h3>Övning 4</h3>
+                <p>Skriv ett program som frågar efter namn och ålder.</p>
+                <p>Programmet ska skriva ut en hälsning med en f-sträng.</p>
+                <p>Om personen är minst 18 år ska programmet skriva "Du är myndig", annars "Du är inte myndig".</p>
+
+                <h3>Övning 5</h3>
+                <p>Skriv ett program som frågar efter poäng på ett prov (0-100).</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Underkänt om poängen är under 50</li>
+                    <li>Godkänt om poängen är mellan 50 och 79</li>
+                    <li>Mycket bra om poängen är 80 eller mer</li>
+                </ul>
+
+                <h3>Övning 6</h3>
+                <p>Skriv ett program som frågar efter ålder och om personen har studentkort (ja eller nej).</p>
+                <p>Programmet ska skriva ut "Rabatt beviljad" om personen är under 20 eller har studentkort, annars "Ingen rabatt".</p>
+
+                <h3>Övning 7</h3>
+                <p>Skriv ett program som frågar efter ett tal.</p>
+                <p>Programmet ska skriva ut "Delbart med 5" om talet kan delas med 5 utan rest, annars "Inte delbart med 5".</p>
+                <p>Tips: använd operatorn <code>%</code>.</p>
+
+                <h3>Övning 8</h3>
+                <p>Skriv ett program som frågar efter en temperatur.</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Kallt om temperaturen är under 10</li>
+                    <li>Lagom om temperaturen är mellan 10 och 20</li>
+                    <li>Varmt om temperaturen är över 20</li>
+                </ul>
+                <p>Använd if, elif och else.</p>
+            </section>
+
+            <section class="content-section" id="s59">
+                <h2>5.9 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är syftet med en if-sats i ett program?</li>
+                    <li>Vad är skillnaden mellan if och if else?</li>
+                    <li>När använder man elif i ett program?</li>
+                    <li>Varför är ordningen på villkor viktig när man använder if, elif och else?</li>
+                    <li>Vad betyder operatorn % i Python och när används den?</li>
+                    <li>Vad gör logiska operatorer som and, or och not?</li>
+                    <li>Vad betyder det att villkor kan vara nästlade?</li>
+                    <li>Varför är indrag viktiga i Python när man arbetar med villkor?</li>
+                    <li>Ge ett exempel på ett program i vardagen där datorer behöver fatta beslut.</li>
+                    <li>Varför är beslut (villkor) en viktig del av programmering?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-4.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Operatorer och beräkningar</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-6.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Loopar</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>
