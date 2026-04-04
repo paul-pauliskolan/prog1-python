@@ -1,85 +1,435 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The Local Interstellar Cloud and the Local Bubble: Understand the galactic neighborhood shaped by ancient stellar explosions surrounding our Sun.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 11: Struktur och läsbar kod - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 11 - Struktur och läsbar kod</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 11: Struktur och läsbar kod</h1>
+                <p class="subtitle">I detta kapitel lär du dig namngivning, kommentarer och hur du strukturerar kod så
+                    att program blir tydliga och lätta att underhålla.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s111">11.1 Namngivning</a></li>
+                    <li><a href="#s112">11.2 Kommentarer</a></li>
+                    <li><a href="#s113">11.3 Strukturera kod</a></li>
+                    <li><a href="#s114">11.4 Dela upp program och läslig kod</a></li>
+                    <li><a href="#s115">11.5 Övningar</a></li>
+                    <li><a href="#s116">11.6 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s111">
+                <h2>11.1 Namngivning</h2>
+                <p>När man programmerar är det viktigt att använda <strong>tydliga namn på variabler och
+                        funktioner</strong>.</p>
+                <p>Bra namn gör koden</p>
+                <ul>
+                    <li>lättare att läsa</li>
+                    <li>lättare att förstå</li>
+                    <li>lättare att felsöka</li>
+                </ul>
 
-        <section id="chapter-summary"></section>
+                <h3>Dåliga namn</h3>
+                <pre><code>x = 10
+y = 20
+z = x + y</code></pre>
+                <p>Det är svårt att förstå vad variablerna betyder.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Bra namn</h3>
+                <pre><code>width = 10
+height = 20
+area = width + height</code></pre>
+                <p>Nu blir det tydligare vad programmet gör.</p>
 
-        <section id="chapter-videos"></section>
+                <h3>Namn på funktioner</h3>
+                <p>Funktioner bör ha namn som beskriver vad de gör.</p>
+                <p>Dåligt exempel</p>
+                <pre><code>def f(a, b):
+    return a + b</code></pre>
+                <p>Bra exempel</p>
+                <pre><code>def add(a, b):
+    return a + b</code></pre>
 
-        <section id="chapter-resources"></section>
+                <h3>Regler i Python</h3>
+                <p>Variabelnamn</p>
+                <ul>
+                    <li>ska börja med en bokstav eller underscore</li>
+                    <li>får innehålla bokstäver och siffror</li>
+                    <li>får inte vara ett reserverat ord</li>
+                </ul>
 
-        <div class="chapter-nav"></div>
+                <h3>Bra vanor</h3>
+                <ul>
+                    <li>Använd engelska namn i kod</li>
+                    <li>Använd små bokstäver</li>
+                    <li>Använd tydliga ord istället för förkortningar</li>
+                </ul>
+                <p>Exempel</p>
+                <pre><code>total_price = 100
+user_name = "Anna"</code></pre>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Sammanfattning</h3>
+                <p>Bra namngivning gör att</p>
+                <ul>
+                    <li>koden blir tydligare</li>
+                    <li>det blir lättare att förstå programmet</li>
+                    <li>det blir enklare att arbeta vidare med koden</li>
+                </ul>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Övning</h3>
+                <p>Förbättra namnen i koden nedan</p>
+                <pre><code>a = 5
+b = 10
+c = a * b
+print(c)</code></pre>
+            </section>
+
+            <section class="content-section" id="s112">
+                <h2>11.2 Kommentarer</h2>
+                <p>Kommentarer används för att <strong>förklara kod</strong>.</p>
+                <p>En kommentar skrivs med tecknet <code>#</code> och körs inte av programmet.</p>
+
+                <h3>Exempel</h3>
+                <pre><code># detta är en kommentar
+print("Hej")</code></pre>
+                <p>Kommentarer används för att göra koden lättare att förstå för andra och för dig själv.</p>
+
+                <h3>När man ska använda kommentarer</h3>
+                <p>Kommentarer är bra när man vill</p>
+                <ul>
+                    <li>förklara vad programmet gör</li>
+                    <li>förklara svåra delar av koden</li>
+                    <li>beskriva syftet med variabler eller funktioner</li>
+                </ul>
+                <p>Exempel</p>
+                <pre><code># fråga användaren efter ålder
+age = int(input("Hur gammal är du? "))
+
+# räkna ut ålder om 5 år
+future_age = age + 5
+
+print(f"Om fem år är du {future_age} år gammal")</code></pre>
+
+                <h3>När man inte ska använda kommentarer</h3>
+                <p>Man ska inte skriva kommentarer som bara upprepar vad koden redan visar.</p>
+                <p>Dåligt exempel</p>
+                <pre><code># sätt x till 10
+x = 10</code></pre>
+                <p>Det är redan tydligt vad koden gör.</p>
+
+                <h3>Bättre kod istället för kommentarer</h3>
+                <p>Ibland är det bättre att skriva tydligare kod istället för att använda kommentarer.</p>
+                <p>Dåligt exempel</p>
+                <pre><code># räkna ut area
+a = w * h</code></pre>
+                <p>Bättre exempel</p>
+                <pre><code>area = width * height</code></pre>
+                <p>Nu behövs ingen kommentar eftersom variabelnamnen är tydliga.</p>
+
+                <h3>Kommentarer i funktioner</h3>
+                <p>Kommentarer är extra viktiga i funktioner.</p>
+                <pre><code>def add(a, b):
+    # returnerar summan av två tal
+    return a + b</code></pre>
+
+                <h3>Sammanfattning</h3>
+                <p>Använd kommentarer för att</p>
+                <ul>
+                    <li>förklara varför något görs</li>
+                    <li>förklara svår kod</li>
+                </ul>
+                <p>Undvik kommentarer som förklarar självklar kod. Det beror på vem som ska läsa koden hur utförlig den
+                    ska vara.</p>
+
+                <h3>Övning</h3>
+                <p>Lägg till lämpliga kommentarer i koden</p>
+                <pre><code>name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+future_age = age + 10
+print(f"Hej {name}")
+print(f"Om tio år är du {future_age} år gammal")</code></pre>
+            </section>
+
+            <section class="content-section" id="s113">
+                <h2>11.3 Strukturera kod</h2>
+                <p>Att strukturera kod betyder att man organiserar programmet så att det blir <strong>lätt att läsa,
+                        förstå och vidareutveckla</strong>.</p>
+                <p>Bra struktur gör stor skillnad när program blir större.</p>
+
+                <h3>Dela upp i funktioner</h3>
+                <p>Istället för att skriva all kod i en lång lista kan man dela upp programmet i funktioner.</p>
+                <p>Dåligt exempel</p>
+                <pre><code>name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+future_age = age + 5
+print(f"Hej {name}")
+print(f"Om fem år är du {future_age} år gammal")</code></pre>
+                <p>Bättre exempel</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")
+
+def calculate_future_age(age):
+    return age + 5
+
+name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+greet(name)
+future_age = calculate_future_age(age)
+print(f"Om fem år är du {future_age} år gammal")</code></pre>
+
+                <h3>Använd tydliga steg</h3>
+                <p>Ett program blir tydligare om det följer en struktur</p>
+                <ul>
+                    <li>input</li>
+                    <li>bearbetning</li>
+                    <li>output</li>
+                </ul>
+                <p>Exempel</p>
+                <pre><code># input
+age = int(input("Hur gammal är du? "))
+
+# bearbetning
+future_age = age + 5
+
+# output
+print(f"Om fem år är du {future_age} år gammal")</code></pre>
+
+                <h3>Undvik onödigt upprepad kod</h3>
+                <p>Om samma kod används flera gånger bör man använda funktioner.</p>
+                <p>Dåligt exempel</p>
+                <pre><code>print("Hej Anna")
+print("Hej Erik")
+print("Hej Sara")</code></pre>
+                <p>Bättre exempel</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")
+
+greet("Anna")
+greet("Erik")
+greet("Sara")</code></pre>
+
+                <h3>Sammanfattning</h3>
+                <p>Bra struktur innebär att</p>
+                <ul>
+                    <li>program delas upp i funktioner</li>
+                    <li>koden följer tydliga steg</li>
+                    <li>upprepning undviks</li>
+                </ul>
+                <p>Det gör programmet</p>
+                <ul>
+                    <li>lättare att läsa</li>
+                    <li>lättare att felsöka</li>
+                    <li>lättare att utveckla</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Gör om koden så att den använder funktioner</p>
+                <pre><code>name = input("Vad heter du? ")
+number = int(input("Skriv ett tal: "))
+result = number * 2
+print(f"Hej {name}")
+print(f"Ditt tal gånger två är {result}")</code></pre>
+            </section>
+
+            <section class="content-section" id="s114">
+                <h2>11.4 Dela upp program och läslig kod</h2>
+                <p>När program blir större är det viktigt att både <strong>dela upp programmet</strong> och skriva
+                    <strong>läsbar kod</strong>.</p>
+                <p>Det gör att programmet blir lättare att förstå, ändra och felsöka.</p>
+
+                <h3>Dela upp program i delar</h3>
+                <p>Ett program bör delas upp i mindre delar med hjälp av funktioner. Varje funktion ska ha en tydlig
+                    uppgift.</p>
+                <p>Exempel</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")
+
+def double(number):
+    return number * 2
+
+name = input("Vad heter du? ")
+number = int(input("Skriv ett tal: "))
+
+greet(name)
+
+result = double(number)
+print(f"Resultatet är {result}")</code></pre>
+
+                <h3>Läslig kod</h3>
+                <p>Kod ska vara lätt att läsa, både för dig själv och för andra.</p>
+                <p>Det uppnås genom</p>
+                <ul>
+                    <li>tydliga variabelnamn</li>
+                    <li>tydliga funktioner</li>
+                    <li>bra struktur</li>
+                    <li>korrekta indrag</li>
+                </ul>
+
+                <h3>Exempel på oläslig kod</h3>
+                <pre><code>n=input("namn")
+a=int(input("ålder"))
+print("hej",n,a+5)</code></pre>
+
+                <h3>Exempel på läsbar kod</h3>
+                <pre><code>name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+
+future_age = age + 5
+
+print(f"Hej {name}")
+print(f"Om fem år är du {future_age} år gammal")</code></pre>
+
+                <h3>Tänk på</h3>
+                <ul>
+                    <li>Lämna tomma rader mellan delar av programmet</li>
+                    <li>Använd konsekvent stil</li>
+                    <li>Undvik onödigt komplex kod</li>
+                </ul>
+
+                <h3>Sammanfattning</h3>
+                <p>Att dela upp program och skriva läsbar kod gör att</p>
+                <ul>
+                    <li>program blir tydligare</li>
+                    <li>det blir enklare att hitta fel</li>
+                    <li>det blir lättare att utveckla vidare</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Förbättra koden så att den blir mer läsbar</p>
+                <pre><code>x=input("namn")
+y=int(input("tal"))
+z=y*2
+print("hej",x)
+print(z)</code></pre>
+            </section>
+
+            <section class="content-section" id="s115">
+                <h2>11.5 Övningar</h2>
+                <p>I dessa övningar ska du träna på</p>
+                <ul>
+                    <li>namngivning</li>
+                    <li>kommentarer</li>
+                    <li>struktur</li>
+                    <li>läsbar kod</li>
+                </ul>
+
+                <h3>Övning 1</h3>
+                <p>Förbättra namnen i koden</p>
+                <pre><code>a = 5
+b = 10
+c = a + b
+print(c)</code></pre>
+
+                <h3>Övning 2</h3>
+                <p>Lägg till kommentarer som förklarar vad koden gör</p>
+                <pre><code>name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+future_age = age + 5
+print(f"Hej {name}")
+print(f"Om fem år är du {future_age} år gammal")</code></pre>
+
+                <h3>Övning 3</h3>
+                <p>Gör koden mer läsbar</p>
+                <pre><code>n=input("namn")
+x=int(input("tal"))
+y=x*2
+print("hej",n)
+print(y)</code></pre>
+
+                <h3>Övning 4</h3>
+                <p>Dela upp programmet i funktioner</p>
+                <pre><code>name = input("Vad heter du? ")
+number = int(input("Skriv ett tal: "))
+result = number * 2
+print(f"Hej {name}")
+print(f"Ditt tal gånger två är {result}")</code></pre>
+
+                <h3>Övning 5</h3>
+                <p>Skriv ett eget program som</p>
+                <ul>
+                    <li>frågar användaren efter namn och ålder</li>
+                    <li>räknar ut hur gammal personen är om 10 år</li>
+                    <li>använder funktioner</li>
+                    <li>har tydliga variabelnamn</li>
+                    <li>innehåller minst två kommentarer</li>
+                </ul>
+                <p>Programmet ska vara lätt att läsa och förstå.</p>
+            </section>
+
+            <section class="content-section" id="s116">
+                <h2>11.6 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Varför är det viktigt att använda tydliga variabelnamn?</li>
+                    <li>Vad kan hända om man använder otydliga namn i sin kod?</li>
+                    <li>När är det bra att använda kommentarer i ett program?</li>
+                    <li>När är det onödigt att använda kommentarer?</li>
+                    <li>Vad innebär det att strukturera kod?</li>
+                    <li>Varför är det bra att dela upp program i funktioner?</li>
+                    <li>Vad kännetecknar läsbar kod?</li>
+                    <li>Hur kan man göra ett program lättare att förstå för andra?</li>
+                    <li>Varför är det viktigt att skriva kod som man själv förstår i efterhand?</li>
+                    <li>Vad kan du göra för att förbättra din egen kod i framtiden?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-10.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Undantagshantering</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-12.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Användargränssnitt</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

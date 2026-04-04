@@ -1,85 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The Outer Planets: Explore Jupiter's colossal gravity, Saturn's magnificent rings, and the ice giants—wandering worlds that shaped our solar system.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 7: Listor - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 7 - Listor</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 7: Listor</h1>
+                <p class="subtitle">I detta kapitel lär du dig att lagra flera värden i listor, använda index och
+                    bearbeta data med loopar.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s71">7.1 Vad är en lista</a></li>
+                    <li><a href="#s72">7.2 Index</a></li>
+                    <li><a href="#s73">7.3 Loopar över listor</a></li>
+                    <li><a href="#s74">7.4 Lägga till värden</a></li>
+                    <li><a href="#s75">7.5 Bearbeta data</a></li>
+                    <li><a href="#s76">7.6 Program med listor</a></li>
+                    <li><a href="#s77">7.7 Övningar</a></li>
+                    <li><a href="#s78">7.8 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s71">
+                <h2>7.1 Vad är en lista</h2>
+                <p>I många program behöver man lagra flera värden samtidigt. Istället för att skapa många variabler kan
+                    man använda en lista.</p>
+                <p>En lista är en datastruktur som kan innehålla flera värden.</p>
 
-        <section id="chapter-summary"></section>
+                <h3>Exempel</h3>
+                <pre><code>numbers = [3, 7, 2, 9]</code></pre>
+                <p>Här skapas en lista som innehåller fyra tal. Listan sparas i variabeln <code>numbers</code>.</p>
+                <p>Man kan också ha listor med text.</p>
+                <pre><code>names = ["Anna", "Erik", "Sara"]</code></pre>
 
-        <section id="chapter-sections"></section>
+                <h3>När listor används</h3>
+                <p>Listor används ofta när program behöver:</p>
+                <ul>
+                    <li>lagra många värden</li>
+                    <li>bearbeta data</li>
+                    <li>gå igenom information med loopar</li>
+                </ul>
 
-        <section id="chapter-videos"></section>
+                <h3>Skriva ut en lista</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+print(numbers)</code></pre>
+                <p>Programmet skriver då ut:</p>
+                <pre><code>[3, 7, 2, 9]</code></pre>
 
-        <section id="chapter-resources"></section>
+                <h3>Loop genom en lista</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+for number in numbers:
+    print(number)</code></pre>
+                <p>Programmet skriver ut varje värde i listan.</p>
+            </section>
 
-        <div class="chapter-nav"></div>
+            <section class="content-section" id="s72">
+                <h2>7.2 Index</h2>
+                <p>Varje värde i en lista har en position. Denna position kallas index.</p>
+                <p>I Python börjar index alltid på 0.</p>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Exempel</h3>
+                <pre><code>numbers = [3, 7, 2, 9]</code></pre>
+                <p>Positionerna i listan är:</p>
+                <pre><code>0 -> 3
+1 -> 7
+2 -> 2
+3 -> 9</code></pre>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Hämta ett värde med index</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+print(numbers[0])</code></pre>
+                <p>Programmet skriver ut 3.</p>
+
+                <pre><code>numbers = [3, 7, 2, 9]
+print(numbers[2])</code></pre>
+                <p>Programmet skriver ut 2.</p>
+
+                <h3>Ändra ett värde i en lista</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+numbers[1] = 10
+print(numbers)</code></pre>
+                <p>Resultat:</p>
+                <pre><code>[3, 10, 2, 9]</code></pre>
+
+                <h3>Viktigt att tänka på</h3>
+                <p>Eftersom index börjar på 0 är det lätt att göra fel. Om en lista innehåller fyra värden är det sista
+                    indexet 3, inte 4.</p>
+
+                <h3>Övning</h3>
+                <p>Skapa en lista med fyra färger:</p>
+                <pre><code>colors = ["röd", "blå", "grön", "gul"]</code></pre>
+                <p>Gör sedan följande:</p>
+                <ol>
+                    <li>Skriv ut den första färgen.</li>
+                    <li>Skriv ut den sista färgen.</li>
+                    <li>Ändra den andra färgen till svart.</li>
+                    <li>Skriv ut hela listan.</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s73">
+                <h2>7.3 Loopar över listor</h2>
+                <p>Listor används ofta tillsammans med loopar. En loop gör det möjligt att gå igenom alla värden i
+                    listan.</p>
+
+                <h3>Exempel</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+for number in numbers:
+    print(number)</code></pre>
+                <p>Programmet skriver ut:</p>
+                <pre><code>3
+7
+2
+9</code></pre>
+
+                <h3>Hur det fungerar</h3>
+                <p>Loopen går igenom listan ett värde i taget. För varje varv i loopen sparas värdet i variabeln
+                    <code>number</code>.</p>
+
+                <h3>Exempel med beräkning</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+for number in numbers:
+    print(number * 2)</code></pre>
+                <p>Resultat:</p>
+                <pre><code>6
+14
+4
+18</code></pre>
+
+                <h3>Varför detta är användbart</h3>
+                <p>Loopar över listor används när program behöver bearbeta många värden, göra beräkningar, skriva ut
+                    information och analysera data.</p>
+
+                <h3>Övning</h3>
+                <p>Skapa en lista med fem tal:</p>
+                <pre><code>numbers = [2, 4, 6, 8, 10]</code></pre>
+                <p>Gör sedan följande:</p>
+                <ol>
+                    <li>Skriv ut alla tal i listan.</li>
+                    <li>Skriv ut varje tal multiplicerat med 3.</li>
+                    <li>Skriv ut summan av alla tal i listan.</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s74">
+                <h2>7.4 Lägga till värden</h2>
+                <p>Ibland behöver ett program lägga till nya värden i en lista. Det kan göras med metoden
+                    <code>append()</code>.</p>
+                <p><code>append()</code> lägger till ett nytt värde i slutet av listan.</p>
+
+                <h3>Exempel</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+numbers.append(5)
+print(numbers)</code></pre>
+                <p>Resultat:</p>
+                <pre><code>[3, 7, 2, 9, 5]</code></pre>
+
+                <h3>Exempel med flera värden</h3>
+                <pre><code>numbers = [1, 2, 3]
+numbers.append(4)
+numbers.append(5)
+print(numbers)</code></pre>
+                <p>Resultat:</p>
+                <pre><code>[1, 2, 3, 4, 5]</code></pre>
+
+                <h3>Exempel med användarens inmatning</h3>
+                <pre><code>numbers = []
+number = int(input("Skriv ett tal: "))
+numbers.append(number)
+print(numbers)</code></pre>
+                <p>Listan var först tom men innehåller nu talet som användaren skrev.</p>
+
+                <h3>Övning</h3>
+                <p>Skapa en tom lista:</p>
+                <pre><code>numbers = []</code></pre>
+                <p>Gör sedan följande:</p>
+                <ol>
+                    <li>Be användaren skriva tre tal.</li>
+                    <li>Lägg till varje tal i listan med <code>append()</code>.</li>
+                    <li>Skriv ut hela listan.</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s75">
+                <h2>7.5 Bearbeta data</h2>
+                <p>När data finns i en lista kan programmet bearbeta informationen. Det kan till exempel handla om att
+                    räkna ut summan av alla tal, medelvärdet, eller det största och minsta värdet.</p>
+
+                <h3>Exempel: summa</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+total = 0
+for number in numbers:
+    total = total + number
+print(f"Summan är {total}")</code></pre>
+
+                <h3>Exempel: medelvärde</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+total = 0
+for number in numbers:
+    total = total + number
+average = total / len(numbers)
+print(f"Medelvärdet är {average}")</code></pre>
+                <p>Funktionen <code>len()</code> används för att ta reda på hur många värden som finns i listan.</p>
+
+                <h3>Exempel: största värdet</h3>
+                <pre><code>numbers = [3, 7, 2, 9]
+largest = numbers[0]
+for number in numbers:
+    if number > largest:
+        largest = number
+print(f"Största talet är {largest}")</code></pre>
+
+                <h3>Varför detta är viktigt</h3>
+                <p>Att bearbeta data i listor används ofta när program ska analysera information, räkna ut statistik och
+                    hantera stora datamängder.</p>
+
+                <h3>Övning</h3>
+                <p>Skapa en lista med fem tal:</p>
+                <pre><code>numbers = [4, 6, 2, 8, 10]</code></pre>
+                <p>Gör sedan följande:</p>
+                <ol>
+                    <li>Räkna ut summan av alla tal i listan.</li>
+                    <li>Räkna ut medelvärdet.</li>
+                    <li>Skriv ut resultaten.</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s76">
+                <h2>7.6 Program med listor</h2>
+                <p>Listor används ofta i program som behöver samla in och bearbeta flera värden.</p>
+                <p>Genom att kombinera listor, loopar och villkor kan program hantera större mängder data.</p>
+
+                <h3>Exempel: samla in tal</h3>
+                <pre><code>numbers = []
+for i in range(5):
+    number = int(input("Skriv ett tal: "))
+    numbers.append(number)
+print(numbers)</code></pre>
+                <p>Programmet skapar först en tom lista och lägger sedan till talen som användaren skriver.</p>
+
+                <h3>Exempel: hitta största talet</h3>
+                <pre><code>numbers = [4, 7, 2, 9, 5]
+largest = numbers[0]
+for number in numbers:
+    if number > largest:
+        largest = number
+print(f"Största talet är {largest}")</code></pre>
+
+                <h3>Exempel: räkna jämna tal</h3>
+                <pre><code>numbers = [4, 7, 2, 9, 5]
+count = 0
+for number in numbers:
+    if number % 2 == 0:
+        count = count + 1
+print(f"Antal jämna tal är {count}")</code></pre>
+
+                <h3>Varför listor är viktiga</h3>
+                <p>Listor används ofta när program behöver lagra många värden, bearbeta data, göra beräkningar och
+                    analysera information.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som:</p>
+                <ol>
+                    <li>skapar en tom lista</li>
+                    <li>ber användaren skriva fem tal</li>
+                    <li>lägger till talen i listan</li>
+                    <li>räknar ut summan av alla tal</li>
+                    <li>skriver ut både listan och summan</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s77">
+                <h2>7.7 Övningar</h2>
+                <p>I dessa övningar ska du använda listor, loopar, <code>append()</code>, index och beräkningar med data
+                    i listor.</p>
+
+                <h3>Övning 1</h3>
+                <p>Skapa en lista med fem tal:</p>
+                <pre><code>numbers = [3, 7, 2, 9, 5]</code></pre>
+                <p>Gör sedan följande:</p>
+                <ol>
+                    <li>Skriv ut hela listan.</li>
+                    <li>Skriv ut det första talet i listan.</li>
+                    <li>Skriv ut det sista talet i listan.</li>
+                </ol>
+
+                <h3>Övning 2</h3>
+                <p>Skapa en lista med fem tal. Skriv ett program som skriver ut alla tal i listan med en for-loop.</p>
+
+                <h3>Övning 3</h3>
+                <p>Skapa listan:</p>
+                <pre><code>numbers = [4, 6, 2, 8, 10]</code></pre>
+                <p>Skriv ett program som räknar ut summan av alla tal i listan.</p>
+
+                <h3>Övning 4</h3>
+                <p>Skapa listan:</p>
+                <pre><code>numbers = [4, 6, 2, 8, 10]</code></pre>
+                <p>Skriv ett program som räknar ut medelvärdet av talen i listan. Tips: använd <code>len()</code>.</p>
+
+                <h3>Övning 5</h3>
+                <p>Skriv ett program som:</p>
+                <ol>
+                    <li>skapar en tom lista</li>
+                    <li>ber användaren skriva fem tal</li>
+                    <li>lägger till talen i listan med <code>append()</code></li>
+                    <li>skriver ut hela listan</li>
+                </ol>
+
+                <h3>Övning 6</h3>
+                <p>Skriv ett program som:</p>
+                <ol>
+                    <li>skapar en lista med tal</li>
+                    <li>går igenom listan med en loop</li>
+                    <li>skriver ut alla jämna tal i listan</li>
+                </ol>
+
+                <h3>Övning 7</h3>
+                <p>Skriv ett program som:</p>
+                <ol>
+                    <li>skapar en lista med tal</li>
+                    <li>går igenom listan</li>
+                    <li>räknar hur många tal som är större än 5</li>
+                </ol>
+                <p>Programmet ska skriva ut resultatet.</p>
+            </section>
+
+            <section class="content-section" id="s78">
+                <h2>7.8 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är en lista i Python?</li>
+                    <li>Varför används listor i program?</li>
+                    <li>Vad betyder index i en lista?</li>
+                    <li>Varför börjar index på 0 i Python?</li>
+                    <li>Hur kan man gå igenom alla värden i en lista?</li>
+                    <li>Vad gör metoden <code>append()</code>?</li>
+                    <li>Hur kan man räkna ut summan av alla tal i en lista?</li>
+                    <li>Vad gör funktionen <code>len()</code> när den används på en lista?</li>
+                    <li>Ge ett exempel på när listor kan vara användbara i ett program.</li>
+                    <li>Varför används listor ofta tillsammans med loopar?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-6.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Loopar</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-8.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Funktioner</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

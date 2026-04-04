@@ -1,85 +1,532 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Leaving the Solar System: Explore the heliopause where the Sun's wind meets the interstellar medium, and humanity's Voyager probes venture beyond.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 9: Felsökning - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 9 - Felsökning</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 9: Felsökning</h1>
+                <p class="subtitle">I detta kapitel lär du dig att förstå syntaxfel, logiska fel och exekveringsfel samt
+                    att felsöka program systematiskt.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s91">9.1 Syntaxfel</a></li>
+                    <li><a href="#s92">9.2 Logiska fel</a></li>
+                    <li><a href="#s93">9.3 Exekveringsfel</a></li>
+                    <li><a href="#s94">9.4 Läsa felmeddelanden</a></li>
+                    <li><a href="#s95">9.5 Systematisk felsökning</a></li>
+                    <li><a href="#s96">9.6 Testa program</a></li>
+                    <li><a href="#s97">9.7 Övningar</a></li>
+                    <li><a href="#s98">9.8 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s91">
+                <h2>9.1 Syntaxfel</h2>
+                <p>När man programmerar gör man ofta misstag i koden. Ett vanligt fel är <strong>syntaxfel</strong>.</p>
+                <p>Ett syntaxfel betyder att <strong>koden inte följer språkets regler</strong>. Python kan då inte köra
+                    programmet.</p>
+                <p>När ett syntaxfel uppstår visar Python ett <strong>felmeddelande</strong>.</p>
+                <p>Felmeddelandet talar ofta om</p>
+                <ul>
+                    <li>vilken rad felet finns på</li>
+                    <li>vilken typ av fel som uppstod</li>
+                </ul>
 
-        <section id="chapter-summary"></section>
+                <h3>Exempel på syntaxfel</h3>
+                <p>I Python måste parenteser stängas.</p>
+                <pre><code>print("Hej världen"</code></pre>
+                <p>Här saknas en avslutande parentes.</p>
+                <p>Programmet kan därför inte köras.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel med saknat kolon</h3>
+                <p>Efter <code>if</code> måste man skriva kolon.</p>
+                <p>Fel kod</p>
+                <pre><code>age = 18
+if age >= 18
+    print("Du är myndig")</code></pre>
+                <p>Rätt kod</p>
+                <pre><code>age = 18
+if age >= 18:
+    print("Du är myndig")</code></pre>
 
-        <section id="chapter-videos"></section>
+                <h3>Exempel med stavfel</h3>
+                <p>Om man skriver fel på ett kommando kan Python inte förstå koden.</p>
+                <p>Fel kod</p>
+                <pre><code>pritn("Hej")</code></pre>
+                <p>Rätt kod</p>
+                <pre><code>print("Hej")</code></pre>
 
-        <section id="chapter-resources"></section>
+                <h3>Hur man hittar syntaxfel</h3>
+                <p>När Python visar ett felmeddelande är det bra att</p>
+                <ul>
+                    <li>läsa felmeddelandet</li>
+                    <li>titta på raden som anges</li>
+                    <li>kontrollera parenteser, kolon och stavning</li>
+                </ul>
 
-        <div class="chapter-nav"></div>
+                <h3>Övning</h3>
+                <p>Vilka syntaxfel finns i följande kod?</p>
+                <pre><code>print("Hej världen"
+age = 18
+if age >= 18
+print("Du är myndig")</code></pre>
+            </section>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+            <section class="content-section" id="s92">
+                <h2>9.2 Logiska fel</h2>
+                <p>Ett <strong>logiskt fel</strong> uppstår när programmet kan köras utan felmeddelanden men ändå ger
+                    <strong>fel resultat</strong>.</p>
+                <p>Python hittar inte dessa fel automatiskt eftersom koden är korrekt skriven enligt språkets regler.
+                    Problemet är istället <strong>hur programmet är konstruerat</strong>.</p>
+                <p>Logiska fel är mycket vanliga när man programmerar.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Exempel på logiskt fel</h3>
+                <p>Programmet nedan ska räkna ut summan av två tal.</p>
+                <p>Fel kod</p>
+                <pre><code>a = 5
+b = 3
+summa = a - b
+print(summa)</code></pre>
+                <p>Programmet körs utan problem, men resultatet blir <strong>fel</strong> eftersom man råkade använda
+                    minus istället för plus.</p>
+                <p>Rätt kod</p>
+                <pre><code>a = 5
+b = 3
+summa = a + b
+print(summa)</code></pre>
+
+                <h3>Ett annat exempel</h3>
+                <p>Programmet ska lägga till 10 cm till en längd.</p>
+                <p>Fel kod</p>
+                <pre><code>length = 170
+length + 10
+print(length)</code></pre>
+                <p>Resultatet blir fortfarande <strong>170</strong> eftersom värdet aldrig sparades i variabeln.</p>
+                <p>Rätt kod</p>
+                <pre><code>length = 170
+length = length + 10
+print(length)</code></pre>
+
+                <h3>Hur man hittar logiska fel</h3>
+                <p>Logiska fel kan vara svårare att upptäcka än syntaxfel. Några vanliga metoder är</p>
+                <ul>
+                    <li>skriva ut variabler med <code>print()</code> för att kontrollera värden</li>
+                    <li>testa programmet med olika indata</li>
+                    <li>gå igenom koden rad för rad</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Programmet ska räkna ut medelvärdet av två tal. Koden innehåller ett logiskt fel.</p>
+                <pre><code>a = 10
+b = 20
+average = a + b / 2
+print(average)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vad blir resultatet när programmet körs?</li>
+                    <li>Varför blir resultatet fel?</li>
+                    <li>Hur ska koden ändras för att beräkna medelvärdet korrekt?</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s93">
+                <h2>9.3 Exekveringsfel</h2>
+                <p>Ett <strong>exekveringsfel</strong> uppstår när programmet startar men kraschar medan det körs.</p>
+                <p>Koden är alltså <strong>syntaktiskt korrekt</strong>, men något händer under körningen som gör att
+                    programmet inte kan fortsätta.</p>
+                <p>Python visar då ett <strong>felmeddelande</strong> som talar om vad som gick fel.</p>
+                <p>Exekveringsfel kallas ibland <strong>runtime error</strong>.</p>
+                <p>Vanliga orsaker är</p>
+                <ul>
+                    <li>fel typ av data</li>
+                    <li>division med noll</li>
+                    <li>försök att använda en variabel som inte finns</li>
+                </ul>
+
+                <h3>Exempel: fel datatyp</h3>
+                <p>Programmet försöker omvandla text till ett tal.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+                <p>Om användaren skriver</p>
+                <pre><code>hej</code></pre>
+                <p>kan Python inte omvandla texten till ett heltal. Programmet kraschar då med ett felmeddelande.</p>
+
+                <h3>Exempel: division med noll</h3>
+                <p>Division med noll är inte tillåten i matematik.</p>
+                <pre><code>number = 10
+result = number / 0
+print(result)</code></pre>
+                <p>Programmet kraschar eftersom man inte kan dela ett tal med noll.</p>
+
+                <h3>Exempel: variabel som inte finns</h3>
+                <pre><code>name = "Anna"
+print(namn)</code></pre>
+                <p>Här finns ett stavfel. Variabeln <code>namn</code> existerar inte.</p>
+                <p>Python visar då ett felmeddelande.</p>
+
+                <h3>Hur man hittar exekveringsfel</h3>
+                <p>När ett exekveringsfel uppstår kan du</p>
+                <ul>
+                    <li>läsa felmeddelandet noggrant</li>
+                    <li>kontrollera vilken rad felet uppstod på</li>
+                    <li>kontrollera indata från användaren</li>
+                    <li>testa programmet med olika värden</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Koden nedan innehåller ett exekveringsfel.</p>
+                <pre><code>number = int(input("Skriv ett tal: "))
+result = 100 / number
+print(result)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vad händer om användaren skriver <strong>0</strong>?</li>
+                    <li>Varför uppstår ett fel?</li>
+                    <li>Hur skulle man kunna undvika detta problem i ett program?</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s94">
+                <h2>9.4 Läsa felmeddelanden</h2>
+                <p>När ett program innehåller fel visar Python ett <strong>felmeddelande</strong>.</p>
+                <p>Felmeddelandet hjälper programmeraren att förstå <strong>vad som gick fel</strong> och <strong>var
+                        felet finns i koden</strong>.</p>
+                <p>Ett felmeddelande innehåller ofta</p>
+                <ul>
+                    <li>filens namn</li>
+                    <li>radnumret där felet uppstod</li>
+                    <li>vilken typ av fel det är</li>
+                </ul>
+
+                <h3>Exempel</h3>
+                <p>Om följande kod körs</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+                <p>och användaren skriver</p>
+                <pre><code>hej</code></pre>
+                <p>kan Python visa ett felmeddelande som liknar detta</p>
+                <pre><code>ValueError: invalid literal for int()</code></pre>
+                <p>Det betyder att Python försökte omvandla text till ett heltal men misslyckades.</p>
+
+                <h3>Exempel med division med noll</h3>
+                <pre><code>number = 10
+result = number / 0
+print(result)</code></pre>
+                <p>Python visar då ett felmeddelande som</p>
+                <pre><code>ZeroDivisionError: division by zero</code></pre>
+                <p>Det betyder att programmet försökte dela ett tal med noll.</p>
+
+                <h3>Vad man ska göra när ett fel uppstår</h3>
+                <p>När ett felmeddelande visas kan du</p>
+                <ul>
+                    <li>läsa vilken typ av fel det är</li>
+                    <li>titta på raden där felet uppstod</li>
+                    <li>kontrollera variabler och beräkningar</li>
+                    <li>testa programmet igen efter ändring</li>
+                </ul>
+                <p>Att <strong>lära sig läsa felmeddelanden</strong> är en viktig del av programmering.</p>
+
+                <h3>Övning</h3>
+                <p>Koden nedan innehåller ett fel.</p>
+                <pre><code>age = input("Hur gammal är du? ")
+result = age + 5
+print(result)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vilken typ av fel uppstår när programmet körs?</li>
+                    <li>Varför uppstår felet?</li>
+                    <li>Hur kan koden ändras så att programmet fungerar?</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s95">
+                <h2>9.5 Systematisk felsökning</h2>
+                <p>När ett program inte fungerar är det viktigt att <strong>felsöka steg för steg</strong>.</p>
+                <p>Systematisk felsökning betyder att man undersöker problemet på ett lugnt och ordnat sätt istället för
+                    att bara gissa.</p>
+                <p>Det är ett viktigt arbetssätt i programmering.</p>
+
+                <h3>Ett bra arbetssätt</h3>
+                <p>När du felsöker kan du göra så här</p>
+                <ul>
+                    <li>läs felmeddelandet noggrant</li>
+                    <li>titta på raden där felet finns</li>
+                    <li>kontrollera variabler och värden</li>
+                    <li>testa små delar av programmet</li>
+                    <li>ändra en sak i taget</li>
+                </ul>
+                <p>Om man ändrar för många saker samtidigt blir det svårare att förstå vad som faktiskt löste problemet.
+                </p>
+
+                <h3>Använd print vid felsökning</h3>
+                <p>Ett enkelt sätt att felsöka är att skriva ut värden med <code>print()</code>.</p>
+                <p>Exempel</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age)</code></pre>
+                <p>Då kan du kontrollera vilket värde variabeln faktiskt har.</p>
+
+                <h3>Exempel</h3>
+                <p>Programmet ska räkna ut summan av två tal, men resultatet blir fel.</p>
+                <pre><code>a = 10
+b = 5
+summa = a - b
+print(summa)</code></pre>
+                <p>Om du felsöker systematiskt kan du upptäcka att operatorn är fel.</p>
+                <p>Rätt kod är</p>
+                <pre><code>a = 10
+b = 5
+summa = a + b
+print(summa)</code></pre>
+
+                <h3>Testa små delar</h3>
+                <p>Om ett program är långt kan det vara bra att testa en liten del i taget.</p>
+                <p>Till exempel kan du först kontrollera att input fungerar.</p>
+                <pre><code>name = input("Vad heter du? ")
+print(name)</code></pre>
+                <p>När den delen fungerar kan du gå vidare.</p>
+
+                <h3>Sammanfattning</h3>
+                <p>Systematisk felsökning betyder att du</p>
+                <ul>
+                    <li>arbetar steg för steg</li>
+                    <li>läser felmeddelanden</li>
+                    <li>kontrollerar värden</li>
+                    <li>testar små delar av programmet</li>
+                    <li>ändrar en sak i taget</li>
+                </ul>
+                <p>Det gör det lättare att hitta och rätta fel.</p>
+
+                <h3>Övning</h3>
+                <p>Programmet nedan ska räkna ut medelvärdet av två tal, men något är fel.</p>
+                <pre><code>a = int(input("Skriv första talet: "))
+b = int(input("Skriv andra talet: "))
+average = a + b / 2
+print(f"Medelvärdet är {average}")</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vad blir fel i programmet?</li>
+                    <li>Hur kan du använda <code>print()</code> för att felsöka?</li>
+                    <li>Hur ska koden ändras för att ge rätt medelvärde?</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s96">
+                <h2>9.6 Testa program</h2>
+                <p>När man skriver program är det viktigt att <strong>testa att programmet fungerar korrekt</strong>.
+                </p>
+                <p>Att testa ett program betyder att man kör programmet med olika indata för att kontrollera att
+                    resultatet blir rätt.</p>
+                <p>Testning hjälper programmeraren att upptäcka</p>
+                <ul>
+                    <li>logiska fel</li>
+                    <li>felaktiga beräkningar</li>
+                    <li>problem med indata</li>
+                </ul>
+
+                <h3>Testa med olika värden</h3>
+                <p>Ett program bör testas med flera olika värden.</p>
+                <p>Exempel</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+                <p>Man kan testa programmet med olika åldrar</p>
+                <ul>
+                    <li>10</li>
+                    <li>18</li>
+                    <li>30</li>
+                </ul>
+                <p>Då kan man kontrollera att programmet alltid ger rätt resultat.</p>
+
+                <h3>Testa gränsvärden</h3>
+                <p>Det är också bra att testa <strong>gränsvärden</strong>.</p>
+                <p>Gränsvärden är värden som ligger nära en gräns i programmet.</p>
+                <p>Exempel</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+if age >= 18:
+    print("Du är myndig")
+else:
+    print("Du är inte myndig")</code></pre>
+                <p>Bra testvärden kan vara</p>
+                <ul>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                </ul>
+                <p>Då kan man kontrollera att programmet hanterar gränsen korrekt.</p>
+
+                <h3>Testa felaktig indata</h3>
+                <p>Det är också viktigt att tänka på vad som händer om användaren skriver något oväntat.</p>
+                <p>Exempel</p>
+                <pre><code>age = int(input("Hur gammal är du? "))</code></pre>
+                <p>Om användaren skriver</p>
+                <pre><code>hej</code></pre>
+                <p>kommer programmet att krascha.</p>
+                <p>I senare kapitel kommer vi att lära oss hur man kan <strong>hantera sådana fel</strong>.</p>
+
+                <h3>Övning</h3>
+                <p>Programmet nedan räknar ut hur gammal en person är om tio år.</p>
+                <pre><code>age = int(input("Hur gammal är du? "))
+future_age = age + 10
+print(f"Om tio år är du {future_age} år gammal")</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vilka olika värden kan du testa i programmet?</li>
+                    <li>Varför är det bra att testa flera olika värden?</li>
+                    <li>Vad händer om användaren skriver text istället för ett tal?</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s97">
+                <h2>9.7 Övningar</h2>
+                <p>I dessa övningar ska du träna på att <strong>hitta och rätta fel i program</strong>.</p>
+                <p>Övningarna innehåller olika typer av fel</p>
+                <ul>
+                    <li>syntaxfel</li>
+                    <li>logiska fel</li>
+                    <li>exekveringsfel</li>
+                </ul>
+
+                <h3>Övning 1</h3>
+                <p>Programmet ska skriva ut en hälsning, men koden innehåller ett fel.</p>
+                <pre><code>name = input("Vad heter du? ")
+print("Hej " name)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vilket fel finns i koden?</li>
+                    <li>Hur ska koden ändras för att fungera?</li>
+                </ol>
+
+                <h3>Övning 2</h3>
+                <p>Programmet ska räkna ut summan av två tal, men resultatet blir fel.</p>
+                <pre><code>a = 8
+b = 4
+summa = a - b
+print(summa)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vad är felet i programmet?</li>
+                    <li>Hur ska koden ändras?</li>
+                </ol>
+
+                <h3>Övning 3</h3>
+                <p>Programmet kraschar när det körs.</p>
+                <pre><code>number = int(input("Skriv ett tal: "))
+result = 50 / number
+print(result)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vad händer om användaren skriver <strong>0</strong>?</li>
+                    <li>Varför uppstår felet?</li>
+                </ol>
+
+                <h3>Övning 4</h3>
+                <p>Programmet ska räkna ut medelvärdet av två tal.</p>
+                <pre><code>a = 10
+b = 20
+average = a + b / 2
+print(average)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Varför blir resultatet fel?</li>
+                    <li>Hur ska koden ändras?</li>
+                </ol>
+
+                <h3>Övning 5</h3>
+                <p>Programmet ska använda en funktion, men något saknas.</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")
+
+greet</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Varför skrivs inget ut?</li>
+                    <li>Hur ska funktionen anropas?</li>
+                </ol>
+
+                <h3>Övning 6</h3>
+                <p>Programmet ska skriva ut talen 1 till 5.</p>
+                <pre><code>for i in range(5)
+print(i)</code></pre>
+                <p>Frågor</p>
+                <ol>
+                    <li>Vilket syntaxfel finns i koden?</li>
+                    <li>Hur ska koden ändras?</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s98">
+                <h2>9.8 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är ett syntaxfel?</li>
+                    <li>Vad är ett logiskt fel?</li>
+                    <li>Vad är ett exekveringsfel?</li>
+                    <li>Vilken typ av fel är lättast att upptäcka, och varför?</li>
+                    <li>Hur kan felmeddelanden hjälpa dig när du programmerar?</li>
+                    <li>Varför är det viktigt att testa program med olika värden?</li>
+                    <li>Hur kan <code>print()</code> hjälpa dig att felsöka ett program?</li>
+                    <li>Vad betyder det att felsöka systematiskt?</li>
+                    <li>Vad kan hända om man inte kontrollerar användarens inmatning?</li>
+                    <li>Hur kan du bli bättre på att hitta fel i din kod?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-8.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Funktioner</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-10.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Undantagshantering</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

@@ -1,85 +1,477 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Comets, Kuiper Belt, and the Oort Cloud: Journey to the icy frontier at the edge of our solar system and the home of ancient comets.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 8: Funktioner - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 8 - Funktioner</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 8: Funktioner</h1>
+                <p class="subtitle">I detta kapitel lär du dig att skapa egna funktioner, använda parametrar och
+                    returnera värden för att strukturera program bättre.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s81">8.1 Varför funktioner används</a></li>
+                    <li><a href="#s82">8.2 Definiera funktioner</a></li>
+                    <li><a href="#s83">8.3 Parametrar</a></li>
+                    <li><a href="#s84">8.4 Return</a></li>
+                    <li><a href="#s85">8.5 Strukturera program</a></li>
+                    <li><a href="#s86">8.6 Större program</a></li>
+                    <li><a href="#s87">8.7 Övningar</a></li>
+                    <li><a href="#s88">8.8 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s81">
+                <h2>8.1 Varför funktioner används</h2>
+                <p>När program blir större kan koden bli svår att läsa och svår att ändra.</p>
+                <p>Ett sätt att göra program mer organiserade är att använda <strong>funktioner</strong>.</p>
+                <p>En funktion är en <strong>namngiven del av ett program</strong> som utför en bestämd uppgift.</p>
+                <p>I stället för att skriva samma kod flera gånger kan man lägga koden i en funktion och sedan använda
+                    den när den behövs.</p>
 
-        <section id="chapter-summary"></section>
+                <h3>Exempel utan funktion</h3>
+                <p>Programmet skriver ut samma text flera gånger.</p>
+                <pre><code>print("Hej och välkommen")
+print("Hej och välkommen")
+print("Hej och välkommen")</code></pre>
+                <p>Det fungerar, men koden blir onödigt lång.</p>
+                <p>Om man vill ändra texten måste man ändra på flera ställen.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel med funktion</h3>
+                <p>Med en funktion kan man skriva koden en gång och sedan använda den flera gånger.</p>
+                <pre><code>def greet():
+    print("Hej och välkommen")
 
-        <section id="chapter-videos"></section>
+greet()
+greet()
+greet()</code></pre>
+                <p>Här definieras först funktionen <code>greet()</code>.</p>
+                <p>Sedan anropas funktionen tre gånger.</p>
 
-        <section id="chapter-resources"></section>
+                <h3>Varför funktioner är bra</h3>
+                <p>Funktioner gör program</p>
+                <ul>
+                    <li>lättare att läsa</li>
+                    <li>lättare att ändra</li>
+                    <li>lättare att återanvända</li>
+                </ul>
+                <p>De hjälper också programmeraren att dela upp ett program i mindre delar.</p>
+                <p>Det är särskilt bra när program börjar bli längre.</p>
 
-        <div class="chapter-nav"></div>
+                <h3>Viktigt att tänka på</h3>
+                <p>I Python börjar en funktion med ordet <code>def</code>.</p>
+                <p>Efter namnet skriver man parenteser och kolon.</p>
+                <p>Koden inuti funktionen måste vara <strong>indragen</strong>.</p>
+                <p>Exempel</p>
+                <pre><code>def greet():
+    print("Hej och välkommen")</code></pre>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Övning</h3>
+                <p>Skriv ett program som innehåller en funktion som skriver ut texten</p>
+                <pre><code>Välkommen till Python</code></pre>
+                <p>Anropa funktionen <strong>tre gånger</strong>.</p>
+            </section>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+            <section class="content-section" id="s82">
+                <h2>8.2 Definiera funktioner</h2>
+                <p>I Python skapas funktioner med ordet <code>def</code>.</p>
+                <p>Efter funktionsnamnet skriver man parenteser <code>()</code> och ett kolon <code>:</code>.</p>
+                <p>Koden som tillhör funktionen måste skrivas <strong>indragen på nästa rad</strong>.</p>
+
+                <h3>Grundstruktur</h3>
+                <pre><code>def funktion():
+    kod som ska köras</code></pre>
+
+                <h3>Exempel</h3>
+                <p>Här definieras en funktion som hälsar på en person.</p>
+                <pre><code>def greet(name):
+    print("Hej", name)</code></pre>
+                <p>Funktionen har en <strong>parameter</strong> som heter <code>name</code>.</p>
+                <p>En parameter är ett värde som skickas in till funktionen.</p>
+                <p>För att använda funktionen måste den <strong>anropas</strong>.</p>
+                <pre><code>greet("Anna")
+greet("Erik")</code></pre>
+                <p>Programmet skriver ut</p>
+                <pre><code>Hej Anna
+Hej Erik</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <ol>
+                    <li>Programmet definierar funktionen <code>greet</code>.</li>
+                    <li>Funktionen har parametern <code>name</code>.</li>
+                    <li>När funktionen anropas skickas ett namn in.</li>
+                    <li>Funktionen skriver ut en hälsning.</li>
+                </ol>
+
+                <h3>Exempel med f-sträng</h3>
+                <p>Man kan också använda f-strängar.</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")
+
+greet("Sara")</code></pre>
+
+                <h3>Övning</h3>
+                <p>Skapa en funktion som heter <code>welcome</code>.</p>
+                <p>Funktionen ska ta emot ett namn och skriva ut</p>
+                <pre><code>Välkommen {namn}</code></pre>
+                <p>Exempel på användning</p>
+                <pre><code>welcome("Alex")</code></pre>
+                <p>Programmet ska skriva ut</p>
+                <pre><code>Välkommen Alex</code></pre>
+            </section>
+
+            <section class="content-section" id="s83">
+                <h2>8.3 Parametrar</h2>
+                <p>När en funktion behöver information för att kunna arbeta används <strong>parametrar</strong>.</p>
+                <p>En parameter är ett värde som skickas in till funktionen när den anropas.</p>
+                <p>Parametrar gör att samma funktion kan användas med olika värden.</p>
+
+                <h3>Exempel</h3>
+                <p>Här har funktionen en parameter som heter <code>name</code>.</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")</code></pre>
+                <p>När funktionen anropas skickas ett namn in.</p>
+                <pre><code>greet("Anna")
+greet("Erik")</code></pre>
+                <p>Programmet skriver ut</p>
+                <pre><code>Hej Anna
+Hej Erik</code></pre>
+                <p>Funktionen är densamma, men resultatet blir olika beroende på vilket värde som skickas in.</p>
+
+                <h3>Flera parametrar</h3>
+                <p>En funktion kan också ha flera parametrar.</p>
+                <pre><code>def introduce(name, age):
+    print(f"{name} är {age} år gammal")
+
+introduce("Sara", 17)</code></pre>
+                <p>Programmet skriver ut</p>
+                <pre><code>Sara är 17 år gammal</code></pre>
+
+                <h3>Hur parametrar fungerar</h3>
+                <ol>
+                    <li>Funktionen definieras med parametrar.</li>
+                    <li>När funktionen anropas skickas värden in.</li>
+                    <li>Funktionen använder värdena i sin kod.</li>
+                </ol>
+
+                <h3>Övning</h3>
+                <p>Skapa en funktion som heter <code>add</code>.</p>
+                <p>Funktionen ska ta emot <strong>två tal</strong> och skriva ut summan.</p>
+                <p>Exempel</p>
+                <pre><code>add(3, 5)</code></pre>
+                <p>Programmet ska skriva ut</p>
+                <pre><code>Summan är 8</code></pre>
+            </section>
+
+            <section class="content-section" id="s84">
+                <h2>8.4 Return</h2>
+                <p>Ibland vill man att en funktion <strong>ska ge tillbaka ett värde</strong>.</p>
+                <p>Då används ordet <code>return</code>.</p>
+                <p><code>return</code> skickar tillbaka ett resultat från funktionen till den plats där funktionen
+                    anropas.</p>
+
+                <h3>Exempel</h3>
+                <p>Här finns en funktion som räknar ut summan av två tal.</p>
+                <pre><code>def add(a, b):
+    return a + b</code></pre>
+                <p>När funktionen anropas returneras summan.</p>
+                <pre><code>result = add(3, 5)
+print(result)</code></pre>
+                <p>Programmet skriver ut</p>
+                <pre><code>8</code></pre>
+
+                <h3>Vad som händer i programmet</h3>
+                <ol>
+                    <li>Funktionen <code>add</code> tar emot två tal.</li>
+                    <li>Funktionen räknar ut summan.</li>
+                    <li>Summan skickas tillbaka med <code>return</code>.</li>
+                    <li>Resultatet sparas i variabeln <code>result</code>.</li>
+                </ol>
+
+                <h3>Varför return används</h3>
+                <p>Med <code>return</code> kan funktioner</p>
+                <ul>
+                    <li>beräkna värden</li>
+                    <li>skicka tillbaka resultat</li>
+                    <li>användas i andra beräkningar</li>
+                </ul>
+
+                <h3>Exempel</h3>
+                <pre><code>def add(a, b):
+    return a + b
+
+total = add(10, 7)
+print(f"Summan är {total}")</code></pre>
+                <p>Programmet skriver ut</p>
+                <pre><code>Summan är 17</code></pre>
+
+                <h3>Övning</h3>
+                <p>Skapa en funktion som heter <code>multiply</code>.</p>
+                <p>Funktionen ska</p>
+                <ul>
+                    <li>ta emot två tal</li>
+                    <li>returnera produkten av talen</li>
+                </ul>
+                <p>Använd sedan funktionen och skriv ut resultatet.</p>
+            </section>
+
+            <section class="content-section" id="s85">
+                <h2>8.5 Strukturera program</h2>
+                <p>När program blir större är det viktigt att <strong>strukturera koden</strong>.</p>
+                <p>Det innebär att dela upp programmet i <strong>mindre delar</strong> som är lättare att läsa och
+                    förstå.</p>
+                <p>Funktioner hjälper programmeraren att organisera programmet.</p>
+                <p>Ett vanligt sätt att strukturera program är</p>
+                <ol>
+                    <li>funktioner högst upp i programmet</li>
+                    <li>huvudprogram längst ner</li>
+                </ol>
+
+                <h3>Exempel</h3>
+                <p>Här finns två funktioner som används i programmet.</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")
+
+def add(a, b):
+    return a + b</code></pre>
+                <p>Sedan används funktionerna i huvudprogrammet.</p>
+                <pre><code>name = input("Vad heter du? ")
+greet(name)
+result = add(4, 6)
+print(f"Summan är {result}")</code></pre>
+
+                <h3>Varför struktur är viktigt</h3>
+                <p>Strukturerad kod gör program</p>
+                <ul>
+                    <li>lättare att läsa</li>
+                    <li>lättare att felsöka</li>
+                    <li>lättare att vidareutveckla</li>
+                </ul>
+                <p>Det gör också att funktioner kan <strong>återanvändas flera gånger</strong>.</p>
+
+                <h3>Bra vanor i Python</h3>
+                <p>När man skriver program är det bra att</p>
+                <ul>
+                    <li>använda tydliga funktionsnamn</li>
+                    <li>dela upp program i funktioner</li>
+                    <li>skriva kod som är lätt att läsa</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program med två funktioner.</p>
+                <p>Den första funktionen ska skriva ut en hälsning.</p>
+                <pre><code>def greet(name):</code></pre>
+                <p>Den andra funktionen ska räkna ut summan av två tal.</p>
+                <pre><code>def add(a, b):</code></pre>
+                <p>Använd funktionerna i programmet.</p>
+            </section>
+
+            <section class="content-section" id="s86">
+                <h2>8.6 Större program</h2>
+                <p>När program växer blir det viktigt att <strong>dela upp programmet i flera funktioner</strong>.</p>
+                <p>Varje funktion ska göra <strong>en tydlig uppgift</strong>.</p>
+                <p>Det gör programmet</p>
+                <ul>
+                    <li>lättare att läsa</li>
+                    <li>lättare att testa</li>
+                    <li>lättare att ändra</li>
+                </ul>
+                <p>Ett större program kan därför bestå av flera funktioner som samarbetar.</p>
+
+                <h3>Exempel</h3>
+                <p>Här finns ett program som använder flera funktioner.</p>
+                <pre><code>def greet(name):
+    print(f"Hej {name}")
+
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b</code></pre>
+                <p>Huvudprogrammet använder funktionerna.</p>
+                <pre><code>name = input("Vad heter du? ")
+greet(name)
+x = int(input("Skriv ett tal: "))
+y = int(input("Skriv ett tal: "))
+sum_result = add(x, y)
+product_result = multiply(x, y)
+print(f"Summan är {sum_result}")
+print(f"Produkten är {product_result}")</code></pre>
+
+                <h3>Hur programmet är uppbyggt</h3>
+                <p>Programmet består av tre delar</p>
+                <ul>
+                    <li>funktioner</li>
+                    <li>huvudprogram</li>
+                    <li>utskrift av resultat</li>
+                </ul>
+                <p>Varje funktion gör en egen uppgift.</p>
+
+                <h3>Fördelar med denna struktur</h3>
+                <p>Programmet blir mer organiserat.</p>
+                <p>Det blir också lättare att</p>
+                <ul>
+                    <li>lägga till nya funktioner</li>
+                    <li>ändra delar av programmet</li>
+                    <li>återanvända funktioner i andra program</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Skapa ett program med tre funktioner.</p>
+                <pre><code>def greet(name)</code></pre>
+                <p>ska skriva ut en hälsning.</p>
+                <pre><code>def square(number)</code></pre>
+                <p>ska returnera talet multiplicerat med sig självt.</p>
+                <pre><code>def double(number)</code></pre>
+                <p>ska returnera talet gånger två.</p>
+                <p>Programmet ska</p>
+                <ul>
+                    <li>fråga efter ett namn</li>
+                    <li>fråga efter ett tal</li>
+                    <li>använda funktionerna</li>
+                    <li>skriva ut resultaten</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s87">
+                <h2>8.7 Övningar</h2>
+                <p>I dessa övningar ska du använda</p>
+                <ul>
+                    <li>funktioner</li>
+                    <li>parametrar</li>
+                    <li>return</li>
+                    <li>variabler</li>
+                    <li>input</li>
+                    <li>f-strängar</li>
+                </ul>
+
+                <h3>Övning 1</h3>
+                <p>Skapa en funktion som heter <code>greet</code>.</p>
+                <p>Funktionen ska ta emot ett namn och skriva ut</p>
+                <pre><code>Hej {namn}</code></pre>
+                <p>Exempel</p>
+                <pre><code>greet("Anna")</code></pre>
+
+                <h3>Övning 2</h3>
+                <p>Skapa en funktion som heter <code>square</code>.</p>
+                <p>Funktionen ska ta emot ett tal och returnera talet multiplicerat med sig självt.</p>
+                <p>Exempel</p>
+                <pre><code>square(4)</code></pre>
+                <p>Resultat</p>
+                <pre><code>16</code></pre>
+
+                <h3>Övning 3</h3>
+                <p>Skapa en funktion som heter <code>add</code>.</p>
+                <p>Funktionen ska ta emot två tal och returnera summan.</p>
+                <p>Programmet ska sedan skriva ut resultatet.</p>
+
+                <h3>Övning 4</h3>
+                <p>Skapa en funktion som heter <code>age_in_five_years</code>.</p>
+                <p>Funktionen ska ta emot en ålder och returnera hur gammal personen är om fem år.</p>
+                <p>Programmet ska fråga användaren efter ålder och skriva ut resultatet.</p>
+
+                <h3>Övning 5</h3>
+                <p>Skapa en funktion som heter <code>area</code>.</p>
+                <p>Funktionen ska ta emot två värden</p>
+                <ul>
+                    <li>bredd</li>
+                    <li>höjd</li>
+                </ul>
+                <p>Funktionen ska returnera arean av en rektangel.</p>
+                <p>Formel</p>
+                <pre><code>area = bredd * höjd</code></pre>
+                <p>Programmet ska skriva ut resultatet.</p>
+
+                <h3>Övning 6</h3>
+                <p>Skapa ett program med två funktioner.</p>
+                <pre><code>def greet(name)</code></pre>
+                <p>ska skriva ut en hälsning.</p>
+                <pre><code>def double(number)</code></pre>
+                <p>ska returnera talet gånger två.</p>
+                <p>Programmet ska</p>
+                <ul>
+                    <li>fråga efter ett namn</li>
+                    <li>fråga efter ett tal</li>
+                    <li>använda funktionerna</li>
+                    <li>skriva ut resultatet</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s88">
+                <h2>8.8 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är en funktion i Python?</li>
+                    <li>Varför använder man funktioner i program?</li>
+                    <li>Vad betyder ordet <code>def</code> i Python?</li>
+                    <li>Vad är en parameter?</li>
+                    <li>Vad är skillnaden mellan en funktion som <strong>skriver ut ett värde</strong> och en funktion
+                        som använder <strong>return</strong>?</li>
+                    <li>Varför är det bra att dela upp större program i flera funktioner?</li>
+                    <li>Vad händer om man anropar en funktion flera gånger i ett program?</li>
+                    <li>När kan det vara bättre att använda <code>return</code> istället för <code>print</code> i en
+                        funktion?</li>
+                    <li>Ge ett exempel på en uppgift där en funktion kan vara användbar.</li>
+                    <li>Varför blir program ofta lättare att läsa när man använder funktioner?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-7.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Listor</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-9.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Felsökning</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

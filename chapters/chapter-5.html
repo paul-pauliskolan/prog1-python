@@ -26,7 +26,8 @@
             <header class="chapter-hero" id="top">
                 <p class="eyebrow">Programmering nivå 1 med Python</p>
                 <h1>Kapitel 5: Villkor</h1>
-                <p class="subtitle">I detta kapitel lär du dig hur program fattar beslut med if, elif, else och logiska uttryck.</p>
+                <p class="subtitle">I detta kapitel lär du dig hur program fattar beslut med if, elif, else och logiska
+                    uttryck.</p>
             </header>
 
             <section class="toc-section">
@@ -49,12 +50,15 @@
 
             <section class="content-section" id="s51">
                 <h2>5.1 Beslut i program</h2>
-                <p>Hittills har våra program utfört instruktioner rad för rad uppifrån och ner. Alla instruktioner har körts varje gång programmet startar.</p>
-                <p>I många program behöver datorn däremot fatta beslut. Programmet måste kunna göra olika saker beroende på vad användaren skriver in eller vilka värden som finns i programmet.</p>
+                <p>Hittills har våra program utfört instruktioner rad för rad uppifrån och ner. Alla instruktioner har
+                    körts varje gång programmet startar.</p>
+                <p>I många program behöver datorn däremot fatta beslut. Programmet måste kunna göra olika saker beroende
+                    på vad användaren skriver in eller vilka värden som finns i programmet.</p>
                 <p>Detta kallas villkor.</p>
 
                 <h3>Exempel på beslut i program</h3>
-                <p>Ett program kan till exempel behöva kontrollera om en person är myndig, om ett tal är större än ett annat eller om en användare har skrivit rätt lösenord.</p>
+                <p>Ett program kan till exempel behöva kontrollera om en person är myndig, om ett tal är större än ett
+                    annat eller om en användare har skrivit rätt lösenord.</p>
                 <p>Programmet kan då fatta ett beslut och göra olika saker beroende på resultatet.</p>
 
                 <h3>Exempel</h3>
@@ -83,14 +87,17 @@ print(age >= 18)</code></pre>
                 <p>Om det är True körs koden som hör till villkoret.</p>
 
                 <h3>Indrag i Python</h3>
-                <p>Python använder indrag för att visa vilken kod som hör till ett villkor. Raden med print körs bara om villkoret är sant.</p>
+                <p>Python använder indrag för att visa vilken kod som hör till ett villkor. Raden med print körs bara om
+                    villkoret är sant.</p>
                 <p>Om indraget saknas kommer Python att ge ett fel.</p>
 
                 <h3>Sammanfattning</h3>
-                <p>Med hjälp av if kan ett program kontrollera ett villkor, avgöra om något är sant eller falskt, och köra kod bara när villkoret är sant.</p>
+                <p>Med hjälp av if kan ett program kontrollera ett villkor, avgöra om något är sant eller falskt, och
+                    köra kod bara när villkoret är sant.</p>
 
                 <h3>Enkel övning</h3>
-                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut ett meddelande om talet är större än 10.</p>
+                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut ett meddelande om talet är
+                    större än 10.</p>
                 <pre><code>number = int(input("Skriv ett tal: "))
 if number > 10:
     print("Talet är större än 10")</code></pre>
@@ -99,12 +106,14 @@ if number > 10:
             <section class="content-section" id="s52">
                 <h2>5.2 if</h2>
                 <p>I Python används if för att kontrollera ett villkor och fatta ett beslut i ett program.</p>
-                <p>Programmet kontrollerar om ett villkor är sant. Om villkoret är sant körs koden som hör till villkoret.</p>
+                <p>Programmet kontrollerar om ett villkor är sant. Om villkoret är sant körs koden som hör till
+                    villkoret.</p>
 
                 <h3>Grundstruktur</h3>
                 <pre><code>if villkor:
     kod som ska köras</code></pre>
-                <p>Efter villkoret finns ett kolon <code>:</code>. På nästa rad skrivs koden som ska köras, och den raden måste vara indragen.</p>
+                <p>Efter villkoret finns ett kolon <code>:</code>. På nästa rad skrivs koden som ska köras, och den
+                    raden måste vara indragen.</p>
 
                 <h3>Exempel</h3>
                 <pre><code>age = int(input("Hur gammal är du? "))
@@ -122,7 +131,8 @@ if age >= 18:
                 <h3>Exempel på körning</h3>
                 <pre><code>Hur gammal är du? 20
 Du är myndig</code></pre>
-                <p>Om användaren istället skriver 15 kommer inget meddelande att skrivas ut eftersom villkoret inte är sant.</p>
+                <p>Om användaren istället skriver 15 kommer inget meddelande att skrivas ut eftersom villkoret inte är
+                    sant.</p>
 
                 <h3>Villkor i if</h3>
                 <p>Villkoret i ett if-uttryck är ofta en jämförelse, till exempel:</p>
@@ -143,7 +153,8 @@ if age >= 18:
                 <p>Alla indragna rader körs om villkoret är sant.</p>
 
                 <h3>Övning</h3>
-                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut ett meddelande om talet är större än 100.</p>
+                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut ett meddelande om talet är
+                    större än 100.</p>
                 <pre><code>number = int(input("Skriv ett tal: "))
 if number > 100:
     print("Talet är större än 100")</code></pre>
@@ -151,7 +162,8 @@ if number > 100:
 
             <section class="content-section" id="s53">
                 <h2>5.3 if else</h2>
-                <p>Med if kan ett program kontrollera om ett villkor är sant. Men ibland vill man också göra något om villkoret inte är sant.</p>
+                <p>Med if kan ett program kontrollera om ett villkor är sant. Men ibland vill man också göra något om
+                    villkoret inte är sant.</p>
                 <p>Då använder man else. Ordet else betyder annars.</p>
 
                 <h3>Grundstruktur</h3>
@@ -190,10 +202,12 @@ if number > 0:
     print("Talet är positivt")
 else:
     print("Talet är noll eller negativt")</code></pre>
-                <p>Alla rader som är indragna efter if körs om villkoret är sant. Alla rader som är indragna efter else körs annars.</p>
+                <p>Alla rader som är indragna efter if körs om villkoret är sant. Alla rader som är indragna efter else
+                    körs annars.</p>
 
                 <h3>Operatorn %</h3>
-                <p>I Python finns operatorn <code>%</code>. Den kallas modulooperatorn och används för att räkna ut resten vid en division.</p>
+                <p>I Python finns operatorn <code>%</code>. Den kallas modulooperatorn och används för att räkna ut
+                    resten vid en division.</p>
                 <pre><code>print(10 % 3)</code></pre>
                 <p>Resultat: 1</p>
                 <p>Därför används % ofta för att kontrollera om ett tal är jämnt eller udda.</p>
@@ -201,7 +215,8 @@ else:
                 <p>Resultat: 0 (eftersom 8 är jämnt delbart med 2).</p>
 
                 <h3>Övning</h3>
-                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut om talet är jämnt eller udda.</p>
+                <p>Skriv ett program som frågar användaren efter ett tal och skriver ut om talet är jämnt eller udda.
+                </p>
                 <pre><code>number = int(input("Skriv ett tal: "))
 
 if number % 2 == 0:
@@ -212,7 +227,8 @@ else:
 
             <section class="content-section" id="s54">
                 <h2>5.4 elif</h2>
-                <p>Ibland behöver ett program kontrollera flera olika villkor. Då används elif, som betyder annars om.</p>
+                <p>Ibland behöver ett program kontrollera flera olika villkor. Då används elif, som betyder annars om.
+                </p>
                 <p>Programmet kontrollerar villkoren i tur och ordning tills ett av dem är sant.</p>
 
                 <h3>Grundstruktur</h3>
@@ -274,7 +290,8 @@ else:
 
             <section class="content-section" id="s55">
                 <h2>5.5 Nästlade villkor</h2>
-                <p>Ibland behöver ett program kontrollera ett villkor inuti ett annat villkor. Detta kallas nästlade villkor.</p>
+                <p>Ibland behöver ett program kontrollera ett villkor inuti ett annat villkor. Detta kallas nästlade
+                    villkor.</p>
                 <p>Det betyder att en if-sats ligger inuti en annan if-sats.</p>
 
                 <h3>Grundstruktur</h3>
@@ -316,7 +333,8 @@ Hur gammal är du? 15
 Du är inte myndig ännu</code></pre>
 
                 <h3>Viktigt att tänka på</h3>
-                <p>När villkor ligger inuti andra villkor blir indragen extra viktiga. Indragen visar vilken kod som hör till vilket villkor.</p>
+                <p>När villkor ligger inuti andra villkor blir indragen extra viktiga. Indragen visar vilken kod som hör
+                    till vilket villkor.</p>
                 <p>Varje nytt villkor inuti ett annat villkor behöver ytterligare ett indrag.</p>
 
                 <h3>Övning</h3>
@@ -332,7 +350,8 @@ Du är inte myndig ännu</code></pre>
             <section class="content-section" id="s56">
                 <h2>5.6 Logiska uttryck</h2>
                 <p>I många program behöver man kontrollera flera villkor samtidigt. Då används logiska operatorer.</p>
-                <p>De tre vanligaste logiska operatorerna i Python är <code>and</code>, <code>or</code> och <code>not</code>.</p>
+                <p>De tre vanligaste logiska operatorerna i Python är <code>and</code>, <code>or</code> och
+                    <code>not</code>.</p>
 
                 <h3>Operatorn and</h3>
                 <p>Operatorn and betyder att båda villkoren måste vara sanna.</p>
@@ -364,7 +383,8 @@ else:
 
                 <h3>Viktigt att tänka på</h3>
                 <p>Logiska operatorer gör det möjligt att skriva mer avancerade villkor.</p>
-                <p>De används ofta när man behöver kontrollera flera värden samtidigt, flera alternativ eller om något inte är sant.</p>
+                <p>De används ofta när man behöver kontrollera flera värden samtidigt, flera alternativ eller om något
+                    inte är sant.</p>
 
                 <h3>Övning</h3>
                 <p>Skriv ett program som frågar efter ålder och om personen har studentkort (ja eller nej).</p>
@@ -378,7 +398,8 @@ else:
             <section class="content-section" id="s57">
                 <h2>5.7 Program med beslut</h2>
                 <p>Nu har du lärt dig flera sätt att låta ett program fatta beslut.</p>
-                <p>Med hjälp av if, elif, else och logiska operatorer kan programmet välja olika vägar beroende på användarens inmatning.</p>
+                <p>Med hjälp av if, elif, else och logiska operatorer kan programmet välja olika vägar beroende på
+                    användarens inmatning.</p>
                 <p>Program som använder villkor kallas ofta program med beslut.</p>
 
                 <h3>Exempel: biljettpris</h3>
@@ -405,7 +426,8 @@ if number % 2 == 0:
     print("Talet är jämnt")
 else:
     print("Talet är udda")</code></pre>
-                <p>Operatorn % kallas modulo och används för att ta fram resten i en division. Om resten blir 0 är talet jämnt.</p>
+                <p>Operatorn % kallas modulo och används för att ta fram resten i en division. Om resten blir 0 är talet
+                    jämnt.</p>
 
                 <h3>Exempel: tillgång till ett konto</h3>
                 <pre><code>password = input("Skriv lösenord: ")
@@ -415,7 +437,8 @@ else:
     print("Fel lösenord")</code></pre>
 
                 <h3>Varför beslut är viktiga</h3>
-                <p>Utan villkor skulle alla program göra samma sak varje gång. Med beslut kan programmet anpassa sig efter användaren, hantera olika situationer och lösa mer avancerade problem.</p>
+                <p>Utan villkor skulle alla program göra samma sak varje gång. Med beslut kan programmet anpassa sig
+                    efter användaren, hantera olika situationer och lösa mer avancerade problem.</p>
 
                 <h3>Övning</h3>
                 <p>Skriv ett program som frågar efter ett tal.</p>
@@ -430,7 +453,8 @@ else:
             <section class="content-section" id="s58">
                 <h2>5.8 Övningar</h2>
                 <p>I dessa övningar ska du använda det du har lärt dig i kapitlet om villkor.</p>
-                <p>Du ska använda if, elif, else, logiska operatorer, modulo <code>%</code> och f-strängar för utskrift.</p>
+                <p>Du ska använda if, elif, else, logiska operatorer, modulo <code>%</code> och f-strängar för utskrift.
+                </p>
 
                 <h3>Övning 1</h3>
                 <p>Skriv ett program som frågar efter en persons ålder.</p>
@@ -464,11 +488,13 @@ else:
 
                 <h3>Övning 6</h3>
                 <p>Skriv ett program som frågar efter ålder och om personen har studentkort (ja eller nej).</p>
-                <p>Programmet ska skriva ut "Rabatt beviljad" om personen är under 20 eller har studentkort, annars "Ingen rabatt".</p>
+                <p>Programmet ska skriva ut "Rabatt beviljad" om personen är under 20 eller har studentkort, annars
+                    "Ingen rabatt".</p>
 
                 <h3>Övning 7</h3>
                 <p>Skriv ett program som frågar efter ett tal.</p>
-                <p>Programmet ska skriva ut "Delbart med 5" om talet kan delas med 5 utan rest, annars "Inte delbart med 5".</p>
+                <p>Programmet ska skriva ut "Delbart med 5" om talet kan delas med 5 utan rest, annars "Inte delbart med
+                    5".</p>
                 <p>Tips: använd operatorn <code>%</code>.</p>
 
                 <h3>Övning 8</h3>

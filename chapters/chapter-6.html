@@ -1,85 +1,420 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Meteoroids, Meteors, and Meteorites: Discover how fragments from space become meteor showers and deliver samples of the early solar system to Earth.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 6: Loopar - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 6 - Loopar</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 6: Loopar</h1>
+                <p class="subtitle">I detta kapitel lär du dig hur kod kan upprepas med for- och while-loopar, samt hur
+                    break används för att styra upprepningar.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s61">6.1 Varför loopar behövs</a></li>
+                    <li><a href="#s62">6.2 while-loop</a></li>
+                    <li><a href="#s63">6.3 for-loop</a></li>
+                    <li><a href="#s64">6.4 range()</a></li>
+                    <li><a href="#s65">6.5 Oändliga loopar</a></li>
+                    <li><a href="#s66">6.6 Loopar och villkor</a></li>
+                    <li><a href="#s67">6.7 Program med upprepningar</a></li>
+                    <li><a href="#s68">6.8 Break</a></li>
+                    <li><a href="#s69">6.9 Övningar</a></li>
+                    <li><a href="#s610">6.10 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s61">
+                <h2>6.1 Varför loopar behövs</h2>
+                <p>I många program behöver samma kod köras flera gånger. Om vi skulle skriva samma kod om och om igen
+                    skulle programmet bli långt och svårt att läsa.</p>
+                <p>Därför använder programmerare loopar.</p>
+                <p>En loop gör att ett program kan upprepa en kodsektion automatiskt.</p>
 
-        <section id="chapter-summary"></section>
+                <h3>Exempel utan loop</h3>
+                <p>Om vi vill skriva ut talen 1 till 5 utan loop måste vi skriva:</p>
+                <pre><code>print(1)
+print(2)
+print(3)
+print(4)
+print(5)</code></pre>
+                <p>Det fungerar, men koden blir snabbt lång om vi behöver skriva ut många tal.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel med loop</h3>
+                <p>Med en loop kan samma uppgift lösas mycket enklare.</p>
+                <pre><code>for i in range(5):
+    print(i + 1)</code></pre>
+                <p>Programmet upprepar utskriften flera gånger automatiskt.</p>
 
-        <section id="chapter-videos"></section>
+                <h3>Varför loopar är viktiga</h3>
+                <p>Loopar används när program behöver upprepa en uppgift många gånger, arbeta med listor av data, räkna
+                    upp eller ner och bearbeta många värden.</p>
+                <p>Många program i verkligheten använder loopar, till exempel när spel uppdaterar skärmen många gånger
+                    per sekund, när program går igenom en lista med användare, eller när en app bearbetar många
+                    dataposter.</p>
 
-        <section id="chapter-resources"></section>
+                <h3>Två vanliga loopar i Python</h3>
+                <p>I Python finns två vanliga typer av loopar:</p>
+                <ul>
+                    <li><code>for</code> används när man vet hur många gånger något ska upprepas</li>
+                    <li><code>while</code> används när något ska upprepas så länge ett villkor är sant</li>
+                </ul>
+                <p>I detta kapitel kommer du att lära dig hur båda dessa fungerar.</p>
+            </section>
 
-        <div class="chapter-nav"></div>
+            <section class="content-section" id="s62">
+                <h2>6.2 while-loop</h2>
+                <p>En while-loop upprepar kod så länge ett villkor är sant.</p>
+                <p>Det betyder att programmet kontrollerar villkoret före varje varv.</p>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Exempel</h3>
+                <pre><code>count = 1
+while count <= 5:
+    print(count)
+    count = count + 1</code></pre>
+                <p>Programmet skriver ut talen 1 till 5.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Hur det fungerar</h3>
+                <ol>
+                    <li>Variabeln <code>count</code> börjar på 1.</li>
+                    <li>Programmet kontrollerar om count är mindre än eller lika med 5.</li>
+                    <li>Om sant skrivs count ut.</li>
+                    <li>Count ökas med 1.</li>
+                    <li>Villkoret kontrolleras igen.</li>
+                </ol>
+
+                <h3>Viktigt</h3>
+                <p>Glöm inte att ändra variabler i loopen, annars kan programmet fastna i en oändlig loop.</p>
+            </section>
+
+            <section class="content-section" id="s63">
+                <h2>6.3 for-loop</h2>
+                <p>En for-loop används när man vill upprepa kod ett visst antal gånger.</p>
+                <p>I Python används ofta funktionen <code>range()</code> tillsammans med en for-loop.</p>
+
+                <h3>Exempel</h3>
+                <pre><code>for i in range(5):
+    print(i)</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <p><code>range(5)</code> skapar talen 0, 1, 2, 3, 4.</p>
+                <p>Variabeln <code>i</code> får varje tal i tur och ordning.</p>
+                <p>Programmet skriver därför ut:</p>
+                <pre><code>0
+1
+2
+3
+4</code></pre>
+
+                <h3>Viktigt att tänka på</h3>
+                <p>Koden som ska upprepas måste vara indragen.</p>
+                <pre><code>for i in range(5):
+    print(i)</code></pre>
+                <p>Varje gång loopen körs får variabeln <code>i</code> ett nytt värde.</p>
+            </section>
+
+            <section class="content-section" id="s64">
+                <h2>6.4 range()</h2>
+                <p>Funktionen <code>range()</code> används ofta tillsammans med for-loopar. Den skapar en serie tal som
+                    loopen kan gå igenom.</p>
+
+                <h3>Enkelt exempel</h3>
+                <pre><code>for i in range(5):
+    print(i)</code></pre>
+                <p><code>range(5)</code> skapar talen 0, 1, 2, 3, 4.</p>
+                <p>Observera att talet 5 inte ingår.</p>
+
+                <h3>Start och stopp</h3>
+                <p>Man kan också ange startvärde och stoppvärde.</p>
+                <pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+                <p>Programmet skriver då ut:</p>
+                <pre><code>1
+2
+3
+4
+5</code></pre>
+
+                <h3>Steg i range()</h3>
+                <p>Man kan också ange hur mycket talet ska öka varje gång.</p>
+                <pre><code>for i in range(0, 10, 2):
+    print(i)</code></pre>
+                <p>Programmet skriver ut:</p>
+                <pre><code>0
+2
+4
+6
+8</code></pre>
+                <p>Detta gör att loopen hoppar fram 2 steg varje gång.</p>
+            </section>
+
+            <section class="content-section" id="s65">
+                <h2>6.5 Oändliga loopar</h2>
+                <p>En oändlig loop är en loop som aldrig tar slut.</p>
+                <p>Det händer när villkoret i loopen alltid är sant.</p>
+
+                <h3>Exempel</h3>
+                <pre><code>while True:
+    print("Detta program fortsätter för alltid")</code></pre>
+                <p>Eftersom villkoret <code>True</code> alltid är sant kommer loopen att fortsätta.</p>
+
+                <h3>Oändlig loop av misstag</h3>
+                <p>Man kan också råka skapa en oändlig loop:</p>
+                <pre><code>count = 0
+while count < 5:
+    print(count)</code></pre>
+                <p>Här ändras aldrig värdet på count. Villkoret är därför alltid sant och loopen slutar aldrig.</p>
+
+                <h3>Rätt sätt</h3>
+                <pre><code>count = 0
+while count < 5:
+    print(count)
+    count = count + 1</code></pre>
+                <p>Nu ökar count varje gång loopen körs och programmet avslutas när count blir 5.</p>
+            </section>
+
+            <section class="content-section" id="s66">
+                <h2>6.6 Loopar och villkor</h2>
+                <p>Loopar och villkor används ofta tillsammans i program.</p>
+                <p>En loop kan upprepa en uppgift, och ett villkor kan bestämma vad som ska hända i varje varv av
+                    loopen.</p>
+
+                <h3>Exempel</h3>
+                <pre><code>for i in range(1, 11):
+    if i % 2 == 0:
+        print(f"{i} är jämnt")
+    else:
+        print(f"{i} är udda")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <p>Loopen går igenom talen 1 till 10.</p>
+                <p>För varje tal kontrollerar programmet om talet är jämnt eller udda.</p>
+                <p>Operatorn <code>%</code> används för att ta fram resten vid division. Om resten blir 0 är talet
+                    jämnt.</p>
+
+                <h3>Exempel med användarens inmatning</h3>
+                <pre><code>number = int(input("Hur många tal vill du skriva ut? "))
+for i in range(1, number + 1):
+    if i % 2 == 0:
+        print(f"{i} är jämnt")
+    else:
+        print(f"{i} är udda")</code></pre>
+                <p>Programmet skriver ut alla tal upp till det tal användaren anger.</p>
+
+                <h3>Varför detta är viktigt</h3>
+                <p>Genom att kombinera loopar och villkor kan program bearbeta många värden, analysera data och göra
+                    olika saker i varje varv av loopen.</p>
+            </section>
+
+            <section class="content-section" id="s67">
+                <h2>6.7 Program med upprepningar</h2>
+                <p>Loopar används ofta när ett program behöver göra samma sak flera gånger.</p>
+                <p>Det kan till exempel handla om att läsa in flera värden, räkna något eller skriva ut många resultat.
+                </p>
+
+                <h3>Exempel: skriva ut flera tal</h3>
+                <pre><code>for i in range(1, 11):
+    print(i)</code></pre>
+                <p>Programmet skriver ut talen från 1 till 10.</p>
+
+                <h3>Exempel: summera tal</h3>
+                <pre><code>total = 0
+for i in range(5):
+    number = int(input("Skriv ett tal: "))
+    total = total + number
+print(f"Summan är {total}")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <p>Variabeln total börjar med värdet 0.</p>
+                <p>Varje gång loopen körs läses ett tal in och talet läggs till i total.</p>
+                <p>När loopen är klar skrivs summan ut.</p>
+
+                <h3>Exempel: räkna jämna tal</h3>
+                <pre><code>count = 0
+for i in range(1, 11):
+    if i % 2 == 0:
+        count = count + 1
+print(f"Antal jämna tal är {count}")</code></pre>
+                <p>Programmet går igenom talen 1 till 10 och räknar hur många som är jämna.</p>
+
+                <h3>Varför upprepningar är viktiga</h3>
+                <p>Loopar gör det möjligt att bearbeta många värden, upprepa beräkningar och skapa program som arbetar
+                    med större datamängder.</p>
+                <p>Många program i verkligheten bygger på upprepningar.</p>
+            </section>
+
+            <section class="content-section" id="s68">
+                <h2>6.8 Break</h2>
+                <p>Ibland behöver ett program avsluta en loop tidigare än planerat. Då kan man använda kommandot
+                    <code>break</code>.</p>
+                <p>När break körs avslutas loopen direkt, även om villkoret fortfarande är sant.</p>
+
+                <h3>Exempel</h3>
+                <pre><code>while True:
+    number = int(input("Skriv ett tal (0 för att avsluta): "))
+    if number == 0:
+        break
+    print(f"Du skrev talet {number}")</code></pre>
+
+                <h3>Hur programmet fungerar</h3>
+                <p>Programmet använder en oändlig loop.</p>
+                <p>Varje gång loopen körs frågar programmet efter ett tal.</p>
+                <p>Om användaren skriver 0 körs break och loopen avslutas. Annars fortsätter programmet.</p>
+
+                <h3>Exempel på körning</h3>
+                <pre><code>Skriv ett tal (0 för att avsluta): 5
+Du skrev talet 5
+
+Skriv ett tal (0 för att avsluta): 8
+Du skrev talet 8
+
+Skriv ett tal (0 för att avsluta): 0</code></pre>
+                <p>Programmet avslutas.</p>
+
+                <h3>Varför break används</h3>
+                <p><code>break</code> används när man vill avsluta en loop i förtid, stoppa ett program när ett visst
+                    villkor uppfylls eller avbryta en oändlig loop.</p>
+                <p>Det är ett vanligt sätt att kontrollera när ett program ska sluta köra.</p>
+            </section>
+
+            <section class="content-section" id="s69">
+                <h2>6.9 Övningar</h2>
+                <p>I dessa övningar ska du använda for, while, range(), villkor (if) och break.</p>
+
+                <h3>Övning 1</h3>
+                <p>Skriv ett program som skriver ut talen från 1 till 10 med en for-loop.</p>
+
+                <h3>Övning 2</h3>
+                <p>Skriv ett program som skriver ut talen från 1 till 20.</p>
+                <p>Programmet ska skriva ut om varje tal är jämnt eller udda.</p>
+                <p>Tips: använd %.</p>
+
+                <h3>Övning 3</h3>
+                <p>Skriv ett program som frågar användaren efter 5 tal.</p>
+                <p>Programmet ska räkna ut summan av talen och skriva ut resultatet.</p>
+
+                <h3>Övning 4</h3>
+                <p>Skriv ett program som frågar användaren efter ett tal.</p>
+                <p>Programmet ska skriva ut multiplikationstabellen för talet från 1 till 10.</p>
+                <p>Exempel om användaren skriver 3:</p>
+                <pre><code>3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9</code></pre>
+
+                <h3>Övning 5</h3>
+                <p>Skriv ett program som frågar användaren efter tal tills användaren skriver 0.</p>
+                <p>Programmet ska skriva ut varje tal som användaren skriver.</p>
+                <p>Använd en while-loop.</p>
+
+                <h3>Övning 6</h3>
+                <p>Skriv ett program som frågar användaren efter tal tills användaren skriver 0.</p>
+                <p>Programmet ska räkna ut summan av alla tal.</p>
+                <p>Tips: använd break.</p>
+
+                <h3>Övning 7</h3>
+                <p>Skriv ett program som frågar användaren efter tal tills användaren skriver 0.</p>
+                <p>Programmet ska räkna hur många tal användaren har skrivit.</p>
+
+                <h3>Övning 8</h3>
+                <p>Skriv ett program som skriver ut talen från 1 till 50.</p>
+                <p>Programmet ska skriva ut:</p>
+                <ul>
+                    <li>Fizz om talet är delbart med 3</li>
+                    <li>Buzz om talet är delbart med 5</li>
+                    <li>FizzBuzz om talet är delbart med både 3 och 5</li>
+                    <li>annars ska talet skrivas ut</li>
+                </ul>
+
+                <h3>Vad är FizzBuzz?</h3>
+                <p>FizzBuzz är en klassisk programmeringsövning som ofta används när man lär sig programmering.</p>
+                <p>Uppgiften används också ibland i jobbintervjuer för programmerare. Den testar om en person förstår
+                    grundläggande saker i programmering, till exempel loopar, villkor, operatorer och logiskt tänkande.
+                </p>
+
+                <h3>Bakgrund</h3>
+                <p>Spelet FizzBuzz kommer ursprungligen från ett barnspel där deltagare räknar upp tal i tur och
+                    ordning.</p>
+                <p>Reglerna är:</p>
+                <ul>
+                    <li>säg Fizz istället för tal som är delbara med 3</li>
+                    <li>säg Buzz istället för tal som är delbara med 5</li>
+                    <li>säg FizzBuzz istället för tal som är delbara med både 3 och 5</li>
+                </ul>
+                <p>När uppgiften används i programmering ska datorn göra samma sak.</p>
+            </section>
+
+            <section class="content-section" id="s610">
+                <h2>6.10 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är en loop i programmering?</li>
+                    <li>Varför används loopar i program?</li>
+                    <li>Vad är skillnaden mellan en for-loop och en while-loop?</li>
+                    <li>Vad gör funktionen range() i en for-loop?</li>
+                    <li>Varför är indrag viktiga när man skriver loopar i Python?</li>
+                    <li>Vad är en oändlig loop och hur kan den uppstå?</li>
+                    <li>Hur kan kommandot break användas i en loop?</li>
+                    <li>Ge ett exempel på en situation där ett program behöver upprepa något många gånger.</li>
+                    <li>Varför är loopar viktiga när man arbetar med större datamängder?</li>
+                    <li>Hur kan loopar och villkor användas tillsammans i ett program?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-5.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Villkor</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-7.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Listor</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

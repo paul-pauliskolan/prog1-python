@@ -1,85 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Beyond the Solar System: Discover thousands of exoplanets orbiting distant stars, habitable zones, and the search for worlds like Earth.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 10: Undantagshantering - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 10 - Undantagshantering</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 10: Undantagshantering</h1>
+                <p class="subtitle">I detta kapitel lär du dig att fånga fel med <code>try</code> och
+                    <code>except</code> samt att skriva robusta program som inte kraschar vid oväntad inmatning.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s101">10.1 Vad är undantag</a></li>
+                    <li><a href="#s102">10.2 Hantera felaktig input</a></li>
+                    <li><a href="#s103">10.3 Robusta program</a></li>
+                    <li><a href="#s104">10.4 Övningar</a></li>
+                    <li><a href="#s105">10.5 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s101">
+                <h2>10.1 Vad är undantag</h2>
+                <p>I tidigare kapitel har du sett att program kan krascha när något går fel. Till exempel om användaren
+                    skriver fel typ av data eller om man delar med noll.</p>
+                <p>Ett <strong>undantag</strong> är ett fel som uppstår när programmet körs.</p>
+                <p>Istället för att programmet kraschar kan vi i Python <strong>fånga felet och hantera det</strong>.
+                    Detta kallas <strong>undantagshantering</strong>.</p>
 
-        <section id="chapter-summary"></section>
+                <h3>Varför använda undantag</h3>
+                <p>Undantag gör att program kan</p>
+                <ul>
+                    <li>fortsätta köra trots fel</li>
+                    <li>ge tydliga felmeddelanden till användaren</li>
+                    <li>hantera oväntad inmatning</li>
+                </ul>
+                <p>Det gör program mer stabila och användarvänliga.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel utan undantag</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+                <p>Om användaren skriver</p>
+                <pre><code>hej</code></pre>
+                <p>kraschar programmet.</p>
 
-        <section id="chapter-videos"></section>
+                <h3>Exempel med undantag</h3>
+                <pre><code>try:
+    age = int(input("Hur gammal är du? "))
+    print(age + 5)
+except:
+    print("Du måste skriva ett tal")</code></pre>
+                <p>Nu kraschar inte programmet. Istället får användaren ett meddelande.</p>
 
-        <section id="chapter-resources"></section>
+                <h3>Hur det fungerar</h3>
+                <ul>
+                    <li><code>try</code> används för kod som kan orsaka fel</li>
+                    <li><code>except</code> körs om ett fel uppstår</li>
+                </ul>
+                <p>Programmet försöker först köra koden i <code>try</code>. Om något går fel hoppar Python till
+                    <code>except</code>.</p>
 
-        <div class="chapter-nav"></div>
+                <h3>Övning</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter ett tal</li>
+                    <li>försöker omvandla det till ett heltal</li>
+                    <li>skriver ut talet plus 10</li>
+                </ul>
+                <p>Om användaren skriver något som inte är ett tal ska programmet skriva ut</p>
+                <pre><code>Fel inmatning</code></pre>
+            </section>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+            <section class="content-section" id="s102">
+                <h2>10.2 Hantera felaktig input</h2>
+                <p>När ett program tar emot indata från användaren finns det alltid en risk att användaren skriver något
+                    oväntat.</p>
+                <p>Det kan till exempel vara</p>
+                <ul>
+                    <li>text istället för tal</li>
+                    <li>tom inmatning</li>
+                    <li>fel format</li>
+                </ul>
+                <p>Därför är det viktigt att kunna <strong>hantera felaktig input</strong>.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Problem utan felhantering</h3>
+                <pre><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+                <p>Om användaren skriver</p>
+                <pre><code>hej</code></pre>
+                <p>kraschar programmet eftersom text inte kan omvandlas till ett tal.</p>
+
+                <h3>Lösning med try except</h3>
+                <pre><code>try:
+    age = int(input("Hur gammal är du? "))
+    print(age + 5)
+except:
+    print("Fel inmatning")</code></pre>
+                <p>Programmet kraschar inte längre. Istället får användaren ett tydligt meddelande.</p>
+
+                <h3>Be användaren försöka igen</h3>
+                <p>Ibland vill man att användaren ska få flera försök. Det kan man göra med en loop.</p>
+                <pre><code>while True:
+    try:
+        age = int(input("Hur gammal är du? "))
+        print(age + 5)
+        break
+    except:
+        print("Fel inmatning, försök igen")</code></pre>
+                <p>Programmet fortsätter tills användaren skriver ett korrekt värde.</p>
+
+                <h3>Varför detta är viktigt</h3>
+                <p>Att hantera felaktig input gör program</p>
+                <ul>
+                    <li>mer robusta</li>
+                    <li>mer användarvänliga</li>
+                    <li>mer pålitliga</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter ett tal</li>
+                    <li>fortsätter fråga tills användaren skriver ett giltigt heltal</li>
+                    <li>skriver ut talet multiplicerat med 2</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s103">
+                <h2>10.3 Robusta program</h2>
+                <p>Ett <strong>robust program</strong> är ett program som klarar av oväntade situationer utan att
+                    krascha.</p>
+                <p>Det betyder att programmet kan hantera</p>
+                <ul>
+                    <li>felaktig input</li>
+                    <li>ovanliga värden</li>
+                    <li>oväntade situationer</li>
+                </ul>
+                <p>Robusta program är viktiga eftersom användare inte alltid gör som programmeraren tänkt.</p>
+
+                <h3>Exempel på icke robust program</h3>
+                <pre><code>number = int(input("Skriv ett tal: "))
+print(100 / number)</code></pre>
+                <p>Problem</p>
+                <ul>
+                    <li>om användaren skriver text kraschar programmet</li>
+                    <li>om användaren skriver 0 kraschar programmet</li>
+                </ul>
+
+                <h3>Exempel på robust program</h3>
+                <pre><code>while True:
+    try:
+        number = int(input("Skriv ett tal: "))
+        if number == 0:
+            print("Du kan inte dela med 0")
+        else:
+            print(100 / number)
+            break
+    except:
+        print("Fel inmatning, försök igen")</code></pre>
+                <p>Programmet</p>
+                <ul>
+                    <li>hanterar felaktig input</li>
+                    <li>hanterar division med noll</li>
+                    <li>låter användaren försöka igen</li>
+                </ul>
+
+                <h3>Vad gör ett program robust</h3>
+                <p>Ett robust program</p>
+                <ul>
+                    <li>kontrollerar användarens inmatning</li>
+                    <li>hanterar fel med <code>try except</code></li>
+                    <li>ger tydliga meddelanden</li>
+                    <li>låter användaren försöka igen</li>
+                </ul>
+
+                <h3>Varför detta är viktigt</h3>
+                <p>Robusta program är</p>
+                <ul>
+                    <li>mer stabila</li>
+                    <li>lättare att använda</li>
+                    <li>mer professionella</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter två tal</li>
+                    <li>fortsätter fråga tills båda talen är giltiga heltal</li>
+                    <li>skriver ut resultatet av divisionen</li>
+                </ul>
+                <p>Programmet ska</p>
+                <ul>
+                    <li>inte krascha</li>
+                    <li>hantera division med noll</li>
+                    <li>ge tydliga felmeddelanden</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s104">
+                <h2>10.4 Övningar</h2>
+                <p>I dessa övningar ska du träna på</p>
+                <ul>
+                    <li><code>try except</code></li>
+                    <li>hantera felaktig input</li>
+                    <li>skapa robusta program</li>
+                </ul>
+
+                <h3>Övning 1</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter ett tal</li>
+                    <li>försöker omvandla det till ett heltal</li>
+                    <li>skriver ut talet multiplicerat med 3</li>
+                </ul>
+                <p>Om användaren skriver fel ska programmet skriva</p>
+                <pre><code>Fel inmatning</code></pre>
+
+                <h3>Övning 2</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter ett tal</li>
+                    <li>fortsätter fråga tills användaren skriver ett giltigt heltal</li>
+                    <li>skriver ut talet plus 10</li>
+                </ul>
+
+                <h3>Övning 3</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter två tal</li>
+                    <li>försöker omvandla dem till heltal</li>
+                    <li>skriver ut summan</li>
+                </ul>
+                <p>Om något blir fel ska programmet skriva</p>
+                <pre><code>Fel inmatning</code></pre>
+
+                <h3>Övning 4</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter två tal</li>
+                    <li>fortsätter fråga tills båda talen är giltiga</li>
+                    <li>skriver ut produkten</li>
+                </ul>
+
+                <h3>Övning 5</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter ett tal</li>
+                    <li>kontrollerar att talet inte är 0</li>
+                    <li>skriver ut 100 delat med talet</li>
+                </ul>
+                <p>Programmet ska</p>
+                <ul>
+                    <li>hantera felaktig input</li>
+                    <li>hantera division med noll</li>
+                    <li>inte krascha</li>
+                </ul>
+
+                <h3>Övning 6</h3>
+                <p>Skriv ett program som</p>
+                <ul>
+                    <li>frågar användaren efter ett tal</li>
+                    <li>fortsätter fråga tills användaren skriver ett giltigt tal större än 0</li>
+                    <li>skriver ut talet multiplicerat med 5</li>
+                </ul>
+                <p>Programmet ska ge tydliga felmeddelanden om något blir fel.</p>
+            </section>
+
+            <section class="content-section" id="s105">
+                <h2>10.5 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är ett undantag i Python?</li>
+                    <li>Vad är syftet med <code>try</code> och <code>except</code>?</li>
+                    <li>Vad händer om ett fel uppstår i ett <code>try</code>-block?</li>
+                    <li>Varför är det viktigt att hantera felaktig input?</li>
+                    <li>Vad innebär det att ett program är robust?</li>
+                    <li>Hur kan man göra ett program mer användarvänligt med hjälp av undantag?</li>
+                    <li>Varför är det bättre att få ett felmeddelande än att programmet kraschar?</li>
+                    <li>Hur fungerar en loop tillsammans med <code>try except</code>?</li>
+                    <li>Vad kan hända om man inte hanterar division med noll i ett program?</li>
+                    <li>Hur kan du förbättra ett program så att det klarar oväntade situationer?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-9.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Felsökning</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-11.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Struktur och läsbar kod</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

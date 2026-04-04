@@ -1,85 +1,656 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Our Nearest Stars: Explore Alpha Centauri, our closest stellar neighbor at 4.37 light-years, and the scale of distances across our cosmic neighborhood.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 12: Användargränssnitt - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 12 - Användargränssnitt</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 12: Användargränssnitt</h1>
+                <p class="subtitle">I detta kapitel går du från textbaserade gränssnitt till grafiska program i Tkinter
+                    och bygger kompletta små GUI-appar.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s121">12.1 Program och användare</a></li>
+                    <li><a href="#s122">12.2 Textbaserade menyer</a></li>
+                    <li><a href="#s123">12.3 Introduktion till Tkinter</a></li>
+                    <li><a href="#s124">12.4 Tkinter input och uppdatera text</a></li>
+                    <li><a href="#s125">12.5 Tkinter input och output, widgets, ändra utseende</a></li>
+                    <li><a href="#s126">12.6 Kompletta GUI-program med widgets</a></li>
+                    <li><a href="#s127">12.7 Reflektionsfrågor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s121">
+                <h2>12.1 Program och användare</h2>
+                <p>Ett program används nästan alltid av en <strong>användare</strong>. Därför är det viktigt att
+                    programmet kan <strong>kommunicera tydligt</strong> med den som använder det.</p>
+                <p>Detta kallas <strong>användargränssnitt</strong>.</p>
+                <p>Ett användargränssnitt är det som användaren ser och interagerar med.</p>
 
-        <section id="chapter-summary"></section>
+                <h3>Olika typer av användargränssnitt</h3>
+                <p>Det finns flera typer av gränssnitt:</p>
+                <ul>
+                    <li>kommandorad</li>
+                    <li>grafiska gränssnitt</li>
+                    <li>webbgränssnitt</li>
+                </ul>
+                <p>I denna kurs börjar vi med <strong>kommandorad</strong>, där användaren skriver in text.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel</h3>
+                <pre><code>name = input("Vad heter du? ")
+print(f"Hej {name}")</code></pre>
+                <p>Här sker en enkel kommunikation:</p>
+                <ul>
+                    <li>programmet frågar</li>
+                    <li>användaren svarar</li>
+                    <li>programmet ger ett resultat</li>
+                </ul>
 
-        <section id="chapter-videos"></section>
+                <h3>Vad är ett bra användargränssnitt</h3>
+                <p>Ett bra användargränssnitt är</p>
+                <ul>
+                    <li>tydligt</li>
+                    <li>enkelt att förstå</li>
+                    <li>lätt att använda</li>
+                </ul>
 
-        <section id="chapter-resources"></section>
+                <h3>Exempel på tydligt program</h3>
+                <pre><code>name = input("Skriv ditt namn: ")
+age = int(input("Skriv din ålder: "))
 
-        <div class="chapter-nav"></div>
+print(f"Hej {name}")
+print(f"Du är {age} år gammal")</code></pre>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Exempel på otydligt program</h3>
+                <pre><code>n = input("x: ")
+a = int(input("y: "))
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+print(n)
+print(a)</code></pre>
+                <p>Det är svårt att förstå vad programmet vill.</p>
+
+                <h3>Tänk på</h3>
+                <ul>
+                    <li>Skriv tydliga frågor</li>
+                    <li>Skriv tydliga svar</li>
+                    <li>Ge instruktioner till användaren</li>
+                </ul>
+
+                <h3>Sammanfattning</h3>
+                <p>Program och användare kommunicerar genom gränssnittet. Ett bra gränssnitt gör programmet enklare att
+                    använda.</p>
+            </section>
+
+            <section class="content-section" id="s122">
+                <h2>12.2 Textbaserade menyer</h2>
+                <p>En vanlig typ av användargränssnitt är <strong>textbaserade menyer</strong>.</p>
+                <p>En meny låter användaren välja mellan olika alternativ i ett program.</p>
+                <p>Det gör programmet mer strukturerat och lättare att använda.</p>
+
+                <h3>Exempel på meny</h3>
+                <pre><code>print("1. Hälsa")
+print("2. Räkna")
+print("3. Avsluta")
+
+choice = input("Välj ett alternativ: ")</code></pre>
+
+                <h3>Använda val med if</h3>
+                <pre><code>if choice == "1":
+    print("Hej!")
+elif choice == "2":
+    number = int(input("Skriv ett tal: "))
+    print(number * 2)
+elif choice == "3":
+    print("Programmet avslutas")
+else:
+    print("Ogiltigt val")</code></pre>
+
+                <h3>Göra menyn återkommande</h3>
+                <p>Ofta vill man att menyn ska visas flera gånger. Det kan göras med en loop.</p>
+                <pre><code>while True:
+    print("1. Hälsa")
+    print("2. Räkna")
+    print("3. Avsluta")
+
+    choice = input("Välj ett alternativ: ")
+
+    if choice == "1":
+        print("Hej!")
+    elif choice == "2":
+        number = int(input("Skriv ett tal: "))
+        print(number * 2)
+    elif choice == "3":
+        print("Programmet avslutas")
+        break
+    else:
+        print("Ogiltigt val")</code></pre>
+
+                <h3>Varför använda menyer</h3>
+                <p>Menyer gör att</p>
+                <ul>
+                    <li>användaren vet vad som går att göra</li>
+                    <li>programmet blir tydligare</li>
+                    <li>det blir enklare att använda flera funktioner</li>
+                </ul>
+
+                <h3>Tänk på</h3>
+                <ul>
+                    <li>Ge tydliga alternativ</li>
+                    <li>Hantera felaktiga val</li>
+                    <li>Använd loop så att programmet fortsätter</li>
+                </ul>
+
+                <h3>Övning</h3>
+                <p>Skapa en meny med följande alternativ:</p>
+                <ol>
+                    <li>Skriv ut ditt namn</li>
+                    <li>Räkna ut ett tal gånger 3</li>
+                    <li>Avsluta programmet</li>
+                </ol>
+                <p>Programmet ska fortsätta tills användaren väljer att avsluta.</p>
+            </section>
+
+            <section class="content-section" id="s123">
+                <h2>12.3 Introduktion till Tkinter</h2>
+                <p>Hittills har du arbetat med <strong>textbaserade program</strong> i terminalen. Men många program
+                    använder istället <strong>grafiska användargränssnitt</strong>.</p>
+                <p>I Python kan man skapa enkla grafiska program med biblioteket <strong>Tkinter</strong>.</p>
+                <p>Tkinter följer oftast med Python och används för att skapa fönster, knappar och text.</p>
+
+                <h3>Vad är Tkinter</h3>
+                <p>Tkinter är ett bibliotek i Python som används för att skapa <strong>grafiska program</strong>.</p>
+                <p>Med Tkinter kan man till exempel skapa</p>
+                <ul>
+                    <li>fönster</li>
+                    <li>text</li>
+                    <li>knappar</li>
+                    <li>inmatningsfält</li>
+                </ul>
+
+                <h3>Skapa ett enkelt fönster</h3>
+                <p>Först måste man importera Tkinter.</p>
+                <pre><code>import tkinter as tk</code></pre>
+                <p>Sedan kan man skapa ett fönster.</p>
+                <pre><code>window = tk.Tk()
+window.title("Mitt första program")</code></pre>
+                <p>Till sist måste programmet hållas igång.</p>
+                <pre><code>window.mainloop()</code></pre>
+                <p>Detta program öppnar ett enkelt fönster med titeln <strong>Mitt första program</strong>.</p>
+
+                <h3>Exempel: hela programmet</h3>
+                <pre><code>import tkinter as tk
+window = tk.Tk()
+window.title("Mitt första program")
+window.mainloop()</code></pre>
+
+                <h3>Lägga till text</h3>
+                <pre><code>import tkinter as tk
+
+window = tk.Tk()
+window.title("Exempel")
+
+label = tk.Label(window, text="Hej världen")
+label.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Lägga till en knapp</h3>
+                <pre><code>import tkinter as tk
+
+def say_hello():
+    print("Hej!")
+
+window = tk.Tk()
+
+button = tk.Button(window, text="Klicka här", command=say_hello)
+button.pack()
+
+window.mainloop()</code></pre>
+                <p>När användaren klickar på knappen körs funktionen.</p>
+
+                <h3>Viktiga delar</h3>
+                <ul>
+                    <li><code>import tkinter as tk</code> importerar biblioteket</li>
+                    <li><code>tk.Tk()</code> skapar fönstret</li>
+                    <li><code>Label</code> visar text</li>
+                    <li><code>Button</code> skapar en knapp</li>
+                    <li><code>pack()</code> placerar objekt i fönstret</li>
+                    <li><code>mainloop()</code> håller fönstret öppet</li>
+                </ul>
+
+                <h3>Sammanfattning</h3>
+                <p>Tkinter gör det möjligt att skapa enkla grafiska program i Python.</p>
+                <p>Det är ett första steg från textbaserade program till program med <strong>grafiskt
+                        användargränssnitt</strong>.</p>
+
+                <h3>Övning</h3>
+                <p>Skapa ett program med Tkinter som</p>
+                <ul>
+                    <li>visar ett fönster</li>
+                    <li>har titeln <strong>Mitt GUI-program</strong></li>
+                    <li>innehåller en knapp</li>
+                    <li>skriver ut <strong>Hej</strong> i terminalen när användaren klickar på knappen</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s124">
+                <h2>12.4 Tkinter input och uppdatera text</h2>
+                <p>I detta avsnitt bygger vi vidare på Tkinter och skapar mer användbara program.</p>
+                <p>Nu ska vi inte bara visa text och knappar, utan även låta användaren skriva in data och få ett
+                    resultat i fönstret.</p>
+
+                <h3>Ta emot input i GUI</h3>
+                <p>För att användaren ska kunna skriva något i programmet använder vi <code>Entry</code>.</p>
+                <pre><code>import tkinter as tk
+
+window = tk.Tk()
+window.title("Input exempel")
+
+entry = tk.Entry(window)
+entry.pack()
+
+window.mainloop()</code></pre>
+                <p>Här kan användaren skriva text i ett fält.</p>
+
+                <h3>Hämta värdet från inputfältet</h3>
+                <p>För att använda det som användaren skriver använder vi <code>.get()</code>.</p>
+                <pre><code>import tkinter as tk
+
+def show_text():
+    text = entry.get()
+    print(text)
+
+window = tk.Tk()
+
+entry = tk.Entry(window)
+entry.pack()
+
+button = tk.Button(window, text="Visa text", command=show_text)
+button.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Uppdatera text i fönstret</h3>
+                <p>Istället för att skriva ut i terminalen kan vi visa resultat direkt i GUI.</p>
+                <pre><code>import tkinter as tk
+
+def greet():
+    name = entry.get()
+    label.config(text=f"Hej {name}")
+
+window = tk.Tk()
+window.title("GUI-program")
+
+entry = tk.Entry(window)
+entry.pack()
+
+button = tk.Button(window, text="Säg hej", command=greet)
+button.pack()
+
+label = tk.Label(window, text="")
+label.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Sammanfattning</h3>
+                <p>I detta avsnitt har du lärt dig att</p>
+                <ul>
+                    <li>använda inputfält (Entry)</li>
+                    <li>hämta värden från användaren</li>
+                    <li>uppdatera text i GUI</li>
+                    <li>koppla knappar till funktioner</li>
+                </ul>
+                <p>Detta gör att du kan skapa riktiga program med användarinteraktion.</p>
+
+                <h3>Övningar</h3>
+                <ol>
+                    <li>Skapa ett program där användaren skriver sitt namn och får en hälsning i fönstret.</li>
+                    <li>Skapa ett program där användaren skriver ett tal och programmet visar talet gånger 2.</li>
+                    <li>Utmaning: skapa ett program där användaren skriver sin ålder och programmet visar hur gammal
+                        personen är om 5 år.</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s125">
+                <h2>12.5 Tkinter input och output, widgets, ändra utseende</h2>
+                <p>I detta avsnitt bygger vi vidare på Tkinter och lär oss fler funktioner så att vi kan skapa mer
+                    avancerade grafiska program.</p>
+
+                <h3>Input och output i GUI</h3>
+                <p>Du har redan sett hur man använder <code>Entry</code> och <code>Label</code>. Detta är grunden i
+                    nästan alla GUI-program.</p>
+                <pre><code>import tkinter as tk
+
+def greet():
+    name = entry.get()
+    label.config(text=f"Hej {name}")
+
+window = tk.Tk()
+
+entry = tk.Entry(window)
+entry.pack()
+
+button = tk.Button(window, text="Säg hej", command=greet)
+button.pack()
+
+label = tk.Label(window, text="")
+label.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Flera widgets i samma program</h3>
+                <pre><code>import tkinter as tk
+
+def double():
+    value = int(entry.get())
+    label.config(text=f"{value * 2}")
+
+def triple():
+    value = int(entry.get())
+    label.config(text=f"{value * 3}")
+
+window = tk.Tk()
+
+entry = tk.Entry(window)
+entry.pack()
+
+btn1 = tk.Button(window, text="x2", command=double)
+btn1.pack()
+
+btn2 = tk.Button(window, text="x3", command=triple)
+btn2.pack()
+
+label = tk.Label(window, text="")
+label.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Ändra utseende</h3>
+                <pre><code>label = tk.Label(window, text="Hej", fg="blue", font=("Arial", 16))
+label.pack()</code></pre>
+
+                <h3>Rensa inputfält</h3>
+                <pre><code>def clear():
+    entry.delete(0, tk.END)
+
+button = tk.Button(window, text="Rensa", command=clear)
+button.pack()</code></pre>
+
+                <h3>Kontrollera input (enkel validering)</h3>
+                <pre><code>def calculate():
+    try:
+        value = int(entry.get())
+        label.config(text=f"{value * 2}")
+    except:
+        label.config(text="Skriv ett tal")</code></pre>
+
+                <h3>Placering med grid istället för pack</h3>
+                <p><code>pack()</code> staplar saker. <code>grid()</code> ger mer kontroll.</p>
+                <pre><code>entry = tk.Entry(window)
+entry.grid(row=0, column=0)
+
+button = tk.Button(window, text="OK")
+button.grid(row=0, column=1)</code></pre>
+
+                <h3>Sammanfattning</h3>
+                <p>Nu kan du</p>
+                <ul>
+                    <li>skapa flera knappar</li>
+                    <li>hantera input och output</li>
+                    <li>ändra utseende</li>
+                    <li>hantera fel</li>
+                    <li>placera element mer exakt</li>
+                </ul>
+                <p>Detta räcker för att skapa riktiga små applikationer.</p>
+
+                <h3>Övningar</h3>
+                <ol>
+                    <li>Skapa ett program med två knappar: en som dubblar ett tal och en som tredubblar ett tal.</li>
+                    <li>Skapa ett program som tar emot ett tal, visar resultatet gånger 5 och hanterar felaktig input.
+                    </li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s126">
+                <h2>12.6 Kompletta GUI-program med widgets</h2>
+                <p>I detta avsnitt ska vi använda Tkinter för att skapa <strong>mer kompletta program</strong>.</p>
+                <p>Nu kombinerar vi flera delar för att bygga små appar som faktiskt känns användbara.</p>
+
+                <h3>Radioknappar (Radiobutton)</h3>
+                <p>Radioknappar används när användaren ska välja <strong>ett alternativ av flera</strong>.</p>
+                <pre><code>choice = tk.IntVar()
+choice.set(1)
+
+radio1 = tk.Radiobutton(window, text="Alternativ 1", variable=choice, value=1)
+radio1.pack()
+
+radio2 = tk.Radiobutton(window, text="Alternativ 2", variable=choice, value=2)
+radio2.pack()
+
+# Hämta värde
+choice.get()</code></pre>
+
+                <h3>Dropdown (OptionMenu)</h3>
+                <p>Används när användaren ska välja från en lista.</p>
+                <pre><code>options = ["Röd", "Blå", "Grön"]
+
+selected = tk.StringVar()
+selected.set(options[0])
+
+dropdown = tk.OptionMenu(window, selected, *options)
+dropdown.pack()
+
+# Hämta värde
+selected.get()</code></pre>
+
+                <h3>Kryssruta (Checkbutton)</h3>
+                <p>Används när användaren kan välja <strong>ja/nej</strong>.</p>
+                <pre><code>checked = tk.BooleanVar()
+
+checkbox = tk.Checkbutton(window, text="Jag godkänner", variable=checked)
+checkbox.pack()
+
+# Hämta värde
+checked.get()</code></pre>
+
+                <h3>Textfält (flera rader)</h3>
+                <pre><code>text = tk.Text(window, height=5, width=30)
+text.pack()
+
+# Hämta text
+text.get("1.0", tk.END)</code></pre>
+
+                <h3>Exempel 1: Filmapp</h3>
+                <pre><code>import tkinter as tk
+
+def add_movie():
+    name = entry_name.get()
+    try:
+        length = int(entry_length.get())
+        result_label.config(text=f"Filmen {name} är {length} minuter lång")
+    except:
+        result_label.config(text="Skriv en giltig längd")
+
+window = tk.Tk()
+window.title("Filmlista")
+
+label_name = tk.Label(window, text="Filmens namn:")
+label_name.pack()
+
+entry_name = tk.Entry(window)
+entry_name.pack()
+
+label_length = tk.Label(window, text="Längd i minuter:")
+label_length.pack()
+
+entry_length = tk.Entry(window)
+entry_length.pack()
+
+button = tk.Button(window, text="Lägg till film", command=add_movie)
+button.pack()
+
+result_label = tk.Label(window, text="")
+result_label.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Exempel 2: Temperaturomvandling</h3>
+                <pre><code>import tkinter as tk
+
+def convert():
+    try:
+        temp = float(entry.get())
+        if choice.get() == 1:
+            result = (temp * 9/5) + 32
+            result_label.config(text=f"{temp}°C = {result:.1f}°F")
+        else:
+            result = (temp - 32) * 5/9
+            result_label.config(text=f"{temp}°F = {result:.1f}°C")
+    except:
+        result_label.config(text="Skriv ett giltigt tal")
+
+window = tk.Tk()
+window.title("Temperaturomvandlare")
+
+label = tk.Label(window, text="Ange temperatur:")
+label.pack()
+
+entry = tk.Entry(window)
+entry.pack()
+
+choice = tk.IntVar()
+choice.set(1)
+
+radio1 = tk.Radiobutton(window, text="Celsius till Fahrenheit", variable=choice, value=1)
+radio1.pack()
+
+radio2 = tk.Radiobutton(window, text="Fahrenheit till Celsius", variable=choice, value=2)
+radio2.pack()
+
+button = tk.Button(window, text="Omvandla", command=convert)
+button.pack()
+
+result_label = tk.Label(window, text="")
+result_label.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Exempel 3: Enkel budgetapp</h3>
+                <pre><code>import tkinter as tk
+
+total = 0
+
+def add_cost():
+    global total
+    try:
+        cost = int(entry.get())
+        total = total + cost
+        result_label.config(text=f"Totalt: {total} kr")
+    except:
+        result_label.config(text="Fel inmatning")
+
+window = tk.Tk()
+window.title("Budget")
+
+label = tk.Label(window, text="Ange kostnad i kronor:")
+label.pack()
+
+entry = tk.Entry(window)
+entry.pack()
+
+button = tk.Button(window, text="Lägg till kostnad", command=add_cost)
+button.pack()
+
+result_label = tk.Label(window, text="Totalt: 0 kr")
+result_label.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Vad är viktigt att förstå</h3>
+                <ul>
+                    <li>Etiketter används för att visa resultat</li>
+                    <li>Entry används för input</li>
+                    <li>Funktioner kopplas till knappar</li>
+                    <li>Programmet reagerar på användaren</li>
+                </ul>
+                <p>Detta är grunden för riktiga appar.</p>
+            </section>
+
+            <section class="content-section" id="s127">
+                <h2>12.7 Reflektionsfrågor</h2>
+                <ol>
+                    <li>Vad är ett användargränssnitt och varför är det viktigt?</li>
+                    <li>Vad är skillnaden mellan ett textbaserat program och ett grafiskt program?</li>
+                    <li>Varför är det viktigt att använda etiketter (Label) i GUI-program?</li>
+                    <li>När är det lämpligt att använda radioknappar?</li>
+                    <li>När passar det bättre att använda en dropdown istället för radioknappar?</li>
+                    <li>Vad används en kryssruta (Checkbutton) till?</li>
+                    <li>Hur skiljer sig Entry och Text från varandra?</li>
+                    <li>Vad händer om man inte hanterar felaktig input i ett GUI-program?</li>
+                    <li>Hur kan man göra ett GUI-program mer användarvänligt?</li>
+                    <li>Vilka delar behövs för att skapa ett komplett GUI-program i Tkinter?</li>
+                    <li>Vad var svårast med att arbeta med Tkinter och varför?</li>
+                    <li>Hur skulle du kunna förbättra ett GUI-program du har gjort?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-11.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Struktur och läsbar kod</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-13.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Programmering, användare och framtid</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>
