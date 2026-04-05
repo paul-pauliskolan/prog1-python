@@ -1,85 +1,650 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Local Stellar Associations and Moving Groups: Explore families of stars born together, including Pleiades, Hyades, and the Sun's stellar origins.">
-    <title>Chapter - Space Safari</title>
+    <meta name="description" content="Kapitel 14: Projekt - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 14 - Projekt</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 14: Projekt</h1>
+                <p class="subtitle">I detta kapitel går du igenom hela projektprocessen: planering, krav, design,
+                    implementering, testning, dokumentation och redovisning.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s141">14.1 Planera ett program</a></li>
+                    <li><a href="#s142">14.2 Kravspecifikation (VAD)</a></li>
+                    <li><a href="#s143">14.3 Design (HUR)</a></li>
+                    <li><a href="#s144">14.4 Implementering</a></li>
+                    <li><a href="#s145">14.5 Testning</a></li>
+                    <li><a href="#s146">14.6 Dokumentation</a></li>
+                    <li><a href="#s147">14.7 Redovisning</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s141">
+                <h2>14.1 Planera ett program</h2>
+                <p>Innan du börjar koda måste du planera ditt program.</p>
+                <p>Många nybörjare hoppar direkt till kod, men då fastnar man ofta.</p>
+                <p>Planering hjälper dig att</p>
+                <ul>
+                    <li>förstå problemet</li>
+                    <li>strukturera lösningen</li>
+                    <li>undvika onödiga fel</li>
+                </ul>
 
-        <section id="chapter-summary"></section>
+                <h3>Vad innebär planering</h3>
+                <p>Att planera ett program betyder att du bestämmer</p>
+                <ul>
+                    <li>vad programmet ska göra</li>
+                    <li>vem som ska använda det</li>
+                    <li>hur det ska fungera</li>
+                </ul>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel</h3>
+                <p>Du vill skapa en filmapp. Då kan planeringen vara:</p>
+                <p>Programmet ska</p>
+                <ul>
+                    <li>låta användaren skriva in filmer</li>
+                    <li>spara längd på filmer</li>
+                    <li>visa information om filmer</li>
+                </ul>
 
-        <section id="chapter-videos"></section>
+                <h3>En enkel plan</h3>
+                <p>Du kan skriva din plan så här:</p>
+                <p>Program: Filmlista</p>
+                <p>Programmet ska</p>
+                <ul>
+                    <li>ta emot filmens namn</li>
+                    <li>ta emot filmens längd</li>
+                    <li>visa information om filmen</li>
+                </ul>
 
-        <section id="chapter-resources"></section>
+                <h3>Viktiga frågor att ställa</h3>
+                <ul>
+                    <li>Vad är syftet med programmet?</li>
+                    <li>Vad ska användaren kunna göra?</li>
+                    <li>Vilken information behövs?</li>
+                    <li>Hur ska resultatet visas?</li>
+                </ul>
 
-        <div class="chapter-nav"></div>
+                <h3>Tips</h3>
+                <ul>
+                    <li>Börja enkelt</li>
+                    <li>Gör inte för stort program direkt</li>
+                    <li>Bygg vidare steg för steg</li>
+                </ul>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>Koppling till kursen</h3>
+                <p>När du planerar tränar du problemlösning, struktur och förståelse för hur program byggs. Detta
+                    används i verkliga projekt.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Övning</h3>
+                <p>Skriv en plan för ett eget program, till exempel:</p>
+                <ul>
+                    <li>en budgetapp</li>
+                    <li>en träningsapp</li>
+                    <li>en filmlista</li>
+                    <li>ett enkelt spel</li>
+                </ul>
+                <p>Skriv:</p>
+                <ul>
+                    <li>vad programmet ska göra</li>
+                    <li>vad användaren ska kunna göra</li>
+                    <li>vilken information som behövs</li>
+                </ul>
+                <p>Planen ska vara tydlig och enkel att förstå.</p>
+            </section>
+
+            <section class="content-section" id="s142">
+                <h2>14.2 Kravspecifikation (VAD)</h2>
+                <p>Efter att du har planerat ditt program är nästa steg att skriva en kravspecifikation.</p>
+                <p>En kravspecifikation beskriver exakt vad programmet ska göra och gör det tydligt vad som ska byggas
+                    innan du börjar koda.</p>
+
+                <h3>Varför behövs en kravspecifikation</h3>
+                <p>En kravspecifikation hjälper dig att</p>
+                <ul>
+                    <li>ha tydliga mål</li>
+                    <li>undvika missförstånd</li>
+                    <li>bygga rätt funktioner från början</li>
+                </ul>
+
+                <h3>Vad innehåller en kravspecifikation</h3>
+                <p>En enkel kravspecifikation kan innehålla:</p>
+                <ul>
+                    <li>funktionella krav</li>
+                    <li>krav på användaren</li>
+                    <li>krav på hur programmet ska bete sig</li>
+                </ul>
+
+                <h3>Funktionella krav</h3>
+                <p>Funktionella krav beskriver vad programmet ska kunna göra.</p>
+                <p>Exempel:</p>
+                <ul>
+                    <li>Programmet ska ta emot användarens namn</li>
+                    <li>Programmet ska ta emot användarens ålder</li>
+                    <li>Programmet ska beräkna år kvar till pension</li>
+                    <li>Programmet ska visa resultatet</li>
+                </ul>
+
+                <h3>Krav på användaren</h3>
+                <ul>
+                    <li>Användaren ska kunna skriva in text</li>
+                    <li>Användaren ska kunna skriva in siffror</li>
+                    <li>Användaren ska förstå vad som ska matas in</li>
+                </ul>
+
+                <h3>Krav på beteende</h3>
+                <ul>
+                    <li>Programmet ska visa felmeddelande vid felaktig inmatning</li>
+                    <li>Programmet ska inte krascha</li>
+                    <li>Programmet ska visa tydliga instruktioner</li>
+                </ul>
+
+                <h3>Exempel</h3>
+                <p>Program: Filmlista</p>
+                <p>Funktionella krav</p>
+                <ul>
+                    <li>Programmet ska kunna lägga till en film</li>
+                    <li>Programmet ska kunna visa alla filmer</li>
+                    <li>Programmet ska kunna visa filmens längd</li>
+                </ul>
+                <p>Användarkrav</p>
+                <ul>
+                    <li>Användaren ska kunna skriva in filmens namn</li>
+                    <li>Användaren ska kunna skriva in filmens längd</li>
+                </ul>
+                <p>Beteende</p>
+                <ul>
+                    <li>Programmet ska visa ett tydligt fel om längden inte är ett tal</li>
+                    <li>Programmet ska visa filmer i en lista</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Skriv tydligt och konkret</li>
+                    <li>Undvik otydliga ord som "bra" och "snabb"</li>
+                    <li>Tänk på användaren</li>
+                </ul>
+
+                <h3>Koppling till kursen</h3>
+                <p>När du skriver kravspecifikation tränar du problemlösning, struktur och anpassning till användare.
+                    Detta är viktigt för att nå högre betyg.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv en kravspecifikation för ditt program från föregående övning och dela upp i:</p>
+                <ul>
+                    <li>funktionella krav</li>
+                    <li>användarkrav</li>
+                    <li>beteende</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s143">
+                <h2>14.3 Design (HUR)</h2>
+                <p>När du har en plan och en kravspecifikation är nästa steg design.</p>
+                <p>Design handlar om hur programmet ska byggas. Du bestämmer struktur, uppdelning och hur olika delar
+                    hänger ihop.</p>
+
+                <h3>Vad innebär design</h3>
+                <p>Att designa ett program betyder att du bestämmer</p>
+                <ul>
+                    <li>vilka delar programmet ska bestå av</li>
+                    <li>hur dessa delar ska samarbeta</li>
+                    <li>hur koden ska organiseras</li>
+                </ul>
+
+                <h3>Dela upp programmet</h3>
+                <p>Ett bra program delas upp i mindre delar. Det gör koden lättare att förstå och arbeta med.</p>
+                <p>Exempel på steg:</p>
+                <ul>
+                    <li>ta emot inmatning</li>
+                    <li>bearbeta data</li>
+                    <li>visa resultat</li>
+                </ul>
+
+                <h3>Exempel</h3>
+                <p>Program: Filmlista</p>
+                <p>Design</p>
+                <ul>
+                    <li>Del 1 Inmatning: användaren skriver filmens namn och längd</li>
+                    <li>Del 2 Bearbetning: programmet sparar informationen</li>
+                    <li>Del 3 Utskrift: programmet visar information om filmen</li>
+                </ul>
+
+                <h3>Pseudokod</h3>
+                <p>Ett sätt att designa är att skriva pseudokod, alltså en beskrivning av programmet med vanliga ord.
+                </p>
+                <pre><code>Starta program
+Fråga efter filmens namn
+Fråga efter filmens längd
+Spara informationen
+Visa filmen</code></pre>
+
+                <h3>En enkel struktur</h3>
+                <pre><code>Start
+Inmatning
+Bearbetning
+Utskrift
+Slut</code></pre>
+
+                <h3>Tänk på detta</h3>
+                <ul>
+                    <li>Håll designen enkel</li>
+                    <li>Dela upp i tydliga steg</li>
+                    <li>Skriv så att någon annan förstår</li>
+                </ul>
+
+                <h3>Koppling till kursen</h3>
+                <p>När du arbetar med design tränar du strukturerad problemlösning, planering av program och förmåga att
+                    bygga större program.</p>
+
+                <h3>Övning</h3>
+                <p>Skriv en design för ditt program med pseudokod. Dela upp i steg som inmatning, bearbetning och
+                    utskrift.</p>
+            </section>
+
+            <section class="content-section" id="s144">
+                <h2>14.4 Implementering</h2>
+                <p>Nu är det dags att börja koda. Implementering betyder att du skriver programmet utifrån din design.
+                </p>
+                <p>Du går från plan och struktur till fungerande kod.</p>
+
+                <h3>Vad innebär implementering</h3>
+                <ul>
+                    <li>du skriver koden</li>
+                    <li>du följer din design</li>
+                    <li>du testar under tiden</li>
+                </ul>
+
+                <h3>Arbeta steg för steg</h3>
+                <p>Skriv inte hela programmet direkt. Bygg i små delar och testa ofta.</p>
+                <p>Exempel:</p>
+                <ul>
+                    <li>börja med att ta emot inmatning</li>
+                    <li>testa att det fungerar</li>
+                    <li>lägg till nästa del</li>
+                </ul>
+
+                <h3>Exempel</h3>
+                <pre><code>def hamta_film():
+    namn = input("Skriv filmens namn: ")
+    return namn
+
+def hamta_langd():
+    while True:
+        try:
+            langd = int(input("Skriv filmens längd: "))
+            return langd
+        except ValueError:
+            print("Fel: skriv ett heltal")
+
+def visa_film(namn, langd):
+    print(f"Film: {namn}")
+    print(f"Längd: {langd} minuter")
+
+film = hamta_film()
+langd = hamta_langd()
+visa_film(film, langd)</code></pre>
+
+                <h3>Testa under tiden</h3>
+                <p>Kör programmet ofta och testa:</p>
+                <ul>
+                    <li>rätt värden</li>
+                    <li>fel värden</li>
+                    <li>gränsfall</li>
+                </ul>
+
+                <h3>Vanliga fel</h3>
+                <ul>
+                    <li>syntaxfel (felstavningar i koden)</li>
+                    <li>logiska fel (programmet gör fel sak)</li>
+                    <li>felaktig inmatning</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Skriv tydliga variabelnamn</li>
+                    <li>Använd funktioner</li>
+                    <li>Kommentera vid behov</li>
+                    <li>Testa ofta</li>
+                </ul>
+
+                <h3>Koppling till kursen</h3>
+                <p>När du implementerar tränar du programmering i Python, kontrollstrukturer, felhantering och
+                    kodstruktur.</p>
+
+                <h3>Övning</h3>
+                <p>Implementera ditt program utifrån din design. Programmet ska ta emot inmatning, bearbeta information
+                    och visa resultat.</p>
+
+                <h3>Extra övning: GUI i Tkinter</h3>
+                <p>Skapa ett program med grafiskt gränssnitt som hanterar information om en film.</p>
+                <p>Programmet ska</p>
+                <ul>
+                    <li>ta emot filmens namn</li>
+                    <li>ta emot filmens längd i minuter</li>
+                    <li>beräkna längden i timmar</li>
+                    <li>visa resultatet i fönstret</li>
+                </ul>
+                <p>Krav</p>
+                <ul>
+                    <li>Använd Label före varje inmatningsfält</li>
+                    <li>Använd Entry för input</li>
+                    <li>Använd en Button som startar beräkningen</li>
+                    <li>Visa resultatet med en Label</li>
+                    <li>Visa felmeddelande om längden inte är ett heltal</li>
+                </ul>
+                <p>Tips</p>
+                <ul>
+                    <li>Använd en funktion som körs när knappen klickas</li>
+                    <li>Använd get() för att läsa data från Entry</li>
+                    <li>Använd config() för att uppdatera text i Label</li>
+                </ul>
+                <p>Extra utmaning:</p>
+                <ul>
+                    <li>visa resultatet på flera rader</li>
+                    <li>formatera till exempel 123 min som 2 tim och 3 min</li>
+                    <li>testa fel värden och se vad som händer</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s145">
+                <h2>14.5 Testning</h2>
+                <p>När programmet är färdigt behöver du testa det. Testning betyder att du kontrollerar att programmet
+                    fungerar som det ska.</p>
+                <p>Du testar både vanliga fall och situationer där något kan bli fel.</p>
+
+                <h3>Varför är testning viktigt</h3>
+                <p>Testning hjälper dig att</p>
+                <ul>
+                    <li>hitta fel</li>
+                    <li>förbättra programmet</li>
+                    <li>se om kraven är uppfyllda</li>
+                </ul>
+
+                <h3>Vad ska man testa</h3>
+                <ul>
+                    <li>programmet startar</li>
+                    <li>inmatning fungerar</li>
+                    <li>beräkningar blir rätt</li>
+                    <li>resultatet visas korrekt</li>
+                    <li>fel hanteras på rätt sätt</li>
+                </ul>
+
+                <h3>Exempel</h3>
+                <p>Du har gjort ett filmprogram. Testa till exempel:</p>
+                <ul>
+                    <li>skriv in ett filmnamn</li>
+                    <li>skriv in ett vanligt heltal som längd</li>
+                    <li>kontrollera att rätt resultat visas</li>
+                </ul>
+                <p>Testa sedan felaktiga värden:</p>
+                <ul>
+                    <li>tomt filmnamn</li>
+                    <li>bokstäver i längdfältet</li>
+                    <li>negativt tal</li>
+                    <li>0</li>
+                </ul>
+
+                <h3>Testfall</h3>
+                <p>Ett testfall är en planerad test. Du bestämmer</p>
+                <ul>
+                    <li>vad du skriver in</li>
+                    <li>vad som borde hända</li>
+                    <li>vad som faktiskt händer</li>
+                </ul>
+
+                <h3>Exempel på testfall</h3>
+                <p>Test 1</p>
+                <p>Inmatning: Interstellar, 169</p>
+                <p>Förväntat resultat: Programmet visar filmens namn och tiden 2 tim 49 min</p>
+
+                <p>Test 2</p>
+                <p>Inmatning: Tomt namn, 120</p>
+                <p>Förväntat resultat: Felmeddelande om att filmnamn saknas</p>
+
+                <p>Test 3</p>
+                <p>Inmatning: Avatar, abc</p>
+                <p>Förväntat resultat: Felmeddelande om att längden måste vara ett heltal</p>
+
+                <p>Test 4</p>
+                <p>Inmatning: Dune, -5</p>
+                <p>Förväntat resultat: Felmeddelande om att längden måste vara större än 0</p>
+
+                <h3>Dokumentera testningen</h3>
+                <p>Det är bra att skriva ner dina tester. Då ser du tydligt vad du har testat, vilka fel du hittat och
+                    vad du behöver ändra.</p>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Testa både rätt och fel värden</li>
+                    <li>Testa flera olika situationer</li>
+                    <li>Ändra en sak i taget om något går fel</li>
+                </ul>
+
+                <h3>Koppling till kursen</h3>
+                <p>När du testar tränar du att hitta syntaxfel, logiska fel, förebygga fel och förbättra
+                    programkvalitet.</p>
+
+                <h3>Övning</h3>
+                <p>Testa ditt program med minst fyra olika testfall. Skriv för varje testfall:</p>
+                <ul>
+                    <li>vilken inmatning du använder</li>
+                    <li>vad du förväntar dig</li>
+                    <li>vad som faktiskt händer</li>
+                </ul>
+                <p>Fundera på om du behöver ändra något i programmet efter testningen.</p>
+            </section>
+
+            <section class="content-section" id="s146">
+                <h2>14.6 Dokumentation</h2>
+                <p>När programmet är klart behöver det dokumenteras. Dokumentation betyder att du beskriver hur
+                    programmet fungerar.</p>
+                <p>Det gör det lättare för dig själv och andra att förstå koden.</p>
+
+                <h3>Varför behövs dokumentation</h3>
+                <p>Dokumentation hjälper dig att</p>
+                <ul>
+                    <li>förklara programmet</li>
+                    <li>visa hur det fungerar</li>
+                    <li>göra koden lättare att förstå senare</li>
+                </ul>
+
+                <h3>Vad kan dokumenteras</h3>
+                <ul>
+                    <li>vad programmet gör</li>
+                    <li>hur programmet används</li>
+                    <li>hur koden är uppbyggd</li>
+                    <li>vilka delar som är viktiga</li>
+                </ul>
+
+                <h3>Kommentarer i kod</h3>
+                <p>Ett vanligt sätt att dokumentera är kommentarer i koden.</p>
+                <pre><code># Hämtar filmens namn från användaren
+namn = entry_namn.get()</code></pre>
+                <p>Du ska inte kommentera varje rad i onödan, utan där kommentarer faktiskt hjälper läsaren.</p>
+
+                <h3>Beskrivning av programmet</h3>
+                <p>Det är också bra att skriva en kort text om programmet, till exempel:</p>
+                <p>Programmet tar emot ett filmnamn och en längd i minuter. Sedan räknar programmet om tiden till timmar
+                    och minuter. Resultatet visas i programmets fönster.</p>
+
+                <h3>Beskrivning av viktiga delar</h3>
+                <p>Du kan förklara viktiga delar, till exempel vad en funktion gör, hur fel hanteras och hur resultat
+                    visas.</p>
+                <p>Exempel: Funktionen berakna() läser in värden, kontrollerar längden och visar resultatet i fönstret.
+                </p>
+
+                <h3>Vad bra dokumentation kännetecknas av</h3>
+                <p>Bra dokumentation är</p>
+                <ul>
+                    <li>tydlig</li>
+                    <li>kortfattad</li>
+                    <li>relevant</li>
+                    <li>lätt att förstå</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Skriv så att en annan elev förstår</li>
+                    <li>Förklara viktiga delar</li>
+                    <li>Håll dokumentationen enkel och tydlig</li>
+                </ul>
+
+                <h3>Koppling till kursen</h3>
+                <p>När du dokumenterar tränar du god struktur, tydlig kommunikation och förståelse för kodens
+                    uppbyggnad.</p>
+
+                <h3>Övning</h3>
+                <p>Dokumentera ditt program. Skriv:</p>
+                <ul>
+                    <li>en kort beskrivning av vad programmet gör</li>
+                    <li>kommentarer till viktiga delar i koden</li>
+                    <li>en förklaring av hur användaren använder programmet</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="s147">
+                <h2>14.7 Redovisning</h2>
+                <p>När ett program är klart ska det ofta redovisas.</p>
+                <p>Redovisning betyder att du visar upp ditt arbete och förklarar hur du har tänkt.</p>
+                <p>Det handlar inte bara om att visa att programmet fungerar, utan också om att beskriva hur du
+                    planerade, byggde, testade och förbättrade programmet.</p>
+
+                <h3>Varför redovisning är viktigt</h3>
+                <p>En redovisning hjälper dig att</p>
+                <ul>
+                    <li>visa vad du har gjort</li>
+                    <li>förklara hur programmet fungerar</li>
+                    <li>visa hur du har löst problem</li>
+                    <li>visa att du förstår din egen kod</li>
+                </ul>
+
+                <h3>Vad en redovisning kan innehålla</h3>
+                <ul>
+                    <li>vad programmet gör</li>
+                    <li>vem programmet är gjort för</li>
+                    <li>vilka krav du utgick från</li>
+                    <li>hur du designade programmet</li>
+                    <li>hur du implementerade det</li>
+                    <li>hur du testade det</li>
+                    <li>vilka problem du stötte på</li>
+                    <li>hur du löste dem</li>
+                </ul>
+
+                <h3>Beskriv projektet</h3>
+                <p>Exempel:</p>
+                <p>Jag har gjort ett filmprogram i Tkinter. Användaren kan skriva in en films namn och dess längd i
+                    minuter. Programmet räknar om tiden till timmar och minuter och visar resultatet i fönstret.</p>
+
+                <h3>Beskriv din planering</h3>
+                <p>Exempel:</p>
+                <p>Först planerade jag vad programmet skulle göra. Sedan skrev jag en kravspecifikation. Efter det
+                    gjorde jag en enkel design där jag bestämde vilka delar programmet skulle ha.</p>
+
+                <h3>Beskriv hur programmet fungerar</h3>
+                <p>Exempel:</p>
+                <p>Programmet har två inmatningsfält och två knappar. En knapp används för att räkna ut resultatet. Den
+                    andra används för att rensa fälten. Programmet kontrollerar också om användaren skriver fel.</p>
+
+                <h3>Beskriv problem och lösningar</h3>
+                <p>Exempel:</p>
+                <p>Ett problem var att användaren kunde skriva bokstäver i längdfältet. Det löste jag med try/except.
+                </p>
+                <p>Ett annat problem var att användaren kunde lämna filmnamnet tomt. Det löste jag med en kontroll som
+                    visar ett felmeddelande.</p>
+
+                <h3>Beskriv testningen</h3>
+                <p>Exempel:</p>
+                <p>Jag testade både korrekta och felaktiga värden. Jag testade till exempel ett vanligt tal, ett
+                    negativt tal, text i längdfältet och tomt namn.</p>
+
+                <h3>Visa förbättringar</h3>
+                <p>Exempel:</p>
+                <p>Om jag skulle fortsätta utveckla programmet skulle jag kunna lägga till en lista med flera filmer.
+                    Jag skulle också kunna spara filmer i en fil.</p>
+
+                <h3>Tips inför redovisning</h3>
+                <ul>
+                    <li>Använd tydliga ord</li>
+                    <li>Visa programmet steg för steg</li>
+                    <li>Förklara varför du gjort vissa val</li>
+                    <li>Var beredd att beskriva hur koden fungerar</li>
+                </ul>
+
+                <h3>Koppling till kursen</h3>
+                <p>När du redovisar tränar du att beskriva projektarbete, visa problemlösning och förklara hur större
+                    program byggs.</p>
+
+                <h3>Övning</h3>
+                <p>Förbered en kort redovisning av ditt program. Ta med:</p>
+                <ul>
+                    <li>vad programmet gör</li>
+                    <li>hur du planerade arbetet</li>
+                    <li>hur programmet är uppbyggt</li>
+                    <li>vilka problem du löste</li>
+                    <li>hur du testade programmet</li>
+                    <li>vad du skulle vilja förbättra vidare</li>
+                </ul>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-13.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Programmering, användare och framtid</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-15.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Programmering i samhället</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>
