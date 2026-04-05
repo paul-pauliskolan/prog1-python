@@ -1,85 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="The Future of the Solar System: Trace the Sun's galactic voyage, future stellar encounters, and the long-term fate of our cosmic home.">
-    <title>Chapter - Space Safari</title>
+        content="Kapitel 18: Arbetssätt i projekt kopplat till Teknik 2 - metodik, planering, testning, dokumentation och projektförslag.">
+    <title>Kapitel 18 - Arbetssätt i projekt kopplat till Teknik 2</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 18: Arbetssätt i projekt kopplat till Teknik 2</h1>
+                <p class="subtitle">I detta kapitel kopplar du programmeringsprojekt till teknikprojekt med fokus på
+                    planering, krav, testning, risker och dokumentation.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s181">18.1 Programmering som del av ett teknikprojekt</a></li>
+                    <li><a href="#s182">18.2 Arbeta i steg</a></li>
+                    <li><a href="#s183">18.3 Problem, krav, design och implementering</a></li>
+                    <li><a href="#s184">18.4 Testning, risker, användare och dokumentation</a></li>
+                    <li><a href="#s185">18.5 Förslag på app/program och checklistor</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s181">
+                <h2>18.1 Programmering som del av ett teknikprojekt</h2>
+                <p>När du arbetar med ett större programmeringsprojekt tränar du inte bara på kod. Du tränar också på
+                    planering, problemlösning, testning, dokumentation och redovisning. Det liknar hur man arbetar i
+                    Teknik 2.</p>
+                <p>I ett teknikprojekt börjar man ofta med ett problem eller ett behov. Programmering blir då ett
+                    verktyg för att skapa en lösning, inte bara en övning i syntax.</p>
+                <p>Exempel på lösningar:</p>
+                <ul>
+                    <li>ett program som räknar ut energiförbrukning</li>
+                    <li>ett bokningssystem</li>
+                    <li>en budgetapp</li>
+                    <li>ett lagerprogram</li>
+                    <li>ett planeringsverktyg för skolarbete</li>
+                </ul>
+            </section>
 
-        <section id="chapter-summary"></section>
+            <section class="content-section" id="s182">
+                <h2>18.2 Arbeta i steg</h2>
+                <p>Ett strukturerat projektarbete i Programmering 1 och Teknik 2 kan delas upp i tydliga steg:</p>
+                <ol>
+                    <li>identifiera ett problem</li>
+                    <li>beskriva behov och användare</li>
+                    <li>planera lösningen</li>
+                    <li>skriva kravspecifikation</li>
+                    <li>göra design</li>
+                    <li>implementera programmet</li>
+                    <li>testa programmet</li>
+                    <li>förbättra programmet</li>
+                    <li>dokumentera arbetet</li>
+                    <li>redovisa resultatet</li>
+                </ol>
+                <p>Det gör arbetet enklare att följa och lättare att utvärdera.</p>
+            </section>
 
-        <section id="chapter-sections"></section>
+            <section class="content-section" id="s183">
+                <h2>18.3 Problem, krav, design och implementering</h2>
 
-        <section id="chapter-videos"></section>
+                <h3>Problem och behov</h3>
+                <p>Ett projekt börjar med att du ser ett behov: något som tar tid, ofta blir fel eller kan göras
+                    enklare med ett program.</p>
+                <p>Exempel:</p>
+                <ul>
+                    <li>En elev vill hålla ordning på sina läxor.</li>
+                    <li>En butik vill räkna ut totalsummor snabbare.</li>
+                </ul>
 
-        <section id="chapter-resources"></section>
+                <h3>Krav och design</h3>
+                <p>När problemet är tydligt formulerat beskriver du vad programmet ska kunna göra i en
+                    kravspecifikation. Därefter planerar du lösningen i designfasen, till exempel med pseudokod,
+                    skisser eller flödesscheman.</p>
 
-        <div class="chapter-nav"></div>
+                <h3>Implementering</h3>
+                <p>Efter planering bygger du programmet. Här använder du det du lärt dig om variabler, villkor,
+                    loopar, funktioner, felhantering och användargränssnitt.</p>
+            </section>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+            <section class="content-section" id="s184">
+                <h2>18.4 Testning, risker, användare och dokumentation</h2>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Testning och förbättring</h3>
+                <p>Det räcker inte att programmet nästan fungerar. Testa både rätt och fel inmatning, kontrollera att
+                    resultatet är rimligt och att programmet är lätt att förstå.</p>
+
+                <h3>Risker och rimlighet</h3>
+                <p>I Teknik 2 ingår risk- och kvalitetsarbete. Samma sak gäller här:</p>
+                <ul>
+                    <li>Vad händer vid fel inmatning?</li>
+                    <li>Vad händer om programmet räknar fel?</li>
+                    <li>Kan information visas eller sparas på fel sätt?</li>
+                    <li>Verkar resultatet rimligt?</li>
+                </ul>
+
+                <h3>Användare och tillgänglighet</h3>
+                <p>Programmet ska fungera för den som ska använda det. Fundera på tydlighet i instruktioner,
+                    felmeddelanden, knappar och texter.</p>
+
+                <h3>Dokumentation och redovisning</h3>
+                <p>När projektet är klart ska du dokumentera:</p>
+                <ul>
+                    <li>vilket problem du löste</li>
+                    <li>hur du planerade och byggde programmet</li>
+                    <li>hur du testade och förbättrade lösningen</li>
+                    <li>vad resultatet blev</li>
+                </ul>
+                <p>Det här knyter ihop arbetet med Teknik 2: metodik, tillämpning, kvalitet, dokumentation och
+                    presentation.</p>
+            </section>
+
+            <section class="content-section" id="s185">
+                <h2>18.5 Förslag på app/program och checklistor</h2>
+
+                <h3>Innan projektet</h3>
+                <ul>
+                    <li>välj problem eller behov</li>
+                    <li>bestäm användare och syfte</li>
+                    <li>skriv kravspecifikation</li>
+                    <li>planera steg för steg och gör pseudokod/skiss</li>
+                    <li>skapa projektmapp och repository på GitHub</li>
+                    <li>skriv en enkel README.md på engelska</li>
+                </ul>
+
+                <h3>Under projektet</h3>
+                <ul>
+                    <li>bygg en enkel fungerande version först</li>
+                    <li>testa varje del innan du går vidare</li>
+                    <li>använd tydliga namn och kommentera vid behov</li>
+                    <li>använd felhantering där det behövs</li>
+                    <li>gör rimlighetsbedömningar av resultat</li>
+                    <li>spara och ladda upp nya versioner ofta</li>
+                    <li>skriv tydliga commit-kommentarer på engelska</li>
+                </ul>
+                <p><strong>Viktigt:</strong> ladda upp en ny version varje programmeringstillfälle, minst varje dag du
+                    kodar.</p>
+
+                <h3>Efter projektet</h3>
+                <ul>
+                    <li>testa hela programmet med flera testfall</li>
+                    <li>dokumentera förväntat resultat och faktiskt resultat</li>
+                    <li>rätta kvarvarande fel</li>
+                    <li>kontrollera att programmet uppfyller krav</li>
+                    <li>färdigställ README.md på engelska</li>
+                    <li>förbered redovisning</li>
+                </ul>
+
+                <h3>Kort checklista</h3>
+                <p><strong>Innan:</strong> problem, syfte, användare, krav, planering, pseudokod, GitHub.</p>
+                <p><strong>Under:</strong> koda stegvis, testa ofta, spara versioner, skriv commits, förbättra.</p>
+                <p><strong>Efter:</strong> sluttesta, dokumentera, rätta fel, ladda upp slutversion, redovisa.</p>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-17.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Tkinter-app till Mac-app med PyInstaller</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-19.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Appendix - förslag till projekt</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

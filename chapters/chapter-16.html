@@ -1,85 +1,296 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="The Local Arm and Beyond: Find our place in the Milky Way's spiral structure, from the Orion Arm to the galactic center and dark matter halo.">
-    <title>Chapter - Space Safari</title>
+        content="Kapitel 16: Versionshantering och GitHub - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 16 - Versionshantering och GitHub</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 16: Versionshantering och GitHub</h1>
+                <p class="subtitle">I detta kapitel lär du dig grunderna i versionshantering, hur du laddar upp
+                    Pythonfiler till GitHub och hur du skriver en tydlig README.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s161">16.1 Vad är versionshantering</a></li>
+                    <li><a href="#s162">16.2 Ladda upp Pythonfiler till GitHub</a></li>
+                    <li><a href="#s163">16.3 README.md</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s161">
+                <h2>16.1 Vad är versionshantering</h2>
+                <p>När man programmerar ändras koden ofta många gånger.</p>
+                <p>Man testar nya lösningar, rättar fel och bygger vidare steg för steg.</p>
+                <p>Därför är det viktigt att kunna spara olika versioner av sitt program.</p>
+                <p>I det här kapitlet får du lära dig vad versionshantering är, hur GitHub kan användas och hur du
+                    laddar upp Pythonfiler till ett repository.</p>
 
-        <section id="chapter-summary"></section>
+                <h3>Commit-kommentarer på engelska</h3>
+                <p>I den här kursen ska commit-kommentarer skrivas på engelska.</p>
+                <p>Det gör att du vänjer dig vid ett arbetssätt som är vanligt inom programmering.</p>
+                <p>Många verktyg, guider och projekt i GitHub använder engelska.</p>
+                <p>Därför är det bra att redan från början träna på att skriva tydliga kommentarer på engelska.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>Exempel på bra commit-kommentarer</h3>
+                <pre><code>Create first version of the program
+Add menu for user choices
+Fix input error for numbers
+Add function for calculating average
+Improve error handling with try-except</code></pre>
 
-        <section id="chapter-videos"></section>
+                <h3>Viktigt att tänka på</h3>
+                <p>En commit-kommentar ska vara</p>
+                <ul>
+                    <li>kort</li>
+                    <li>tydlig</li>
+                    <li>konkret</li>
+                </ul>
+                <p>Den ska berätta vad du har ändrat.</p>
 
-        <section id="chapter-resources"></section>
+                <h3>Undvik sådana kommentarer</h3>
+                <pre><code>stuff
+update
+new
+fix</code></pre>
+                <p>De är för otydliga och berättar inte vad som faktiskt ändrades.</p>
 
-        <div class="chapter-nav"></div>
+                <h3>En enkel modell</h3>
+                <p>Du kan skriva:</p>
+                <p><strong>Verb + what you changed</strong></p>
+                <pre><code>Add menu
+Fix loop condition
+Create function for input
+Improve print output</code></pre>
+            </section>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+            <section class="content-section" id="s162">
+                <h2>16.2 Ladda upp Pythonfiler till GitHub</h2>
+                <p>När du har skapat ett repository på GitHub kan du börja ladda upp dina Pythonfiler.</p>
+                <p>I den här kursen räcker det att du använder GitHub direkt i webbläsaren.</p>
+                <p>Du behöver alltså inte börja med terminalkommandon.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>Vad du behöver</h3>
+                <p>Innan du börjar behöver du</p>
+                <ul>
+                    <li>ett GitHub-konto</li>
+                    <li>ett repository</li>
+                    <li>en eller flera Pythonfiler på datorn</li>
+                </ul>
+                <p>Vanliga filer i den här kursen är till exempel</p>
+                <pre><code>main.py
+uppgift1.py
+spel.py</code></pre>
+
+                <h3>Skapa ett repository</h3>
+                <p>Ett repository är projektets mapp på GitHub.</p>
+                <p>Så här gör du:</p>
+                <ol>
+                    <li>Gå till GitHub</li>
+                    <li>Logga in på ditt konto</li>
+                    <li>Klicka på New eller välj Create new repository</li>
+                    <li>Skriv ett namn på projektet, till exempel python-uppgifter</li>
+                    <li>Välj om projektet ska vara Public eller Private</li>
+                    <li>Klicka på Create repository</li>
+                </ol>
+
+                <h3>Ladda upp en Pythonfil</h3>
+                <p>När ditt repository är skapat kan du ladda upp dina filer:</p>
+                <ol>
+                    <li>Öppna ditt repository</li>
+                    <li>Klicka på Add file</li>
+                    <li>Välj Upload files</li>
+                    <li>Dra in din py-fil eller klicka på choose your files</li>
+                    <li>Kontrollera att rätt fil har valts</li>
+                    <li>Skriv en commit-kommentar på engelska</li>
+                    <li>Klicka på Commit changes</li>
+                </ol>
+                <p>Nu finns filen sparad på GitHub.</p>
+
+                <h3>Exempel</h3>
+                <p>Du har gjort ett program som heter main.py.</p>
+                <p>En bra commit-kommentar kan vara:</p>
+                <pre><code>Add first version of main.py</code></pre>
+
+                <h3>Ladda upp en ny version av samma fil</h3>
+                <p>Viktigt: Ladda upp en ny version varje programmeringstillfälle, hellre en gång för mycket än en gång
+                    för lite. Minst varje dag du kodar.</p>
+                <p>Om du har ändrat filen på din dator kan du ladda upp den igen.</p>
+                <p>GitHub sparar då den nya versionen och visar att en förändring har gjorts.</p>
+                <p>Skriv alltid en ny commit-kommentar som förklarar vad du ändrat, till exempel:</p>
+                <pre><code>Add input for user name
+Fix error in while loop
+Improve print output</code></pre>
+
+                <h3>Redigera filer direkt på GitHub</h3>
+                <p>Du kan också ändra en fil direkt på GitHub, vilket passar bäst för små ändringar.</p>
+                <ol>
+                    <li>Öppna filen i ditt repository</li>
+                    <li>Klicka på pennan för att redigera filen</li>
+                    <li>Ändra i koden</li>
+                    <li>Scrolla ner på sidan</li>
+                    <li>Skriv en commit-kommentar på engelska</li>
+                    <li>Klicka på Commit changes</li>
+                </ol>
+
+                <h3>Vad du ska ladda upp</h3>
+                <p>I den här kursen räcker det oftast att du laddar upp</p>
+                <ul>
+                    <li>py-filer</li>
+                    <li>eventuellt en README.md</li>
+                    <li>andra filer som hör till projektet</li>
+                </ul>
+                <p>Det viktigaste är att din Pythonkod finns sparad i repositoryt.</p>
+
+                <h3>Arbeta steg för steg</h3>
+                <p>Det är bättre att ladda upp koden ofta än att vänta tills allt är klart.</p>
+                <p>Ett bra arbetssätt är:</p>
+                <ol>
+                    <li>skriv en del av programmet</li>
+                    <li>testa att det fungerar</li>
+                    <li>ladda upp filen</li>
+                    <li>skriv en tydlig commit-kommentar</li>
+                    <li>fortsätt sedan med nästa del</li>
+                </ol>
+
+                <h3>Vanliga misstag</h3>
+                <p>Vanliga misstag är att</p>
+                <ul>
+                    <li>ladda upp fel fil</li>
+                    <li>glömma att skriva en tydlig commit-kommentar</li>
+                    <li>vänta för länge mellan uppladdningarna</li>
+                    <li>skriva över fungerande kod utan att ha sparat en tidigare version</li>
+                </ul>
+                <p>Därför är det bra att arbeta i små steg.</p>
+            </section>
+
+            <section class="content-section" id="s163">
+                <h2>16.3 README.md</h2>
+                <p>I många projekt på GitHub finns en fil som heter README.md.</p>
+                <p>Det är ofta den första filen man ser när man öppnar ett repository.</p>
+                <p>README-filen används för att förklara vad projektet är och hur det fungerar.</p>
+
+                <h3>Vad betyder README</h3>
+                <p>Namnet README betyder ungefär las detta forst.</p>
+                <p>Det är alltså en fil som hjälper andra att snabbt förstå projektet.</p>
+
+                <h3>Vad betyder .md</h3>
+                <p>Filändelsen md står för Markdown.</p>
+                <p>Markdown är ett enkelt sätt att formatera text med rubriker, listor och länkar.</p>
+
+                <h3>Varför README är viktig</h3>
+                <p>En README gör projektet lättare att förstå.</p>
+                <p>Den hjälper andra att se</p>
+                <ul>
+                    <li>vad programmet gör</li>
+                    <li>vem projektet är till för</li>
+                    <li>hur man startar programmet</li>
+                    <li>vad filerna används till</li>
+                </ul>
+
+                <h3>README ska skrivas på engelska</h3>
+                <p>I den här kursen ska README-filen skrivas på engelska.</p>
+                <p>GitHub används ofta i internationella sammanhang, så det är bra att träna på enkel och tydlig
+                    projektinformation på engelska.</p>
+
+                <h3>Vad kan stå i en enkel README</h3>
+                <p>I Programmering 1 behöver README-filen inte vara lång eller avancerad.</p>
+                <p>Det räcker med enkel information som hjälper någon att förstå projektet, till exempel:</p>
+                <ul>
+                    <li>project title</li>
+                    <li>short description</li>
+                    <li>how to run the program</li>
+                    <li>files in the project</li>
+                    <li>author</li>
+                </ul>
+
+                <h3>Exempel på innehåll</h3>
+                <pre><code># Movie Program
+
+This program lets the user enter the name of a movie and its length in minutes.
+The program then shows the movie title and converts the time into hours and minutes.
+
+## How to run
+Run the file main.py in Python.
+
+## Files
+main.py - the main program
+README.md - information about the project
+
+## Author
+Paul</code></pre>
+
+                <h3>Vad som passar i den här kursen</h3>
+                <p>För elever i Programmering 1 räcker det ofta att README-filen innehåller:</p>
+                <ul>
+                    <li>en rubrik med projektets namn</li>
+                    <li>en kort beskrivning av programmet</li>
+                    <li>hur man startar programmet</li>
+                    <li>vilka filer som finns</li>
+                    <li>författarens namn</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <p>Skriv kort och tydligt. Använd enkel engelska.</p>
+                <p>Det viktigaste är att någon annan kan förstå vad projektet handlar om.</p>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-15.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Programmering i samhället</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-17.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Tkinter-app till Mac-app</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>

@@ -1,85 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="The Stellar Life Cycle in Orion: Witness stellar birth, aging giants like Betelgeuse, and supernova remnants in the Orion molecular cloud complex.">
-    <title>Chapter - Space Safari</title>
+        content="Kapitel 17: Gör en Tkinter-app till en Mac-app med PyInstaller - komplett kapitel med innehållsförteckning.">
+    <title>Kapitel 17 - Tkinter-app till Mac-app</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL7KJ6J4ZZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-SL7KJ6J4ZZ');
-    </script>
 </head>
 
 <body class="chapter-page">
-    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="../index.html" class="logo">🌌 Space Safari</a>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-        <a href="../index.html" class="menu-close" id="menu-close">✕</a>
-        <h2>All Chapters</h2>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
         <nav class="chapter-menu" id="chapters-menu"></nav>
-    </div>
+    </aside>
 
-    <main class="container chapter-page">
-        <header>
-            <h1><a href="../index.html" style="color: var(--accent); text-decoration: none;">🌌 Space Safari</a></h1>
-        </header>
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Programmering nivå 1 med Python</p>
+                <h1>Kapitel 17: Gör en Tkinter-app till en Mac-app med PyInstaller</h1>
+                <p class="subtitle">I detta kapitel lär du dig steg för steg hur du paketerar ett Tkinter-program till
+                    en körbar Mac-app.</p>
+            </header>
 
-        <div class="chapter-header"></div>
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehållsförteckning</h2>
+                    <p class="section-note">Klicka på ett avsnitt för att hoppa direkt.</p>
+                </div>
+                <ul>
+                    <li><a href="#s171">17.1 Steg för steg med PyInstaller</a></li>
+                    <li><a href="#s172">17.2 Exempel</a></li>
+                    <li><a href="#s173">17.3 Bra att veta</a></li>
+                </ul>
+            </section>
 
-        <section class="book-promo">
-            <p>📖 Reading a free preview? <a href="../index.html">Get the full Space Safari book on Kindle</a></p>
-        </section>
+            <section class="content-section" id="s171">
+                <h2>17.1 Steg för steg med PyInstaller</h2>
 
-        <section id="chapter-summary"></section>
+                <h3>1. Kontrollera att programmet fungerar</h3>
+                <p>Börja med att testa din Pythonfil som vanligt.</p>
+                <pre><code>python3 main.py</code></pre>
+                <p>Programmet ska fungera innan du försöker göra en app.</p>
 
-        <section id="chapter-sections"></section>
+                <h3>2. Öppna Terminal</h3>
+                <p>Öppna Terminal på din Mac och gå till mappen där din Pythonfil finns.</p>
+                <pre><code>cd ~/Desktop/minapp</code></pre>
+                <p>Står du i mappen Programmering 1 kan du till exempel skriva:</p>
+                <pre><code>cd "kap 16"</code></pre>
+                <p>Med kommandot ls kan du kontrollera att du är i rätt mapp.</p>
 
-        <section id="chapter-videos"></section>
+                <h3>3. Installera PyInstaller</h3>
+                <pre><code>pip3 install pyinstaller</code></pre>
+                <p>Om det inte fungerar kan du prova:</p>
+                <pre><code>python3 -m pip install pyinstaller</code></pre>
 
-        <section id="chapter-resources"></section>
+                <h3>4. Kontrollera att PyInstaller är installerat</h3>
+                <pre><code>python3 -m PyInstaller --version</code></pre>
+                <p>Om det inte fungerar, prova:</p>
+                <pre><code>pyinstaller --version</code></pre>
+                <p>Om du får ett versionsnummer är allt klart.</p>
 
-        <div class="chapter-nav"></div>
+                <h3>5. Bygg appen</h3>
+                <p>Om din fil heter main.py:</p>
+                <pre><code>python3 -m PyInstaller --windowed --onedir main.py</code></pre>
+                <p>Detta betyder:</p>
+                <ul>
+                    <li>--windowed: appen öppnas utan terminalfönster</li>
+                    <li>--onedir: appen byggs som en mapp med allt den behöver</li>
+                </ul>
+                <p>På macOS skapas då både en körbar fil och en app i dist-mappen.</p>
 
-        <section class="cta-section">
-            <h2>Continue the Journey</h2>
-            <p>You've explored a preview of Space Safari. Discover all 22 chapters and dive deeper into our cosmic
-                neighborhood.</p>
-            <a href="../index.html" class="cta-button">Explore the Full Book on Kindle</a>
-        </section>
+                <h3>6. Hitta appen</h3>
+                <p>När byggandet är klart får du normalt mapparna:</p>
+                <pre><code>build
+dist
+main.spec</code></pre>
+                <p>Gå in i dist-mappen. Där ska du hitta något i stil med:</p>
+                <pre><code>main.app</code></pre>
+                <p>Det är din Mac-app.</p>
 
-        <footer>
-            <p><a href="../index.html">← Back to All Chapters</a></p>
-            <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">© Paul Belfrage. All rights
-                reserved except when clearly stated.</p>
-        </footer>
+                <h3>7. Starta appen</h3>
+                <p>Dubbelklicka på appen i Finder.</p>
+                <p>Om macOS varnar för okänd utvecklare kan du behöva:</p>
+                <ul>
+                    <li>högerklicka på appen</li>
+                    <li>välja Öppna</li>
+                    <li>välja Öppna igen</li>
+                </ul>
+
+                <h3>8. Bygg med eget namn</h3>
+                <pre><code>pyinstaller --windowed --onedir --name Filminfo main.py</code></pre>
+                <p>Då blir appen:</p>
+                <pre><code>Filminfo.app</code></pre>
+
+                <h3>9. Lägg till ikon</h3>
+                <p>Om du har en ikonfil i icns-format:</p>
+                <pre><code>pyinstaller --windowed --onedir --name Filminfo --icon ikon.icns main.py</code></pre>
+
+                <h3>10. Viktigt för macOS</h3>
+                <p>Bygg appen på en Mac.</p>
+                <p>En Mac-app bör byggas på samma typ av system som den ska köras på.</p>
+
+                <h3>11. Använd inte detta som första val på Mac</h3>
+                <pre><code>pyinstaller --onefile --windowed main.py</code></pre>
+                <p>Det fungerar ibland, men rekommenderas inte som förstahandsval för macOS-appbundles.</p>
+
+                <h3>12. Om appen inte fungerar</h3>
+                <p>Vanliga problem är:</p>
+                <ul>
+                    <li>fel Python-miljö</li>
+                    <li>saknade filer som programmet använder</li>
+                    <li>fel sökvägar till bilder eller andra resurser</li>
+                    <li>att man byggt innan programmet fungerade färdigt</li>
+                </ul>
+                <p>Om appen kraschar direkt, testa först att köra py-filen normalt igen.</p>
+
+                <h3>13. Om programmet använder bilder eller andra filer</h3>
+                <p>Om din Tkinter-app använder bilder, textfiler, json-filer eller andra resurser kan de behöva läggas
+                    till särskilt i bygget.</p>
+                <p>Då kan extra PyInstaller-inställningar eller en spec-fil behövas.</p>
+
+                <h3>14. Enkel standardmodell</h3>
+                <pre><code>python3 -m pip install pyinstaller
+cd sökväg/till/mappen
+python3 -m PyInstaller --windowed --onedir main.py</code></pre>
+
+                <h3>15. Sammanfattning</h3>
+                <p>Gör så här:</p>
+                <ol>
+                    <li>testa att Pythonprogrammet fungerar</li>
+                    <li>installera PyInstaller</li>
+                    <li>öppna Terminal i rätt mapp</li>
+                    <li>kör pyinstaller med --windowed och --onedir</li>
+                    <li>öppna app-filen i dist</li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="s172">
+                <h2>17.2 Exempel</h2>
+                <p>Om du har filen filmapp.py, kan du till exempel skriva:</p>
+                <pre><code>python3 -m PyInstaller --windowed --onedir main.py</code></pre>
+                <p>Då får du en app i dist-mappen, till exempel:</p>
+                <pre><code>dist/FilmApp.app</code></pre>
+            </section>
+
+            <section class="content-section" id="s173">
+                <h2>17.3 Bra att veta</h2>
+                <p>PyInstaller analyserar ditt program och samlar med Python-tolk och beroenden i paketet.</p>
+                <p>Det är därför mottagaren oftast inte behöver installera Python separat för att köra appen.</p>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-16.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Föregående kapitel</div>
+                        <div class="nav-title">Versionshantering och GitHub</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="#top" class="nav-button">
+                    <div>
+                        <div class="nav-label">Till toppen</div>
+                        <div class="nav-title">Innehållsförteckning</div>
+                    </div>
+                    <div aria-hidden="true">↑</div>
+                </a>
+                <a href="chapter-18.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Arbetssätt i projekt kopplat till Teknik 2</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
     </main>
 
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a> · <a href="../preview.html">Till kapitellistan</a></p>
+    </footer>
+
     <script src="../js/main.js"></script>
-    <script>
-        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
-        if (match) {
-            const chapterNumber = parseInt(match[1])
-            const interval = setInterval(() => {
-                if (window.spacesafari && window.spacesafari.getChapter(chapterNumber)) {
-                    clearInterval(interval)
-                    window.spacesafari.renderChapterPage(chapterNumber)
-                }
-            }, 100)
-        }
-    </script>
 </body>
 
 </html>
