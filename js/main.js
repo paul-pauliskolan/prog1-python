@@ -51,6 +51,15 @@ function injectGoogleCse() {
 
   const menuToggle = document.getElementById("menu-toggle");
 
+  const searchToggle = document.createElement("button");
+  searchToggle.type = "button";
+  searchToggle.className = "search-toggle";
+  searchToggle.id = "search-toggle";
+  searchToggle.setAttribute("aria-label", "Visa eller dölj sökfält");
+  searchToggle.setAttribute("aria-controls", "google-cse-wrap");
+  searchToggle.setAttribute("aria-expanded", "false");
+  searchToggle.textContent = "🔍";
+
   const wrapper = document.createElement("section");
   wrapper.className = "site-search";
   wrapper.id = "google-cse-wrap";
@@ -64,9 +73,16 @@ function injectGoogleCse() {
 
   wrapper.append(script, search);
 
+  searchToggle.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("mobile-search-open");
+    searchToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
   if (menuToggle) {
+    navbar.insertBefore(searchToggle, menuToggle);
     navbar.insertBefore(wrapper, menuToggle);
   } else {
+    navbar.appendChild(searchToggle);
     navbar.appendChild(wrapper);
   }
 }
@@ -79,6 +95,15 @@ function setupMenuToggle() {
 
   if (menuToggle) {
     menuToggle.addEventListener("click", () => {
+      const navbar = document.querySelector(".navbar");
+      const searchToggle = document.getElementById("search-toggle");
+      if (navbar) {
+        navbar.classList.remove("mobile-search-open");
+      }
+      if (searchToggle) {
+        searchToggle.setAttribute("aria-expanded", "false");
+      }
+
       if (sideMenu.classList.contains("active")) {
         closeMenu();
       } else {

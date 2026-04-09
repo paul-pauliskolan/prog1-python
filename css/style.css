@@ -201,6 +201,7 @@ ol {
 }
 
 .menu-toggle,
+.search-toggle,
 .menu-close,
 .primary-link,
 .secondary-link,
@@ -223,17 +224,43 @@ ol {
   margin-left: auto;
 }
 
+.search-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.search-toggle:hover {
+  background: rgba(123, 211, 137, 0.12);
+}
+
 @media (max-width: 760px) {
   .navbar {
     flex-wrap: wrap;
     gap: 0.65rem;
   }
 
+  .search-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
   .site-search {
     order: 3;
+    display: none;
     flex: 1 0 100%;
     max-width: none;
     margin-right: 0;
+  }
+
+  .navbar.mobile-search-open .site-search {
+    display: block;
   }
 
   .site-search .gsc-results-wrapper-visible,
