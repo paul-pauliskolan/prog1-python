@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadChaptersData();
   setupMenuToggle();
   applyBranding();
+  injectGoogleCse();
 });
 
 function applyBranding() {
@@ -35,6 +36,38 @@ function applyBranding() {
   );
   if (chapterHomeTitle) {
     chapterHomeTitle.textContent = `🐍 ${BOOK_SHORT_TITLE}`;
+  }
+}
+
+function injectGoogleCse() {
+  if (document.getElementById("google-cse-wrap")) {
+    return;
+  }
+
+  const navbar = document.querySelector(".navbar");
+  if (!navbar) {
+    return;
+  }
+
+  const menuToggle = document.getElementById("menu-toggle");
+
+  const wrapper = document.createElement("section");
+  wrapper.className = "site-search";
+  wrapper.id = "google-cse-wrap";
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://cse.google.com/cse.js?cx=43ae7d3150a604896";
+
+  const search = document.createElement("div");
+  search.className = "gcse-search";
+
+  wrapper.append(script, search);
+
+  if (menuToggle) {
+    navbar.insertBefore(wrapper, menuToggle);
+  } else {
+    navbar.appendChild(wrapper);
   }
 }
 

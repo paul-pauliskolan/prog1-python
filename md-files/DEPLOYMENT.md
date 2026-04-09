@@ -1,6 +1,6 @@
-# Space Safari - Deployment Guide
+# Programmering nivå 1 med Python - Deployment Guide
 
-Quick start guide for getting your Space Safari companion website online.
+Quick start guide for getting your Programmering nivå 1 med Python companion website online.
 
 ## Quick Deploy Options
 
@@ -9,7 +9,7 @@ Quick start guide for getting your Space Safari companion website online.
 **No account needed for instant deployment:**
 
 1. Go to [netlify.com/drop](https://netlify.com/drop)
-2. Drag and drop the entire "Space Safari" folder
+2. Drag and drop the entire "Programmering nivå 1 med Python" folder
 3. Your site is live! (You get a free subdomain)
 
 **To keep it permanent:**
@@ -23,7 +23,7 @@ Quick start guide for getting your Space Safari companion website online.
 **If you use GitHub:**
 
 1. Create a new repository (name it `your-username.github.io` or `spacesafari`)
-2. Push the Space Safari folder contents to the repo
+2. Push the Programmering nivå 1 med Python folder contents to the repo
 3. Go to Settings → Pages
 4. Select "Deploy from branch" → main branch
 5. Site appears at `your-username.github.io` or repo URL
@@ -103,7 +103,7 @@ Value: your-netlify-domain.netlify.app
 **Python 3 (simplest):**
 
 ```bash
-cd "/Users/paul/Space Safari"
+cd "/Users/paul/Prog 1 Python SS"
 python -m http.server 8000
 # Visit http://localhost:8000
 ```
@@ -118,7 +118,7 @@ npx http-server Space\ Safari
 **macOS with Ruby:**
 
 ```bash
-cd "/Users/paul/Space Safari"
+cd "/Users/paul/Prog 1 Python SS"
 ruby -run -ehttpd . -p8000
 # Visit http://localhost:8000
 ```
@@ -131,7 +131,7 @@ Ensure these files are included:
 - ✅ `css/style.css` - Stylesheet
 - ✅ `js/main.js` - JavaScript
 - ✅ `data/chapters.json` - Chapter data
-- ✅ `chapters/chapter-1.html` through `chapter-22.html` - All chapter pages
+- ✅ `chapters/chapter-1.html` through `chapter-19.html` - All chapter pages
 - ✅ `assets/images/` - Image directory (can be empty initially)
 
 ## Post-Deployment Checklist
@@ -284,4 +284,4 @@ Create `netlify.toml` in root:
 
 ---
 
-**Happy deploying!** Your Space Safari companion website is now ready to help readers explore the cosmos! 🚀
+**Happy deploying!** Your Programmering nivå 1 med Python companion website is now ready to help readers explore the cosmos! 🚀

@@ -1,8 +1,8 @@
-# Space Safari - Simplified Companion Website
+# Programmering nivå 1 med Python - Simplified Companion Website
 
 ## What You Have
 
-A clean, simple companion website for "Space Safari: A Journey Through Our Cosmic Neighborhood"
+A clean, simple companion website for "Programmering nivå 1 med Python: A Journey Through Our Cosmic Neighborhood"
 
 - **Homepage** - Simple intro + list of all 22 chapters
 - **Chapter Pages** - Each chapter shows:
@@ -18,7 +18,7 @@ A clean, simple companion website for "Space Safari: A Journey Through Our Cosmi
 ### Run Locally
 
 ```bash
-cd "/Users/paul/Space Safari"
+cd "/Users/paul/Prog 1 Python SS"
 python -m http.server 8000
 ```
 

@@ -1,8 +1,8 @@
-# ✅ Space Safari - Simplified Version Complete
+# ✅ Programmering nivå 1 med Python - Simplified Version Complete
 
 ## What's Done
 
-The Space Safari companion website has been **completely simplified** and is ready to use!
+The Programmering nivå 1 med Python companion website has been **completely simplified** and is ready to use!
 
 ### The Site Now Has:
 
@@ -44,7 +44,7 @@ Core files (tiny!):
 ## Try It Now
 
 ```bash
-cd "/Users/paul/Space Safari"
+cd "/Users/paul/Prog 1 Python SS"
 python -m http.server 8000
 ```
 
@@ -62,7 +62,7 @@ Click on any chapter to see it with:
 ### Easiest: Netlify
 
 1. Go to **drop.netlify.com**
-2. Drag and drop the "Space Safari" folder
+2. Drag and drop the "Programmering nivå 1 med Python" folder
 3. Done! Your site is live.
 
 ### Or use:

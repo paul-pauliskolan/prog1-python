@@ -1,6 +1,6 @@
-# Space Safari - Companion Website
+# Programmering nivå 1 med Python - Companion Website
 
-A beautiful, interactive educational companion website for "Space Safari: A Journey Through Our Cosmic Neighborhood."
+A beautiful, interactive educational companion website for "Programmering nivå 1 med Python: A Journey Through Our Cosmic Neighborhood."
 
 ## Overview
 
@@ -38,7 +38,7 @@ Each chapter page includes:
 ## Site Structure
 
 ```
-Space Safari/
+Programmering nivå 1 med Python/
 ├── index.html                 # Homepage
 ├── css/
 │   └── style.css             # Main stylesheet
@@ -50,7 +50,7 @@ Space Safari/
 │   ├── chapter-template.html # Template for chapter pages
 │   ├── chapter-1.html        # Chapter pages (1-22)
 │   ├── chapter-2.html
-│   └── ... chapter-22.html
+│   └── ... chapter-19.html
 ├── assets/
 │   └── images/               # For custom images/diagrams
 └── README.md                 # This file
@@ -213,7 +213,7 @@ Edit chapter data in `data/chapters.json`:
 ## Credits
 
 - **Site Design & Development**: Educational companion website
-- **Book**: "Space Safari: A Journey Through Our Cosmic Neighborhood"
+- **Book**: "Programmering nivå 1 med Python: A Journey Through Our Cosmic Neighborhood"
 - **Data Sources**: NASA, ESA, academic institutions
 - **Icons & Assets**: Open source and educational
 
@@ -221,7 +221,7 @@ Edit chapter data in `data/chapters.json`:
 
 This companion website is designed to enhance and supplement the original book. When referencing or sharing, please acknowledge:
 
-- The original book "Space Safari: A Journey Through Our Cosmic Neighborhood"
+- The original book "Programmering nivå 1 med Python: A Journey Through Our Cosmic Neighborhood"
 - NASA and ESA for scientific content and imagery
 - All curated educational resources
 

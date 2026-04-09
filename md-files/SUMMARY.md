@@ -1,8 +1,8 @@
-# Space Safari Website - Final Summary
+# Programmering nivå 1 med Python Website - Final Summary
 
 ## ✅ Complete & Ready to Use
 
-Your companion website for "Space Safari: A Journey Through Our Cosmic Neighborhood" is **done** and **simplified**.
+Your companion website for "Programmering nivå 1 med Python: A Journey Through Our Cosmic Neighborhood" is **done** and **simplified**.
 
 ---
 
@@ -55,7 +55,7 @@ Very clean and simple:
 ## File Structure
 
 ```
-Space Safari/
+Programmering nivå 1 med Python/
 ├── index.html                    ← Homepage
 ├── css/
 │   └── style.css               ← All styling
@@ -76,7 +76,7 @@ Space Safari/
 ### Test Locally
 
 ```bash
-cd "/Users/paul/Space Safari"
+cd "/Users/paul/Prog 1 Python SS"
 python -m http.server 8000
 ```
 
@@ -217,7 +217,7 @@ Works on:
 
 ## Success!
 
-Your Space Safari companion website is **complete**, **simple**, **clean**, and **ready to deploy**! 🚀
+Your Programmering nivå 1 med Python companion website is **complete**, **simple**, **clean**, and **ready to deploy**! 🚀
 
 All chapters work, videos are linked, resources are included. Just copy the folder to any web server and you're live.
 

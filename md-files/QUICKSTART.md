@@ -1,8 +1,8 @@
-# 🚀 Space Safari - Quick Start Guide
+# 🚀 Programmering nivå 1 med Python - Quick Start Guide
 
 ## What You Have
 
-A complete, professional static website companion to "Space Safari: A Journey Through Our Cosmic Neighborhood" with:
+A complete, professional static website companion to "Programmering nivå 1 med Python: A Journey Through Our Cosmic Neighborhood" with:
 
 - ✅ Professional homepage with book introduction
 - ✅ 22 fully-featured chapter pages
@@ -17,7 +17,7 @@ A complete, professional static website companion to "Space Safari: A Journey Th
 ### On Mac:
 
 ```bash
-cd "/Users/paul/Space Safari"
+cd "/Users/paul/Prog 1 Python SS"
 python -m http.server 8000
 ```
 
@@ -32,7 +32,7 @@ The site works in your browser. All files are ready to go.
 ### Easiest Option - Netlify Drop
 
 1. Go to [drop.netlify.com](https://drop.netlify.com)
-2. Drag & drop the "Space Safari" folder
+2. Drag & drop the "Programmering nivå 1 med Python" folder
 3. Your site is live!
 
 ### Other Options
@@ -46,10 +46,10 @@ The site works in your browser. All files are ready to go.
 ## File Structure
 
 ```
-Space Safari/
+Programmering nivå 1 med Python/
 ├── index.html              ← Homepage (start here!)
 ├── chapters/               ← 22 chapter pages
-│   └── chapter-1.html through chapter-22.html
+│   └── chapter-1.html through chapter-19.html
 ├── css/
 │   └── style.css          ← All styling
 ├── js/
@@ -66,7 +66,7 @@ Space Safari/
    - Shows all 22 chapters
    - Provides navigation
 
-2. **Chapter Pages** (`chapters/chapter-1.html` → `chapter-22.html`)
+2. **Chapter Pages** (`chapters/chapter-1.html` → `chapter-19.html`)
    - Auto-populated with chapter data from JSON
    - Shows overview, topics, videos, resources
    - Easy navigation between chapters
@@ -186,7 +186,7 @@ A: Edit JSON file, commit, redeploy. Takes 2 minutes.
 **Test it locally first:**
 
 ```bash
-cd "/Users/paul/Space Safari"
+cd "/Users/paul/Prog 1 Python SS"
 python -m http.server 8000
 # Open http://localhost:8000 in your browser
 ```

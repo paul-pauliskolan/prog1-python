@@ -1,4 +1,4 @@
-# Space Safari Website - Feature Showcase
+# Programmering nivå 1 med Python Website - Feature Showcase
 
 ## What's Included
 
@@ -145,7 +145,7 @@ Each chapter page includes:
 **Code Organization**
 
 ```
-Space Safari/
+Programmering nivå 1 med Python/
 ├── index.html          - Semantic HTML with structure
 ├── css/style.css       - All styling (no external libraries)
 ├── js/main.js          - Pure JavaScript, no dependencies

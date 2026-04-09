@@ -1,9 +1,9 @@
-# Space Safari - Visual Navigation Guide
+# Programmering nivå 1 med Python - Visual Navigation Guide
 
 ## Site Map & Navigation Flow
 
 ```
-Space Safari Website Structure
+Programmering nivå 1 med Python Website Structure
 
 HOME (index.html)
 │
@@ -16,7 +16,7 @@ HOME (index.html)
 │    └─── Hamburger Menu (Mobile)
 │
 ├─── HERO SECTION
-│    ├─── Title: "Space Safari"
+│    ├─── Title: "Programmering nivå 1 med Python"
 │    ├─── Subtitle: "A Journey Through Our Cosmic Neighborhood"
 │    └─── CTA Buttons: [Explore Chapters] [Learn More]
 │
@@ -47,7 +47,7 @@ HOME (index.html)
 │    └─ 🔗 Explore Resources
 │
 └─── FOOTER
-     ├─ Space Safari Info
+     ├─ Programmering nivå 1 med Python Info
      ├─ Quick Links
      ├─ Resource Links (NASA, ESA, etc.)
      └─ Educational Links
@@ -60,7 +60,7 @@ CHAPTER PAGE (chapters/chapter-X.html)
 
 ┌─────────────────────────────────────┐
 │ HEADER (Sticky)                      │
-│  🌌 Space Safari | [Menu]            │
+│  🌌 Programmering nivå 1 med Python | [Menu]            │
 └─────────────────────────────────────┘
 
 ┌─────────────────────────────────────┐
@@ -169,7 +169,7 @@ CHAPTER PAGE (chapters/chapter-X.html)
 
 ┌─────────────────────────────────────┐
 │ FOOTER                               │
-│  Space Safari | Quick Links | Res.   │
+│  Programmering nivå 1 med Python | Quick Links | Res.   │
 └─────────────────────────────────────┘
 ```
 
