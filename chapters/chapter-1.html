@@ -252,7 +252,7 @@ print(f"Hej {namn}")</code></pre>
                 <p>När IDLE startar öppnas ett fönster som kallas Python Shell.</p>
                 <figure>
                     <img src="../assets/images/ch1/image4.png" alt="IDLE Shell på macOS">
-                    <figcaption>I Python Shell kan du skriva Pythonkod direkt och köra den direkt.</figcaption>
+                    <figcaption>I Python Shell kan du skriva Pythonkod och köra den direkt.</figcaption>
                 </figure>
 
                 <h3>Python Shell</h3>
@@ -430,7 +430,13 @@ print(f"Hej {namn}")</code></pre>
                 <p>Till exempel:</p>
                 <pre><code>if True:
     print("Detta skrivs ut")</code></pre>
-                <p>Indraget visar att raden hör till instruktionen ovanför. Gör indraget med tab-tangenten.</p>
+                <p>Här rekommenderar jag att du gör indrag med tabtangenten. I Python är standard fyra mellanslag, och i VS Code omvandlas Tab normalt automatiskt till fyra mellanslag. Därför blir indraget korrekt även om du trycker på Tab.</p>
+                <p>Vill du kontrollera detta i VS Code kan du visa osynliga tecken:</p>
+                <ol>
+                    <li>Öppna Settings via Code - Preferences - Settings (eller kortkommandot Cmd + ,).</li>
+                    <li>Sök efter Render Whitespace.</li>
+                    <li>Välj all för att visa alla blanktecken hela tiden.</li>
+                </ol>
                 <p>Om indraget saknas eller är fel kan Python visa ett felmeddelande.</p>
                 <figure>
                     <img src="../assets/images/ch1/image14.png" alt="IndentationError i terminal vid fel indrag">
@@ -497,14 +503,14 @@ print(f"Hej {namn}")</code></pre>
 världen</code></pre>
 
                 <h3>\t - tab</h3>
-                <p><code>\t</code> betyder tabbtecken. Det används för att skapa ett mellanrum som är större än ett
-                    vanligt mellanslag.</p>
+                <p><code>\t</code> betyder tabbtecken. Det används för att hoppa till nästa tabbstopp.</p>
                 <p>Exempel:</p>
                 <pre><code>print("Namn\tÅlder")
 print("Anna\t16")</code></pre>
                 <p>Det kan skrivas ut ungefär så här:</p>
                 <pre><code>Namn        Ålder
 Anna        16</code></pre>
+                <p>Exakt justering kan se olika ut beroende på terminal, editor och typsnitt.</p>
                 <p>Det är användbart när man vill göra enkel uppradning av text.</p>
 
                 <h3>\" - citattecken i text</h3>
@@ -604,7 +610,7 @@ print("Han sa: \"Python är kul\"")</code></pre>
                     <li>sortering av paket</li>
                     <li>analys av data</li>
                     <li>bokningssystem</li>
-                    <li>tradingbotar</li>
+                    <li>tradingbotar (program som automatiskt köper och säljer tillgångar)</li>
                     <li>rekommendationer i streamingtjänster</li>
                 </ul>
                 <p>Automatisering kan göra arbete snabbare och mer effektivt.</p>

@@ -1898,7 +1898,7 @@ I denna kurs använder vi **Python**, som är ett interpreterat programspråk.
 
 ## **1.7 Installera Python på macOS** {#1.7-installera-python-på-macos}
 
-För att kunna skriva och köra Pythonprogram behöver Python vara installerat på datorn. De flesta Mac-datorer har redan en version av Python installerad, men ofta är den äldre och används av operativsystemet. I denna kurs använder vi **Python 3**, därför installerar vi den senaste versionen.
+För att kunna skriva och köra Pythonprogram behöver Python vara installerat på datorn. I denna kurs använder vi **Python 3**, därför installerar vi den senaste versionen.
 
 ### **Steg 1 – Ladda ner Python** {#steg-1-–-ladda-ner-python}
 
