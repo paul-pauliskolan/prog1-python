@@ -43,6 +43,7 @@
                     <li><a href="#s85">8.5 Strukturera program</a></li>
                     <li><a href="#s86">8.6 Större program</a></li>
                     <li><a href="#s87">8.7 Övningar</a></li>
+                    <li><a href="#s87-quiz">Quiz</a></li>
                     <li><a href="#s88">8.8 Reflektionsfrågor</a></li>
                 </ul>
             </section>
@@ -421,6 +422,50 @@ print(f"Produkten är {product_result}")</code></pre>
                     <li>använda funktionerna</li>
                     <li>skriva ut resultatet</li>
                 </ul>
+            </section>
+
+            <section class="content-section" id="s87-quiz">
+                <h2>Quiz</h2>
+                <p>Svara på frågorna och klicka sedan på knappen längst ner för att se hur många rätt du fick.</p>
+                <form class="chapter-quiz">
+                    <fieldset data-correct="a" data-explanation="En funktion är en namngiven koddel som kan användas flera gånger.">
+                        <legend>1. Vad är en funktion?</legend>
+                        <label><input type="radio" name="ch8q1" value="a"> En namngiven koddel som kan återanvändas</label><br>
+                        <label><input type="radio" name="ch8q1" value="b"> Enbart ett felmeddelande</label><br>
+                        <label><input type="radio" name="ch8q1" value="c"> Ett annat ord för lista</label><br>
+                        <label><input type="radio" name="ch8q1" value="d"> En fil som inte kan köras</label>
+                    </fieldset>
+                    <fieldset data-correct="c" data-explanation="def används när man skapar eller definierar en funktion.">
+                        <legend>2. Vilket ord används för att skapa en funktion?</legend>
+                        <label><input type="radio" name="ch8q2" value="a"> if</label><br>
+                        <label><input type="radio" name="ch8q2" value="b"> for</label><br>
+                        <label><input type="radio" name="ch8q2" value="c"> def</label><br>
+                        <label><input type="radio" name="ch8q2" value="d"> print</label>
+                    </fieldset>
+                    <fieldset data-correct="d" data-explanation="En parameter tar emot ett värde som funktionen kan använda.">
+                        <legend>3. Vad är en parameter?</legend>
+                        <label><input type="radio" name="ch8q3" value="a"> En kommentar i koden</label><br>
+                        <label><input type="radio" name="ch8q3" value="b"> Ett terminalkommando</label><br>
+                        <label><input type="radio" name="ch8q3" value="c"> En typ av lista</label><br>
+                        <label><input type="radio" name="ch8q3" value="d"> Ett värde som funktionen tar emot</label>
+                    </fieldset>
+                    <fieldset data-correct="b" data-explanation="return skickar tillbaka ett resultat från funktionen.">
+                        <legend>4. Vad gör <code>return</code>?</legend>
+                        <label><input type="radio" name="ch8q4" value="a"> Avslutar datorn</label><br>
+                        <label><input type="radio" name="ch8q4" value="b"> Skickar tillbaka ett resultat</label><br>
+                        <label><input type="radio" name="ch8q4" value="c"> Skapar en ny mapp</label><br>
+                        <label><input type="radio" name="ch8q4" value="d"> Byter datatyp automatiskt</label>
+                    </fieldset>
+                    <fieldset data-correct="a" data-explanation="Funktioner gör kod lättare att läsa, testa och återanvända.">
+                        <legend>5. Varför är funktioner användbara?</legend>
+                        <label><input type="radio" name="ch8q5" value="a"> De gör kod lättare att återanvända och strukturera</label><br>
+                        <label><input type="radio" name="ch8q5" value="b"> De gör att kod aldrig behöver testas</label><br>
+                        <label><input type="radio" name="ch8q5" value="c"> De ersätter alla variabler</label><br>
+                        <label><input type="radio" name="ch8q5" value="d"> De fungerar bara i IDLE</label>
+                    </fieldset>
+                    <button type="button" class="check-quiz">Rätta quizet</button>
+                    <div class="quiz-result" aria-live="polite"></div>
+                </form>
             </section>
 
             <section class="content-section" id="s88">

@@ -40,6 +40,7 @@
                     <li><a href="#s171">17.1 Steg för steg med PyInstaller</a></li>
                     <li><a href="#s172">17.2 Exempel</a></li>
                     <li><a href="#s173">17.3 Bra att veta</a></li>
+                    <li><a href="#s173-quiz">Quiz</a></li>
                 </ul>
             </section>
 
@@ -162,6 +163,50 @@ python3 -m PyInstaller --windowed --onedir main.py</code></pre>
                 <h2>17.3 Bra att veta</h2>
                 <p>PyInstaller analyserar ditt program och samlar med Python-tolk och beroenden i paketet.</p>
                 <p>Det är därför mottagaren oftast inte behöver installera Python separat för att köra appen.</p>
+            </section>
+
+            <section class="content-section" id="s173-quiz">
+                <h2>Quiz</h2>
+                <p>Svara på frågorna och klicka sedan på knappen längst ner för att se hur många rätt du fick.</p>
+                <form class="chapter-quiz">
+                    <fieldset data-correct="b" data-explanation="PyInstaller kan paketera ett Pythonprogram till en körbar app eller fil.">
+                        <legend>1. Vad används PyInstaller till?</legend>
+                        <label><input type="radio" name="ch17q1" value="a"> Att skriva HTML-tabeller</label><br>
+                        <label><input type="radio" name="ch17q1" value="b"> Att paketera Pythonprogram</label><br>
+                        <label><input type="radio" name="ch17q1" value="c"> Att skapa listor</label><br>
+                        <label><input type="radio" name="ch17q1" value="d"> Att ändra syntaxregler</label>
+                    </fieldset>
+                    <fieldset data-correct="c" data-explanation="Terminalen används för att köra kommandon som installerar och startar PyInstaller.">
+                        <legend>2. Var kör man ofta PyInstaller-kommandon?</legend>
+                        <label><input type="radio" name="ch17q2" value="a"> I en bildfil</label><br>
+                        <label><input type="radio" name="ch17q2" value="b"> I en pappersbok</label><br>
+                        <label><input type="radio" name="ch17q2" value="c"> I Terminalen</label><br>
+                        <label><input type="radio" name="ch17q2" value="d"> I en kommentar</label>
+                    </fieldset>
+                    <fieldset data-correct="a" data-explanation="Man behöver testa appen efter paketering eftersom miljön kan skilja sig från när man kör Pythonfilen direkt.">
+                        <legend>3. Varför ska man testa appen efter paketering?</legend>
+                        <label><input type="radio" name="ch17q3" value="a"> För att kontrollera att den fungerar som app</label><br>
+                        <label><input type="radio" name="ch17q3" value="b"> För att ta bort källkoden</label><br>
+                        <label><input type="radio" name="ch17q3" value="c"> För att undvika alla filer</label><br>
+                        <label><input type="radio" name="ch17q3" value="d"> För att ändra Python till Java</label>
+                    </fieldset>
+                    <fieldset data-correct="d" data-explanation="En sökväg talar om var en fil eller mapp finns på datorn.">
+                        <legend>4. Vad är en sökväg?</legend>
+                        <label><input type="radio" name="ch17q4" value="a"> En typ av loop</label><br>
+                        <label><input type="radio" name="ch17q4" value="b"> Ett lösenord</label><br>
+                        <label><input type="radio" name="ch17q4" value="c"> Ett räknesätt</label><br>
+                        <label><input type="radio" name="ch17q4" value="d"> En adress till en fil eller mapp</label>
+                    </fieldset>
+                    <fieldset data-correct="b" data-explanation="En app kan behöva extra filer, bilder eller resurser för att fungera korrekt efter paketering.">
+                        <legend>5. Varför måste man tänka på extra filer?</legend>
+                        <label><input type="radio" name="ch17q5" value="a"> För att Python saknar variabler</label><br>
+                        <label><input type="radio" name="ch17q5" value="b"> För att appen kan behöva resurser för att fungera</label><br>
+                        <label><input type="radio" name="ch17q5" value="c"> För att loopar försvinner</label><br>
+                        <label><input type="radio" name="ch17q5" value="d"> För att HTML krävs i alla appar</label>
+                    </fieldset>
+                    <button type="button" class="check-quiz">Rätta quizet</button>
+                    <div class="quiz-result" aria-live="polite"></div>
+                </form>
             </section>
 
             <div class="chapter-nav">

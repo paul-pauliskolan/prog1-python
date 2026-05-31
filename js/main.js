@@ -388,3 +388,36 @@ window.pythonbook = {
 };
 
 window.spacesafari = window.pythonbook;
+
+document.querySelectorAll(".chapter-quiz").forEach((quiz) => {
+  const button = quiz.querySelector(".check-quiz");
+  const result = quiz.querySelector(".quiz-result");
+
+  if (!button || !result) {
+    return;
+  }
+
+  button.addEventListener("click", () => {
+    const questions = quiz.querySelectorAll("fieldset[data-correct]");
+    let score = 0;
+    const feedback = [];
+
+    questions.forEach((question, index) => {
+      const selected = question.querySelector("input[type='radio']:checked");
+      const correct = question.dataset.correct;
+      const explanation = question.dataset.explanation;
+
+      if (selected && selected.value === correct) {
+        score += 1;
+      } else {
+        feedback.push(`<li>Fråga ${index + 1}: ${explanation}</li>`);
+      }
+    });
+
+    const feedbackHtml = feedback.length > 0
+      ? `<p>Förklaringar till fel eller obesvarade frågor:</p><ul>${feedback.join("")}</ul>`
+      : "<p>Alla svar är rätt.</p>";
+
+    result.innerHTML = `<h3>Resultat: ${score} av ${questions.length} rätt</h3>${feedbackHtml}`;
+  });
+});

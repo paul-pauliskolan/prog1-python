@@ -40,6 +40,7 @@
                     <li><a href="#s102">10.2 Hantera felaktig input</a></li>
                     <li><a href="#s103">10.3 Robusta program</a></li>
                     <li><a href="#s104">10.4 Övningar</a></li>
+                    <li><a href="#s104-quiz">Quiz</a></li>
                     <li><a href="#s105">10.5 Reflektionsfrågor</a></li>
                 </ul>
             </section>
@@ -288,6 +289,50 @@ print(100 / number)</code></pre>
                     <li>skriver ut talet multiplicerat med 5</li>
                 </ul>
                 <p>Programmet ska ge tydliga felmeddelanden om något blir fel.</p>
+            </section>
+
+            <section class="content-section" id="s104-quiz">
+                <h2>Quiz</h2>
+                <p>Svara på frågorna och klicka sedan på knappen längst ner för att se hur många rätt du fick.</p>
+                <form class="chapter-quiz">
+                    <fieldset data-correct="b" data-explanation="Ett undantag är ett fel som uppstår när programmet körs.">
+                        <legend>1. Vad är ett undantag?</legend>
+                        <label><input type="radio" name="ch10q1" value="a"> En kommentar</label><br>
+                        <label><input type="radio" name="ch10q1" value="b"> Ett fel som uppstår under körning</label><br>
+                        <label><input type="radio" name="ch10q1" value="c"> En typ av lista</label><br>
+                        <label><input type="radio" name="ch10q1" value="d"> En f-sträng</label>
+                    </fieldset>
+                    <fieldset data-correct="d" data-explanation="try används runt kod som kan orsaka ett undantag.">
+                        <legend>2. Vad används <code>try</code> till?</legend>
+                        <label><input type="radio" name="ch10q2" value="a"> Att skapa en variabel</label><br>
+                        <label><input type="radio" name="ch10q2" value="b"> Att skriva ut en rubrik</label><br>
+                        <label><input type="radio" name="ch10q2" value="c"> Att avsluta en loop</label><br>
+                        <label><input type="radio" name="ch10q2" value="d"> Att testa kod som kan ge fel</label>
+                    </fieldset>
+                    <fieldset data-correct="a" data-explanation="except körs om ett undantag fångas i try-blocket.">
+                        <legend>3. När körs <code>except</code>?</legend>
+                        <label><input type="radio" name="ch10q3" value="a"> När ett fel fångas</label><br>
+                        <label><input type="radio" name="ch10q3" value="b"> Alltid före try</label><br>
+                        <label><input type="radio" name="ch10q3" value="c"> Bara när koden är tom</label><br>
+                        <label><input type="radio" name="ch10q3" value="d"> När programmet sparas</label>
+                    </fieldset>
+                    <fieldset data-correct="c" data-explanation="Robusta program hanterar felaktig input utan att krascha.">
+                        <legend>4. Vad betyder att ett program är robust?</legend>
+                        <label><input type="radio" name="ch10q4" value="a"> Att det aldrig använder variabler</label><br>
+                        <label><input type="radio" name="ch10q4" value="b"> Att det bara fungerar med rätt input</label><br>
+                        <label><input type="radio" name="ch10q4" value="c"> Att det kan hantera fel utan att krascha</label><br>
+                        <label><input type="radio" name="ch10q4" value="d"> Att det är så kort som möjligt</label>
+                    </fieldset>
+                    <fieldset data-correct="b" data-explanation="ValueError kan uppstå när text inte kan omvandlas till ett tal.">
+                        <legend>5. När kan <code>ValueError</code> uppstå?</legend>
+                        <label><input type="radio" name="ch10q5" value="a"> När man skriver en kommentar</label><br>
+                        <label><input type="radio" name="ch10q5" value="b"> När en typomvandling inte fungerar</label><br>
+                        <label><input type="radio" name="ch10q5" value="c"> När man använder en korrekt lista</label><br>
+                        <label><input type="radio" name="ch10q5" value="d"> När filen heter .py</label>
+                    </fieldset>
+                    <button type="button" class="check-quiz">Rätta quizet</button>
+                    <div class="quiz-result" aria-live="polite"></div>
+                </form>
             </section>
 
             <section class="content-section" id="s105">

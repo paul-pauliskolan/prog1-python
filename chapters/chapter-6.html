@@ -45,6 +45,7 @@
                     <li><a href="#s67">6.7 Program med upprepningar</a></li>
                     <li><a href="#s68">6.8 Break</a></li>
                     <li><a href="#s69">6.9 Övningar</a></li>
+                    <li><a href="#s69-quiz">Quiz</a></li>
                     <li><a href="#s610">6.10 Reflektionsfrågor</a></li>
                 </ul>
             </section>
@@ -366,6 +367,50 @@ Skriv ett tal (0 för att avsluta): 0</code></pre>
                     <li>säg FizzBuzz istället för tal som är delbara med både 3 och 5</li>
                 </ul>
                 <p>När uppgiften används i programmering ska datorn göra samma sak.</p>
+            </section>
+
+            <section class="content-section" id="s69-quiz">
+                <h2>Quiz</h2>
+                <p>Svara på frågorna och klicka sedan på knappen längst ner för att se hur många rätt du fick.</p>
+                <form class="chapter-quiz">
+                    <fieldset data-correct="d" data-explanation="En loop används för att upprepa kod flera gånger.">
+                        <legend>1. Vad används en loop till?</legend>
+                        <label><input type="radio" name="ch6q1" value="a"> Att bara köra kod en gång</label><br>
+                        <label><input type="radio" name="ch6q1" value="b"> Att byta namn på variabler</label><br>
+                        <label><input type="radio" name="ch6q1" value="c"> Att skapa en bild</label><br>
+                        <label><input type="radio" name="ch6q1" value="d"> Att upprepa kod</label>
+                    </fieldset>
+                    <fieldset data-correct="a" data-explanation="En for-loop passar bra när man vet hur många varv loopen ska köras.">
+                        <legend>2. När passar en <code>for</code>-loop ofta bra?</legend>
+                        <label><input type="radio" name="ch6q2" value="a"> När antalet upprepningar är känt</label><br>
+                        <label><input type="radio" name="ch6q2" value="b"> När programmet ska avslutas direkt</label><br>
+                        <label><input type="radio" name="ch6q2" value="c"> När man inte använder variabler</label><br>
+                        <label><input type="radio" name="ch6q2" value="d"> När man bara skriver kommentarer</label>
+                    </fieldset>
+                    <fieldset data-correct="c" data-explanation="En while-loop körs så länge dess villkor är sant.">
+                        <legend>3. Hur länge körs en <code>while</code>-loop?</legend>
+                        <label><input type="radio" name="ch6q3" value="a"> Exakt en gång</label><br>
+                        <label><input type="radio" name="ch6q3" value="b"> Aldrig</label><br>
+                        <label><input type="radio" name="ch6q3" value="c"> Så länge villkoret är sant</label><br>
+                        <label><input type="radio" name="ch6q3" value="d"> Bara när filen sparas</label>
+                    </fieldset>
+                    <fieldset data-correct="b" data-explanation="range() används ofta för att skapa en följd av tal i en for-loop.">
+                        <legend>4. Vad används <code>range()</code> ofta till?</legend>
+                        <label><input type="radio" name="ch6q4" value="a"> Att läsa text från användaren</label><br>
+                        <label><input type="radio" name="ch6q4" value="b"> Att skapa talföljder för loopar</label><br>
+                        <label><input type="radio" name="ch6q4" value="c"> Att kontrollera datatyp</label><br>
+                        <label><input type="radio" name="ch6q4" value="d"> Att radera kod</label>
+                    </fieldset>
+                    <fieldset data-correct="d" data-explanation="En oändlig loop fortsätter eftersom villkoret aldrig blir falskt.">
+                        <legend>5. Vad orsakar ofta en oändlig loop?</legend>
+                        <label><input type="radio" name="ch6q5" value="a"> För många print()</label><br>
+                        <label><input type="radio" name="ch6q5" value="b"> Ett korrekt indrag</label><br>
+                        <label><input type="radio" name="ch6q5" value="c"> En tom textsträng</label><br>
+                        <label><input type="radio" name="ch6q5" value="d"> Att loopens villkor aldrig blir falskt</label>
+                    </fieldset>
+                    <button type="button" class="check-quiz">Rätta quizet</button>
+                    <div class="quiz-result" aria-live="polite"></div>
+                </form>
             </section>
 
             <section class="content-section" id="s610">

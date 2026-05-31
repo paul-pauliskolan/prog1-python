@@ -42,6 +42,7 @@
                     <li><a href="#s183">18.3 Problem, krav, design och implementering</a></li>
                     <li><a href="#s184">18.4 Testning, risker, användare och dokumentation</a></li>
                     <li><a href="#s185">18.5 Förslag på app/program och checklistor</a></li>
+                    <li><a href="#s185-quiz">Quiz</a></li>
                 </ul>
             </section>
 
@@ -194,6 +195,50 @@
                 <p><strong>Innan:</strong> problem, syfte, användare, krav, planering, pseudokod, GitHub.</p>
                 <p><strong>Under:</strong> koda stegvis, testa ofta, spara versioner, skriv commits, förbättra.</p>
                 <p><strong>Efter:</strong> sluttesta, dokumentera, rätta fel, ladda upp slutversion, redovisa.</p>
+            </section>
+
+            <section class="content-section" id="s185-quiz">
+                <h2>Quiz</h2>
+                <p>Svara på frågorna och klicka sedan på knappen längst ner för att se hur många rätt du fick.</p>
+                <form class="chapter-quiz">
+                    <fieldset data-correct="a" data-explanation="Ett teknikprojekt behöver planering, krav, design, implementation, testning och dokumentation.">
+                        <legend>1. Vad ingår ofta i ett teknikprojekt?</legend>
+                        <label><input type="radio" name="ch18q1" value="a"> Planering, krav, design, kod, testning och dokumentation</label><br>
+                        <label><input type="radio" name="ch18q1" value="b"> Bara att skriva slumpmässig kod</label><br>
+                        <label><input type="radio" name="ch18q1" value="c"> Bara att byta filnamn</label><br>
+                        <label><input type="radio" name="ch18q1" value="d"> Bara att stänga programmet</label>
+                    </fieldset>
+                    <fieldset data-correct="d" data-explanation="Krav beskriver vad programmet ska uppfylla och vilka behov det ska lösa.">
+                        <legend>2. Vad beskriver krav i ett projekt?</legend>
+                        <label><input type="radio" name="ch18q2" value="a"> Datorns färg</label><br>
+                        <label><input type="radio" name="ch18q2" value="b"> Endast typsnitt</label><br>
+                        <label><input type="radio" name="ch18q2" value="c"> Bara vem som äger datorn</label><br>
+                        <label><input type="radio" name="ch18q2" value="d"> Vad programmet ska uppfylla</label>
+                    </fieldset>
+                    <fieldset data-correct="b" data-explanation="Risker är saker som kan skapa problem för projektet, användaren eller lösningen.">
+                        <legend>3. Vad är en risk i ett projekt?</legend>
+                        <label><input type="radio" name="ch18q3" value="a"> En garanterad framgång</label><br>
+                        <label><input type="radio" name="ch18q3" value="b"> Något som kan skapa problem</label><br>
+                        <label><input type="radio" name="ch18q3" value="c"> En lista utan värden</label><br>
+                        <label><input type="radio" name="ch18q3" value="d"> En färdig appikon</label>
+                    </fieldset>
+                    <fieldset data-correct="c" data-explanation="Testning visar om programmet fungerar och om resultatet är rimligt.">
+                        <legend>4. Varför testar man i ett projekt?</legend>
+                        <label><input type="radio" name="ch18q4" value="a"> För att slippa dokumentera</label><br>
+                        <label><input type="radio" name="ch18q4" value="b"> För att ta bort alla krav</label><br>
+                        <label><input type="radio" name="ch18q4" value="c"> För att kontrollera funktion och rimlighet</label><br>
+                        <label><input type="radio" name="ch18q4" value="d"> För att göra programmet osynligt</label>
+                    </fieldset>
+                    <fieldset data-correct="a" data-explanation="En checklista hjälper dig att kontrollera att viktiga delar inte glöms bort.">
+                        <legend>5. Varför är checklistor användbara?</legend>
+                        <label><input type="radio" name="ch18q5" value="a"> De hjälper till att kontrollera viktiga delar</label><br>
+                        <label><input type="radio" name="ch18q5" value="b"> De ersätter all kod</label><br>
+                        <label><input type="radio" name="ch18q5" value="c"> De gör testning omöjlig</label><br>
+                        <label><input type="radio" name="ch18q5" value="d"> De används bara för bilder</label>
+                    </fieldset>
+                    <button type="button" class="check-quiz">Rätta quizet</button>
+                    <div class="quiz-result" aria-live="polite"></div>
+                </form>
             </section>
 
             <div class="chapter-nav">

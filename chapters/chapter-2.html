@@ -45,6 +45,7 @@
                     <li><a href="#s26">2.6 Typomvandling</a></li>
                     <li><a href="#s27">2.7 Vanliga nybörjarfel</a></li>
                     <li><a href="#s28">2.8 Övningar</a></li>
+                    <li><a href="#s28-quiz">Quiz</a></li>
                     <li><a href="#s29">2.9 Reflektionsfrågor</a></li>
                 </ul>
             </section>
@@ -472,6 +473,56 @@ Du bor i Malmö
 Din favoritmat är pizza</code></pre>
             </section>
 
+            <section class="content-section" id="s28-quiz">
+                <h2>Quiz</h2>
+                <p>Svara på frågorna och klicka sedan på knappen längst ner för att se hur många rätt du fick.</p>
+
+                <form id="chapter-2-quiz">
+                    <fieldset>
+                        <legend>1. Vad är en variabel?</legend>
+                        <label><input type="radio" name="q1" value="a"> En plats där ett program kan lagra ett värde</label><br>
+                        <label><input type="radio" name="q1" value="b"> Ett felmeddelande i terminalen</label><br>
+                        <label><input type="radio" name="q1" value="c"> Ett program som bara skriver ut text</label><br>
+                        <label><input type="radio" name="q1" value="d"> Ett kommando som stänger Python</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>2. Vilken datatyp används för text i Python?</legend>
+                        <label><input type="radio" name="q2" value="a"> int</label><br>
+                        <label><input type="radio" name="q2" value="b"> float</label><br>
+                        <label><input type="radio" name="q2" value="c"> bool</label><br>
+                        <label><input type="radio" name="q2" value="d"> str</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>3. Vad gör <code>input()</code>?</legend>
+                        <label><input type="radio" name="q3" value="a"> Omvandlar text till heltal</label><br>
+                        <label><input type="radio" name="q3" value="b"> Frågar användaren efter information</label><br>
+                        <label><input type="radio" name="q3" value="c"> Visar vilken datatyp ett värde har</label><br>
+                        <label><input type="radio" name="q3" value="d"> Rensar terminalen</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>4. Varför används <code>int()</code> ofta tillsammans med <code>input()</code>?</legend>
+                        <label><input type="radio" name="q4" value="a"> För att input alltid ger ett decimaltal</label><br>
+                        <label><input type="radio" name="q4" value="b"> För att byta namn på en variabel</label><br>
+                        <label><input type="radio" name="q4" value="c"> För att omvandla användarens text till ett heltal</label><br>
+                        <label><input type="radio" name="q4" value="d"> För att skriva ut text med citattecken</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>5. Vad gör <code>type()</code>?</legend>
+                        <label><input type="radio" name="q5" value="a"> Läser in text från användaren</label><br>
+                        <label><input type="radio" name="q5" value="b"> Visar vilken datatyp ett värde har</label><br>
+                        <label><input type="radio" name="q5" value="c"> Lägger ihop två textsträngar</label><br>
+                        <label><input type="radio" name="q5" value="d"> Skapar en ny Pythonfil</label>
+                    </fieldset>
+
+                    <button type="button" id="check-chapter-2-quiz">Rätta quizet</button>
+                    <div id="chapter-2-quiz-result" aria-live="polite"></div>
+                </form>
+            </section>
+
             <section class="content-section" id="s29">
                 <h2>2.9 Reflektionsfrågor</h2>
                 <p>Fundera på frågorna nedan. Du kan diskutera dem med en klasskamrat eller skriva ner dina svar.</p>
@@ -520,6 +571,56 @@ Din favoritmat är pizza</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        const chapter2QuizButton = document.getElementById("check-chapter-2-quiz");
+
+        if (chapter2QuizButton) {
+            chapter2QuizButton.addEventListener("click", () => {
+                const answers = {
+                    q1: {
+                        correct: "a",
+                        explanation: "En variabel är en plats i datorns minne där ett värde lagras och kan användas senare."
+                    },
+                    q2: {
+                        correct: "d",
+                        explanation: "Datatypen str används för textsträngar, till exempel \"Hej\"."
+                    },
+                    q3: {
+                        correct: "b",
+                        explanation: "input() används för att ta emot information från användaren."
+                    },
+                    q4: {
+                        correct: "c",
+                        explanation: "input() ger text. Om värdet ska användas som heltal behöver det ofta omvandlas med int()."
+                    },
+                    q5: {
+                        correct: "b",
+                        explanation: "type() visar vilken datatyp ett värde eller en variabel har."
+                    }
+                };
+
+                let score = 0;
+                const feedback = [];
+
+                Object.entries(answers).forEach(([question, data], index) => {
+                    const selected = document.querySelector(`input[name="${question}"]:checked`);
+
+                    if (selected && selected.value === data.correct) {
+                        score += 1;
+                    } else {
+                        feedback.push(`<li>Fråga ${index + 1}: ${data.explanation}</li>`);
+                    }
+                });
+
+                const result = document.getElementById("chapter-2-quiz-result");
+                const feedbackHtml = feedback.length > 0
+                    ? `<p>Förklaringar till fel eller obesvarade frågor:</p><ul>${feedback.join("")}</ul>`
+                    : "<p>Alla svar är rätt.</p>";
+
+                result.innerHTML = `<h3>Resultat: ${score} av 5 rätt</h3>${feedbackHtml}`;
+            });
+        }
+    </script>
 </body>
 
 </html>
