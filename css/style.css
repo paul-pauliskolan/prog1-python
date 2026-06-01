@@ -550,6 +550,128 @@ ol {
   min-height: 4rem;
 }
 
+.practice-home-section {
+  background:
+    linear-gradient(135deg, rgba(246, 196, 83, 0.12), transparent 42%),
+    rgba(26, 32, 64, 0.68);
+}
+
+.practice-home-links .chapter-link {
+  border-color: rgba(246, 196, 83, 0.32);
+}
+
+.practice-intro {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.practice-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.practice-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.practice-link:hover,
+.practice-link-active {
+  border-color: rgba(246, 196, 83, 0.56);
+  background: rgba(246, 196, 83, 0.1);
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.practice-section > p {
+  max-width: 72ch;
+}
+
+.practice-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.practice-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(15, 18, 32, 0.72);
+  padding: 1rem;
+}
+
+.practice-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.practice-options {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.option-button {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #9db4d8;
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
+  background: #eef4ff;
+  color: #111827;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option-button:hover:not(:disabled) {
+  border-color: var(--accent-strong);
+  background: #dfeaff;
+}
+
+.option-button.is-correct {
+  border-color: #15803d;
+  background: #dcfce7;
+}
+
+.option-button.is-wrong {
+  border-color: #b91c1c;
+  background: #fee2e2;
+}
+
+.option-button:disabled {
+  color: #111827;
+  cursor: default;
+  opacity: 1;
+}
+
+.practice-answer {
+  margin: 0.9rem 0 0;
+  padding: 0.75rem;
+  border-left: 4px solid var(--accent-strong);
+  border-radius: 6px;
+  background: rgba(246, 196, 83, 0.1);
+}
+
+.practice-card pre {
+  margin-top: 0.85rem;
+}
+
 .split-mode {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);

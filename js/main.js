@@ -93,6 +93,10 @@ function setupMenuToggle() {
   const sideMenu = document.getElementById("side-menu");
   const chapterLinks = document.querySelectorAll(".side-menu .chapter-link");
 
+  if (!sideMenu) {
+    return;
+  }
+
   if (menuToggle) {
     menuToggle.addEventListener("click", () => {
       const navbar = document.querySelector(".navbar");
