@@ -243,6 +243,31 @@ function answerLetter(index) {
   return ["A", "B", "C", "D"][index];
 }
 
+function chunkQuestions(questions, size) {
+  const chunks = [];
+  for (let index = 0; index < questions.length; index += size) {
+    chunks.push(questions.slice(index, index + size));
+  }
+  return chunks;
+}
+
+function renderQuestion(question, questionIndex) {
+  const options = question.options
+    .map(
+      (option, optionIndex) =>
+        `<li><button class="option-button" type="button" data-option-index="${optionIndex}"><strong>${answerLetter(optionIndex)}.</strong> ${escapeHtml(option)}</button></li>`,
+    )
+    .join("");
+  const code = question.code ? `<pre><code>${escapeHtml(question.code)}</code></pre>` : "";
+
+  return `<article class="practice-card" data-question-index="${questionIndex}" data-correct-index="${question.correctIndex}" data-answer="${escapeHtml(question.answer)}">
+    <h3>${questionIndex + 1}. ${escapeHtml(question.question)}</h3>
+    ${code}
+    <ol class="practice-options">${options}</ol>
+    <p class="practice-answer" hidden aria-live="polite"></p>
+  </article>`;
+}
+
 function renderPracticePage() {
   const root = document.getElementById("practice-root");
   const groupKey = document.body.dataset.practiceGroup || "1-20";
@@ -266,25 +291,107 @@ function renderPracticePage() {
     })
     .join("");
 
-  root.innerHTML = group.questions
-    .map((question, index) => {
-      const options = question.options
-        .map(
-          (option, optionIndex) =>
-            `<li><button class="option-button" type="button" data-option-index="${optionIndex}"><strong>${answerLetter(optionIndex)}.</strong> ${escapeHtml(option)}</button></li>`,
-        )
+  const questionGroups = chunkQuestions(group.questions, 10);
+
+  root.innerHTML = questionGroups
+    .map((questions, groupIndex) => {
+      const start = groupIndex * 10;
+      const end = start + questions.length;
+      const hidden = groupIndex === 0 ? "" : " hidden";
+      const questionMarkup = questions
+        .map((question, index) => renderQuestion(question, start + index))
         .join("");
-      const code = question.code ? `<pre><code>${escapeHtml(question.code)}</code></pre>` : "";
-      return `<article class="practice-card" data-correct-index="${question.correctIndex}" data-answer="${escapeHtml(question.answer)}">
-        <h3>${index + 1}. ${escapeHtml(question.question)}</h3>
-        ${code}
-        <ol class="practice-options">${options}</ol>
-        <p class="practice-answer" hidden aria-live="polite"></p>
-      </article>`;
+
+      return `<section class="practice-part"${hidden} data-part-index="${groupIndex}">
+        <div class="practice-part-header">
+          <div>
+            <p class="eyebrow">Del ${groupIndex + 1} av ${questionGroups.length}</p>
+            <h3>Fråga ${start + 1}-${end}</h3>
+          </div>
+          <p class="practice-part-progress" aria-live="polite">0 av ${questions.length} besvarade</p>
+        </div>
+        <div class="practice-list">${questionMarkup}</div>
+        <div class="practice-actions">
+          <button class="primary-link practice-check-button" type="button">Rätta 10 frågor</button>
+          <p class="practice-result" hidden aria-live="polite"></p>
+        </div>
+      </section>`;
     })
     .join("");
 
+  root.insertAdjacentHTML(
+    "afterbegin",
+    `<nav class="practice-part-nav" aria-label="Välj delprov">
+      ${questionGroups
+        .map((questions, groupIndex) => {
+          const start = groupIndex * 10 + 1;
+          const end = groupIndex * 10 + questions.length;
+          const active = groupIndex === 0 ? " practice-part-link-active" : "";
+          return `<button class="practice-part-link${active}" type="button" data-target-part="${groupIndex}">Fråga ${start}-${end}</button>`;
+        })
+        .join("")}
+    </nav>`,
+  );
+
   root.addEventListener("click", (event) => {
+    const partLink = event.target.closest(".practice-part-link");
+    if (partLink) {
+      const targetPart = partLink.dataset.targetPart;
+      root.querySelectorAll(".practice-part-link").forEach((link) => {
+        link.classList.toggle("practice-part-link-active", link === partLink);
+      });
+      root.querySelectorAll(".practice-part").forEach((part) => {
+        part.hidden = part.dataset.partIndex !== targetPart;
+      });
+      return;
+    }
+
+    const checkButton = event.target.closest(".practice-check-button");
+    if (checkButton) {
+      const part = checkButton.closest(".practice-part");
+      const cards = Array.from(part.querySelectorAll(".practice-card"));
+      const answeredCount = cards.filter((practiceCard) => practiceCard.dataset.selectedIndex !== undefined).length;
+      const result = part.querySelector(".practice-result");
+
+      if (answeredCount !== cards.length) {
+        result.innerHTML = `<strong>Inte klar än.</strong> Svara på alla 10 frågor först. ${answeredCount} av ${cards.length} är besvarade.`;
+        result.hidden = false;
+        return;
+      }
+
+      let correctAnswers = 0;
+
+      cards.forEach((card) => {
+        const selectedIndex = Number(card.dataset.selectedIndex);
+        const correctIndex = Number(card.dataset.correctIndex);
+        const correctLetter = answerLetter(correctIndex);
+        const feedback = card.querySelector(".practice-answer");
+        const selectedButton = card.querySelector(`[data-option-index="${selectedIndex}"]`);
+
+        card.dataset.answered = "true";
+        card.querySelectorAll(".option-button").forEach((optionButton, optionIndex) => {
+          optionButton.disabled = true;
+          if (optionIndex === correctIndex) {
+            optionButton.classList.add("is-correct");
+          }
+        });
+
+        if (selectedIndex === correctIndex) {
+          correctAnswers += 1;
+          feedback.innerHTML = `<strong>Rätt.</strong> Svaret är ${correctLetter}.`;
+        } else {
+          selectedButton.classList.add("is-wrong");
+          feedback.innerHTML = `<strong>Fel.</strong> Rätt svar är ${correctLetter}: ${escapeHtml(card.dataset.answer)}`;
+        }
+        feedback.hidden = false;
+      });
+
+      checkButton.disabled = true;
+      result.innerHTML = `<strong>Resultat:</strong> ${correctAnswers} av ${cards.length} rätt.`;
+      result.hidden = false;
+      return;
+    }
+
     const button = event.target.closest(".option-button");
     if (!button) {
       return;
@@ -295,26 +402,18 @@ function renderPracticePage() {
       return;
     }
 
-    const selectedIndex = Number(button.dataset.optionIndex);
-    const correctIndex = Number(card.dataset.correctIndex);
-    const correctLetter = answerLetter(correctIndex);
-    const feedback = card.querySelector(".practice-answer");
-
-    card.dataset.answered = "true";
-    card.querySelectorAll(".option-button").forEach((optionButton, optionIndex) => {
-      optionButton.disabled = true;
-      if (optionIndex === correctIndex) {
-        optionButton.classList.add("is-correct");
-      }
+    card.dataset.selectedIndex = button.dataset.optionIndex;
+    card.querySelectorAll(".option-button").forEach((optionButton) => {
+      optionButton.classList.toggle("is-selected", optionButton === button);
     });
 
-    if (selectedIndex === correctIndex) {
-      feedback.innerHTML = `<strong>Rätt.</strong> Svaret är ${correctLetter}.`;
-    } else {
-      button.classList.add("is-wrong");
-      feedback.innerHTML = `<strong>Fel.</strong> Rätt svar är ${correctLetter}: ${escapeHtml(card.dataset.answer)}`;
-    }
-    feedback.hidden = false;
+    const part = card.closest(".practice-part");
+    const cards = Array.from(part.querySelectorAll(".practice-card"));
+    const answeredCount = cards.filter((practiceCard) => practiceCard.dataset.selectedIndex !== undefined).length;
+    const totalCount = cards.length;
+
+    part.querySelector(".practice-part-progress").textContent = `${answeredCount} av ${totalCount} besvarade`;
+    part.querySelector(".practice-result").hidden = true;
   });
 }
 

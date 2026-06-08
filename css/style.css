@@ -599,6 +599,58 @@ ol {
   max-width: 72ch;
 }
 
+.practice-part-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.practice-part-link {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font:
+    700 0.95rem/1.1 "Trebuchet MS",
+    "Segoe UI",
+    sans-serif;
+  cursor: pointer;
+}
+
+.practice-part-link:hover,
+.practice-part-link-active {
+  border-color: rgba(246, 196, 83, 0.56);
+  background: rgba(246, 196, 83, 0.1);
+  color: var(--accent-strong);
+}
+
+.practice-part-header,
+.practice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.practice-part-header {
+  margin-top: 1.25rem;
+}
+
+.practice-part-header h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.practice-part-progress {
+  margin: 0;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
 .practice-list {
   display: grid;
   gap: 1rem;
@@ -644,6 +696,16 @@ ol {
   background: #dfeaff;
 }
 
+.option-button.is-selected {
+  border-color: var(--accent-strong);
+  background: #fff3bf;
+}
+
+.option-button.is-selected:hover:not(:disabled) {
+  border-color: var(--accent-strong);
+  background: #fff3bf;
+}
+
 .option-button.is-correct {
   border-color: #15803d;
   background: #dcfce7;
@@ -666,6 +728,29 @@ ol {
   border-left: 4px solid var(--accent-strong);
   border-radius: 6px;
   background: rgba(246, 196, 83, 0.1);
+}
+
+.practice-actions {
+  margin-top: 1rem;
+}
+
+.practice-check-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.practice-check-button:disabled {
+  cursor: default;
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.practice-result {
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
 }
 
 .practice-card pre {
