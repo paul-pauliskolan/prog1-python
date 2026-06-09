@@ -2,6 +2,36 @@
 
 const BOOK_TITLE = "Programmering nivå 1 med Python";
 const BOOK_SHORT_TITLE = "Python";
+const CHAPTER_EXTRAS = [
+  {
+    afterChapter: 4,
+    number: "ÖV",
+    title: "Övningsuppgift kap 1-4",
+    hrefFromHome: "chapters/ovningsuppgift-kap-1-4.html",
+    hrefFromChapter: "ovningsuppgift-kap-1-4.html",
+  },
+  {
+    afterChapter: 7,
+    number: "ÖV",
+    title: "Övningsuppgift kap 1-7",
+    hrefFromHome: "chapters/ovningsuppgift-kap-1-7.html",
+    hrefFromChapter: "ovningsuppgift-kap-1-7.html",
+  },
+  {
+    afterChapter: 11,
+    number: "ÖV",
+    title: "Övningsuppgift kap 1-11",
+    hrefFromHome: "chapters/ovningsuppgift-kap-1-11.html",
+    hrefFromChapter: "ovningsuppgift-kap-1-11.html",
+  },
+  {
+    afterChapter: 18,
+    number: "ÖV",
+    title: "Övningsuppgift kap 1-18",
+    hrefFromHome: "chapters/ovningsuppgift-kap-1-18.html",
+    hrefFromChapter: "ovningsuppgift-kap-1-18.html",
+  },
+];
 
 let chaptersData = [];
 
@@ -184,6 +214,7 @@ function renderChapterMenu() {
     link.innerHTML = `<span class="chapter-number">${String(chapter.number).padStart(2, "0")}</span><span class="chapter-title">${chapter.title}</span>`;
 
     menu.appendChild(link);
+    appendChapterExtras(menu, chapter.number, isChapterPage);
   });
 }
 
@@ -197,7 +228,20 @@ function renderChapterMenuFullWidth(menuElement) {
     link.innerHTML = `<span class="chapter-number">${String(chapter.number).padStart(2, "0")}</span><span class="chapter-title">${chapter.title}</span>`;
 
     menuElement.appendChild(link);
+    appendChapterExtras(menuElement, chapter.number, false);
   });
+}
+
+function appendChapterExtras(menuElement, chapterNumber, isChapterPage) {
+  CHAPTER_EXTRAS.filter((extra) => extra.afterChapter === chapterNumber).forEach(
+    (extra) => {
+      const link = document.createElement("a");
+      link.href = isChapterPage ? extra.hrefFromChapter : extra.hrefFromHome;
+      link.className = "chapter-link chapter-link-extra";
+      link.innerHTML = `<span class="chapter-number">${extra.number}</span><span class="chapter-title">${extra.title}</span>`;
+      menuElement.appendChild(link);
+    },
+  );
 }
 
 function getChapter(chapterNumber) {

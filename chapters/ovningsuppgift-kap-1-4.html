@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Övningsuppgift för kapitel 1-4 i Programmering nivå 1 med Python.">
+    <title>Övningsuppgift kap 1-4 - Programmering nivå 1 med Python</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page assignment-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Övningsuppgift</p>
+                <h1>Övningsuppgift kap 1-4</h1>
+                <p class="subtitle">Välj en nivå och skapa ett Pythonprogram där du använder variabler, input,
+                    typomvandling, operatorer och tydliga utskrifter.</p>
+            </header>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehåll</h2>
+                    <p class="section-note">Uppgiften tränar det du har arbetat med i kapitel 1-4.</p>
+                </div>
+                <ul>
+                    <li><a href="#upplagg">Upplägg</a></li>
+                    <li><a href="#e-niva">E-nivå: Personligt beräkningsprogram</a></li>
+                    <li><a href="#c-niva">C-nivå: Hälsokontrollprogram</a></li>
+                    <li><a href="#a-niva">A-nivå: Elevanalysprogram</a></li>
+                    <li><a href="#inlamning">Inlämning</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="upplagg">
+                <h2>Upplägg</h2>
+                <p>Du ska skriva ett program i Python. Programmet ska fråga användaren efter information, spara svaren i
+                    variabler, göra beräkningar eller jämförelser och skriva ut ett tydligt resultat.</p>
+                <p>Välj den nivå som passar dig. Du får gärna börja med E-nivån och sedan bygga vidare, men lämna in ett
+                    program som du själv förstår och kan förklara.</p>
+                <h3>Tips innan du börjar</h3>
+                <ul>
+                    <li>Skriv en sak i taget och kör programmet ofta.</li>
+                    <li>Använd tydliga variabelnamn, till exempel <code>age</code>, <code>height_cm</code> och
+                        <code>score</code>.</li>
+                    <li>Kom ihåg att <code>input()</code> alltid ger text. Använd <code>int()</code> eller
+                        <code>float()</code> när du ska räkna.</li>
+                    <li>Använd f-strängar när du skriver ut svar, till exempel
+                        <code>print(f"Hej {name}")</code>.</li>
+                </ul>
+            </section>
+
+            <section class="content-section assignment-levels">
+                <div class="assignment-level" id="e-niva">
+                    <h3>E-nivå: Personligt beräkningsprogram</h3>
+                    <p>Skapa ett program som frågar användaren efter namn, ålder och längd i centimeter.</p>
+
+                    <h4>Programmet ska skriva ut</h4>
+                    <ul>
+                        <li>en hälsning med personens namn</li>
+                        <li>hur gammal personen är nu</li>
+                        <li>hur gammal personen är om 5 år</li>
+                        <li>hur lång personen är nu</li>
+                        <li>hur lång personen blir om personen växer 10 cm</li>
+                    </ul>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Hej Anna
+Du är 17 år gammal
+Om fem år är du 22 år gammal
+Din längd är 170 cm
+Om du växer 10 cm blir din längd 180 cm</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>variabler</li>
+                        <li>input från användaren</li>
+                        <li>typomvandling</li>
+                        <li>aritmetiska operatorer</li>
+                        <li>utskrifter med f-strängar</li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="c-niva">
+                    <h3>C-nivå: Hälsokontrollprogram</h3>
+                    <p>Skapa ett program som analyserar användarens information. Programmet ska fråga efter namn, ålder,
+                        längd i centimeter och vikt i kilogram.</p>
+
+                    <h4>Programmet ska beräkna och kontrollera</h4>
+                    <ul>
+                        <li>BMI</li>
+                        <li>om personen är vuxen, alltså minst 18 år</li>
+                        <li>om BMI ligger mellan 18.5 och 25</li>
+                    </ul>
+
+                    <p>Formel:</p>
+                    <pre><code>bmi = weight / (height_m * height_m)</code></pre>
+
+                    <h4>Programmet ska skriva ut</h4>
+                    <ul>
+                        <li>personens namn</li>
+                        <li>personens BMI</li>
+                        <li>om personen är vuxen</li>
+                        <li>om BMI ligger inom normalintervallet</li>
+                    </ul>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Hej Erik
+Ditt BMI är 22.4
+Är du vuxen: True
+BMI inom normalintervallet: True</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>variabler</li>
+                        <li>matematiska uttryck</li>
+                        <li>jämförelseoperatorer</li>
+                        <li>logiska operatorer</li>
+                        <li>input och typomvandling</li>
+                        <li>utskrifter med f-strängar</li>
+                        <li>variabler som lagrar resultat av jämförelser, till exempel <code>is_adult = age &gt;= 18</code></li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="a-niva">
+                    <h3>A-nivå: Elevanalysprogram</h3>
+                    <p>Skapa ett program som analyserar en elevs resultat. Programmet ska fråga efter namn, ålder och
+                        poäng på ett prov mellan 0 och 100.</p>
+
+                    <h4>Programmet ska kontrollera</h4>
+                    <ul>
+                        <li>om eleven är myndig</li>
+                        <li>om eleven har klarat provet, alltså minst 50 poäng</li>
+                        <li>om eleven har fått ett högt resultat, alltså minst 80 poäng</li>
+                        <li>om poängen ligger inom intervallet 0 till 100</li>
+                    </ul>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Hej Sara
+Du är 18 år gammal
+Är du myndig: True
+Klarade du provet: True
+Högt resultat: True
+Poängen inom intervallet 0-100: True</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>variabler</li>
+                        <li>matematiska uttryck</li>
+                        <li>jämförelseoperatorer</li>
+                        <li>logiska operatorer</li>
+                        <li>flera jämförelser</li>
+                        <li>tydlig struktur i koden</li>
+                        <li>kommentarer i koden</li>
+                        <li>utskrifter med f-strängar</li>
+                        <li>variabler som lagrar resultat från logiska uttryck</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section" id="inlamning">
+                <h2>Inlämning</h2>
+                <p>Lämna in Pythonfilen. Filen ska innehålla en kort kommentar som beskriver vad programmet gör.</p>
+                <p>Kontrollera innan du lämnar in att programmet går att köra, att alla frågor till användaren är
+                    tydliga och att utskrifterna är lätta att läsa.</p>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-4.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Tillbaka</div>
+                        <div class="nav-title">Kapitel 4</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="chapter-5.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Kapitel 5: Villkor</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p>© Paul Belfrage. Anpassad för Programmering 1 med Python. | <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fyjjAhtlfX3u6UeVvk6AlF_3-ow0UdZmgP3QtJIn5s7_hw/viewform" target="_blank" rel="noopener noreferrer">Kontakt / Återkoppling</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

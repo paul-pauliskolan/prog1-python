@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Övningsuppgift för kapitel 1-18 i Programmering nivå 1 med Python, kopplad till Teknik 2.">
+    <title>Övningsuppgift kap 1-18 - Programmering nivå 1 med Python</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page assignment-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Övningsuppgift</p>
+                <h1>Övningsuppgift kap 1-18</h1>
+                <p class="subtitle">Utveckla en grafisk app i Python med Tkinter. Uppgiften tränar programmering,
+                    projektmetodik, planering, testning och utvärdering med koppling till Teknik 2.</p>
+            </header>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehåll</h2>
+                    <p class="section-note">Uppgiften bygger på det du har arbetat med i kapitel 1-18.</p>
+                </div>
+                <ul>
+                    <li><a href="#syfte">Syfte och uppgift</a></li>
+                    <li><a href="#tekniska-krav">Tekniska krav</a></li>
+                    <li><a href="#appideer">Exempel på appidéer</a></li>
+                    <li><a href="#inlamning">Det här ska lämnas in</a></li>
+                    <li><a href="#e-niva">E-nivå</a></li>
+                    <li><a href="#c-niva">C-nivå</a></li>
+                    <li><a href="#a-niva">A-nivå</a></li>
+                    <li><a href="#koppling">Koppling till Teknik 2 och programmering</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="syfte">
+                <h2>Syfte och uppgift</h2>
+                <p>Du ska planera, genomföra och utvärdera ett mindre tekniskt arbete där du utvecklar en app i Python.
+                    Appen ska byggas med Tkinter och ha ett tydligt syfte för en användare.</p>
+                <p>Appen ska kunna användas på macOS och lämnas in så att den kan startas direkt som en app-fil, utan
+                    att användaren först behöver öppna Python-koden manuellt.</p>
+                <p>Uppgiften ska kunna lösas med vanlig Python och sådant ni har arbetat med i kursen. Appens funktion
+                    ska inte kräva sensorer, extra hårdvara eller externa moduler.</p>
+                <h3>Du ska visa att du kan</h3>
+                <ul>
+                    <li>gå från idé till färdig lösning</li>
+                    <li>planera innan du programmerar</li>
+                    <li>skapa ett grafiskt gränssnitt</li>
+                    <li>testa, felsöka och förbättra</li>
+                    <li>utvärdera resultatet</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="tekniska-krav">
+                <h2>Tekniska krav</h2>
+                <p>Appen ska:</p>
+                <ul class="assignment-checklist">
+                    <li>vara skriven i Python</li>
+                    <li>använda Tkinter som grafiskt gränssnitt</li>
+                    <li>kunna köras på macOS</li>
+                    <li>kunna startas direkt som en app-fil i macOS</li>
+                    <li>ha ett grafiskt fönster med till exempel knappar, etiketter, textfält eller menyer</li>
+                    <li>byggas med kunskaper från kursen och kursboken</li>
+                    <li>inte kräva sensorer, extra hårdvara eller externa moduler för själva appens funktion</li>
+                    <li>vara tillräckligt tydlig för att en användare ska förstå hur den används</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="appideer">
+                <h2>Exempel på appidéer</h2>
+                <p>Du får välja en egen idé, men den ska passa nivån och gå att bygga med Python och Tkinter.</p>
+                <ul>
+                    <li>miniräknare</li>
+                    <li>Yatzy eller annat enkelt tärningsspel</li>
+                    <li>quiz-app</li>
+                    <li>poängräknare</li>
+                    <li>budgetapp</li>
+                    <li>enkel bokningsapp</li>
+                    <li>temperatur- eller enhetsomvandlare</li>
+                    <li>registerapp</li>
+                    <li>att-göra-lista</li>
+                    <li>menybaserad spel- eller verktygsapp</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="inlamning">
+                <h2>Det här ska lämnas in</h2>
+                <div class="assignment-levels">
+                    <div class="assignment-level">
+                        <h3>1. Planering</h3>
+                        <ul>
+                            <li>beskrivning av uppgiften eller problemet</li>
+                            <li>syfte med appen</li>
+                            <li>vem appen är tänkt för</li>
+                            <li>pseudokod, skiss eller flödesschema</li>
+                            <li>enkel plan för hur appens gränssnitt ska byggas</li>
+                        </ul>
+                    </div>
+
+                    <div class="assignment-level">
+                        <h3>2. Kod och app</h3>
+                        <ul>
+                            <li>fungerande Pythonkod</li>
+                            <li>Tkinter-gränssnitt</li>
+                            <li>tydliga namn på variabler och funktioner</li>
+                            <li>kommentarer där det behövs</li>
+                            <li>kod som är möjlig att följa</li>
+                            <li>en fungerande app-fil för macOS som kan öppnas direkt</li>
+                        </ul>
+                    </div>
+
+                    <div class="assignment-level">
+                        <h3>3. Test och utvärdering</h3>
+                        <ul>
+                            <li>hur du testat appen</li>
+                            <li>vilka fel som uppstod</li>
+                            <li>hur du löste felen</li>
+                            <li>vad som fungerar bra</li>
+                            <li>vad som kan förbättras</li>
+                            <li>kontroll att appen fungerar som app-fil i macOS</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section assignment-levels">
+                <div class="assignment-level" id="e-niva">
+                    <h3>E-nivå: Enkel och fungerande app</h3>
+                    <p>För E-nivå ska du genomföra en enkel och fungerande app.</p>
+
+                    <h4>Appen ska</h4>
+                    <ul class="assignment-checklist">
+                        <li>ha ett grafiskt gränssnitt i Tkinter</li>
+                        <li>lösa en enkel uppgift</li>
+                        <li>använda variabler</li>
+                        <li>använda inmatning och utskrift eller visning i fönstret</li>
+                        <li>innehålla villkor och/eller loopar</li>
+                        <li>fungera för vanliga inmatningar</li>
+                        <li>ha enkla instruktioner så att användaren förstår hur appen används</li>
+                        <li>kunna startas som app-fil i macOS</li>
+                    </ul>
+
+                    <h4>Du ska också</h4>
+                    <ul>
+                        <li>beskriva vad appen ska göra</li>
+                        <li>visa enkel planering</li>
+                        <li>testa att appen fungerar</li>
+                        <li>ge enkla kommentarer om arbetet</li>
+                    </ul>
+
+                    <h4>Exempel på E-nivå</h4>
+                    <ul>
+                        <li>enkel miniräknare med grundläggande funktioner</li>
+                        <li>enkel omvandlarapp</li>
+                        <li>enkelt quiz med några frågor</li>
+                        <li>enkel poängräknare</li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="c-niva">
+                    <h3>C-nivå: Mer utvecklad app</h3>
+                    <p>För C-nivå ska du genomföra en mer utvecklad app med tydligare struktur och mer systematisk
+                        testning.</p>
+
+                    <h4>Appen ska</h4>
+                    <ul class="assignment-checklist">
+                        <li>lösa en tydligare och mer omfattande uppgift</li>
+                        <li>vara uppdelad i funktioner</li>
+                        <li>använda flera kontrollstrukturer</li>
+                        <li>hantera felaktig inmatning på ett rimligt sätt</li>
+                        <li>ha ett tydligt och användbart gränssnitt i Tkinter</li>
+                        <li>vara tydligt anpassad till syfte och användare</li>
+                        <li>ha kod som är tydlig och strukturerad</li>
+                        <li>kunna startas som app-fil i macOS</li>
+                    </ul>
+
+                    <h4>Du ska också</h4>
+                    <ul>
+                        <li>göra en tydlig planering innan programmeringen börjar</li>
+                        <li>använda pseudokod, diagram eller liknande metod</li>
+                        <li>testa appen mer systematiskt</li>
+                        <li>beskriva problem, lösningar och förbättringar</li>
+                        <li>resonera om hur appen passar användaren</li>
+                    </ul>
+
+                    <h4>Exempel på C-nivå</h4>
+                    <ul>
+                        <li>miniräknare med flera funktioner och tydlig layout</li>
+                        <li>Yatzy i förenklad form med tärningskast och poängräkning</li>
+                        <li>budgetapp med flera val</li>
+                        <li>quiz-app med poängsystem</li>
+                        <li>enkel bokningsapp med listor</li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="a-niva">
+                    <h3>A-nivå: Välutvecklad app</h3>
+                    <p>För A-nivå ska du genomföra en välutvecklad och mer komplex app, fortfarande inom ramen för
+                        vanlig Python och Tkinter.</p>
+
+                    <h4>Appen ska</h4>
+                    <ul class="assignment-checklist">
+                        <li>lösa en uppgift med flera delar som hänger ihop</li>
+                        <li>vara tydligt strukturerad i funktioner eller andra delar</li>
+                        <li>hantera fel och oväntade inmatningar på ett genomtänkt sätt</li>
+                        <li>ha ett tydligt, användarvänligt och välplanerat gränssnitt</li>
+                        <li>vara mycket väl anpassad till syfte och användare</li>
+                        <li>visa att du gör genomtänkta val i appens struktur och användning</li>
+                        <li>kunna startas som app-fil i macOS</li>
+                    </ul>
+
+                    <h4>Du ska också</h4>
+                    <ul>
+                        <li>planera arbetet tydligt</li>
+                        <li>motivera dina lösningar</li>
+                        <li>testa appen systematiskt och förbättra den efter tester</li>
+                        <li>utvärdera styrkor, svagheter och möjliga förbättringar</li>
+                        <li>visa god förståelse för problemlösning och programmering</li>
+                    </ul>
+
+                    <h4>Exempel på A-nivå</h4>
+                    <ul>
+                        <li>Yatzy eller annat tärningsspel med flera rundor och tydligt poängsystem</li>
+                        <li>menybaserad app med flera funktioner som hänger ihop</li>
+                        <li>budget- eller registerapp som kan spara och läsa data i fil</li>
+                        <li>quiz- eller spelapp med flera nivåer, poängräkning och felhantering</li>
+                        <li>bokningsapp med tydlig struktur och god användaranpassning</li>
+                    </ul>
+
+                    <p>På A-nivå ska appen vara mer genomtänkt, mer välstrukturerad och bättre testad, men den ska
+                        fortfarande kunna göras med sådant ni har arbetat med i boken.</p>
+                </div>
+            </section>
+
+            <section class="content-section" id="koppling">
+                <h2>Koppling till Teknik 2 och programmering</h2>
+                <h3>Teknik 2</h3>
+                <p>Uppgiften tränar särskilt metodik och arbetsformer i projekt samt tillämpning av programmering för
+                    problemlösning.</p>
+                <ul>
+                    <li>identifiera en uppgift</li>
+                    <li>planera en lösning</li>
+                    <li>skapa appen</li>
+                    <li>testa och förbättra</li>
+                    <li>utvärdera resultatet</li>
+                </ul>
+
+                <h3>Programmering</h3>
+                <p>Uppgiften knyter an till kursinnehåll som strukturerad problemlösning, pseudokod och diagramteknik,
+                    kontrollstrukturer, felsökning, undantagshantering, gränssnitt och tydlig kod.</p>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-18.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Tillbaka</div>
+                        <div class="nav-title">Kapitel 18</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="chapter-19.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Kapitel 19</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p>© Paul Belfrage. Anpassad för Programmering 1 med Python. | <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fyjjAhtlfX3u6UeVvk6AlF_3-ow0UdZmgP3QtJIn5s7_hw/viewform" target="_blank" rel="noopener noreferrer">Kontakt / Återkoppling</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

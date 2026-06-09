@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Övningsuppgift för kapitel 1-7 i Programmering nivå 1 med Python.">
+    <title>Övningsuppgift kap 1-7 - Programmering nivå 1 med Python</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page assignment-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Övningsuppgift</p>
+                <h1>Övningsuppgift kap 1-7</h1>
+                <p class="subtitle">Välj en nivå och skapa ett Pythonprogram där du använder variabler, input,
+                    typomvandling, operatorer, villkor, loopar, listor och tydliga utskrifter.</p>
+            </header>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehåll</h2>
+                    <p class="section-note">Uppgiften tränar det du har arbetat med i kapitel 1-7.</p>
+                </div>
+                <ul>
+                    <li><a href="#upplagg">Upplägg</a></li>
+                    <li><a href="#e-niva">E-nivå: Elevprofilprogram</a></li>
+                    <li><a href="#c-niva">C-nivå: Klassanalysprogram</a></li>
+                    <li><a href="#a-niva">A-nivå: Butiksanalysprogram</a></li>
+                    <li><a href="#inlamning">Inlämning och bedömning</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="upplagg">
+                <h2>Upplägg</h2>
+                <p>Du ska skriva ett program i Python. Programmet ska fråga användaren efter information, spara svar i
+                    variabler eller listor, bearbeta informationen och skriva ut ett tydligt resultat.</p>
+                <p>Välj den nivå som passar dig. Du får gärna börja med E-nivån och sedan bygga vidare, men lämna in ett
+                    program som du själv förstår och kan förklara.</p>
+                <h3>Tips innan du börjar</h3>
+                <ul>
+                    <li>Skriv och testa programmet i små delar.</li>
+                    <li>Använd tydliga variabelnamn, till exempel <code>name</code>, <code>score</code> och
+                        <code>scores</code>.</li>
+                    <li>Använd <code>int()</code> eller <code>float()</code> när du ska räkna med inmatade värden.</li>
+                    <li>Använd <code>append()</code> när du ska lägga till värden i en lista.</li>
+                    <li>Använd f-strängar när du skriver ut resultat, till exempel
+                        <code>print(f"Högsta poäng är {highest_score}")</code>.</li>
+                </ul>
+            </section>
+
+            <section class="content-section assignment-levels">
+                <div class="assignment-level" id="e-niva">
+                    <h3>E-nivå: Elevprofilprogram</h3>
+                    <p>Skapa ett program som samlar in och skriver ut information om en elev.</p>
+
+                    <h4>Programmet ska fråga efter</h4>
+                    <ul>
+                        <li>namn</li>
+                        <li>ålder</li>
+                        <li>längd i centimeter</li>
+                        <li>favoritämne i skolan</li>
+                    </ul>
+
+                    <h4>Programmet ska räkna ut</h4>
+                    <ul>
+                        <li>hur gammal eleven är om 5 år</li>
+                        <li>hur lång eleven blir om eleven växer 10 cm</li>
+                    </ul>
+
+                    <h4>Exempel på körning</h4>
+                    <pre><code>Vad heter du? Erik
+Hur gammal är du? 16
+Hur lång är du i cm? 175
+Vilket är ditt favoritämne? Programmering</code></pre>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Hej Erik
+Du är 16 år gammal
+Om fem år är du 21 år gammal
+Din längd är 175 cm
+Om du växer 10 cm blir din längd 185 cm
+Ditt favoritämne är Programmering</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>variabler</li>
+                        <li>input</li>
+                        <li>typomvandling</li>
+                        <li>aritmetiska operatorer</li>
+                        <li>utskrift med f-strängar</li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="c-niva">
+                    <h3>C-nivå: Klassanalysprogram</h3>
+                    <p>Skapa ett program som samlar in resultat från flera elever.</p>
+
+                    <h4>Programmet ska först fråga</h4>
+                    <ul>
+                        <li>hur många elever som ska registreras</li>
+                    </ul>
+
+                    <h4>För varje elev ska programmet fråga efter</h4>
+                    <ul>
+                        <li>elevens namn</li>
+                        <li>poäng på ett prov mellan 0 och 100</li>
+                    </ul>
+
+                    <p>Poängen ska sparas i en lista. När alla elever är registrerade ska programmet räkna ut och skriva
+                        ut klassens medelpoäng, högsta poäng och lägsta poäng.</p>
+
+                    <h4>Exempel på körning</h4>
+                    <pre><code>Hur många elever finns i klassen? 3
+Elev 1 namn: Anna
+Poäng: 72
+Elev 2 namn: Erik
+Poäng: 84
+Elev 3 namn: Sara
+Poäng: 65</code></pre>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Klassens medelpoäng är 73.6
+Högsta poäng är 84
+Lägsta poäng är 65</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>variabler</li>
+                        <li>listor</li>
+                        <li><code>append()</code></li>
+                        <li>loopar</li>
+                        <li>aritmetiska operatorer</li>
+                        <li>bearbetning av data i listor</li>
+                        <li>f-strängar</li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="a-niva">
+                    <h3>A-nivå: Butiksanalysprogram</h3>
+                    <p>Skapa ett program som analyserar försäljning i en butik.</p>
+
+                    <h4>Programmet ska först fråga</h4>
+                    <ul>
+                        <li>hur många produkter som ska registreras</li>
+                    </ul>
+
+                    <h4>För varje produkt ska programmet fråga efter</h4>
+                    <ul>
+                        <li>produktens namn</li>
+                        <li>pris</li>
+                        <li>antal sålda produkter</li>
+                    </ul>
+
+                    <p>Informationen ska sparas i listor.</p>
+
+                    <h4>Programmet ska räkna ut</h4>
+                    <ul>
+                        <li>total försäljning för varje produkt</li>
+                        <li>butikens totala försäljning</li>
+                        <li>vilken produkt som sålde mest</li>
+                    </ul>
+
+                    <h4>Exempel på körning</h4>
+                    <pre><code>Hur många produkter ska registreras? 3
+Produkt 1 namn: Kaffe
+Pris: 45
+Antal sålda: 10
+Produkt 2 namn: Te
+Pris: 30
+Antal sålda: 8
+Produkt 3 namn: Choklad
+Pris: 25
+Antal sålda: 20</code></pre>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Kaffe sålde för 450 kr
+Te sålde för 240 kr
+Choklad sålde för 500 kr
+Butikens totala försäljning är 1190 kr
+Produkten som sålde mest är Choklad</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>variabler</li>
+                        <li>listor</li>
+                        <li><code>append()</code></li>
+                        <li>loopar</li>
+                        <li>aritmetiska operatorer</li>
+                        <li>bearbetning av data i listor</li>
+                        <li>jämförelser för att hitta största värde</li>
+                        <li>f-strängar</li>
+                        <li>tydlig struktur i koden</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section" id="inlamning">
+                <h2>Inlämning och bedömning</h2>
+                <p>Lämna in Pythonfilen. Filen ska innehålla en kommentar i början som förklarar vad programmet gör.</p>
+                <p>Använd tydliga variabelnamn och kommentarer där de hjälper läsaren att förstå koden.</p>
+
+                <h3>Bedömningen baseras på</h3>
+                <ul>
+                    <li>om programmet fungerar korrekt</li>
+                    <li>hur tydligt problemet löses</li>
+                    <li>hur strukturerad koden är</li>
+                    <li>hur väl programmets resultat presenteras</li>
+                </ul>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-7.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Tillbaka</div>
+                        <div class="nav-title">Kapitel 7</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="chapter-8.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Kapitel 8: Funktioner</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p>© Paul Belfrage. Anpassad för Programmering 1 med Python. | <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fyjjAhtlfX3u6UeVvk6AlF_3-ow0UdZmgP3QtJIn5s7_hw/viewform" target="_blank" rel="noopener noreferrer">Kontakt / Återkoppling</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Övningsuppgift för kapitel 1-11 i Programmering nivå 1 med Python.">
+    <title>Övningsuppgift kap 1-11 - Programmering nivå 1 med Python</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page assignment-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero" id="top">
+                <p class="eyebrow">Övningsuppgift</p>
+                <h1>Övningsuppgift kap 1-11</h1>
+                <p class="subtitle">Välj en nivå och skapa ett Pythonprogram där du använder grunderna från kapitel
+                    1-11: variabler, input, operatorer, villkor, loopar, listor, funktioner, felsökning,
+                    undantagshantering och tydlig kodstruktur.</p>
+            </header>
+
+            <section class="toc-section">
+                <div class="section-heading">
+                    <h2>Innehåll</h2>
+                    <p class="section-note">Uppgiften tränar det du har arbetat med i kapitel 1-11.</p>
+                </div>
+                <ul>
+                    <li><a href="#upplagg">Upplägg</a></li>
+                    <li><a href="#e-niva">E-nivå: Personlig vardagskalkylator</a></li>
+                    <li><a href="#c-niva">C-nivå: Träningslogg</a></li>
+                    <li><a href="#a-niva">A-nivå: Gissa talet</a></li>
+                    <li><a href="#inlamning">Inlämning och bedömning</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="upplagg">
+                <h2>Upplägg</h2>
+                <p>Du ska skriva ett program i Python. Programmet ska fråga användaren efter information, bearbeta
+                    informationen och skriva ut ett tydligt resultat med f-strängar.</p>
+                <p>Välj den nivå som passar dig. Du får gärna börja med E-nivån och sedan bygga vidare, men lämna in ett
+                    program som du själv förstår och kan förklara.</p>
+                <h3>Tips innan du börjar</h3>
+                <ul>
+                    <li>Skriv en liten del i taget och kör programmet ofta.</li>
+                    <li>Skapa funktioner för delar som har ett tydligt ansvar, till exempel inmatning, beräkning eller
+                        utskrift.</li>
+                    <li>Använd tydliga variabelnamn och kommentarer där de faktiskt hjälper.</li>
+                    <li>Använd <code>try</code> och <code>except</code> när uppgiften kräver att felaktig input ska
+                        hanteras.</li>
+                    <li>Alla utskrifter ska använda f-strängar.</li>
+                </ul>
+            </section>
+
+            <section class="content-section assignment-levels">
+                <div class="assignment-level" id="e-niva">
+                    <h3>E-nivå: Personlig vardagskalkylator</h3>
+                    <p>Skapa ett program som hjälper användaren med enkla vardagsberäkningar.</p>
+
+                    <h4>Programmet ska fråga efter</h4>
+                    <ul>
+                        <li>namn</li>
+                        <li>ålder</li>
+                        <li>hur många timmar användaren sover per natt</li>
+                    </ul>
+
+                    <h4>Programmet ska räkna ut</h4>
+                    <ul>
+                        <li>hur många timmar användaren sover per vecka</li>
+                        <li>hur gammal användaren är om 10 år</li>
+                    </ul>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Hej Alex
+Du är 16 år gammal
+Du sover 56 timmar per vecka
+Om 10 år är du 26 år gammal</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>variabler</li>
+                        <li>input</li>
+                        <li>typomvandling</li>
+                        <li>aritmetiska beräkningar</li>
+                        <li>f-strängar</li>
+                        <li>tydliga variabelnamn</li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="c-niva">
+                    <h3>C-nivå: Träningslogg</h3>
+                    <p>Skapa ett program där användaren kan registrera träningspass.</p>
+
+                    <h4>Programmet ska</h4>
+                    <ul>
+                        <li>fråga hur många pass användaren vill registrera</li>
+                        <li>använda en loop för att samla in antal minuter per pass</li>
+                        <li>spara tiderna i en lista</li>
+                    </ul>
+
+                    <h4>Programmet ska räkna ut och visa</h4>
+                    <ul>
+                        <li>total träningstid</li>
+                        <li>medelvärde per pass</li>
+                        <li>alla registrerade pass</li>
+                    </ul>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Du tränade totalt 180 minuter
+Medel per pass är 60 minuter
+Dina pass: [45, 60, 75]</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>loopar</li>
+                        <li>listor</li>
+                        <li>beräkningar</li>
+                        <li>f-strängar</li>
+                        <li>minst en egen funktion</li>
+                        <li>programmet ska vara strukturerat med funktioner</li>
+                    </ul>
+                </div>
+
+                <div class="assignment-level" id="a-niva">
+                    <h3>A-nivå: Spel - Gissa talet</h3>
+                    <p>Skapa ett spel där användaren ska gissa ett slumpat tal mellan 1 och 100.</p>
+
+                    <h4>Programmet ska</h4>
+                    <ul>
+                        <li>slumpa fram ett tal mellan 1 och 100</li>
+                        <li>låta användaren gissa tills svaret är rätt</li>
+                        <li>ge feedback: för lågt eller för högt</li>
+                        <li>räkna antal gissningar</li>
+                        <li>spara gissningarna i en lista</li>
+                        <li>hantera felaktig input med <code>try</code> och <code>except</code></li>
+                        <li>fråga om användaren vill spela igen</li>
+                    </ul>
+
+                    <h4>Exempel på resultat</h4>
+                    <pre><code>Gissa ett tal mellan 1 och 100
+För lågt
+För högt
+Rätt! Du klarade det på 5 gissningar
+Vill du spela igen?</code></pre>
+
+                    <h4>Krav</h4>
+                    <ul class="assignment-checklist">
+                        <li>loopar</li>
+                        <li>villkor</li>
+                        <li>funktioner</li>
+                        <li>listor för att spara gissningar</li>
+                        <li>undantagshantering</li>
+                        <li>tydlig struktur</li>
+                        <li>kommentarer</li>
+                    </ul>
+
+                    <h4>Förslag på funktioner</h4>
+                    <ul>
+                        <li>en funktion för spelet</li>
+                        <li>en funktion för input</li>
+                        <li>en funktion för utskrift</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section" id="inlamning">
+                <h2>Inlämning och bedömning</h2>
+                <p>Lämna in Pythonfilen. Kontrollera att programmet går att köra, att utskrifterna är tydliga och att
+                    koden är strukturerad så att en annan person kan följa den.</p>
+
+                <h3>Bedömningen baseras på</h3>
+                <ul>
+                    <li>hur väl programmet fungerar</li>
+                    <li>hur tydlig koden är</li>
+                    <li>hur strukturerat programmet är</li>
+                    <li>hur väl kraven uppfylls</li>
+                </ul>
+
+                <h3>Nivåernas fokus</h3>
+                <ul>
+                    <li><strong>E-nivå:</strong> Enkla program fungerar och använder grundläggande delar.</li>
+                    <li><strong>C-nivå:</strong> Programmet är mer strukturerat och använder flera delar tillsammans.</li>
+                    <li><strong>A-nivå:</strong> Programmet är välstrukturerat, robust och visar god förståelse för
+                        programmering.</li>
+                </ul>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="chapter-11.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Tillbaka</div>
+                        <div class="nav-title">Kapitel 11</div>
+                    </div>
+                    <div aria-hidden="true">←</div>
+                </a>
+                <a href="chapter-12.html" class="nav-button">
+                    <div>
+                        <div class="nav-label">Nästa kapitel</div>
+                        <div class="nav-title">Kapitel 12: Användargränssnitt</div>
+                    </div>
+                    <div aria-hidden="true">→</div>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p>© Paul Belfrage. Anpassad för Programmering 1 med Python. | <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8fyjjAhtlfX3u6UeVvk6AlF_3-ow0UdZmgP3QtJIn5s7_hw/viewform" target="_blank" rel="noopener noreferrer">Kontakt / Återkoppling</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
