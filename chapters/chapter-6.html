@@ -98,6 +98,34 @@ print(5)</code></pre>
 while count <= 5:
     print(count)
     count = count + 1</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: while-loop</h3>
+                            <p>Testa hur en <code>while</code>-loop upprepar kod så länge villkoret är sant.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra startvärdet <code>count = 1</code> till <code>count = 0</code></li>
+                            <li>ändra villkoret till <code>count &lt;= 10</code></li>
+                            <li>ändra ökningen till <code>count = count + 2</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-6-while-code">Kod</label>
+                    <textarea id="chapter-6-while-code" class="python-code-editor" spellcheck="false" data-python-code>count = 1
+while count <= 5:
+    print(count)
+    count = count + 1</textarea>
+                    <label for="chapter-6-while-input">Inmatning</label>
+                    <textarea id="chapter-6-while-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet skriver ut talen 1 till 5.</p>
 
                 <h3>Hur det fungerar</h3>
@@ -121,6 +149,32 @@ while count <= 5:
                 <h3>Exempel</h3>
                 <pre><code>for i in range(5):
     print(i)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: for-loop</h3>
+                            <p>Testa hur variabeln <code>i</code> får ett nytt värde varje varv.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra <code>range(5)</code> till <code>range(8)</code></li>
+                            <li>ändra utskriften till <code>print(i + 1)</code></li>
+                            <li>lägga till <code>print("Hej")</code> inne i loopen</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-6-for-code">Kod</label>
+                    <textarea id="chapter-6-for-code" class="python-code-editor" spellcheck="false" data-python-code>for i in range(5):
+    print(i)</textarea>
+                    <label for="chapter-6-for-input">Inmatning</label>
+                    <textarea id="chapter-6-for-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Hur programmet fungerar</h3>
                 <p><code>range(5)</code> skapar talen 0, 1, 2, 3, 4.</p>
@@ -165,6 +219,32 @@ while count <= 5:
                 <p>Man kan också ange hur mycket talet ska öka varje gång.</p>
                 <pre><code>for i in range(0, 10, 2):
     print(i)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: range()</h3>
+                            <p>Testa start, stopp och steg i <code>range()</code>.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra stoppvärdet <code>10</code> till <code>20</code></li>
+                            <li>ändra steget <code>2</code> till <code>3</code></li>
+                            <li>testa <code>range(10, 0, -1)</code> för att räkna baklänges</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-6-range-code">Kod</label>
+                    <textarea id="chapter-6-range-code" class="python-code-editor" spellcheck="false" data-python-code>for i in range(0, 10, 2):
+    print(i)</textarea>
+                    <label for="chapter-6-range-input">Inmatning</label>
+                    <textarea id="chapter-6-range-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet skriver ut:</p>
                 <pre><code>0
 2
@@ -196,6 +276,34 @@ while count < 5:
 while count < 5:
     print(count)
     count = count + 1</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: undvik oändlig loop</h3>
+                            <p>Testa varför variabeln i en <code>while</code>-loop måste ändras.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ta bort raden <code>count = count + 1</code> och se felmeddelandet</li>
+                            <li>ändra <code>count &lt; 5</code> till <code>count &lt; 3</code></li>
+                            <li>ändra ökningen till <code>count = count + 2</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-6-infinite-code">Kod</label>
+                    <textarea id="chapter-6-infinite-code" class="python-code-editor" spellcheck="false" data-python-code>count = 0
+while count < 5:
+    print(count)
+    count = count + 1</textarea>
+                    <label for="chapter-6-infinite-input">Inmatning</label>
+                    <textarea id="chapter-6-infinite-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Nu ökar count varje gång loopen körs och programmet avslutas när count blir 5.</p>
             </section>
 
@@ -225,6 +333,36 @@ for i in range(1, number + 1):
         print(f"{i} är jämnt")
     else:
         print(f"{i} är udda")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: loopar och villkor</h3>
+                            <p>Testa hur en loop kan använda <code>if</code> för varje tal.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>5</code>, <code>10</code> eller <code>15</code> i inmatningen</li>
+                            <li>ändra <code>i % 2 == 0</code> till <code>i % 3 == 0</code></li>
+                            <li>ändra texterna till <code>delbart</code> och <code>inte delbart</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-6-loop-condition-code">Kod</label>
+                    <textarea id="chapter-6-loop-condition-code" class="python-code-editor" spellcheck="false" data-python-code>number = int(input("Hur många tal vill du skriva ut? "))
+for i in range(1, number + 1):
+    if i % 2 == 0:
+        print(f"{i} är jämnt")
+    else:
+        print(f"{i} är udda")</textarea>
+                    <label for="chapter-6-loop-condition-input">Inmatning</label>
+                    <textarea id="chapter-6-loop-condition-input" class="python-input-editor" spellcheck="false" data-python-input>10</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet skriver ut alla tal upp till det tal användaren anger.</p>
 
                 <h3>Varför detta är viktigt</h3>
@@ -249,6 +387,39 @@ for i in range(5):
     number = int(input("Skriv ett tal: "))
     total = total + number
 print(f"Summan är {total}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: summera flera tal</h3>
+                            <p>Testa hur en loop kan läsa in flera värden och räkna en summa.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra <code>range(5)</code> till <code>range(3)</code></li>
+                            <li>skriva ett tal per rad i inmatningen</li>
+                            <li>ändra <code>total = total + number</code> till <code>total = total - number</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-6-sum-code">Kod</label>
+                    <textarea id="chapter-6-sum-code" class="python-code-editor" spellcheck="false" data-python-code>total = 0
+for i in range(5):
+    number = int(input("Skriv ett tal: "))
+    total = total + number
+print(f"Summan är {total}")</textarea>
+                    <label for="chapter-6-sum-input">Inmatning</label>
+                    <textarea id="chapter-6-sum-input" class="python-input-editor" spellcheck="false" data-python-input>1
+2
+3
+4
+5</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Hur programmet fungerar</h3>
                 <p>Variabeln total börjar med värdet 0.</p>
@@ -281,6 +452,37 @@ print(f"Antal jämna tal är {count}")</code></pre>
     if number == 0:
         break
     print(f"Du skrev talet {number}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: break</h3>
+                            <p>Testa hur <code>break</code> avslutar en loop när användaren skriver <code>0</code>.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva flera tal och avsluta med <code>0</code></li>
+                            <li>ändra stoppvärdet från <code>0</code> till <code>-1</code></li>
+                            <li>lägga till en utskrift efter loopen, till exempel <code>print("Klart")</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-6-break-code">Kod</label>
+                    <textarea id="chapter-6-break-code" class="python-code-editor" spellcheck="false" data-python-code>while True:
+    number = int(input("Skriv ett tal (0 för att avsluta): "))
+    if number == 0:
+        break
+    print(f"Du skrev talet {number}")</textarea>
+                    <label for="chapter-6-break-input">Inmatning</label>
+                    <textarea id="chapter-6-break-input" class="python-input-editor" spellcheck="false" data-python-input>5
+8
+0</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Hur programmet fungerar</h3>
                 <p>Programmet använder en oändlig loop.</p>
@@ -460,6 +662,8 @@ Skriv ett tal (0 för att avsluta): 0</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>

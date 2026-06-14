@@ -66,6 +66,34 @@
                 <pre><code>age = int(input("Hur gammal är du? "))
 if age >= 18:
     print("Du är myndig")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Testa koden direkt</h3>
+                            <p>Skriv Python-kod, fyll i inmatning och kör programmet i webbläsaren.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra inmatningen till <code>15</code>, <code>18</code> eller <code>20</code></li>
+                            <li>ändra villkoret från <code>age &gt;= 18</code> till ett annat tal</li>
+                            <li>lägga till en <code>else</code>-del som skriver vad som händer om personen inte är myndig</li>
+                            <li>ändra texten i <code>print()</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-5-python-code">Kod</label>
+                    <textarea id="chapter-5-python-code" class="python-code-editor" spellcheck="false" data-python-code>age = int(input("Hur gammal är du? "))
+if age >= 18:
+    print("Du är myndig")</textarea>
+                    <label for="chapter-5-python-input">Inmatning</label>
+                    <textarea id="chapter-5-python-input" class="python-input-editor" spellcheck="false" data-python-input>20</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Tips: tryck Enter efter <code>:</code> så att VS Code gör indraget direkt.</p>
                 <p>I detta exempel händer följande:</p>
                 <ol>
@@ -224,6 +252,37 @@ if number % 2 == 0:
     print("Talet är jämnt")
 else:
     print("Talet är udda")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: jämnt eller udda</h3>
+                            <p>Testa hur <code>%</code> används för att se om ett tal är jämnt eller udda.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>4</code>, <code>7</code>, <code>12</code> eller <code>21</code> i inmatningen</li>
+                            <li>ändra <code>== 0</code> till <code>== 1</code> och se vad som händer</li>
+                            <li>ändra utskrifterna till egna meningar</li>
+                            <li>lägga till en rad som skriver ut resten: <code>print(number % 2)</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-5-even-code">Kod</label>
+                    <textarea id="chapter-5-even-code" class="python-code-editor" spellcheck="false" data-python-code>number = int(input("Skriv ett tal: "))
+
+if number % 2 == 0:
+    print("Talet är jämnt")
+else:
+    print("Talet är udda")</textarea>
+                    <label for="chapter-5-even-input">Inmatning</label>
+                    <textarea id="chapter-5-even-input" class="python-input-editor" spellcheck="false" data-python-input>7</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s54">
@@ -277,6 +336,38 @@ elif score >= 50:
     print("Du klarade provet")
 else:
     print("Du klarade inte provet")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: poäng och elif</h3>
+                            <p>Testa hur programmet väljer mellan <code>if</code>, <code>elif</code> och <code>else</code>.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>30</code>, <code>50</code>, <code>79</code>, <code>80</code> eller <code>100</code> i inmatningen</li>
+                            <li>ändra gränsen <code>80</code> till <code>90</code></li>
+                            <li>ändra gränsen <code>50</code> till <code>60</code></li>
+                            <li>byta ordning på villkoren och fundera på varför resultatet ändras</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-5-score-code">Kod</label>
+                    <textarea id="chapter-5-score-code" class="python-code-editor" spellcheck="false" data-python-code>score = int(input("Hur många poäng fick du? "))
+if score >= 80:
+    print("Du fick ett högt resultat")
+elif score >= 50:
+    print("Du klarade provet")
+else:
+    print("Du klarade inte provet")</textarea>
+                    <label for="chapter-5-score-input">Inmatning</label>
+                    <textarea id="chapter-5-score-input" class="python-input-editor" spellcheck="false" data-python-input>85</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Om poängen är 85 körs bara den första delen eftersom villkoret redan är sant.</p>
 
                 <h3>Övning</h3>
@@ -381,6 +472,39 @@ if age >= 18 and has_ticket == "ja":
     print("Du får gå in")
 else:
     print("Du får inte gå in")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: logiska uttryck</h3>
+                            <p>Testa hur <code>and</code> kräver att två villkor är sanna samtidigt.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>18</code> och <code>ja</code> i inmatningen</li>
+                            <li>skriva <code>17</code> och <code>ja</code> för att se att åldern stoppar programmet</li>
+                            <li>skriva <code>20</code> och <code>nej</code> för att se att biljetten också behövs</li>
+                            <li>ändra <code>and</code> till <code>or</code> och jämföra resultatet</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-5-logic-code">Kod</label>
+                    <textarea id="chapter-5-logic-code" class="python-code-editor" spellcheck="false" data-python-code>age = int(input("Hur gammal är du? "))
+has_ticket = input("Har du biljett (ja/nej)? ")
+
+if age >= 18 and has_ticket == "ja":
+    print("Du får gå in")
+else:
+    print("Du får inte gå in")</textarea>
+                    <label for="chapter-5-logic-input">Inmatning</label>
+                    <textarea id="chapter-5-logic-input" class="python-input-editor" spellcheck="false" data-python-input>18
+ja</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet kräver att personen är minst 18 år och har biljett.</p>
 
                 <h3>Viktigt att tänka på</h3>
@@ -601,6 +725,8 @@ else:
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>
