@@ -78,6 +78,33 @@ print(numbers)</code></pre>
                 <pre><code>numbers = [3, 7, 2, 9]
 for number in numbers:
     print(number)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: skriv ut en lista</h3>
+                            <p>Testa hur en lista kan innehålla flera värden och hur en <code>for</code>-loop går igenom dem.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>lägga till fler tal i listan</li>
+                            <li>byta ut talen mot egna tal</li>
+                            <li>ändra <code>print(number)</code> till <code>print(number * 2)</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-7-list-code">Kod</label>
+                    <textarea id="chapter-7-list-code" class="python-code-editor" spellcheck="false" data-python-code>numbers = [3, 7, 2, 9]
+for number in numbers:
+    print(number)</textarea>
+                    <label for="chapter-7-list-input">Inmatning</label>
+                    <textarea id="chapter-7-list-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet skriver ut varje värde i listan.</p>
             </section>
 
@@ -130,6 +157,37 @@ print(numbers)</code></pre>
                     <li>Ändra den andra färgen till svart.</li>
                     <li>Skriv ut hela listan.</li>
                 </ol>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: index i listor</h3>
+                            <p>Testa hur index används för att hämta och ändra värden i en lista.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra <code>colors[0]</code> till <code>colors[2]</code></li>
+                            <li>testa <code>colors[-1]</code> för att hämta sista färgen</li>
+                            <li>ändra <code>colors[1] = "svart"</code> till en annan färg</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-7-index-code">Kod</label>
+                    <textarea id="chapter-7-index-code" class="python-code-editor" spellcheck="false" data-python-code>colors = ["röd", "blå", "grön", "gul"]
+
+print(colors[0])
+print(colors[-1])
+
+colors[1] = "svart"
+print(colors)</textarea>
+                    <label for="chapter-7-index-input">Inmatning</label>
+                    <textarea id="chapter-7-index-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s73">
@@ -155,6 +213,34 @@ for number in numbers:
                 <pre><code>numbers = [3, 7, 2, 9]
 for number in numbers:
     print(number * 2)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: loopa och beräkna</h3>
+                            <p>Testa hur en loop kan göra samma beräkning på varje tal i en lista.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra listan till egna tal</li>
+                            <li>ändra <code>* 3</code> till <code>* 5</code></li>
+                            <li>lägga till en utskrift som visar originaltalet också</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-7-loop-code">Kod</label>
+                    <textarea id="chapter-7-loop-code" class="python-code-editor" spellcheck="false" data-python-code>numbers = [2, 4, 6, 8, 10]
+
+for number in numbers:
+    print(number * 3)</textarea>
+                    <label for="chapter-7-loop-input">Inmatning</label>
+                    <textarea id="chapter-7-loop-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Resultat:</p>
                 <pre><code>6
 14
@@ -202,6 +288,39 @@ print(numbers)</code></pre>
 number = int(input("Skriv ett tal: "))
 numbers.append(number)
 print(numbers)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: append()</h3>
+                            <p>Testa hur programmet samlar in tal och lägger dem sist i listan.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva tre olika tal, ett per rad</li>
+                            <li>ändra <code>range(3)</code> till <code>range(5)</code> och lägga till fler inmatningar</li>
+                            <li>lägga till <code>print(len(numbers))</code> längst ner</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-7-append-code">Kod</label>
+                    <textarea id="chapter-7-append-code" class="python-code-editor" spellcheck="false" data-python-code>numbers = []
+
+for i in range(3):
+    number = int(input("Skriv ett tal: "))
+    numbers.append(number)
+
+print(numbers)</textarea>
+                    <label for="chapter-7-append-input">Inmatning</label>
+                    <textarea id="chapter-7-append-input" class="python-input-editor" spellcheck="false" data-python-input>4
+7
+2</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Listan var först tom men innehåller nu talet som användaren skrev.</p>
 
                 <h3>Övning</h3>
@@ -234,6 +353,40 @@ for number in numbers:
     total = total + number
 average = total / len(numbers)
 print(f"Medelvärdet är {average}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: summa och medelvärde</h3>
+                            <p>Testa hur en lista kan bearbetas för att räkna ut statistik.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra talen i listan</li>
+                            <li>lägga till fler tal och se hur <code>len(numbers)</code> ändras</li>
+                            <li>lägga till en utskrift för <code>total</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-7-average-code">Kod</label>
+                    <textarea id="chapter-7-average-code" class="python-code-editor" spellcheck="false" data-python-code>numbers = [4, 6, 2, 8, 10]
+total = 0
+
+for number in numbers:
+    total = total + number
+
+average = total / len(numbers)
+
+print(f"Summan är {total}")
+print(f"Medelvärdet är {average}")</textarea>
+                    <label for="chapter-7-average-input">Inmatning</label>
+                    <textarea id="chapter-7-average-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Funktionen <code>len()</code> används för att ta reda på hur många värden som finns i listan.</p>
 
                 <h3>Exempel: största värdet</h3>
@@ -287,6 +440,38 @@ for number in numbers:
     if number % 2 == 0:
         count = count + 1
 print(f"Antal jämna tal är {count}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: listor och villkor</h3>
+                            <p>Testa hur en loop och ett villkor kan hitta värden som uppfyller ett krav.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>lägga till fler tal i listan</li>
+                            <li>ändra villkoret till <code>number &gt; 5</code></li>
+                            <li>skriva ut varje tal som räknas med</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-7-condition-code">Kod</label>
+                    <textarea id="chapter-7-condition-code" class="python-code-editor" spellcheck="false" data-python-code>numbers = [4, 7, 2, 9, 5]
+count = 0
+
+for number in numbers:
+    if number % 2 == 0:
+        count = count + 1
+
+print(f"Antal jämna tal är {count}")</textarea>
+                    <label for="chapter-7-condition-input">Inmatning</label>
+                    <textarea id="chapter-7-condition-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Varför listor är viktiga</h3>
                 <p>Listor används ofta när program behöver lagra många värden, bearbeta data, göra beräkningar och
@@ -449,6 +634,8 @@ print(f"Antal jämna tal är {count}")</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>
