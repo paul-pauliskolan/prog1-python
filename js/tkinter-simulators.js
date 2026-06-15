@@ -115,4 +115,44 @@ document.addEventListener("DOMContentLoaded", () => {
       label.textContent = `Totalt: ${total} kr`;
     });
   });
+
+  document.querySelectorAll("[data-tkinter-film-length-demo]").forEach((demo) => {
+    const nameEntry = demo.querySelector("[data-tkinter-name]");
+    const lengthEntry = demo.querySelector("[data-tkinter-length]");
+    const button = demo.querySelector("[data-tkinter-button]");
+    const clearButton = demo.querySelector("[data-tkinter-clear]");
+    const label = demo.querySelector("[data-tkinter-label]");
+
+    if (!nameEntry || !lengthEntry || !button || !label) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      const name = nameEntry.value.trim();
+      const length = parseNumber(lengthEntry.value);
+
+      if (!name) {
+        label.textContent = "Skriv filmens namn";
+        return;
+      }
+
+      if (length === null || length <= 0 || !Number.isInteger(length)) {
+        label.textContent = "Skriv längden som ett heltal större än 0";
+        return;
+      }
+
+      const hours = Math.floor(length / 60);
+      const minutes = length % 60;
+      label.textContent = `Film: ${name}\nLängd: ${length} minuter\nTid: ${hours} tim ${minutes} min`;
+    });
+
+    if (clearButton) {
+      clearButton.addEventListener("click", () => {
+        nameEntry.value = "";
+        lengthEntry.value = "";
+        label.textContent = "";
+        nameEntry.focus();
+      });
+    }
+  });
 });

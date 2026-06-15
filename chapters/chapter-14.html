@@ -314,6 +314,60 @@ def visa_film(namn, langd):
 film = hamta_film()
 langd = hamta_langd()
 visa_film(film, langd)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: implementera filmprogram</h3>
+                            <p>Testa hur designen blir fungerande kod med funktioner, inmatning, felhantering och utskrift.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra filmens namn och längd i inmatningen</li>
+                            <li>skriva text som längd först och sedan ett heltal på nästa rad</li>
+                            <li>lägga till en kontroll som stoppar negativa längder</li>
+                            <li>ändra <code>visa_film()</code> så utskriften blir tydligare</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-14-implementation-code">Kod</label>
+                    <textarea id="chapter-14-implementation-code" class="python-code-editor python-code-editor-large" spellcheck="false" data-python-code>def hamta_film():
+    namn = input("Skriv filmens namn: ")
+    return namn
+
+def hamta_langd():
+    while True:
+        try:
+            langd = int(input("Skriv filmens längd: "))
+            return langd
+        except ValueError:
+            print("Fel: skriv ett heltal")
+
+def visa_film(namn, langd):
+    print(f"Film: {namn}")
+    print(f"Längd: {langd} minuter")
+
+film = hamta_film()
+langd = hamta_langd()
+visa_film(film, langd)</textarea>
+                    <label for="chapter-14-implementation-input">Inmatning</label>
+                    <div class="python-input-guide">
+                        <p>Fyll i en rad för varje fråga. Om längden är fel frågar programmet igen.</p>
+                        <ol>
+                            <li>Filmens namn</li>
+                            <li>Filmens längd</li>
+                            <li>Ny längd om förra raden inte var ett heltal</li>
+                        </ol>
+                    </div>
+                    <textarea id="chapter-14-implementation-input" class="python-input-editor python-input-editor-tall" spellcheck="false" data-python-input>Interstellar
+abc
+169</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Testa under tiden</h3>
                 <p>Kör programmet ofta.</p>
@@ -377,10 +431,40 @@ visa_film(film, langd)</code></pre>
                     <li>Formatera så det står t.ex. 2 tim och 36 min om användaren matar in 123 min</li>
                     <li>Testa att skriva fel värden och se vad som händer</li>
                 </ul>
-                <p>
-                    <img src="../assets/images/image31.png" alt="Exempel på Tkinter-program för filminfo"
-                        loading="lazy">
-                </p>
+                <div class="tkinter-simulator" data-tkinter-film-length-demo>
+                    <div class="tkinter-simulator-header">
+                        <h3>Interaktiv simulering: filminfo i Tkinter</h3>
+                        <p>Det här visar hur GUI-programmet kan fungera. I Python bygger du samma beteende med Label, Entry, Button och config().</p>
+                    </div>
+                    <div class="tkinter-film-window" role="group" aria-label="Simulerat Tkinter-program för filminfo">
+                        <div class="tkinter-film-titlebar">
+                            <div class="tkinter-film-controls" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="tkinter-film-title">Filminfo</div>
+                        </div>
+                        <div class="tkinter-film-body">
+                            <label class="tkinter-film-label" for="tkinter-film-title">Film:</label>
+                            <input id="tkinter-film-title" class="tkinter-film-entry" type="text" value="D" data-tkinter-name>
+                            <label class="tkinter-film-label" for="tkinter-film-minutes">Längd (minuter):</label>
+                            <input id="tkinter-film-minutes" class="tkinter-film-entry" type="text" value="123" data-tkinter-length>
+                            <button type="button" class="tkinter-film-button tkinter-film-calculate" data-tkinter-button>Beräkna</button>
+                            <button type="button" class="tkinter-film-button tkinter-film-clear" data-tkinter-clear>Rensa</button>
+                            <div class="tkinter-film-output" data-tkinter-label aria-live="polite"></div>
+                        </div>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>123</code> minuter och kontrollera att resultatet blir <code>2 tim och 3 min</code></li>
+                            <li>skriva text i längdfältet och se felmeddelandet</li>
+                            <li>lämna filmnamnet tomt och klicka på <strong>Beräkna</strong></li>
+                            <li>lämna längden tom och klicka på <strong>Beräkna</strong></li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s145">
@@ -698,6 +782,9 @@ namn = entry_namn.get()</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/tkinter-simulators.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>
