@@ -875,6 +875,83 @@ ol {
   max-width: 72ch;
 }
 
+.chapter-focus-box,
+.chapter-keywords,
+.concept-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.chapter-focus-box,
+.chapter-keywords {
+  margin: 1.25rem 0;
+  padding: 1rem;
+}
+
+.chapter-focus-box {
+  border-color: rgba(123, 211, 137, 0.35);
+}
+
+.chapter-focus-box h3,
+.chapter-keywords h3,
+.concept-card h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.02rem;
+}
+
+.chapter-focus-box p,
+.concept-card p {
+  margin-bottom: 0;
+}
+
+.chapter-keywords ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chapter-keywords li {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(246, 196, 83, 0.32);
+  border-radius: 999px;
+  background: rgba(246, 196, 83, 0.08);
+  color: var(--text);
+  font:
+    700 0.85rem/1 "Trebuchet MS",
+    "Segoe UI",
+    sans-serif;
+}
+
+.chapter-table-wrap {
+  width: 100%;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+}
+
+.chapter-summary-table th {
+  color: var(--accent-strong);
+}
+
+.chapter-summary-table td:first-child {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.concept-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.concept-card {
+  padding: 1rem;
+}
+
 .practice-part-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1362,6 +1439,10 @@ th {
   }
 
   .chapter-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .concept-card-grid {
     grid-template-columns: 1fr;
   }
 
