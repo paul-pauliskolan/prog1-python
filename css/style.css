@@ -639,6 +639,21 @@ ol {
   margin-bottom: 0;
 }
 
+.python-input-guide {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.python-input-guide p {
+  margin-bottom: 0.35rem;
+}
+
+.python-input-guide ol {
+  margin-bottom: 0;
+}
+
 .python-workspace label,
 .python-output-label {
   color: var(--accent-strong);
@@ -672,10 +687,23 @@ ol {
   min-height: 3.3rem;
 }
 
+.python-input-editor-tall {
+  min-height: 6.6rem;
+}
+
+.python-code-editor-large {
+  min-height: 28rem;
+}
+
 .python-code-editor:focus,
 .python-input-editor:focus {
   outline: 2px solid rgba(123, 211, 137, 0.7);
   outline-offset: 2px;
+}
+
+.python-workspace-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .python-run-button {
@@ -713,6 +741,99 @@ ol {
   padding: 0.85rem;
   overflow-x: auto;
   white-space: pre-wrap;
+}
+
+.tkinter-simulator {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(246, 196, 83, 0.35);
+  border-radius: 12px;
+  background: rgba(15, 18, 32, 0.72);
+}
+
+.tkinter-simulator-header h3 {
+  margin: 0 0 0.35rem;
+}
+
+.tkinter-simulator-header p {
+  margin: 0;
+}
+
+.tkinter-window-preview {
+  width: min(100%, 22rem);
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f4f6;
+  color: #111827;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.tkinter-titlebar {
+  padding: 0.45rem 0.65rem;
+  background: #e5e7eb;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.tkinter-window-body {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem;
+}
+
+.tkinter-field-label {
+  font-weight: 700;
+}
+
+.tkinter-entry {
+  min-height: 2.35rem;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  padding: 0.45rem 0.55rem;
+  font: inherit;
+}
+
+.tkinter-entry:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+.tkinter-button {
+  justify-self: start;
+  min-height: 2.35rem;
+  border: 1px solid #6b7280;
+  border-radius: 4px;
+  padding: 0.45rem 0.8rem;
+  background: #e5e7eb;
+  color: #111827;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tkinter-button:hover {
+  background: #d1d5db;
+}
+
+.tkinter-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tkinter-radio-option {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.tkinter-label-output {
+  min-height: 1.5rem;
+  font-weight: 700;
 }
 
 .practice-intro {

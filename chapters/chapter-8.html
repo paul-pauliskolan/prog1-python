@@ -72,6 +72,36 @@ print("Hej och välkommen")</code></pre>
 greet()
 greet()
 greet()</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: anropa en funktion</h3>
+                            <p>Testa hur samma funktion kan användas flera gånger.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra texten i <code>print()</code></li>
+                            <li>anropa <code>greet()</code> fler eller färre gånger</li>
+                            <li>skapa en till funktion som skriver ut en annan text</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-8-greet-code">Kod</label>
+                    <textarea id="chapter-8-greet-code" class="python-code-editor" spellcheck="false" data-python-code>def greet():
+    print("Hej och välkommen")
+
+greet()
+greet()
+greet()</textarea>
+                    <label for="chapter-8-greet-input">Inmatning</label>
+                    <textarea id="chapter-8-greet-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Här definieras först funktionen <code>greet()</code>.</p>
                 <p>Sedan anropas funktionen tre gånger.</p>
 
@@ -136,6 +166,35 @@ Hej Erik</code></pre>
     print(f"Hej {name}")
 
 greet("Sara")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: definiera funktion</h3>
+                            <p>Testa hur en funktion definieras med <code>def</code> och sedan anropas.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra namnen i funktionsanropen</li>
+                            <li>ändra texten från <code>Hej</code> till <code>Välkommen</code></li>
+                            <li>lägga till ett tredje anrop av funktionen</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-8-define-code">Kod</label>
+                    <textarea id="chapter-8-define-code" class="python-code-editor" spellcheck="false" data-python-code>def greet(name):
+    print(f"Hej {name}")
+
+greet("Sara")
+greet("Alex")</textarea>
+                    <label for="chapter-8-define-input">Inmatning</label>
+                    <textarea id="chapter-8-define-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Övning</h3>
                 <p>Skapa en funktion som heter <code>welcome</code>.</p>
@@ -171,6 +230,35 @@ Hej Erik</code></pre>
     print(f"{name} är {age} år gammal")
 
 introduce("Sara", 17)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: parametrar</h3>
+                            <p>Testa hur en funktion kan ta emot flera värden.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra namnet och åldern i <code>introduce()</code></li>
+                            <li>anropa funktionen flera gånger med olika värden</li>
+                            <li>lägga till en parameter för klass eller favoritämne</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-8-params-code">Kod</label>
+                    <textarea id="chapter-8-params-code" class="python-code-editor" spellcheck="false" data-python-code>def introduce(name, age):
+    print(f"{name} är {age} år gammal")
+
+introduce("Sara", 17)
+introduce("Alex", 16)</textarea>
+                    <label for="chapter-8-params-input">Inmatning</label>
+                    <textarea id="chapter-8-params-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet skriver ut</p>
                 <pre><code>Sara är 17 år gammal</code></pre>
 
@@ -229,6 +317,36 @@ print(result)</code></pre>
 
 total = add(10, 7)
 print(f"Summan är {total}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: return</h3>
+                            <p>Testa hur en funktion kan skicka tillbaka ett värde som sparas i en variabel.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra talen i <code>add(10, 7)</code></li>
+                            <li>ändra funktionen så den subtraherar istället</li>
+                            <li>använda resultatet i en ny beräkning, till exempel <code>total * 2</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-8-return-code">Kod</label>
+                    <textarea id="chapter-8-return-code" class="python-code-editor" spellcheck="false" data-python-code>def add(a, b):
+    return a + b
+
+total = add(10, 7)
+print(f"Summan är {total}")
+print(f"Dubbla summan är {total * 2}")</textarea>
+                    <label for="chapter-8-return-input">Inmatning</label>
+                    <textarea id="chapter-8-return-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet skriver ut</p>
                 <pre><code>Summan är 17</code></pre>
 
@@ -266,6 +384,41 @@ def add(a, b):
 greet(name)
 result = add(4, 6)
 print(f"Summan är {result}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: strukturera program</h3>
+                            <p>Testa hur funktioner kan ligga överst och huvudprogrammet längst ner.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva ett annat namn i inmatningen</li>
+                            <li>ändra talen i <code>add(4, 6)</code></li>
+                            <li>lägga till en funktion <code>double(number)</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-8-structure-code">Kod</label>
+                    <textarea id="chapter-8-structure-code" class="python-code-editor" spellcheck="false" data-python-code>def greet(name):
+    print(f"Hej {name}")
+
+def add(a, b):
+    return a + b
+
+name = input("Vad heter du? ")
+greet(name)
+
+result = add(4, 6)
+print(f"Summan är {result}")</textarea>
+                    <label for="chapter-8-structure-input">Inmatning</label>
+                    <textarea id="chapter-8-structure-input" class="python-input-editor" spellcheck="false" data-python-input>Kim</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Varför struktur är viktigt</h3>
                 <p>Strukturerad kod gör program</p>
@@ -324,6 +477,58 @@ sum_result = add(x, y)
 product_result = multiply(x, y)
 print(f"Summan är {sum_result}")
 print(f"Produkten är {product_result}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: butikskvitto</h3>
+                            <p>Testa ett mer verkligt program där flera funktioner samarbetar för att räkna ut ett kvitto.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra varans namn, pris, antal och rabatt i inmatningen</li>
+                            <li>ändra rabattregeln i <code>calculate_discount()</code></li>
+                            <li>lägga till moms med en ny funktion <code>calculate_vat(price)</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-8-program-code">Kod</label>
+                    <textarea id="chapter-8-program-code" class="python-code-editor python-code-editor-large" spellcheck="false" data-python-code>def calculate_subtotal(price, quantity):
+    return price * quantity
+
+def calculate_discount(subtotal, discount_percent):
+    return subtotal * discount_percent / 100
+
+def print_receipt(product, quantity, subtotal, discount, total):
+    print("Kvitto")
+    print("------")
+    print(f"Vara: {product}")
+    print(f"Antal: {quantity}")
+    print(f"Pris före rabatt: {subtotal} kr")
+    print(f"Rabatt: {discount} kr")
+    print(f"Att betala: {total} kr")
+
+product = input("Vilken vara köper kunden? ")
+price = int(input("Pris per vara: "))
+quantity = int(input("Antal: "))
+discount_percent = int(input("Rabatt i procent: "))
+
+subtotal = calculate_subtotal(price, quantity)
+discount = calculate_discount(subtotal, discount_percent)
+total = subtotal - discount
+
+print_receipt(product, quantity, subtotal, discount, total)</textarea>
+                    <label for="chapter-8-program-input">Inmatning</label>
+                    <textarea id="chapter-8-program-input" class="python-input-editor" spellcheck="false" data-python-input>Hörlurar
+399
+2
+15</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
 
                 <h3>Hur programmet är uppbyggt</h3>
                 <p>Programmet består av tre delar</p>
@@ -517,6 +722,8 @@ print(f"Produkten är {product_result}")</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>

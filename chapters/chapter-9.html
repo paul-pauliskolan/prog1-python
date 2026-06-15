@@ -98,6 +98,34 @@ if age >= 18:
 age = 18
 if age >= 18
 print("Du är myndig")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: hitta syntaxfel</h3>
+                            <p>Kör koden, läs felmeddelandet och rätta ett fel i taget.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>lägga till den saknade parentesen på första raden</li>
+                            <li>lägga till kolon efter <code>if age &gt;= 18</code></li>
+                            <li>göra indrag framför raden med <code>print("Du är myndig")</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-9-syntax-code">Kod</label>
+                    <textarea id="chapter-9-syntax-code" class="python-code-editor" spellcheck="false" data-python-code>print("Hej världen"
+age = 18
+if age >= 18
+print("Du är myndig")</textarea>
+                    <label for="chapter-9-syntax-input">Inmatning</label>
+                    <textarea id="chapter-9-syntax-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s92">
@@ -149,6 +177,38 @@ print(length)</code></pre>
 b = 20
 average = a + b / 2
 print(average)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: logiskt fel</h3>
+                            <p>Programmet körs, men svaret blir fel. Använd utskrifter för att förstå varför.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>köra koden och jämföra svaret med rätt medelvärde</li>
+                            <li>lägga till <code>print(a + b)</code> före beräkningen</li>
+                            <li>ändra raden till <code>average = (a + b) / 2</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-9-logic-code">Kod</label>
+                    <textarea id="chapter-9-logic-code" class="python-code-editor" spellcheck="false" data-python-code>a = 10
+b = 20
+
+print(f"a är {a}")
+print(f"b är {b}")
+
+average = a + b / 2
+print(f"Medelvärdet är {average}")</textarea>
+                    <label for="chapter-9-logic-input">Inmatning</label>
+                    <textarea id="chapter-9-logic-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Frågor</p>
                 <ol>
                     <li>Vad blir resultatet när programmet körs?</li>
@@ -206,6 +266,33 @@ print(namn)</code></pre>
                 <pre><code>number = int(input("Skriv ett tal: "))
 result = 100 / number
 print(result)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: exekveringsfel</h3>
+                            <p>Testa vad som händer när programmet startar men kraschar under körningen.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>köra med inmatningen <code>0</code> och läsa felmeddelandet</li>
+                            <li>ändra inmatningen till <code>5</code></li>
+                            <li>lägga till ett <code>if</code>-villkor som stoppar division med noll</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-9-runtime-code">Kod</label>
+                    <textarea id="chapter-9-runtime-code" class="python-code-editor" spellcheck="false" data-python-code>number = int(input("Skriv ett tal: "))
+result = 100 / number
+print(result)</textarea>
+                    <label for="chapter-9-runtime-input">Inmatning</label>
+                    <textarea id="chapter-9-runtime-input" class="python-input-editor" spellcheck="false" data-python-input>0</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Frågor</p>
                 <ol>
                     <li>Vad händer om användaren skriver <strong>0</strong>?</li>
@@ -259,6 +346,33 @@ print(result)</code></pre>
                 <pre><code>age = input("Hur gammal är du? ")
 result = age + 5
 print(result)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: läs felmeddelandet</h3>
+                            <p>Kör koden och leta efter feltypen i resultatet.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>läsa raden som börjar med <code>TypeError</code></li>
+                            <li>fundera på varför <code>age</code> är text</li>
+                            <li>ändra första raden till <code>age = int(input("Hur gammal är du? "))</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-9-message-code">Kod</label>
+                    <textarea id="chapter-9-message-code" class="python-code-editor" spellcheck="false" data-python-code>age = input("Hur gammal är du? ")
+result = age + 5
+print(result)</textarea>
+                    <label for="chapter-9-message-input">Inmatning</label>
+                    <textarea id="chapter-9-message-input" class="python-input-editor" spellcheck="false" data-python-input>16</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Frågor</p>
                 <ol>
                     <li>Vilken typ av fel uppstår när programmet körs?</li>
@@ -330,6 +444,41 @@ print(name)</code></pre>
 b = int(input("Skriv andra talet: "))
 average = a + b / 2
 print(f"Medelvärdet är {average}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: felsök steg för steg</h3>
+                            <p>Använd extra <code>print()</code>-rader för att kontrollera värden och delberäkningar.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra testvärdena i inmatningen</li>
+                            <li>jämföra <code>a + b / 2</code> med <code>(a + b) / 2</code></li>
+                            <li>ta bort felsökningsutskrifterna när programmet fungerar</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-9-debug-code">Kod</label>
+                    <textarea id="chapter-9-debug-code" class="python-code-editor" spellcheck="false" data-python-code>a = int(input("Skriv första talet: "))
+b = int(input("Skriv andra talet: "))
+
+print(f"a = {a}")
+print(f"b = {b}")
+print(f"a + b = {a + b}")
+print(f"b / 2 = {b / 2}")
+
+average = a + b / 2
+print(f"Medelvärdet är {average}")</textarea>
+                    <label for="chapter-9-debug-input">Inmatning</label>
+                    <textarea id="chapter-9-debug-input" class="python-input-editor" spellcheck="false" data-python-input>10
+20</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Frågor</p>
                 <ol>
                     <li>Vad blir fel i programmet?</li>
@@ -395,6 +544,33 @@ else:
                 <pre><code>age = int(input("Hur gammal är du? "))
 future_age = age + 10
 print(f"Om tio år är du {future_age} år gammal")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: testa olika värden</h3>
+                            <p>Kör samma program flera gånger med olika inmatningar och jämför resultatet.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>testa <code>10</code>, <code>18</code> och <code>30</code></li>
+                            <li>testa gränsvärden som <code>0</code> och <code>100</code></li>
+                            <li>skriva text, till exempel <code>hej</code>, och läsa felmeddelandet</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-9-test-code">Kod</label>
+                    <textarea id="chapter-9-test-code" class="python-code-editor" spellcheck="false" data-python-code>age = int(input("Hur gammal är du? "))
+future_age = age + 10
+print(f"Om tio år är du {future_age} år gammal")</textarea>
+                    <label for="chapter-9-test-input">Inmatning</label>
+                    <textarea id="chapter-9-test-input" class="python-input-editor" spellcheck="false" data-python-input>18</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Frågor</p>
                 <ol>
                     <li>Vilka olika värden kan du testa i programmet?</li>
@@ -572,6 +748,8 @@ print(i)</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>

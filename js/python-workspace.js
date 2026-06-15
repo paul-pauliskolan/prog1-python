@@ -95,10 +95,26 @@ _output.getvalue()
     }
   }
 
+  function placeRunButtonNearInput(workspace) {
+    const input = workspace.querySelector("[data-python-input]");
+    const outputWrap = workspace.querySelector(".python-output-wrap");
+    const runButton = workspace.querySelector("[data-python-run]");
+
+    if (!input || !outputWrap || !runButton) {
+      return;
+    }
+
+    const actions = document.createElement("div");
+    actions.className = "python-workspace-actions";
+    actions.appendChild(runButton);
+    workspace.insertBefore(actions, outputWrap);
+  }
+
   workspaces.forEach((workspace) => {
     const runButton = workspace.querySelector("[data-python-run]");
 
     if (runButton) {
+      placeRunButtonNearInput(workspace);
       runButton.addEventListener("click", () => runPython(workspace));
     }
   });

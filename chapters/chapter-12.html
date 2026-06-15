@@ -330,6 +330,29 @@ label = tk.Label(window, text="")
 label.pack()
 
 window.mainloop()</code></pre>
+                <div class="tkinter-simulator" data-tkinter-greet-demo>
+                    <div class="tkinter-simulator-header">
+                        <h3>Interaktiv simulering: Säg hej</h3>
+                        <p>Det här är en webbsimulering av Tkinter-programmet ovan. I ett riktigt Python-program öppnas ett separat Tkinter-fönster.</p>
+                    </div>
+                    <div class="tkinter-window-preview" role="group" aria-label="Simulerat Tkinter-fönster">
+                        <div class="tkinter-titlebar">GUI-program</div>
+                        <div class="tkinter-window-body">
+                            <label class="tkinter-field-label" for="tkinter-greet-name">Namn</label>
+                            <input id="tkinter-greet-name" class="tkinter-entry" type="text" value="Anna" data-tkinter-entry>
+                            <button type="button" class="tkinter-button" data-tkinter-button>Säg hej</button>
+                            <div class="tkinter-label-output" data-tkinter-label aria-live="polite"></div>
+                        </div>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Jämför simuleringen med koden:</p>
+                        <ul>
+                            <li><code>entry.get()</code> motsvarar texten i inmatningsfältet.</li>
+                            <li><code>command=greet</code> gör att funktionen körs när knappen klickas.</li>
+                            <li><code>label.config(...)</code> ändrar texten som visas under knappen.</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <h3>Sammanfattning</h3>
                 <p>I detta avsnitt har du lärt dig att</p>
@@ -403,6 +426,24 @@ label = tk.Label(window, text="")
 label.pack()
 
 window.mainloop()</code></pre>
+                <div class="tkinter-simulator" data-tkinter-multiplier-demo>
+                    <div class="tkinter-simulator-header">
+                        <h3>Interaktiv simulering: x2 och x3</h3>
+                        <p>Testa hur två knappar kan använda samma inputfält men köra olika funktioner.</p>
+                    </div>
+                    <div class="tkinter-window-preview" role="group" aria-label="Simulerat Tkinter-fönster med två knappar">
+                        <div class="tkinter-titlebar">Multiplikation</div>
+                        <div class="tkinter-window-body">
+                            <label class="tkinter-field-label" for="tkinter-multiplier-value">Tal</label>
+                            <input id="tkinter-multiplier-value" class="tkinter-entry" type="text" value="6" data-tkinter-entry>
+                            <div class="tkinter-button-row">
+                                <button type="button" class="tkinter-button" data-tkinter-double>x2</button>
+                                <button type="button" class="tkinter-button" data-tkinter-triple>x3</button>
+                            </div>
+                            <div class="tkinter-label-output" data-tkinter-label aria-live="polite"></div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Ändra utseende</h3>
                 <pre><code>label = tk.Label(window, text="Hej", fg="blue", font=("Arial", 16))
@@ -532,6 +573,23 @@ result_label = tk.Label(window, text="")
 result_label.pack()
 
 window.mainloop()</code></pre>
+                <div class="tkinter-simulator" data-tkinter-movie-demo>
+                    <div class="tkinter-simulator-header">
+                        <h3>Interaktiv simulering: filmapp</h3>
+                        <p>Testa hur två inputfält kan användas för att skapa en sammanfattning.</p>
+                    </div>
+                    <div class="tkinter-window-preview" role="group" aria-label="Simulerad filmapp">
+                        <div class="tkinter-titlebar">Filmlista</div>
+                        <div class="tkinter-window-body">
+                            <label class="tkinter-field-label" for="tkinter-movie-name">Filmens namn</label>
+                            <input id="tkinter-movie-name" class="tkinter-entry" type="text" value="Min granne Totoro" data-tkinter-name>
+                            <label class="tkinter-field-label" for="tkinter-movie-length">Längd i minuter</label>
+                            <input id="tkinter-movie-length" class="tkinter-entry" type="text" value="86" data-tkinter-length>
+                            <button type="button" class="tkinter-button" data-tkinter-button>Lägg till film</button>
+                            <div class="tkinter-label-output" data-tkinter-label aria-live="polite"></div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Exempel 2: Temperaturomvandling</h3>
                 <pre><code>import tkinter as tk
@@ -573,6 +631,29 @@ result_label = tk.Label(window, text="")
 result_label.pack()
 
 window.mainloop()</code></pre>
+                <div class="tkinter-simulator" data-tkinter-temperature-demo>
+                    <div class="tkinter-simulator-header">
+                        <h3>Interaktiv simulering: temperatur</h3>
+                        <p>Testa radioknappar genom att välja riktning för omvandlingen.</p>
+                    </div>
+                    <div class="tkinter-window-preview" role="group" aria-label="Simulerad temperaturapp">
+                        <div class="tkinter-titlebar">Temperaturomvandlare</div>
+                        <div class="tkinter-window-body">
+                            <label class="tkinter-field-label" for="tkinter-temperature-value">Ange temperatur</label>
+                            <input id="tkinter-temperature-value" class="tkinter-entry" type="text" value="20" data-tkinter-entry>
+                            <label class="tkinter-radio-option">
+                                <input type="radio" name="tkinter-temperature-choice" value="c_to_f" checked data-tkinter-choice>
+                                Celsius till Fahrenheit
+                            </label>
+                            <label class="tkinter-radio-option">
+                                <input type="radio" name="tkinter-temperature-choice" value="f_to_c" data-tkinter-choice>
+                                Fahrenheit till Celsius
+                            </label>
+                            <button type="button" class="tkinter-button" data-tkinter-button>Omvandla</button>
+                            <div class="tkinter-label-output" data-tkinter-label aria-live="polite"></div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Exempel 3: Enkel budgetapp</h3>
                 <pre><code>import tkinter as tk
@@ -604,6 +685,21 @@ result_label = tk.Label(window, text="Totalt: 0 kr")
 result_label.pack()
 
 window.mainloop()</code></pre>
+                <div class="tkinter-simulator" data-tkinter-budget-demo>
+                    <div class="tkinter-simulator-header">
+                        <h3>Interaktiv simulering: budget</h3>
+                        <p>Testa hur programmet kommer ihåg totalen mellan flera knapptryck.</p>
+                    </div>
+                    <div class="tkinter-window-preview" role="group" aria-label="Simulerad budgetapp">
+                        <div class="tkinter-titlebar">Budget</div>
+                        <div class="tkinter-window-body">
+                            <label class="tkinter-field-label" for="tkinter-budget-cost">Ange kostnad i kronor</label>
+                            <input id="tkinter-budget-cost" class="tkinter-entry" type="text" value="120" data-tkinter-entry>
+                            <button type="button" class="tkinter-button" data-tkinter-button>Lägg till kostnad</button>
+                            <div class="tkinter-label-output" data-tkinter-label aria-live="polite">Totalt: 0 kr</div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Vad är viktigt att förstå</h3>
                 <ul>
@@ -723,6 +819,7 @@ window.mainloop()</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/tkinter-simulators.js"></script>
 </body>
 
 </html>

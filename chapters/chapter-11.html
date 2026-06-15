@@ -110,6 +110,36 @@ user_name = "Anna"</code></pre>
 b = 10
 c = a * b
 print(c)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: tydliga namn</h3>
+                            <p>Jämför otydliga variabelnamn med namn som visar vad programmet räknar ut.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>byta <code>a</code> till <code>width</code></li>
+                            <li>byta <code>b</code> till <code>height</code></li>
+                            <li>byta <code>c</code> till <code>area</code></li>
+                            <li>lägga till tydliga utskrifter, till exempel <code>print(f"Bredd: {width}")</code>, <code>print(f"Höjd: {height}")</code> och <code>print(f"Area: {area}")</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-11-names-code">Kod</label>
+                    <textarea id="chapter-11-names-code" class="python-code-editor" spellcheck="false" data-python-code>a = 5
+b = 10
+c = a * b
+
+print(c)</textarea>
+                    <label for="chapter-11-names-input">Inmatning</label>
+                    <textarea id="chapter-11-names-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s112">
@@ -176,6 +206,40 @@ age = int(input("Hur gammal är du? "))
 future_age = age + 10
 print(f"Hej {name}")
 print(f"Om tio år är du {future_age} år gammal")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: kommentarer</h3>
+                            <p>Testa kommentarer som förklarar varför programmet gör vissa steg.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra eller ta bort kommentarerna och se att programmet körs likadant</li>
+                            <li>lägga till en kommentar som förklarar uträkningen</li>
+                            <li>ändra från 10 år till 5 år</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-11-comments-code">Kod</label>
+                    <textarea id="chapter-11-comments-code" class="python-code-editor" spellcheck="false" data-python-code># Hämta information från användaren
+name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+
+# Beräkna åldern om tio år
+future_age = age + 10
+
+print(f"Hej {name}")
+print(f"Om tio år är du {future_age} år gammal")</textarea>
+                    <label for="chapter-11-comments-input">Inmatning</label>
+                    <textarea id="chapter-11-comments-input" class="python-input-editor" spellcheck="false" data-python-input>Anna
+16</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s113">
@@ -257,6 +321,62 @@ number = int(input("Skriv ett tal: "))
 result = number * 2
 print(f"Hej {name}")
 print(f"Ditt tal gånger två är {result}")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: strukturera ett kassaprogram</h3>
+                            <p>Testa hur ett verkligare program blir tydligare när beräkning och utskrift ligger i egna funktioner.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra pris, antal och rabatt i inmatningen</li>
+                            <li>ändra rabattregeln i <code>rakna_rabatt()</code></li>
+                            <li>lägga till en funktion som heter <code>rakna_moms()</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-11-structure-code">Kod</label>
+                    <textarea id="chapter-11-structure-code" class="python-code-editor python-code-editor-large" spellcheck="false" data-python-code>def rakna_delsumma(pris, antal):
+    return pris * antal
+
+def rakna_rabatt(delsumma, rabatt_procent):
+    return delsumma * rabatt_procent / 100
+
+def skriv_kvitto(vara, total):
+    print(f"Vara: {vara}")
+    print(f"Att betala: {total} kr")
+
+vara = input("Vilken vara köper kunden? ")
+pris = int(input("Pris per vara: "))
+antal = int(input("Antal: "))
+rabatt_procent = int(input("Rabatt i procent: "))
+
+delsumma = rakna_delsumma(pris, antal)
+rabatt = rakna_rabatt(delsumma, rabatt_procent)
+total = delsumma - rabatt
+
+skriv_kvitto(vara, total)</textarea>
+                    <label for="chapter-11-structure-input">Inmatning</label>
+                    <div class="python-input-guide">
+                        <p>Fyll i en rad för varje fråga:</p>
+                        <ol>
+                            <li>Vilken vara köper kunden?</li>
+                            <li>Pris per vara</li>
+                            <li>Antal</li>
+                            <li>Rabatt i procent</li>
+                        </ol>
+                    </div>
+                    <textarea id="chapter-11-structure-input" class="python-input-editor python-input-editor-tall" spellcheck="false" data-python-input>Anteckningsbok
+35
+3
+10</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s114">
@@ -329,6 +449,37 @@ y=int(input("tal"))
 z=y*2
 print("hej",x)
 print(z)</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: gör koden läsbar</h3>
+                            <p>Jämför kompakt kod med samma program skrivet med tydliga namn och mellanrum.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>byta <code>x</code> till <code>user_name</code></li>
+                            <li>byta <code>y</code> till <code>number</code> och <code>z</code> till <code>doubled_number</code></li>
+                            <li>lägga till mellanrum runt <code>=</code> och <code>*</code></li>
+                            <li>göra utskriften tydligare, till exempel <code>print(f"Ditt tal gånger två är {doubled_number}")</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-11-readable-code">Kod</label>
+                    <textarea id="chapter-11-readable-code" class="python-code-editor" spellcheck="false" data-python-code>x=input("namn")
+y=int(input("tal"))
+z=y*2
+print("hej",x)
+print(z)</textarea>
+                    <label for="chapter-11-readable-input">Inmatning</label>
+                    <textarea id="chapter-11-readable-input" class="python-input-editor" spellcheck="false" data-python-input>Kim
+8</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="s115">
@@ -475,6 +626,8 @@ print(f"Ditt tal gånger två är {result}")</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>

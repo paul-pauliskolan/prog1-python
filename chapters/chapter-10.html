@@ -75,6 +75,35 @@ print(age + 5)</code></pre>
     print(age + 5)
 except:
     print("Du måste skriva ett tal")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: fånga fel</h3>
+                            <p>Testa hur <code>try</code> och <code>except</code> gör att programmet inte kraschar vid fel inmatning.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>16</code> i inmatningen</li>
+                            <li>skriva <code>hej</code> och se att programmet fångar felet</li>
+                            <li>ändra texten i <code>except</code>-delen</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-10-exception-code">Kod</label>
+                    <textarea id="chapter-10-exception-code" class="python-code-editor" spellcheck="false" data-python-code>try:
+    age = int(input("Hur gammal är du? "))
+    print(age + 5)
+except:
+    print("Du måste skriva ett tal")</textarea>
+                    <label for="chapter-10-exception-input">Inmatning</label>
+                    <textarea id="chapter-10-exception-input" class="python-input-editor" spellcheck="false" data-python-input>hej</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Nu kraschar inte programmet. Istället får användaren ett meddelande.</p>
 
                 <h3>Hur det fungerar</h3>
@@ -132,6 +161,38 @@ except:
         break
     except:
         print("Fel inmatning, försök igen")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: försök igen</h3>
+                            <p>Testa hur en loop kan fråga igen tills användaren skriver ett giltigt heltal.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>hej</code> på första raden och <code>20</code> på andra raden</li>
+                            <li>ta bort <code>break</code> och se varför programmet behöver ett stopp</li>
+                            <li>ändra beräkningen från <code>age + 5</code> till <code>age + 10</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-10-retry-code">Kod</label>
+                    <textarea id="chapter-10-retry-code" class="python-code-editor" spellcheck="false" data-python-code>while True:
+    try:
+        age = int(input("Hur gammal är du? "))
+        print(age + 5)
+        break
+    except:
+        print("Fel inmatning, försök igen")</textarea>
+                    <label for="chapter-10-retry-input">Inmatning</label>
+                    <textarea id="chapter-10-retry-input" class="python-input-editor" spellcheck="false" data-python-input>hej
+20</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet fortsätter tills användaren skriver ett korrekt värde.</p>
 
                 <h3>Varför detta är viktigt</h3>
@@ -183,6 +244,42 @@ print(100 / number)</code></pre>
             break
     except:
         print("Fel inmatning, försök igen")</code></pre>
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktivt exempel: robust division</h3>
+                            <p>En lärare har 100 övningspoäng att dela lika mellan ett antal elever. Programmet måste hantera om någon skriver text eller råkar ange 0 elever.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>skriva <code>hej</code>, sedan <code>0</code>, sedan <code>4</code></li>
+                            <li>ändra talet <code>100</code> till ett annat tal</li>
+                            <li>ändra meddelandet som visas när användaren skriver <code>0</code></li>
+                        </ul>
+                    </div>
+                    <label for="chapter-10-robust-code">Kod</label>
+                    <textarea id="chapter-10-robust-code" class="python-code-editor" spellcheck="false" data-python-code>while True:
+    try:
+        number = int(input("Skriv ett tal: "))
+        if number == 0:
+            print("Du kan inte dela med 0")
+        else:
+            print(100 / number)
+            break
+    except:
+        print("Fel inmatning, försök igen")</textarea>
+                    <label for="chapter-10-robust-input">Inmatning</label>
+                    <textarea id="chapter-10-robust-input" class="python-input-editor" spellcheck="false" data-python-input>hej
+0
+4</textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
                 <p>Programmet</p>
                 <ul>
                     <li>hanterar felaktig input</li>
@@ -382,6 +479,8 @@ print(100 / number)</code></pre>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyodide.js"></script>
+    <script src="../js/python-workspace.js"></script>
 </body>
 
 </html>
