@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 9 – Felsökning</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 9</p><h1>Felsökning</h1>
+        <p class="fragment">Förstå felet, hitta orsaken och kontrollera lösningen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">skilja mellan syntaxfel, logiska fel och exekveringsfel</li><li class="fragment">läsa ett felmeddelandes viktigaste delar</li><li class="fragment">felsöka steg för steg</li><li class="fragment">använda tillfälliga utskrifter</li><li class="fragment">testa normalvärden, gränsvärden och felaktig indata</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Tre feltyper</p><h2>Felet visar sig på olika sätt</h2>
+        <table class="comparison"><thead><tr><th>Feltyp</th><th>Vad händer?</th></tr></thead><tbody><tr class="fragment"><td>Syntaxfel</td><td>Programmet kan inte börja köra.</td></tr><tr class="fragment"><td>Logiskt fel</td><td>Programmet körs men ger fel resultat.</td></tr><tr class="fragment"><td>Exekveringsfel</td><td>Programmet startar men kraschar under körning.</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">9.1</p><h2>Syntaxfel bryter mot språkets regler</h2>
+        <pre class="code-block fragment"><code>print("Hej världen"</code></pre>
+        <p class="fragment">Den avslutande parentesen saknas.</p>
+        <p class="fragment">Python kan inte tolka programstrukturen och stoppar före körningen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Syntaxfel · terminalen</p><h2>Felmeddelandet pekar mot problemet</h2>
+        <pre class="code-block compact-code fragment"><code>  File "program.py", line 1
+    print("Hej världen"
+         ^
+SyntaxError: '(' was never closed</code></pre>
+        <p class="fragment">Feltypen står längst ner: <code>SyntaxError</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Saknat kolon</p><h2><code>if</code>-raden är ofullständig</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Fel</strong></p><pre class="code-block compact-code fragment"><code>if age &gt;= 18
+    print("Myndig")</code></pre></div><div><p class="fragment"><strong>Rätt</strong></p><pre class="code-block compact-code fragment"><code>if age &gt;= 18:
+    print("Myndig")</code></pre></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Viktig precisering</p><h2>Stavfel är inte alltid syntaxfel</h2>
+        <pre class="code-block fragment"><code>pritn("Hej")</code></pre>
+        <p class="fragment">Raden följer Pythons syntax och programmet börjar därför köra.</p>
+        <p class="fragment">Namnet <code>pritn</code> finns inte. Resultatet blir ett <code>NameError</code> under körningen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hitta syntaxfel</p><h2>Kontrollera tecknen nära raden</h2>
+        <ul><li class="fragment">Är alla parenteser stängda?</li><li class="fragment">Finns kolon efter <code>if</code>, loopar och <code>def</code>?</li><li class="fragment">Är citattecknen parvis?</li><li class="fragment">Är indraget korrekt?</li><li class="fragment">Kan felet egentligen börja på raden ovanför?</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">9.2</p><h2>Logiska fel ger fel svar</h2>
+        <pre class="code-block fragment"><code>a = 5
+b = 3
+summa = a - b
+print(summa)</code></pre>
+        <p class="fragment">Programmet körs och skriver <code>2</code>.</p>
+        <p class="fragment">Uppgiften var att beräkna summan, så operatorn ska vara <code>+</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Logiskt fel</p><h2>Beräkningen sparas inte</h2>
+        <pre class="code-block fragment"><code>length = 170
+length + 10
+print(length)</code></pre>
+        <p class="fragment">Uttrycket räknas ut men resultatet sparas inte.</p>
+        <pre class="code-block fragment"><code>length = length + 10</code></pre>
+        <p class="fragment">Nu får variabeln det nya värdet <code>180</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Prioriteringsfel</p><h2>Programmet körs – svaret blir fel</h2>
+        <pre class="code-block fragment"><code>a = 10
+b = 20
+average = a + b / 2
+print(average)</code></pre>
+        <p class="fragment">Python räknar <code>b / 2</code> först och skriver <code>20.0</code>.</p>
+        <p class="fragment">Rätt uttryck är <code>(a + b) / 2</code>, som ger <code>15.0</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hitta logiska fel</p><h2>Jämför med ett känt svar</h2>
+        <ol><li class="fragment">Välj enkel indata där rätt svar är känt.</li><li class="fragment">Skriv ut delresultat.</li><li class="fragment">Följ variablerna rad för rad.</li><li class="fragment">Jämför operatorer och beräkningsordning med planen.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">9.3</p><h2>Exekveringsfel uppstår under körning</h2>
+        <p class="fragment">Koden är syntaktiskt giltig.</p>
+        <p class="fragment">Programmet startar.</p>
+        <p class="fragment">Ett värde eller en operation gör att programmet inte kan fortsätta.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>ValueError</code></p><h2>Text kan inte bli heltal</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))</code></pre>
+        <pre class="code-block compact-code fragment"><code>Hur gammal är du? hej
+ValueError: invalid literal for int()
+with base 10: 'hej'</code></pre>
+        <p class="fragment"><code>int()</code> kan inte omvandla texten <code>hej</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>ZeroDivisionError</code></p><h2>Division med noll</h2>
+        <pre class="code-block fragment"><code>number = 10
+result = number / 0
+print(result)</code></pre>
+        <pre class="code-block fragment"><code>ZeroDivisionError: division by zero</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>NameError</code></p><h2>Variabelnamnet finns inte</h2>
+        <pre class="code-block fragment"><code>name = "Anna"
+print(namn)</code></pre>
+        <pre class="code-block compact-code fragment"><code>NameError: name 'namn' is not defined</code></pre>
+        <p class="fragment"><code>name</code> och <code>namn</code> är två olika namn.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv kontroll</p><h2>Klassificera felet</h2>
+        <div class="decision-simulator">
+          <div class="decision-controls"><button type="button" class="error-case" data-error-case="syntax">Fall 1: saknad parentes</button><button type="button" class="error-case" data-error-case="logic">Fall 2: fel operator</button><button type="button" class="error-case" data-error-case="runtime">Fall 3: division med noll</button></div>
+          <div class="decision-output"><strong>Analys</strong><pre id="error-output" aria-live="polite">Välj ett fall.</pre></div>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">9.4</p><h2>Läs felmeddelandet nerifrån</h2>
+        <pre class="code-block compact-code fragment"><code>Traceback (most recent call last):
+  File "program.py", line 2, in &lt;module&gt;
+    result = number / 0
+ZeroDivisionError: division by zero</code></pre>
+        <ol><li class="fragment">Feltyp: <code>ZeroDivisionError</code>.</li><li class="fragment">Förklaring: <code>division by zero</code>.</li><li class="fragment">Plats: filen och rad 2.</li><li class="fragment">Kodrad: <code>result = number / 0</code>.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Felrad</p><h2>Raden är en startpunkt</h2>
+        <p class="fragment">Felmeddelandet visar ofta var Python upptäckte problemet.</p>
+        <p class="fragment">Den egentliga orsaken kan finnas tidigare, exempelvis ett felaktigt värde eller en saknad parentes på raden ovanför.</p>
+        <p class="fragment">Kontrollera därför både den angivna raden och närliggande kod.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">När ett fel uppstår</p><h2>Fyra frågor</h2>
+        <ol><li class="fragment">Vilken feltyp står längst ner?</li><li class="fragment">Vilken rad anges?</li><li class="fragment">Vilka värden används på raden?</li><li class="fragment">Vad förväntade jag mig skulle hända?</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">9.5</p><h2>Felsök systematiskt</h2>
+        <div class="flow"><span class="fragment">Återskapa</span><b class="fragment">→</b><span class="fragment">Läs</span><b class="fragment">→</b><span class="fragment">Avgränsa</span><b class="fragment">→</b><span class="fragment">Ändra en sak</span><b class="fragment">→</b><span class="fragment">Testa igen</span></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Tillfälliga utskrifter</p><h2>Se variablernas verkliga värden</h2>
+        <pre class="code-block fragment"><code>a = 10
+b = 20
+
+print(f"a = {a}")
+print(f"b = {b}")
+print(f"a + b = {a + b}")
+print(f"b / 2 = {b / 2}")
+
+average = a + b / 2</code></pre>
+        <p class="fragment">Utskrifterna visar exakt vilka delresultat programmet använder.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Ändra en sak i taget</p><h2>Behåll orsak och verkan</h2>
+        <p class="fragment">Gör en liten ändring.</p>
+        <p class="fragment">Kör samma test igen.</p>
+        <p class="fragment">Kontrollera om beteendet ändrades som väntat.</p>
+        <p class="fragment">Om många saker ändras samtidigt vet du inte vilken ändring som löste eller skapade felet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Testa små delar</p><h2>Avgränsa problemet</h2>
+        <pre class="code-block fragment"><code>name = input("Vad heter du? ")
+print(name)</code></pre>
+        <p class="fragment">Kontrollera först att inmatningen fungerar.</p>
+        <p class="fragment">Lägg sedan tillbaka nästa del av programmet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">9.6</p><h2>Testa flera sorters indata</h2>
+        <table class="comparison"><thead><tr><th>Testtyp</th><th>Exempel</th><th>Syfte</th></tr></thead><tbody><tr class="fragment"><td>Normalvärde</td><td>25</td><td>vanlig användning</td></tr><tr class="fragment"><td>Gränsvärde</td><td>17, 18, 19</td><td>kontrollera gränsen</td></tr><tr class="fragment"><td>Felaktig indata</td><td><code>hej</code></td><td>se hur programmet reagerar</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Gränsvärden</p><h2>Testa precis runt villkoret</h2>
+        <pre class="code-block fragment"><code>if age &gt;= 18:
+    print("Du är myndig")
+else:
+    print("Du är inte myndig")</code></pre>
+        <p class="fragment">Testa <code>17</code>: strax under gränsen.</p>
+        <p class="fragment">Testa <code>18</code>: exakt på gränsen.</p>
+        <p class="fragment">Testa <code>19</code>: strax över gränsen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Testfall</p><h2>Skriv förväntat resultat först</h2>
+        <table class="comparison"><thead><tr><th>Indata</th><th>Förväntat</th><th>Faktiskt</th></tr></thead><tbody><tr class="fragment"><td>17</td><td>inte myndig</td><td>?</td></tr><tr class="fragment"><td>18</td><td>myndig</td><td>?</td></tr><tr class="fragment"><td>19</td><td>myndig</td><td>?</td></tr></tbody></table>
+        <p class="fragment">Ett test är användbart först när du vet vad rätt resultat ska vara.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">9.7 · Övning</p><h2>Hitta tre syntaxproblem</h2>
+        <pre class="code-block fragment"><code>print("Hej världen"
+age = 18
+if age &gt;= 18
+print("Du är myndig")</code></pre>
+        <ol><li class="fragment">Stäng parentesen.</li><li class="fragment">Lägg till kolon efter villkoret.</li><li class="fragment">Gör indrag framför sista raden.</li><li class="fragment">Kör efter varje rättning.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Övning</p><h2>Felsök medelvärdet</h2>
+        <pre class="code-block fragment"><code>a = 10
+b = 20
+average = a + b / 2
+print(average)</code></pre>
+        <p class="fragment">Skriv först vilket resultat du förväntar dig.</p>
+        <p class="fragment">Lägg till utskrifter för delberäkningarna.</p>
+        <p class="fragment">Rätta uttrycket och testa igen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Syntaxfel hindrar Python från att tolka programmet.</li><li class="fragment">Logiska fel ger fel resultat utan att programmet kraschar.</li><li class="fragment">Exekveringsfel uppstår medan programmet körs.</li><li class="fragment">Läs feltyp, radnummer och kodrad i felmeddelandet.</li><li class="fragment">Avgränsa problemet och ändra en sak i taget.</li><li class="fragment">Testa normalvärden, gränsvärden och oväntad indata.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    (function () {
+      const output = document.getElementById("error-output");
+      const cases = {
+        syntax: {
+          code: 'print("Hej"',
+          type: "Syntaxfel",
+          message: "SyntaxError: '(' was never closed",
+          fix: 'print("Hej")'
+        },
+        logic: {
+          code: "summa = 5 - 3",
+          type: "Logiskt fel",
+          message: "Ingen krasch, men resultatet blir 2 i stället för 8.",
+          fix: "summa = 5 + 3"
+        },
+        runtime: {
+          code: "result = 10 / 0",
+          type: "Exekveringsfel",
+          message: "ZeroDivisionError: division by zero",
+          fix: "Kontrollera att nämnaren inte är 0 före divisionen."
+        }
+      };
+      if (!output) return;
+      document.querySelectorAll(".error-case").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const item = cases[button.dataset.errorCase];
+          output.textContent = item.code + "\n\nFeltyp: " + item.type + "\n" + item.message + "\n\nRättning: " + item.fix;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 8 – Funktioner</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 8</p><h1>Funktioner</h1>
+        <p class="fragment">Dela upp, återanvänd och strukturera kod.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">förklara varför funktioner används</li><li class="fragment">definiera och anropa egna funktioner</li><li class="fragment">skilja mellan parametrar och argument</li><li class="fragment">returnera och använda värden</li><li class="fragment">strukturera ett program med flera funktioner</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.1</p><h2>En funktion är en namngiven koddel</h2>
+        <p class="fragment">Funktionen utför en bestämd uppgift.</p>
+        <p class="fragment">Koden skrivs en gång och kan användas flera gånger.</p>
+        <p class="fragment">Programmet delas upp i mindre, tydligare delar.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Utan funktion</p><h2>Samma kod upprepas</h2>
+        <pre class="code-block fragment"><code>print("Hej och välkommen")
+print("Hej och välkommen")
+print("Hej och välkommen")</code></pre>
+        <p class="fragment">Om texten ändras måste tre rader redigeras.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Med funktion</p><h2>Skriv uppgiften en gång</h2>
+        <pre class="code-block fragment"><code>def greet():
+    print("Hej och välkommen")
+
+greet()
+greet()
+greet()</code></pre>
+        <p class="fragment">Funktionen definieras en gång och anropas tre gånger.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Två moment</p><h2>Definiera och anropa</h2>
+        <div class="two-column"><div><p class="fragment"><strong>1. Definiera</strong></p><pre class="code-block compact-code fragment"><code>def greet():
+    print("Hej")</code></pre><p class="fragment">Beskriver vad funktionen ska göra.</p></div><div><p class="fragment"><strong>2. Anropa</strong></p><pre class="code-block compact-code fragment"><code>greet()</code></pre><p class="fragment">Kör funktionens kod.</p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Viktig regel</p><h2>Definitionen kör inte uppgiften</h2>
+        <pre class="code-block fragment"><code>def greet():
+    print("Hej")</code></pre>
+        <p class="fragment">Python lär sig att funktionen finns.</p>
+        <p class="fragment">Ingen hälsning skrivs ut förrän programmet når <code>greet()</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.2 · Grundstruktur</p><h2>Så definieras en funktion</h2>
+        <pre class="code-block fragment"><code>def funktionsnamn():
+    kod som ska köras</code></pre>
+        <ul><li class="fragment"><code>def</code> startar definitionen.</li><li class="fragment">Namnet beskriver uppgiften.</li><li class="fragment">Parenteser och kolon krävs.</li><li class="fragment">Funktionskroppen är indragen.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Funktion med information</p><h2>Ta emot ett namn</h2>
+        <pre class="code-block fragment"><code>def greet(name):
+    print(f"Hej {name}")
+
+greet("Anna")
+greet("Erik")</code></pre>
+        <pre class="code-block compact-code fragment"><code>Hej Anna
+Hej Erik</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg för steg</p><h2>Vad händer vid anropet?</h2>
+        <ol><li class="fragment">Programmet når <code>greet("Anna")</code>.</li><li class="fragment">Värdet <code>"Anna"</code> skickas in.</li><li class="fragment">Parametern <code>name</code> får värdet <code>"Anna"</code>.</li><li class="fragment">F-strängen använder värdet.</li><li class="fragment">Funktionen avslutas och programmet fortsätter.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.3</p><h2>Parameter och argument</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Parameter</strong></p><pre class="code-block fragment"><code>def greet(name):</code></pre><p class="fragment"><code>name</code> är namnet som används inne i funktionen.</p></div><div><p class="fragment"><strong>Argument</strong></p><pre class="code-block fragment"><code>greet("Anna")</code></pre><p class="fragment"><code>"Anna"</code> är värdet som skickas in vid anropet.</p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Flera parametrar</p><h2>Värden kopplas efter position</h2>
+        <pre class="code-block fragment"><code>def introduce(name, age):
+    print(f"{name} är {age} år gammal")
+
+introduce("Sara", 17)</code></pre>
+        <p class="fragment"><code>"Sara" → name</code></p>
+        <p class="fragment"><code>17 → age</code></p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Ordningen spelar roll</p><h2>Argumenten följer parametrarna</h2>
+        <pre class="code-block fragment"><code>introduce("Sara", 17)</code></pre>
+        <p class="fragment">Första argumentet hör till första parametern.</p>
+        <p class="fragment">Andra argumentet hör till andra parametern.</p>
+        <p class="fragment"><code>introduce(17, "Sara")</code> ger värdena fel betydelse.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Vanligt fel</p><h2>Rätt antal argument krävs</h2>
+        <pre class="code-block fragment"><code>def introduce(name, age):
+    print(f"{name} är {age} år")
+
+introduce("Sara")</code></pre>
+        <pre class="code-block compact-code fragment"><code>TypeError: introduce() missing 1 required
+positional argument: 'age'</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.4</p><h2><code>return</code> skickar tillbaka ett värde</h2>
+        <pre class="code-block fragment"><code>def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)</code></pre>
+        <pre class="code-block fragment"><code>8</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>return</code> · flöde</p><h2>Argument in – resultat ut</h2>
+        <div class="flow"><span class="fragment"><code>3, 5</code></span><b class="fragment">→</b><span class="fragment"><code>add(a, b)</code></span><b class="fragment">→</b><span class="fragment"><code>return 8</code></span><b class="fragment">→</b><span class="fragment"><code>result = 8</code></span></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv kontroll</p><h2>Argument och returvärde</h2>
+        <div class="decision-simulator">
+          <div class="decision-controls"><label for="function-a">Argument <code>a</code></label><input id="function-a" type="number" value="3"><label for="function-b">Argument <code>b</code></label><input id="function-b" type="number" value="5"><button id="run-add" type="button">Kör add(a, b)</button><button id="run-multiply" type="button">Kör multiply(a, b)</button></div>
+          <div class="decision-output"><strong>Funktionsspårning</strong><pre id="function-output" aria-live="polite">Välj en funktion.</pre></div>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>print</code> eller <code>return</code>?</p><h2>De gör olika saker</h2>
+        <table class="comparison"><thead><tr><th><code>print()</code></th><th><code>return</code></th></tr></thead><tbody><tr><td class="fragment">Visar text i terminalen.</td><td class="fragment">Skickar ett värde till anropet.</td></tr><tr><td class="fragment">Resultatet är främst för användaren.</td><td class="fragment">Värdet kan sparas och beräknas vidare.</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Återanvänd returvärdet</p><h2>Resultatet kan användas igen</h2>
+        <pre class="code-block fragment"><code>def add(a, b):
+    return a + b
+
+total = add(10, 7)
+print(f"Summan är {total}")
+print(f"Dubbla summan är {total * 2}")</code></pre>
+        <pre class="code-block compact-code fragment"><code>Summan är 17
+Dubbla summan är 34</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vad returneras?</h2>
+        <pre class="code-block fragment"><code>def square(number):
+    return number * number
+
+result = square(4)</code></pre>
+        <p class="fragment"><strong>Svar:</strong> funktionen returnerar <code>16</code>.</p>
+        <p class="fragment">Ingenting visas förrän programmet använder <code>print(result)</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.5</p><h2>Funktioner överst – huvudprogram nederst</h2>
+        <pre class="code-block compact-code fragment"><code>def greet(name):
+    print(f"Hej {name}")
+
+def add(a, b):
+    return a + b
+
+# Huvudprogram
+name = input("Vad heter du? ")
+greet(name)
+result = add(4, 6)
+print(f"Summan är {result}")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Programstruktur</p><h2>Två tydliga delar</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Funktionsdefinitioner</strong></p><ul><li class="fragment">beskriver programmets uppgifter</li><li class="fragment">kan återanvändas</li><li class="fragment">ligger högst upp</li></ul></div><div><p class="fragment"><strong>Huvudprogram</strong></p><ul><li class="fragment">läser in data</li><li class="fragment">anropar funktioner</li><li class="fragment">visar resultat</li></ul></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Bra funktionsnamn</p><h2>Namnet ska beskriva uppgiften</h2>
+        <table class="comparison"><thead><tr><th>Tydligt</th><th>Otydligt</th></tr></thead><tbody><tr class="fragment"><td><code>calculate_total()</code></td><td><code>do_it()</code></td></tr><tr class="fragment"><td><code>print_receipt()</code></td><td><code>func1()</code></td></tr><tr class="fragment"><td><code>is_even()</code></td><td><code>check()</code></td></tr></tbody></table>
+        <p class="fragment">En funktion bör helst göra en tydlig uppgift.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.6</p><h2>Flera funktioner kan samarbeta</h2>
+        <pre class="code-block fragment"><code>def greet(name):
+    print(f"Hej {name}")
+
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b</code></pre>
+        <p class="fragment">Varje funktion har en avgränsad uppgift.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Huvudprogrammet</p><h2>Anropa funktionerna</h2>
+        <pre class="code-block compact-code fragment"><code>name = input("Vad heter du? ")
+greet(name)
+
+x = int(input("Skriv ett tal: "))
+y = int(input("Skriv ett tal: "))
+
+sum_result = add(x, y)
+product_result = multiply(x, y)
+
+print(f"Summan är {sum_result}")
+print(f"Produkten är {product_result}")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Större exempel · del 1</p><h2>Funktioner för ett kvitto</h2>
+        <pre class="code-block compact-code fragment"><code>def calculate_subtotal(price, quantity):
+    return price * quantity
+
+def calculate_discount(subtotal, percent):
+    return subtotal * percent / 100
+
+def print_receipt(product, subtotal, discount, total):
+    print(f"Vara: {product}")
+    print(f"Pris före rabatt: {subtotal} kr")
+    print(f"Rabatt: {discount} kr")
+    print(f"Att betala: {total} kr")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Större exempel · del 2</p><h2>Kvittots huvudprogram</h2>
+        <pre class="code-block compact-code fragment"><code>product = input("Vilken vara? ")
+price = int(input("Pris per vara: "))
+quantity = int(input("Antal: "))
+percent = int(input("Rabatt i procent: "))
+
+subtotal = calculate_subtotal(price, quantity)
+discount = calculate_discount(subtotal, percent)
+total = subtotal - discount
+
+print_receipt(product, subtotal, discount, total)</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kvitto · dataflöde</p><h2>Resultat skickas mellan delarna</h2>
+        <div class="flow"><span class="fragment">Input</span><b class="fragment">→</b><span class="fragment"><code>calculate_subtotal()</code></span><b class="fragment">→</b><span class="fragment"><code>calculate_discount()</code></span><b class="fragment">→</b><span class="fragment">total</span><b class="fragment">→</b><span class="fragment"><code>print_receipt()</code></span></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.7 · Övning</p><h2>Skapa tre funktioner</h2>
+        <ul><li class="fragment"><code>greet(name)</code> skriver en hälsning.</li><li class="fragment"><code>square(number)</code> returnerar talet i kvadrat.</li><li class="fragment"><code>double(number)</code> returnerar talet gånger två.</li></ul>
+        <p class="fragment">Huvudprogrammet ska fråga efter namn och tal, anropa funktionerna och skriva ut resultaten.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Övning</p><h2>Rektangelns area</h2>
+        <pre class="code-block fragment"><code>def area(width, height):
+    return width * height</code></pre>
+        <ol><li class="fragment">Läs in bredd och höjd.</li><li class="fragment">Anropa funktionen med två argument.</li><li class="fragment">Spara returvärdet.</li><li class="fragment">Skriv ut arean.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment"><code>def</code> definierar en funktion; namnet med parenteser anropar den.</li><li class="fragment">Parametrar står i definitionen, argument skickas vid anropet.</li><li class="fragment"><code>return</code> skickar tillbaka ett värde.</li><li class="fragment"><code>print()</code> visar något men ersätter inte <code>return</code>.</li><li class="fragment">Funktioner bör ha tydliga namn och avgränsade uppgifter.</li><li class="fragment">Funktionsdefinitioner överst och huvudprogram nederst ger tydlig struktur.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    (function () {
+      const aInput = document.getElementById("function-a");
+      const bInput = document.getElementById("function-b");
+      const addButton = document.getElementById("run-add");
+      const multiplyButton = document.getElementById("run-multiply");
+      const output = document.getElementById("function-output");
+      if (!aInput || !bInput || !addButton || !multiplyButton || !output) return;
+      function argumentsFromInputs() {
+        const a = Number(aInput.value);
+        const b = Number(bInput.value);
+        return Number.isFinite(a) && Number.isFinite(b) ? [a, b] : null;
+      }
+      function showTrace(name, operator) {
+        const args = argumentsFromInputs();
+        if (!args) {
+          output.textContent = "Båda argumenten måste vara tal.";
+          return;
+        }
+        const result = operator(args[0], args[1]);
+        output.textContent = name + "(" + args[0] + ", " + args[1] + ")\n"
+          + "a = " + args[0] + "\n"
+          + "b = " + args[1] + "\n"
+          + "return " + result;
+      }
+      addButton.addEventListener("click", function () { showTrace("add", function (a, b) { return a + b; }); });
+      multiplyButton.addEventListener("click", function () { showTrace("multiply", function (a, b) { return a * b; }); });
+    })();
+  </script>
+</body>
+</html>
