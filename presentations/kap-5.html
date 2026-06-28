@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 5 – Villkor</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 5</p><h1>Villkor</h1>
+        <p class="fragment">Låt programmet välja väg med <code>if</code>, <code>elif</code> och <code>else</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">skriva villkor med <code>if</code></li><li class="fragment">välja mellan vägar med <code>else</code></li><li class="fragment">testa flera alternativ med <code>elif</code></li><li class="fragment">förstå nästlade villkor</li><li class="fragment">kombinera villkor med <code>and</code>, <code>or</code> och <code>not</code></li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.1</p><h2>Villkor låter programmet fatta beslut</h2>
+        <p class="fragment">Tidigare kördes alla instruktioner uppifrån och ner.</p>
+        <p class="fragment">Nu ska viss kod bara köras när ett villkor är sant.</p>
+        <div class="flow"><span class="fragment">Villkor</span><b class="fragment">→</b><span class="fragment"><code>True</code> eller <code>False</code></span><b class="fragment">→</b><span class="fragment">Välj kod</span></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela exemplet</p><h2>Är personen myndig?</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))
+
+if age &gt;= 18:
+    print("Du är myndig")</code></pre>
+        <p class="fragment">Utskriften sker bara om <code>age &gt;= 18</code> är <code>True</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg för steg</p><h2>Så fattas beslutet</h2>
+        <ol><li class="fragment"><code>input()</code> läser in åldern.</li><li class="fragment"><code>int()</code> omvandlar texten till ett heltal.</li><li class="fragment"><code>age &gt;= 18</code> jämför åldern med 18.</li><li class="fragment">Om resultatet är <code>True</code> körs den indragna raden.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.2 · Grundstruktur</p><h2><code>if</code> betyder ”om”</h2>
+        <pre class="code-block fragment"><code>if villkor:
+    kod som körs om villkoret är sant</code></pre>
+        <p class="fragment">Villkoret står efter <code>if</code>.</p>
+        <p class="fragment">Raden avslutas med kolon.</p>
+        <p class="fragment">Koden som hör till villkoret är indragen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Villkor</p><h2>Jämförelsen ger ett booleskt värde</h2>
+        <pre class="code-block fragment"><code>age = 20
+print(age &gt;= 18)</code></pre>
+        <pre class="code-block fragment"><code>True</code></pre>
+        <p class="fragment"><code>if</code> använder samma resultat men skriver inte ut det automatiskt.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Indrag</p><h2>Indraget bestämmer vad som hör ihop</h2>
+        <pre class="code-block fragment"><code>if age &gt;= 18:
+    print("Du är myndig")
+    print("Du får rösta i Sverige")
+
+print("Programmet är klart")</code></pre>
+        <p class="fragment">De två indragna raderna styrs av villkoret.</p>
+        <p class="fragment">Den sista raden körs alltid.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Vanliga syntaxfel</p><h2>Kolon och indrag krävs</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Fel</strong></p><pre class="code-block compact-code fragment"><code>if age &gt;= 18
+print("Myndig")</code></pre></div><div><p class="fragment"><strong>Rätt</strong></p><pre class="code-block compact-code fragment"><code>if age &gt;= 18:
+    print("Myndig")</code></pre></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vad händer om åldern är 15?</h2>
+        <pre class="code-block fragment"><code>if age &gt;= 18:
+    print("Du är myndig")</code></pre>
+        <p class="fragment">Villkoret blir <code>False</code>.</p>
+        <p class="fragment">Den indragna raden hoppas över.</p>
+        <p class="fragment">Ingenting skrivs ut.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.3</p><h2><code>else</code> betyder ”annars”</h2>
+        <pre class="code-block fragment"><code>if villkor:
+    kod när villkoret är sant
+else:
+    kod när villkoret är falskt</code></pre>
+        <p class="fragment">Exakt en av de två grenarna körs.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Myndig eller inte myndig</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))
+
+if age &gt;= 18:
+    print("Du är myndig")
+else:
+    print("Du är inte myndig")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Två körningar</p><h2>Samma kod – olika väg</h2>
+        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>Hur gammal är du? 20
+Du är myndig</code></pre><p class="fragment"><code>if</code>-grenen körs.</p></div><div><pre class="code-block compact-code fragment"><code>Hur gammal är du? 15
+Du är inte myndig</code></pre><p class="fragment"><code>else</code>-grenen körs.</p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Modulus i villkor</p><h2>Jämnt eller udda</h2>
+        <pre class="code-block fragment"><code>number = int(input("Skriv ett tal: "))
+
+if number % 2 == 0:
+    print("Talet är jämnt")
+else:
+    print("Talet är udda")</code></pre>
+        <p class="fragment">Ett jämnt tal får resten <code>0</code> vid division med <code>2</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv kontroll</p><h2>Testa jämnt eller udda</h2>
+        <div class="decision-simulator">
+          <div class="decision-controls"><label for="even-number">Skriv ett heltal</label><input id="even-number" type="number" value="7" step="1"><button id="run-even" type="button">Kör villkoret</button></div>
+          <div class="decision-output"><strong>Terminal</strong><pre id="even-output" aria-live="polite">Tryck på knappen för att köra.</pre></div>
+        </div>
+        <p class="fragment">Prova exempelvis <code>4</code>, <code>7</code>, <code>12</code> och <code>21</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.4</p><h2><code>elif</code> betyder ”annars om”</h2>
+        <pre class="code-block fragment"><code>if första_villkoret:
+    första_vägen
+elif andra_villkoret:
+    andra_vägen
+else:
+    sista_vägen</code></pre>
+        <p class="fragment">Python testar villkoren uppifrån och ner.</p>
+        <p class="fragment">När ett villkor är sant hoppas resten över.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Kallt, lagom eller varmt</h2>
+        <pre class="code-block fragment"><code>temperature = int(input("Ange temperatur: "))
+
+if temperature &lt; 10:
+    print("Det är kallt")
+elif temperature &lt;= 20:
+    print("Det är lagom")
+else:
+    print("Det är varmt")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Ordningen är viktig</p><h2>Första sanna villkoret vinner</h2>
+        <pre class="code-block fragment"><code>score = int(input("Poäng: "))
+
+if score &gt;= 80:
+    print("Högt resultat")
+elif score &gt;= 50:
+    print("Godkänt")
+else:
+    print("Underkänt")</code></pre>
+        <p class="fragment"><code>85</code> uppfyller båda jämförelserna, men bara den första grenen körs.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Varför börjar vi med 80?</h2>
+        <p class="fragment">Om <code>score &gt;= 50</code> låg först skulle även <code>85</code> få resultatet ”Godkänt”.</p>
+        <p class="fragment">Programmet skulle aldrig nå kontrollen <code>score &gt;= 80</code>.</p>
+        <p class="fragment">Börja därför med det mest begränsande villkoret.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.5</p><h2>Ett villkor kan ligga inuti ett annat</h2>
+        <pre class="code-block fragment"><code>if villkor1:
+    if villkor2:
+        kod som ska köras</code></pre>
+        <p class="fragment">Det inre villkoret kontrolleras bara om det yttre är sant.</p>
+        <p class="fragment">Varje nivå får ytterligare ett indrag.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Nästlat villkor · hela programmet</p><h2>Ålder och medborgarskap</h2>
+        <pre class="code-block compact-code fragment"><code>age = int(input("Hur gammal är du? "))
+citizen = input("Svensk medborgare (ja/nej)? ")
+
+if age &gt;= 18:
+    if citizen == "ja":
+        print("Du får rösta i svenska val")
+    else:
+        print("Du är myndig men får inte rösta")
+else:
+    print("Du är inte myndig ännu")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Nästlat villkor · flöde</p><h2>Kontrollera en sak i taget</h2>
+        <ol><li class="fragment">Är personen minst 18 år?</li><li class="fragment">Om ja: är personen svensk medborgare?</li><li class="fragment">Välj meddelande utifrån svaren.</li></ol>
+        <p class="fragment">Om personen är under 18 kontrolleras inte medborgarskapet i villkoret.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.6</p><h2>Logiska operatorer samlar villkor</h2>
+        <table class="comparison"><thead><tr><th>Operator</th><th>Betydelse</th></tr></thead><tbody><tr class="fragment"><td><code>and</code></td><td>båda måste vara sanna</td></tr><tr class="fragment"><td><code>or</code></td><td>minst ett måste vara sant</td></tr><tr class="fragment"><td><code>not</code></td><td>vänder sant och falskt</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>and</code></p><h2>Båda kraven måste uppfyllas</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))
+
+if age &gt;= 18 and age &lt;= 65:
+    print("Du är i arbetsför ålder")</code></pre>
+        <p class="fragment">Åldern måste ligga inom båda gränserna.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>or</code></p><h2>Minst ett alternativ räcker</h2>
+        <pre class="code-block fragment"><code>day = input("Vilken dag är det? ")
+
+if day == "lördag" or day == "söndag":
+    print("Det är helg")</code></pre>
+        <p class="fragment">Dagen kan inte vara båda samtidigt. Därför används <code>or</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>not</code></p><h2>Vänd villkoret</h2>
+        <pre class="code-block fragment"><code>logged_in = False
+
+if not logged_in:
+    print("Du måste logga in först")</code></pre>
+        <p class="fragment"><code>not False</code> blir <code>True</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kombinerat villkor</p><h2>Ålder och biljett</h2>
+        <pre class="code-block compact-code fragment"><code>age = int(input("Hur gammal är du? "))
+has_ticket = input("Har du biljett (ja/nej)? ")
+
+if age &gt;= 18 and has_ticket == "ja":
+    print("Du får gå in")
+else:
+    print("Du får inte gå in")</code></pre>
+        <p class="fragment">Både ålderskravet och biljettkravet måste vara sanna.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.7 · Hela programmet</p><h2>Biljettpris efter ålder</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))
+
+if age &lt; 12:
+    print("Biljettpris: 50 kr")
+elif age &lt; 18:
+    print("Biljettpris: 80 kr")
+else:
+    print("Biljettpris: 120 kr")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Biljettpris · gränser</p><h2>Testa runt varje gräns</h2>
+        <table class="comparison"><thead><tr><th>Ålder</th><th>Förväntat pris</th></tr></thead><tbody><tr class="fragment"><td><code>11</code></td><td>50 kr</td></tr><tr class="fragment"><td><code>12</code></td><td>80 kr</td></tr><tr class="fragment"><td><code>17</code></td><td>80 kr</td></tr><tr class="fragment"><td><code>18</code></td><td>120 kr</td></tr></tbody></table>
+        <p class="fragment">Gränsvärden avslöjar ofta fel i villkor.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lösenord</p><h2>Text kan också jämföras</h2>
+        <pre class="code-block fragment"><code>password = input("Skriv lösenord: ")
+
+if password == "python123":
+    print("Inloggning lyckades")
+else:
+    print("Fel lösenord")</code></pre>
+        <p class="fragment">Jämförelsen skiljer på stora och små bokstäver.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">5.8 · Övning</p><h2>Positivt, negativt eller noll</h2>
+        <ol><li class="fragment">Läs in ett tal.</li><li class="fragment">Använd <code>if</code> för tal större än noll.</li><li class="fragment">Använd <code>elif</code> för tal lika med noll.</li><li class="fragment">Använd <code>else</code> för negativa tal.</li><li class="fragment">Testa <code>-1</code>, <code>0</code> och <code>1</code>.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Övning</p><h2>Barn, tonåring eller vuxen</h2>
+        <ul><li class="fragment">Barn: under 13 år.</li><li class="fragment">Tonåring: 13–19 år.</li><li class="fragment">Vuxen: 20 år eller äldre.</li></ul>
+        <p class="fragment">Planera villkorens ordning innan du skriver koden.</p>
+        <p class="fragment">Testa gränserna <code>12</code>, <code>13</code>, <code>19</code> och <code>20</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment"><code>if</code> kör kod när ett villkor är sant.</li><li class="fragment"><code>else</code> ger en väg när villkoret är falskt.</li><li class="fragment"><code>elif</code> testar fler villkor uppifrån och ner.</li><li class="fragment">Kolon och indrag visar kodblocken.</li><li class="fragment">Nästlade villkor kontrollerar ett villkor inuti ett annat.</li><li class="fragment"><code>and</code>, <code>or</code> och <code>not</code> bygger sammansatta villkor.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    (function () {
+      const button = document.getElementById("run-even");
+      const input = document.getElementById("even-number");
+      const output = document.getElementById("even-output");
+      if (!button || !input || !output) return;
+      button.addEventListener("click", function () {
+        const number = Number(input.value);
+        if (!Number.isInteger(number)) {
+          output.textContent = "Skriv ett heltal.";
+          return;
+        }
+        const rest = number % 2;
+        output.textContent = "number % 2 = " + rest + "\n" + (rest === 0 ? "Talet är jämnt" : "Talet är udda");
+      });
+    })();
+  </script>
+</body>
+</html>

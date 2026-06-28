@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 2 – Variabler, datatyper och input</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 2</p><h1>Variabler, datatyper och input</h1>
+        <p class="fragment">Lagra information, ta emot svar och använda rätt sorts värde.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">skapa variabler och tilldela värden</li><li class="fragment">skilja mellan <code>int</code>, <code>float</code>, <code>str</code> och <code>bool</code></li><li class="fragment">skriva ut värden med f-strängar</li><li class="fragment">läsa in svar med <code>input()</code></li><li class="fragment">omvandla text med <code>int()</code> och <code>float()</code></li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.1</p><h2>En variabel lagrar ett värde</h2>
+        <p class="fragment">Tänk på variabeln som en låda med en etikett.</p>
+        <div class="flow"><span class="fragment">Etikett: <code>name</code></span><b class="fragment">→</b><span class="fragment">Värde: <code>"Anna"</code></span></div>
+        <pre class="code-block fragment"><code>name = "Anna"</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Varför variabler?</p><h2>Använd information senare</h2>
+        <ul><li class="fragment">Lagra information.</li><li class="fragment">Använd samma värde flera gånger.</li><li class="fragment">Ge värdet ett begripligt namn.</li><li class="fragment">Byt värde när programmet körs.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.2 · Tilldelning</p><h2><code>=</code> betyder ”tilldela”</h2>
+        <pre class="code-block fragment"><code>name = "Anna"
+age = 17</code></pre>
+        <p class="fragment">Python sparar värdet till höger under namnet till vänster.</p>
+        <p class="fragment"><code>=</code> betyder inte matematiskt ”lika med” här.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Skapa och använd variabler</h2>
+        <pre class="code-block fragment"><code>name = "Pelle"
+age = 18
+
+print(name)
+print(age)</code></pre>
+        <pre class="code-block fragment"><code>Pelle
+18</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg för steg</p><h2>Vad händer i minnet?</h2>
+        <div class="code-step fragment"><pre class="code-block"><code>name = "Pelle"</code></pre><p>Skapar namnet <code>name</code> och lagrar texten <code>"Pelle"</code>.</p></div>
+        <div class="code-step fragment"><pre class="code-block"><code>age = 18</code></pre><p>Skapar namnet <code>age</code> och lagrar heltalet <code>18</code>.</p></div>
+        <div class="code-step fragment"><pre class="code-block"><code>print(name)</code></pre><p>Hämtar värdet i <code>name</code> och skriver ut det.</p></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.3</p><h2>Datatyp beskriver värdet</h2>
+        <table class="comparison"><thead><tr><th>Typ</th><th>Innehåll</th><th>Exempel</th></tr></thead><tbody><tr class="fragment"><td><code>int</code></td><td>heltal</td><td><code>17</code></td></tr><tr class="fragment"><td><code>float</code></td><td>decimaltal</td><td><code>21.5</code></td></tr><tr class="fragment"><td><code>str</code></td><td>text</td><td><code>"Anna"</code></td></tr><tr class="fragment"><td><code>bool</code></td><td>sant eller falskt</td><td><code>True</code></td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Fyra datatyper</p><h2>Samma syntax – olika värden</h2>
+        <pre class="code-block fragment"><code>age = 17
+temperature = 21.5
+name = "Anna"
+student = True</code></pre>
+        <p class="fragment">Citattecknen gör <code>"Anna"</code> till text.</p>
+        <p class="fragment"><code>True</code> skrivs med stor begynnelsebokstav och utan citattecken.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollera typen</p><h2><code>type()</code> visar datatypen</h2>
+        <pre class="code-block fragment"><code>print(type(17))
+print(type(21.5))
+print(type("Anna"))
+print(type(True))</code></pre>
+        <pre class="code-block compact-code fragment"><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'bool'&gt;</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vilka datatyper?</h2>
+        <pre class="code-block fragment"><code>points = 10
+price = 3.14
+message = "Hej"
+ready = False</code></pre>
+        <p class="fragment"><strong>Svar:</strong> <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.4</p><h2>Skriv ut ett variabelvärde</h2>
+        <div class="code-step fragment"><pre class="code-block"><code>name = "Anna"</code></pre><p>Variabeln får ett värde.</p></div>
+        <div class="code-step fragment"><pre class="code-block"><code>print(name)</code></pre><p>Utan citattecken hämtas värdet i variabeln.</p></div>
+        <div class="code-step fragment"><pre class="code-block"><code>Anna</code></pre><p>Detta blir programmets utskrift.</p></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Text och värden</p><h2><code>print()</code> kan ta flera delar</h2>
+        <pre class="code-block fragment"><code>name = "Anna"
+age = 17
+print("Hej", name)
+print(name, age)</code></pre>
+        <pre class="code-block fragment"><code>Hej Anna
+Anna 17</code></pre>
+        <p class="fragment">Kommat gör att Python lägger in mellanslag mellan delarna.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">F-strängar</p><h2>Placera variabler i text</h2>
+        <pre class="code-block fragment"><code>name = "Anna"
+age = 17
+print(f"{name} är {age} år gammal")</code></pre>
+        <ul><li class="fragment"><code>f</code> står före det första citattecknet.</li><li class="fragment">Variabelnamnen står mellan <code>{</code> och <code>}</code>.</li><li class="fragment">Python ersätter namnen med deras värden.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">F-sträng · resultat</p><h2>Koden blir lätt att läsa</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Kod</strong></p><pre class="code-block compact-code fragment"><code>name = "Anna"
+age = 17
+print(f"Hej {name}")
+print(f"{name} är {age} år")</code></pre></div><div><p class="fragment"><strong>Utskrift</strong></p><pre class="code-block compact-code fragment"><code>Hej Anna
+Anna är 17 år</code></pre></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.5</p><h2><code>input()</code> väntar på ett svar</h2>
+        <div class="code-step fragment"><pre class="code-block"><code>name = input("Vad heter du? ")</code></pre><p>Frågan visas och programmet pausar.</p></div>
+        <p class="fragment">Användaren skriver ett svar och trycker Enter.</p>
+        <p class="fragment">Svaret sparas i variabeln <code>name</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Fråga och svara</h2>
+        <pre class="code-block fragment"><code>name = input("Vad heter du? ")
+city = input("Vilken stad bor du i? ")
+
+print(f"Hej {name}")
+print(f"Du bor i {city}")</code></pre>
+        <pre class="code-block compact-code fragment"><code>Vad heter du? Erik
+Vilken stad bor du i? Malmö
+Hej Erik
+Du bor i Malmö</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Viktig regel</p><h2><code>input()</code> ger alltid text</h2>
+        <pre class="code-block fragment"><code>age = input("Hur gammal är du? ")
+print(type(age))</code></pre>
+        <p class="fragment">Om användaren skriver <code>17</code> blir datatypen ändå <code>str</code>.</p>
+        <p class="fragment">Tangentbordet lämnar alltså text till programmet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.6 · Problem</p><h2>Text och tal kan inte adderas</h2>
+        <pre class="code-block fragment"><code>age = input("Hur gammal är du? ")
+print(age + 5)</code></pre>
+        <p class="fragment"><code>age</code> är <code>str</code>, men <code>5</code> är <code>int</code>.</p>
+        <p class="fragment">Python stoppar programmet med ett <code>TypeError</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Typomvandling</p><h2>Gör texten till ett heltal</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))
+print(age + 5)</code></pre>
+        <ol><li class="fragment"><code>input()</code> läser in text.</li><li class="fragment"><code>int()</code> omvandlar texten till ett heltal.</li><li class="fragment">Heltalet sparas i <code>age</code>.</li><li class="fragment">Nu kan Python beräkna <code>age + 5</code>.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Välj rätt omvandling</p><h2>Tre användbara funktioner</h2>
+        <table class="comparison"><thead><tr><th>Funktion</th><th>Resultat</th><th>Exempel</th></tr></thead><tbody><tr class="fragment"><td><code>int()</code></td><td>heltal</td><td><code>int("17")</code></td></tr><tr class="fragment"><td><code>float()</code></td><td>decimaltal</td><td><code>float("21.5")</code></td></tr><tr class="fragment"><td><code>str()</code></td><td>text</td><td><code>str(17)</code></td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Decimaltal</p><h2>Använd <code>float()</code></h2>
+        <pre class="code-block fragment"><code>temperature = float(input("Vad är temperaturen? "))
+print(temperature + 1)</code></pre>
+        <p class="fragment">Om användaren skriver <code>21.5</code> blir resultatet <code>22.5</code>.</p>
+        <p class="fragment">Ett decimaltal skrivs med punkt i Python.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vad skriver programmet ut?</h2>
+        <pre class="code-block fragment"><code>age = int(input("Ålder: "))
+print(f"Om fem år är du {age + 5} år")</code></pre>
+        <p class="fragment">Användaren skriver <code>17</code>.</p>
+        <p class="fragment"><strong>Svar:</strong> <code>Om fem år är du 22 år</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.7 · Vanliga fel</p><h2>Kontrollera detaljerna</h2>
+        <table class="comparison"><thead><tr><th>Fel</th><th>Kontrollera</th></tr></thead><tbody><tr class="fragment"><td><code>print(Hej)</code></td><td>citattecken runt text</td></tr><tr class="fragment"><td><code>prin("Hej")</code></td><td>stavningen av <code>print</code></td></tr><tr class="fragment"><td><code>print "Hej"</code></td><td>parenteserna</td></tr><tr class="fragment"><td><code>input(...) + 5</code></td><td>datatyp och <code>int()</code></td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Felsökning</p><h2>Läs innan du ändrar</h2>
+        <ol><li class="fragment">Läs den sista raden i felmeddelandet.</li><li class="fragment">Identifiera feltypen, exempelvis <code>TypeError</code>.</li><li class="fragment">Hitta radnumret.</li><li class="fragment">Kontrollera värdenas datatyper.</li><li class="fragment">Rätta en sak och kör igen.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2.8 · Övning</p><h2>Bygg en presentation</h2>
+        <p class="fragment">Programmet ska fråga efter namn, stad och favoritmat.</p>
+        <pre class="code-block compact-code fragment"><code>name = input("Vad heter du? ")
+city = input("Vilken stad bor du i? ")
+food = input("Vilken är din favoritmat? ")
+
+print(f"Hej {name}")
+print(f"Du bor i {city}")
+print(f"Din favoritmat är {food}")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Övning · beräkning</p><h2>Hur gammal om fem år?</h2>
+        <ol><li class="fragment">Fråga efter användarens ålder.</li><li class="fragment">Omvandla svaret med <code>int()</code>.</li><li class="fragment">Beräkna åldern om fem år.</li><li class="fragment">Skriv resultatet med en f-sträng.</li><li class="fragment">Testa med flera åldrar.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">En variabel har ett namn och lagrar ett värde.</li><li class="fragment"><code>=</code> tilldelar ett värde.</li><li class="fragment">Vanliga typer är <code>int</code>, <code>float</code>, <code>str</code> och <code>bool</code>.</li><li class="fragment">F-strängar placerar värden tydligt i text.</li><li class="fragment"><code>input()</code> ger alltid <code>str</code>.</li><li class="fragment">Använd <code>int()</code> eller <code>float()</code> före beräkningar.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+</body>
+</html>

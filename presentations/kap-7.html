@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 7 – Listor</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 7</p><h1>Listor</h1>
+        <p class="fragment">Lagra, hitta och bearbeta flera värden i samma variabel.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">skapa och skriva ut listor</li><li class="fragment">hämta och ändra värden med index</li><li class="fragment">gå igenom listor med loopar</li><li class="fragment">lägga till värden med <code>append()</code></li><li class="fragment">beräkna summa, medelvärde och största värde</li><li class="fragment">kombinera listor, loopar och villkor</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">7.1</p><h2>En lista lagrar flera värden</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]</code></pre>
+        <p class="fragment">Hakparenteserna <code>[ ]</code> markerar listan.</p>
+        <p class="fragment">Komman skiljer värdena åt.</p>
+        <p class="fragment">Hela listan sparas i variabeln <code>numbers</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Listor med text</p><h2>Värden kan vara strängar</h2>
+        <pre class="code-block fragment"><code>names = ["Anna", "Erik", "Sara"]</code></pre>
+        <p class="fragment">Varje namn är en egen sträng.</p>
+        <p class="fragment">Listor används när ett program behöver hantera många värden tillsammans.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Skriv ut listan</p><h2><code>print()</code> visar hela innehållet</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+print(numbers)</code></pre>
+        <pre class="code-block fragment"><code>[3, 7, 2, 9]</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lista och loop</p><h2>Skriv ut ett värde i taget</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+
+for number in numbers:
+    print(number)</code></pre>
+        <pre class="code-block compact-code fragment"><code>3
+7
+2
+9</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Loopens variabel</p><h2><code>number</code> får ett värde per varv</h2>
+        <div class="flow"><span class="fragment"><code>number = 3</code></span><b class="fragment">→</b><span class="fragment"><code>number = 7</code></span><b class="fragment">→</b><span class="fragment"><code>number = 2</code></span><b class="fragment">→</b><span class="fragment"><code>number = 9</code></span></div>
+        <p class="fragment">När alla värden har använts avslutas loopen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">7.2</p><h2>Index anger positionen</h2>
+        <table class="comparison"><thead><tr><th>Index</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr class="fragment"><td>Värde</td><td>3</td><td>7</td><td>2</td><td>9</td></tr></tbody></table>
+        <p class="fragment">Python börjar räkna index från <code>0</code>.</p>
+        <p class="fragment">Fyra värden har därför index <code>0</code> till <code>3</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hämta med index</p><h2>Hakparenteser väljer ett värde</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+
+print(numbers[0])
+print(numbers[2])</code></pre>
+        <pre class="code-block fragment"><code>3
+2</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Negativt index</p><h2>Räkna från slutet</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+
+print(numbers[-1])</code></pre>
+        <p class="fragment"><code>-1</code> betyder det sista värdet.</p>
+        <p class="fragment">Terminalen skriver ut <code>9</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Ändra med index</p><h2>Ersätt ett värde</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+numbers[1] = 10
+print(numbers)</code></pre>
+        <pre class="code-block fragment"><code>[3, 10, 2, 9]</code></pre>
+        <p class="fragment">Värdet på index <code>1</code> ersätts. Listans längd ändras inte.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Vanligt fel</p><h2>Index utanför listan</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+print(numbers[4])</code></pre>
+        <pre class="code-block compact-code fragment"><code>IndexError: list index out of range</code></pre>
+        <p class="fragment">Det sista giltiga indexet är <code>3</code>, inte <code>4</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vilka värden hämtas?</h2>
+        <pre class="code-block fragment"><code>colors = ["röd", "blå", "grön", "gul"]
+
+print(colors[1])
+print(colors[-1])</code></pre>
+        <p class="fragment"><strong>Svar:</strong> <code>blå</code> och <code>gul</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">7.3</p><h2>Bearbeta varje värde</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+
+for number in numbers:
+    print(number * 2)</code></pre>
+        <pre class="code-block compact-code fragment"><code>6
+14
+4
+18</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Viktigt</p><h2>Loopen ändrar inte listan automatiskt</h2>
+        <pre class="code-block fragment"><code>for number in numbers:
+    print(number * 2)</code></pre>
+        <p class="fragment">Uttrycket <code>number * 2</code> skrivs ut.</p>
+        <p class="fragment">Värdena i <code>numbers</code> är fortfarande <code>[3, 7, 2, 9]</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">7.4</p><h2><code>append()</code> lägger till sist</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+numbers.append(5)
+print(numbers)</code></pre>
+        <pre class="code-block fragment"><code>[3, 7, 2, 9, 5]</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Flera tillägg</p><h2>Ett anrop lägger till ett värde</h2>
+        <pre class="code-block fragment"><code>numbers = [1, 2, 3]
+numbers.append(4)
+numbers.append(5)
+print(numbers)</code></pre>
+        <pre class="code-block fragment"><code>[1, 2, 3, 4, 5]</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Samla input</p><h2>Bygg listan i en loop</h2>
+        <pre class="code-block fragment"><code>numbers = []
+
+for i in range(3):
+    number = int(input("Skriv ett tal: "))
+    numbers.append(number)
+
+print(numbers)</code></pre>
+        <p class="fragment">Listan börjar tom och växer ett värde per varv.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv kontroll</p><h2>Undersök en lista</h2>
+        <div class="decision-simulator">
+          <div class="decision-controls"><label for="list-values">Tal, separerade med kommatecken</label><input id="list-values" type="text" value="3, 7, 2, 9"><label for="list-index">Index att hämta</label><input id="list-index" type="number" value="0" step="1"><button id="inspect-list" type="button">Visa värdet</button><label for="list-append">Tal att lägga till</label><input id="list-append" type="number" value="5"><button id="append-list" type="button">Kör append()</button></div>
+          <div class="decision-output"><strong>Terminal</strong><pre id="list-output" aria-live="polite">Tryck på en knapp för att testa.</pre></div>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">7.5 · Summa</p><h2>Samla värden i <code>total</code></h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+total = 0
+
+for number in numbers:
+    total = total + number
+
+print(f"Summan är {total}")</code></pre>
+        <p class="fragment">Resultat: <code>Summan är 21</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Spåra summan</p><h2><code>total</code> förändras varje varv</h2>
+        <table class="comparison"><thead><tr><th><code>number</code></th><th><code>total</code> före</th><th><code>total</code> efter</th></tr></thead><tbody><tr class="fragment"><td>3</td><td>0</td><td>3</td></tr><tr class="fragment"><td>7</td><td>3</td><td>10</td></tr><tr class="fragment"><td>2</td><td>10</td><td>12</td></tr><tr class="fragment"><td>9</td><td>12</td><td>21</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Medelvärde</p><h2>Summan delad med antalet</h2>
+        <pre class="code-block compact-code fragment"><code>numbers = [3, 7, 2, 9]
+total = 0
+
+for number in numbers:
+    total = total + number
+
+average = total / len(numbers)
+print(f"Medelvärdet är {average}")</code></pre>
+        <p class="fragment"><code>len(numbers)</code> ger antalet värden: <code>4</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>len()</code></p><h2>Räkna värdena</h2>
+        <pre class="code-block fragment"><code>numbers = [3, 7, 2, 9]
+print(len(numbers))</code></pre>
+        <pre class="code-block fragment"><code>4</code></pre>
+        <p class="fragment">Längden är <code>4</code>, medan sista indexet är <code>3</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Största värdet</p><h2>Börja med ett verkligt listvärde</h2>
+        <pre class="code-block compact-code fragment"><code>numbers = [3, 7, 2, 9]
+largest = numbers[0]
+
+for number in numbers:
+    if number &gt; largest:
+        largest = number
+
+print(f"Största talet är {largest}")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Spåra största värdet</p><h2><code>largest</code> uppdateras vid behov</h2>
+        <table class="comparison"><thead><tr><th><code>number</code></th><th><code>largest</code> före</th><th>Uppdatering</th></tr></thead><tbody><tr class="fragment"><td>3</td><td>3</td><td>nej</td></tr><tr class="fragment"><td>7</td><td>3</td><td>ja → 7</td></tr><tr class="fragment"><td>2</td><td>7</td><td>nej</td></tr><tr class="fragment"><td>9</td><td>7</td><td>ja → 9</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">7.6</p><h2>Räkna värden som uppfyller ett villkor</h2>
+        <pre class="code-block compact-code fragment"><code>numbers = [4, 7, 2, 9, 5]
+count = 0
+
+for number in numbers:
+    if number % 2 == 0:
+        count = count + 1
+
+print(f"Antal jämna tal är {count}")</code></pre>
+        <p class="fragment">Resultat: <code>2</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Samla in och summera fem tal</h2>
+        <pre class="code-block compact-code fragment"><code>numbers = []
+
+for i in range(5):
+    number = int(input("Skriv ett tal: "))
+    numbers.append(number)
+
+total = 0
+for number in numbers:
+    total = total + number
+
+print(numbers)
+print(f"Summan är {total}")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Programstruktur</p><h2>Samla först – bearbeta sedan</h2>
+        <ol><li class="fragment">Skapa en tom lista.</li><li class="fragment">Läs in värden och använd <code>append()</code>.</li><li class="fragment">Gå igenom listan med en ny loop.</li><li class="fragment">Beräkna resultatet.</li><li class="fragment">Skriv ut listan och resultatet.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">7.7 · Övning</p><h2>Analysera fem tal</h2>
+        <ol><li class="fragment">Skapa en lista med fem tal.</li><li class="fragment">Skriv ut första och sista värdet.</li><li class="fragment">Räkna ut summan.</li><li class="fragment">Räkna ut medelvärdet med <code>len()</code>.</li><li class="fragment">Räkna hur många tal som är större än 5.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vad är skillnaden?</h2>
+        <div class="two-column"><div><pre class="code-block fragment"><code>numbers[1] = 10</code></pre><p class="fragment">Ersätter värdet på index 1.</p></div><div><pre class="code-block fragment"><code>numbers.append(10)</code></pre><p class="fragment">Lägger till ett nytt värde sist.</p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">En lista lagrar flera värden mellan <code>[ ]</code>.</li><li class="fragment">Index börjar på <code>0</code>; <code>-1</code> ger sista värdet.</li><li class="fragment">En <code>for</code>-loop kan bearbeta varje värde.</li><li class="fragment"><code>append()</code> lägger till ett värde sist.</li><li class="fragment"><code>len()</code> ger antalet värden.</li><li class="fragment">Listor, loopar och villkor kan tillsammans analysera data.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    (function () {
+      const valuesInput = document.getElementById("list-values");
+      const indexInput = document.getElementById("list-index");
+      const appendInput = document.getElementById("list-append");
+      const inspectButton = document.getElementById("inspect-list");
+      const appendButton = document.getElementById("append-list");
+      const output = document.getElementById("list-output");
+      if (!valuesInput || !indexInput || !appendInput || !inspectButton || !appendButton || !output) return;
+      function readList() {
+        const parts = valuesInput.value.split(",").map(function (part) { return part.trim(); }).filter(Boolean);
+        const values = parts.map(Number);
+        return values.every(Number.isFinite) ? values : null;
+      }
+      inspectButton.addEventListener("click", function () {
+        const values = readList();
+        const index = Number(indexInput.value);
+        if (!values || !Number.isInteger(index)) {
+          output.textContent = "Listan måste innehålla tal och index måste vara ett heltal.";
+          return;
+        }
+        const actualIndex = index < 0 ? values.length + index : index;
+        if (actualIndex < 0 || actualIndex >= values.length) {
+          output.textContent = "IndexError: list index out of range";
+          return;
+        }
+        output.textContent = "Lista: [" + values.join(", ") + "]\nVärde på index " + index + ": " + values[actualIndex] + "\nlen(lista): " + values.length;
+      });
+      appendButton.addEventListener("click", function () {
+        const values = readList();
+        const value = Number(appendInput.value);
+        if (!values || !Number.isFinite(value)) {
+          output.textContent = "Listan och det nya värdet måste innehålla tal.";
+          return;
+        }
+        values.push(value);
+        valuesInput.value = values.join(", ");
+        output.textContent = "append(" + value + ")\n[" + values.join(", ") + "]";
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 3 – Problemlösning i programmering</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 3</p><h1>Problemlösning i programmering</h1>
+        <p class="fragment">Från en idé till en plan som kan bli fungerande kod.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">förstå och avgränsa ett programmeringsproblem</li><li class="fragment">skriva en tydlig algoritm</li><li class="fragment">dela upp ett problem i mindre delar</li><li class="fragment">planera med pseudokod och flödesschema</li><li class="fragment">gå från problem till kod och testning</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.1</p><h2>Ett problem har tre delar</h2>
+        <div class="flow"><span class="fragment">Input</span><b class="fragment">→</b><span class="fragment">Bearbetning</span><b class="fragment">→</b><span class="fragment">Output</span></div>
+        <ul><li class="fragment"><strong>Input:</strong> vilken information behövs?</li><li class="fragment"><strong>Bearbetning:</strong> vad ska programmet göra?</li><li class="fragment"><strong>Output:</strong> vilket resultat ska visas?</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempelproblem</p><h2>Ålder om fem år</h2>
+        <pre class="code-block fragment"><code>Fråga användaren efter sin ålder
+Räkna ut åldern om fem år
+Skriv ut resultatet</code></pre>
+        <p class="fragment">Planen beskriver vad som ska ske utan att fastna i Python-syntax.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Planen blir Pythonkod</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))
+print(f"Om fem år är du {age + 5} år gammal")</code></pre>
+        <p class="fragment">Input: användaren skriver sin ålder.</p>
+        <p class="fragment">Bearbetning: programmet adderar <code>5</code>.</p>
+        <p class="fragment">Output: den framtida åldern skrivs ut.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Förstå först</p><h2>Tre frågor före koden</h2>
+        <ol><li class="fragment">Vad ska programmet göra?</li><li class="fragment">Vilken information behöver programmet?</li><li class="fragment">Vad ska programmet ge för resultat?</li></ol>
+        <p class="fragment">Om svaren är otydliga är problemet ännu inte tillräckligt förstått.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.2</p><h2>En algoritm är en lösning i steg</h2>
+        <p class="fragment">Stegen ska utföras i en bestämd ordning.</p>
+        <p class="fragment">Varje steg ska vara tydligt och möjligt att följa.</p>
+        <p class="fragment">Recept, möbelinstruktioner och vägbeskrivningar är vardagliga algoritmer.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Algoritm · exempel</p><h2>Ålder om fem år</h2>
+        <ol><li class="fragment">Fråga användaren efter ålder.</li><li class="fragment">Spara åldern i en variabel.</li><li class="fragment">Lägg till 5.</li><li class="fragment">Skriv ut resultatet.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Bra algoritm</p><h2>Fyra krav</h2>
+        <ul><li class="fragment"><strong>Tydlig:</strong> stegen går att förstå.</li><li class="fragment"><strong>Stegvis:</strong> ett moment i taget.</li><li class="fragment"><strong>Logisk:</strong> rätt ordning ger rätt resultat.</li><li class="fragment"><strong>Genomförbar:</strong> varje steg går att utföra.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vad saknas?</h2>
+        <pre class="code-block fragment"><code>fråga efter två tal
+skriv ut summan</code></pre>
+        <p class="fragment">Programmet har fått input, men inget steg beräknar summan.</p>
+        <p class="fragment"><strong>Lägg till:</strong> <code>summa = tal1 + tal2</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.3</p><h2>Dela upp stora problem</h2>
+        <p class="fragment">Ett stort problem kan vara svårt att lösa som en enda uppgift.</p>
+        <p class="fragment">Mindre delar kan förstås, skrivas och testas var för sig.</p>
+        <p class="fragment">Det gör även fel lättare att hitta.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Uppdelning · summa</p><h2>Gör ett steg i taget</h2>
+        <ol><li class="fragment">Läs in det första talet.</li><li class="fragment">Läs in det andra talet.</li><li class="fragment">Lägg ihop talen.</li><li class="fragment">Spara summan.</li><li class="fragment">Skriv ut summan.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Summan av två tal</h2>
+        <pre class="code-block fragment"><code>number1 = int(input("Skriv ett tal: "))
+number2 = int(input("Skriv ett tal till: "))
+summa = number1 + number2
+print(f"Summan är {summa}")</code></pre>
+        <p class="fragment">Varje rad motsvarar en tydlig del: input, beräkning eller output.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.4</p><h2>Pseudokod planerar logiken</h2>
+        <p class="fragment">Pseudokod använder vanliga ord i stället för exakt Python-syntax.</p>
+        <p class="fragment">Den visar struktur, ordning och beslut.</p>
+        <p class="fragment">Den kan inte köras av datorn – den är en plan för människor.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Pseudokod</p><h2>Stort eller litet tal?</h2>
+        <pre class="code-block fragment"><code>läs in ett tal
+om talet är större än 10
+    skriv ut "Stort tal"
+annars
+    skriv ut "Litet tal"</code></pre>
+        <p class="fragment">Indraget visar vilka instruktioner som hör till respektive väg.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Från pseudokod till kod</p><h2>Samma logik i Python</h2>
+        <pre class="code-block fragment"><code>number = int(input("Skriv ett tal: "))
+
+if number &gt; 10:
+    print("Stort tal")
+else:
+    print("Litet tal")</code></pre>
+        <p class="fragment">Python kräver kolon och korrekt indrag efter <code>if</code> och <code>else</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.5</p><h2>Flödesschemat visar planen</h2>
+        <p class="fragment">Symboler visar olika typer av steg.</p>
+        <p class="fragment">Pilar visar i vilken ordning stegen utförs.</p>
+        <p class="fragment">Förgreningar visar val och bakåtpilar visar upprepning.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sekvens</p><h2>Steg efter steg</h2>
+        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>läs in namn
+skriv ut namn
+skriv ut "Välkommen"</code></pre><p class="fragment">Alla instruktioner körs en gång i ordning.</p></div><figure class="slide-figure fragment"><img src="../assets/images/ch1/image18.png" alt="Flödesschema som visar en sekvens"><figcaption>Sekvens: pilarna går vidare till nästa steg.</figcaption></figure></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sekvens · exempel</p><h2>Input, beräkning, output</h2>
+        <figure class="slide-figure fragment"><img src="../assets/images/ch1/image21.png" alt="Flödesschema för summan av två tal"><figcaption>Två värden läses in, adderas och skrivs ut i en rak sekvens.</figcaption></figure>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Selektion</p><h2>Ett villkor väljer väg</h2>
+        <div class="two-column diagram-emphasis"><div><pre class="code-block compact-code fragment"><code>om tal &gt; 10
+    skriv ut "Stort tal"
+annars
+    skriv ut "Litet tal"</code></pre><p class="fragment">Endast en av vägarna körs.</p></div><figure class="slide-figure fragment"><img src="../assets/images/ch1/image19.png" alt="Flödesschema med ett villkor och två vägar"><figcaption>Beslutspunkten delar flödet i sant och falskt.</figcaption></figure></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Selektion · exempel</p><h2>Stort eller litet tal</h2>
+        <figure class="slide-figure fragment"><img src="../assets/images/ch1/image22.png" alt="Flödesschema för stort eller litet tal"><figcaption>Villkoret avgör vilken av de två utskrifterna som används.</figcaption></figure>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Iteration</p><h2>En pil går tillbaka</h2>
+        <div class="two-column diagram-emphasis"><div><pre class="code-block compact-code fragment"><code>så länge talet inte är 0
+    skriv ut talet
+    läs in nytt tal</code></pre><p class="fragment">Stegen upprepas tills villkoret inte längre gäller.</p></div><figure class="slide-figure fragment"><img src="../assets/images/ch1/image20.png" alt="Flödesschema som visar iteration"><figcaption>Bakåtpilen skapar en upprepning.</figcaption></figure></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Jämförelse</p><h2>Tre sätt att beskriva lösningen</h2>
+        <table class="comparison"><thead><tr><th>Form</th><th>Visar</th><th>Användning</th></tr></thead><tbody><tr class="fragment"><td>Algoritm</td><td>lösningens steg</td><td>översikt</td></tr><tr class="fragment"><td>Pseudokod</td><td>programlik struktur</td><td>detaljerad plan</td></tr><tr class="fragment"><td>Flödesschema</td><td>flöde, val och loopar</td><td>visuell kontroll</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.6</p><h2>Från idé till program</h2>
+        <div class="flow"><span class="fragment">Förstå</span><b class="fragment">→</b><span class="fragment">Planera</span><b class="fragment">→</b><span class="fragment">Beskriv</span><b class="fragment">→</b><span class="fragment">Koda</span><b class="fragment">→</b><span class="fragment">Testa</span></div>
+        <p class="fragment">Om testet misslyckas går du tillbaka, rättar planen eller koden och testar igen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Plan</p><h2>Ålder om tio år</h2>
+        <pre class="code-block fragment"><code>fråga efter ålder
+spara åldern
+lägg till 10
+skriv ut resultatet</code></pre>
+        <p class="fragment">Input: ålder. Bearbetning: <code>+ 10</code>. Output: framtida ålder.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kod</p><h2>Ålder om tio år</h2>
+        <pre class="code-block fragment"><code>age = int(input("Hur gammal är du? "))
+future_age = age + 10
+print(f"Om tio år är du {future_age} år gammal")</code></pre>
+        <p class="fragment">Test: om input är <code>15</code> ska output innehålla <code>25</code>.</p>
+        <p class="fragment">Testa även andra rimliga värden.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.7 · Problem</p><h2>Celsius till Fahrenheit</h2>
+        <p class="fragment">Programmet ska läsa in en temperatur i Celsius.</p>
+        <p class="fragment">Det ska omvandla temperaturen med formeln:</p>
+        <pre class="code-block fragment"><code>F = C × 9 / 5 + 32</code></pre>
+        <p class="fragment">Resultatet ska skrivas ut i Fahrenheit.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Temperatur · algoritm</p><h2>Lösningen i tre steg</h2>
+        <ol><li class="fragment">Läs in temperaturen i Celsius.</li><li class="fragment">Räkna ut temperaturen i Fahrenheit.</li><li class="fragment">Skriv ut resultatet.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Temperatur · pseudokod</p><h2>Planen blir mer exakt</h2>
+        <pre class="code-block fragment"><code>start
+läs in temperatur i Celsius
+fahrenheit = celsius × 9 / 5 + 32
+skriv ut temperaturen i Fahrenheit
+slut</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Temperatur · hela programmet</p><h2>Planen blir Python</h2>
+        <pre class="code-block fragment"><code>celsius = float(input("Skriv en temperatur i Celsius: "))
+fahrenheit = celsius * 9 / 5 + 32
+print(f"Temperaturen i Fahrenheit är {fahrenheit}")</code></pre>
+        <p class="fragment">Test: <code>20</code> grader Celsius ska ge <code>68.0</code> grader Fahrenheit.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Temperatur · steg för steg</p><h2>Varje rad har en uppgift</h2>
+        <ul><li class="fragment"><code>input()</code> läser text från användaren.</li><li class="fragment"><code>float()</code> gör texten till ett decimaltal.</li><li class="fragment">Formeln beräknar Fahrenheit.</li><li class="fragment">F-strängen visar resultatet.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">3.8 · Övning</p><h2>Summan av två tal</h2>
+        <ol><li class="fragment">Beskriv input, bearbetning och output.</li><li class="fragment">Skriv algoritmen.</li><li class="fragment">Skriv pseudokod.</li><li class="fragment">Skriv programmet i Python.</li><li class="fragment">Testa exempelvis <code>10 + 15</code>.</li></ol>
+        <p class="fragment">Förväntat resultat: <code>Summan är 25</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Fördjupningsövning</p><h2>Medelvärdet av tre tal</h2>
+        <ol><li class="fragment">Läs in tre tal.</li><li class="fragment">Beräkna summan.</li><li class="fragment">Dela summan med <code>3</code>.</li><li class="fragment">Skriv ut resultatet.</li><li class="fragment">Testa med tal vars medelvärde du känner till.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Förstå input, bearbetning och output före kodningen.</li><li class="fragment">En algoritm beskriver lösningen steg för steg.</li><li class="fragment">Dela upp stora problem i mindre delar.</li><li class="fragment">Pseudokod beskriver logiken med ord.</li><li class="fragment">Flödesscheman visar sekvens, val och upprepning.</li><li class="fragment">Skriv kod först när planen är tydlig – och testa alltid.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+</body>
+</html>

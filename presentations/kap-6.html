@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 6 – Loopar</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 6</p><h1>Loopar</h1>
+        <p class="fragment">Upprepa kod med <code>while</code>, <code>for</code> och <code>range()</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">förklara varför loopar behövs</li><li class="fragment">skriva <code>while</code>- och <code>for</code>-loopar</li><li class="fragment">använda start, stopp och steg i <code>range()</code></li><li class="fragment">undvika oändliga loopar</li><li class="fragment">kombinera loopar med villkor och summor</li><li class="fragment">avsluta en loop med <code>break</code></li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.1</p><h2>En loop upprepar kod</h2>
+        <p class="fragment">Utan loop måste samma instruktion skrivas flera gånger.</p>
+        <pre class="code-block fragment"><code>print(1)
+print(2)
+print(3)
+print(4)
+print(5)</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Samma resultat</p><h2>Kortare kod med en loop</h2>
+        <pre class="code-block fragment"><code>for i in range(5):
+    print(i + 1)</code></pre>
+        <p class="fragment">Den indragna instruktionen är <code>print(i + 1)</code>.</p>
+        <p class="fragment">Den körs fem gånger med olika värden på <code>i</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Två typer</p><h2>Välj loop efter problemet</h2>
+        <table class="comparison"><thead><tr><th><code>for</code></th><th><code>while</code></th></tr></thead><tbody><tr><td class="fragment">När antalet varv är känt.</td><td class="fragment">När ett villkor bestämmer hur länge.</td></tr><tr><td class="fragment">Går igenom en talföljd.</td><td class="fragment">Kontrollerar villkoret före varje varv.</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.2 · Hela programmet</p><h2>Räkna med <code>while</code></h2>
+        <pre class="code-block fragment"><code>count = 1
+
+while count &lt;= 5:
+    print(count)
+    count = count + 1</code></pre>
+        <pre class="code-block compact-code fragment"><code>1
+2
+3
+4
+5</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>while</code> · steg 1</p><h2>Startvärde</h2>
+        <pre class="code-block fragment"><code>count = 1</code></pre>
+        <p class="fragment">Variabeln skapas före loopen.</p>
+        <p class="fragment">Den håller reda på vilket varv programmet befinner sig i.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>while</code> · steg 2</p><h2>Villkoret kontrolleras</h2>
+        <pre class="code-block fragment"><code>while count &lt;= 5:</code></pre>
+        <p class="fragment">Om villkoret är <code>True</code> körs loopens kod.</p>
+        <p class="fragment">Om villkoret är <code>False</code> avslutas loopen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>while</code> · steg 3</p><h2>Värdet måste förändras</h2>
+        <pre class="code-block fragment"><code>count = count + 1</code></pre>
+        <p class="fragment">Det gamla värdet används för att räkna ut ett nytt.</p>
+        <p class="fragment"><code>1 → 2 → 3 → 4 → 5 → 6</code></p>
+        <p class="fragment">När värdet blir <code>6</code> är villkoret falskt.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Spåra loopen</p><h2>Vad händer varje varv?</h2>
+        <table class="comparison"><thead><tr><th><code>count</code> före test</th><th><code>count &lt;= 5</code></th><th>Händelse</th></tr></thead><tbody><tr class="fragment"><td>1</td><td>True</td><td>skriv 1, öka</td></tr><tr class="fragment"><td>2–5</td><td>True</td><td>skriv, öka</td></tr><tr class="fragment"><td>6</td><td>False</td><td>avsluta</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.3 · Hela programmet</p><h2>Räkna med <code>for</code></h2>
+        <pre class="code-block fragment"><code>for i in range(5):
+    print(i)</code></pre>
+        <pre class="code-block fragment"><code>0
+1
+2
+3
+4</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>for</code> · steg för steg</p><h2><code>i</code> får ett nytt värde varje varv</h2>
+        <div class="flow"><span class="fragment"><code>i = 0</code></span><b class="fragment">→</b><span class="fragment"><code>i = 1</code></span><b class="fragment">→</b><span class="fragment"><code>i = 2</code></span><b class="fragment">→</b><span class="fragment"><code>i = 3</code></span><b class="fragment">→</b><span class="fragment"><code>i = 4</code></span></div>
+        <p class="fragment">När talföljden är slut fortsätter programmet efter loopen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Indrag</p><h2>Endast indragen kod upprepas</h2>
+        <pre class="code-block fragment"><code>for i in range(3):
+    print("Varv", i)
+    print("Inne i loopen")
+
+print("Efter loopen")</code></pre>
+        <p class="fragment">De två indragna raderna körs tre gånger.</p>
+        <p class="fragment">Den sista raden körs en gång.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.4</p><h2><code>range(stopp)</code></h2>
+        <pre class="code-block fragment"><code>for i in range(5):
+    print(i)</code></pre>
+        <p class="fragment"><code>range(5)</code> börjar på <code>0</code>.</p>
+        <p class="fragment">Stoppvärdet <code>5</code> ingår inte.</p>
+        <p class="fragment">Följden blir <code>0, 1, 2, 3, 4</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>range()</code></p><h2>Start och stopp</h2>
+        <pre class="code-block fragment"><code>for i in range(1, 6):
+    print(i)</code></pre>
+        <p class="fragment">Startvärdet <code>1</code> ingår.</p>
+        <p class="fragment">Stoppvärdet <code>6</code> ingår inte.</p>
+        <p class="fragment">Följden blir <code>1, 2, 3, 4, 5</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>range()</code></p><h2>Start, stopp och steg</h2>
+        <pre class="code-block fragment"><code>for i in range(0, 10, 2):
+    print(i)</code></pre>
+        <p class="fragment">Start: <code>0</code></p>
+        <p class="fragment">Stopp före: <code>10</code></p>
+        <p class="fragment">Steg: <code>2</code></p>
+        <p class="fragment">Följden blir <code>0, 2, 4, 6, 8</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv kontroll</p><h2>Bygg en talföljd</h2>
+        <div class="decision-simulator">
+          <div class="decision-controls"><label for="range-start">Start</label><input id="range-start" type="number" value="0" step="1"><label for="range-stop">Stopp (ingår inte)</label><input id="range-stop" type="number" value="10" step="1"><label for="range-step">Steg</label><input id="range-step" type="number" value="2" step="1"><button id="run-range" type="button">Kör range()</button></div>
+          <div class="decision-output"><strong>Terminal</strong><pre id="range-output" aria-live="polite">Tryck på knappen för att köra.</pre></div>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Räkna baklänges</p><h2>Använd ett negativt steg</h2>
+        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>for i in range(10, 0, -1):
+    print(i)</code></pre></div><div><pre class="code-block compact-code fragment"><code>10
+9
+8
+7
+6
+5
+4
+3
+2
+1</code></pre></div></div>
+        <p class="fragment">Starten är <code>10</code>, steget är <code>-1</code>.</p>
+        <p class="fragment">Stoppvärdet <code>0</code> ingår inte.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vilka tal skapas?</h2>
+        <pre class="code-block fragment"><code>range(2, 12, 3)</code></pre>
+        <p class="fragment">Börja på <code>2</code> och öka med <code>3</code>.</p>
+        <p class="fragment"><strong>Svar:</strong> <code>2, 5, 8, 11</code>.</p>
+        <p class="fragment">Nästa tal hade varit <code>14</code>, som ligger efter stoppvärdet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.5</p><h2>En oändlig loop tar aldrig slut</h2>
+        <pre class="code-block fragment"><code>while True:
+    print("Detta fortsätter för alltid")</code></pre>
+        <p class="fragment">Villkoret är alltid sant.</p>
+        <p class="fragment">En sådan loop behöver ett annat sätt att avslutas, exempelvis <code>break</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Oändlig av misstag</p><h2>Variabeln ändras inte</h2>
+        <pre class="code-block fragment"><code>count = 0
+
+while count &lt; 5:
+    print(count)</code></pre>
+        <p class="fragment"><code>count</code> förblir <code>0</code>.</p>
+        <p class="fragment">Villkoret <code>0 &lt; 5</code> fortsätter därför att vara sant.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Rätta loopen</p><h2>För villkoret mot <code>False</code></h2>
+        <pre class="code-block fragment"><code>count = 0
+
+while count &lt; 5:
+    print(count)
+    count = count + 1</code></pre>
+        <p class="fragment">Efter fem varv blir <code>count</code> lika med <code>5</code>.</p>
+        <p class="fragment">Då blir villkoret falskt och loopen avslutas.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.6</p><h2>Villkoret kan ändra varje varv</h2>
+        <pre class="code-block compact-code fragment"><code>for i in range(1, 11):
+    if i % 2 == 0:
+        print(f"{i} är jämnt")
+    else:
+        print(f"{i} är udda")</code></pre>
+        <p class="fragment">Loopen väljer en gren för varje tal.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Loop och input</p><h2>Användaren bestämmer antalet varv</h2>
+        <pre class="code-block compact-code fragment"><code>number = int(input("Hur många tal? "))
+
+for i in range(1, number + 1):
+    if i % 2 == 0:
+        print(f"{i} är jämnt")
+    else:
+        print(f"{i} är udda")</code></pre>
+        <p class="fragment"><code>number + 1</code> behövs eftersom stoppvärdet inte ingår.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.7 · Ackumulator</p><h2>Bygg en summa över flera varv</h2>
+        <pre class="code-block fragment"><code>total = 0
+
+for i in range(5):
+    number = int(input("Skriv ett tal: "))
+    total = total + number
+
+print(f"Summan är {total}")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Spåra summan</p><h2><code>total</code> minns tidigare varv</h2>
+        <table class="comparison"><thead><tr><th>Inmatning</th><th><code>total</code> före</th><th><code>total</code> efter</th></tr></thead><tbody><tr class="fragment"><td>3</td><td>0</td><td>3</td></tr><tr class="fragment"><td>5</td><td>3</td><td>8</td></tr><tr class="fragment"><td>2</td><td>8</td><td>10</td></tr></tbody></table>
+        <p class="fragment">En variabel som samlar ett resultat kallas ofta ackumulator.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Räkna träffar</p><h2>Räkna jämna tal</h2>
+        <pre class="code-block compact-code fragment"><code>count = 0
+
+for i in range(1, 11):
+    if i % 2 == 0:
+        count = count + 1
+
+print(f"Antal jämna tal är {count}")</code></pre>
+        <p class="fragment">Räknaren ökar bara när villkoret är sant.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.8</p><h2><code>break</code> avslutar loopen direkt</h2>
+        <pre class="code-block compact-code fragment"><code>while True:
+    number = int(input("Skriv ett tal (0 avslutar): "))
+    if number == 0:
+        break
+    print(f"Du skrev talet {number}")</code></pre>
+        <p class="fragment">När användaren skriver <code>0</code> lämnar programmet loopen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker"><code>break</code> · körning</p><h2>Stoppvärdet skrivs inte ut</h2>
+        <pre class="code-block fragment"><code>Skriv ett tal (0 avslutar): 5
+Du skrev talet 5
+Skriv ett tal (0 avslutar): 8
+Du skrev talet 8
+Skriv ett tal (0 avslutar): 0</code></pre>
+        <p class="fragment"><code>break</code> körs innan den sista <code>print()</code>-raden.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">6.9 · Övning</p><h2>Multiplikationstabell</h2>
+        <p class="fragment">Läs in ett tal från användaren.</p>
+        <p class="fragment">Använd en <code>for</code>-loop från 1 till 10.</p>
+        <pre class="code-block compact-code fragment"><code>3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9</code></pre>
+        <p class="fragment">Använd en f-sträng för varje rad.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Fördjupningsövning</p><h2>FizzBuzz</h2>
+        <ul><li class="fragment">Delbart med både 3 och 5: skriv <code>FizzBuzz</code>.</li><li class="fragment">Annars delbart med 3: skriv <code>Fizz</code>.</li><li class="fragment">Annars delbart med 5: skriv <code>Buzz</code>.</li><li class="fragment">Annars: skriv talet.</li></ul>
+        <p class="fragment">Kontrollera det mest specifika villkoret först.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment"><code>while</code> upprepar så länge ett villkor är sant.</li><li class="fragment"><code>for</code> går igenom en talföljd eller samling.</li><li class="fragment">Stoppvärdet i <code>range()</code> ingår inte.</li><li class="fragment">En <code>while</code>-loop måste kunna nå ett falskt villkor.</li><li class="fragment">Loopar kan innehålla villkor och bygga summor eller räknare.</li><li class="fragment"><code>break</code> avslutar den aktuella loopen direkt.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    (function () {
+      const button = document.getElementById("run-range");
+      const startInput = document.getElementById("range-start");
+      const stopInput = document.getElementById("range-stop");
+      const stepInput = document.getElementById("range-step");
+      const output = document.getElementById("range-output");
+      if (!button || !startInput || !stopInput || !stepInput || !output) return;
+      button.addEventListener("click", function () {
+        const start = Number(startInput.value);
+        const stop = Number(stopInput.value);
+        const step = Number(stepInput.value);
+        if (![start, stop, step].every(Number.isInteger)) {
+          output.textContent = "Start, stopp och steg måste vara heltal.";
+          return;
+        }
+        if (step === 0) {
+          output.textContent = "Steget får inte vara 0.";
+          return;
+        }
+        const values = [];
+        const forward = step > 0;
+        for (let value = start; forward ? value < stop : value > stop; value += step) {
+          values.push(value);
+          if (values.length > 100) {
+            output.textContent = "Fler än 100 värden. Välj ett kortare intervall.";
+            return;
+          }
+        }
+        output.textContent = values.length ? values.join("\n") : "Följden är tom.";
+      });
+    })();
+  </script>
+</body>
+</html>

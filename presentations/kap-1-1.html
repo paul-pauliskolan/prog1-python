@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 1 – Vad är programmering?</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 1</p><h1>Vad är programmering?</h1>
+        <p class="fragment">Från tydliga instruktioner till ditt första Pythonprogram.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">förklara vad program och programmering är</li><li class="fragment">beskriva hur Python kör kod</li><li class="fragment">skriva, spara och köra ett enkelt program</li><li class="fragment">förstå syntax, indrag och vanliga fel</li><li class="fragment">använda specialtecken i text</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.1</p><h2>Ett program är instruktioner</h2>
+        <p class="fragment">Datorn följer instruktionerna steg för steg.</p>
+        <p class="fragment">Den gör exakt det som står i koden.</p>
+        <p class="fragment">Program finns i appar, spel, banker, bilar och medicinsk utrustning.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.2</p><h2>Programmering är en process</h2>
+        <ol><li class="fragment">Analysera problemet.</li><li class="fragment">Planera en lösning.</li><li class="fragment">Skriv kod.</li><li class="fragment">Testa programmet.</li><li class="fragment">Förbättra programmet.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.3 · Hela exemplet</p><h2>Datorn räknar enligt koden</h2>
+        <pre class="code-block fragment"><code>tal1 = 5
+tal2 = 3
+summa = tal1 + tal2
+print(summa)</code></pre>
+        <p class="fragment">Utskrift: <code>8</code></p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Möjligheter och gränser</p><h2>Snabb – men inte tankeläsare</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Datorn kan</strong></p><ul><li class="fragment">räkna snabbt</li><li class="fragment">hantera mycket data</li><li class="fragment">automatisera uppgifter</li></ul></div><div><p class="fragment"><strong>Datorn kan inte</strong></p><ul><li class="fragment">förstå vad du menade</li><li class="fragment">rätta otydliga instruktioner själv</li></ul></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.4</p><h2>Programspråk</h2>
+        <p class="fragment">Kod skrivs med regler och ord från ett programspråk.</p>
+        <p class="fragment">Exempel: Python, Java, C#, JavaScript och C++.</p>
+        <p class="fragment">Vi använder Python eftersom språket är tydligt och lättläst.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.5 · Körflöde</p><h2>Från kod till resultat</h2>
+        <div class="flow"><span class="fragment">Kodfil</span><b class="fragment">→</b><span class="fragment">Python-tolk</span><b class="fragment">⇄</b><span class="fragment">Operativsystem</span><b class="fragment">⇄</b><span class="fragment">Hårdvara</span></div>
+        <ul>
+          <li class="fragment">Python-tolken läser koden och utför instruktionerna.</li>
+          <li class="fragment">Tolken ber operativsystemet om tillgång till exempelvis skärm, tangentbord och filer.</li>
+          <li class="fragment">Operativsystemet styr hårdvaran och skickar data tillbaka till tolken.</li>
+          <li class="fragment">Tolken fortsätter programmet och visar resultatet för användaren.</li>
+        </ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Input och output</p><h2>Programmet möter användaren</h2>
+        <div class="code-step fragment"><pre class="code-block"><code>namn = input("Vad heter du? ")</code></pre><p><code>input()</code> läser in ett svar och sparar det i <code>namn</code>.</p></div>
+        <div class="code-step fragment"><pre class="code-block"><code>print(f"Hej {namn}")</code></pre><p><code>print()</code> visar en hälsning med det sparade namnet.</p></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.6</p><h2>Två sätt att översätta kod</h2>
+        <table class="comparison"><thead><tr><th>Kompilerat</th><th>Interpreterat</th></tr></thead><tbody><tr><td class="fragment">Hela programmet översätts först.</td><td class="fragment">Koden läses och körs steg för steg.</td></tr><tr><td class="fragment">C, C++, Rust, Go</td><td class="fragment">Python, JavaScript, Ruby</td></tr></tbody></table>
+        <p class="fragment">Python är ett interpreterat språk.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.7</p><h2>Installera Python 3</h2>
+        <ol><li class="fragment">Gå till <code>python.org</code> och välj Downloads.</li><li class="fragment">Ladda ner Python 3 för macOS.</li><li class="fragment">Öppna filen och slutför installationen.</li><li class="fragment">Python-versionen kan vara nyare än i läromedlet.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollera installationen</p><h2>Fråga terminalen</h2>
+        <div class="code-step fragment"><pre class="code-block"><code>python3 --version</code></pre><p>Kommandot visar vilken version som är installerad.</p></div>
+        <div class="code-step fragment"><pre class="code-block"><code>Python 3.x.x</code></pre><p>En version som börjar med 3 betyder att du är redo.</p></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.8 · IDLE</p><h2>Testa Python direkt</h2>
+        <p class="fragment">Starta IDLE via Spotlight. Fönstret Python Shell öppnas.</p>
+        <div class="code-step fragment"><pre class="code-block"><code>print("Hej")</code></pre><p>Tryck Enter. Python kör raden direkt och skriver <code>Hej</code>.</p></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Första programfilen</p><h2>Skriv, spara, kör</h2>
+        <pre class="code-block fragment"><code>print("Hej världen")</code></pre>
+        <ol><li class="fragment">Välj File → New File.</li><li class="fragment">Skriv koden.</li><li class="fragment">Spara som <code>hej.py</code>.</li><li class="fragment">Kör med F5 eller Run → Run Module.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Filstruktur</p><h2>Håll ordning från början</h2>
+        <figure class="slide-figure fragment"><img src="../assets/images/ch1/image6.png" alt="Mapp för kapitel 1 med Pythonfilen hej.py"><figcaption>En kursmapp, en kapitelmapp och tydliga filnamn.</figcaption></figure>
+        <p class="fragment">Pythonfiler ska ha filändelsen <code>.py</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.9–1.10 · VS Code</p><h2>Förbered utvecklingsmiljön</h2>
+        <ol><li class="fragment">Installera Visual Studio Code.</li><li class="fragment">Installera Python-tillägget från Microsoft.</li><li class="fragment">Öppna din kapitelmapp.</li><li class="fragment">Välj <code>Python: Select Interpreter</code>.</li><li class="fragment">Välj en Python 3-version.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kör i VS Code</p><h2>Resultatet visas i terminalen</h2>
+        <figure class="slide-figure fragment"><img src="../assets/images/ch1/image10.png" alt="Kapitelmapp öppnad i Visual Studio Code"><figcaption>Öppna hela mappen så att filer och struktur syns i sidomenyn.</figcaption></figure>
+        <p class="fragment">Öppna filen och klicka på Run-knappen uppe till höger.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.11</p><h2>Syntax är kodens regler</h2>
+        <div class="code-step fragment"><pre class="code-block"><code>print("Hej världen")</code></pre><p>Korrekt: texten står inom citattecken.</p></div>
+        <div class="code-step fragment"><pre class="code-block"><code>print(Hej världen)</code></pre><p>Fel: Python kan inte tolka texten.</p></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Indrag</p><h2>Mellanslag visar kodstruktur</h2>
+        <pre class="code-block fragment"><code>if True:
+    print("Detta skrivs ut")</code></pre>
+        <p class="fragment">Raden under <code>if</code> har fyra mellanslag.</p>
+        <p class="fragment">I VS Code omvandlas Tab normalt till fyra mellanslag.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Felsökning</p><h2>Läs felmeddelandet</h2>
+        <pre class="code-block fragment"><code>prin("Hej")</code></pre>
+        <ul><li class="fragment">Vilken rad innehåller felet?</li><li class="fragment">Vilken typ av fel visas?</li><li class="fragment">Är kommandot rättstavat?</li><li class="fragment">Saknas citattecken, parentes eller indrag?</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vad är fel?</h2>
+        <pre class="code-block fragment"><code>print("Hej världen"</code></pre>
+        <p class="fragment">Tänk efter innan du går vidare.</p>
+        <p class="fragment"><strong>Svar:</strong> den avslutande parentesen <code>)</code> saknas.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.12</p><h2>Specialtecken styr texten</h2>
+        <table class="comparison"><thead><tr><th>Tecken</th><th>Betydelse</th></tr></thead><tbody><tr class="fragment"><td><code>\n</code></td><td>ny rad</td></tr><tr class="fragment"><td><code>\t</code></td><td>tabulator</td></tr><tr class="fragment"><td><code>\"</code></td><td>citattecken i text</td></tr><tr class="fragment"><td><code>\\</code></td><td>ett omvänt snedstreck</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Specialtecken · exempel</p><h2>Kod och utskrift</h2>
+        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>print("Hej\nvärlden")
+print("Namn\tÅlder")
+print("Anna\t16")
+print("Han sa: \"Hej!\"")</code></pre></div><div><pre class="code-block compact-code fragment"><code>Hej
+världen
+Namn    Ålder
+Anna    16
+Han sa: "Hej!"</code></pre></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.13</p><h2>Programmering i vardagen</h2>
+        <ul><li class="fragment">appar och webbtjänster</li><li class="fragment">spel och simuleringar</li><li class="fragment">robotar, trafikljus och bilar</li><li class="fragment">bokningssystem och dataanalys</li><li class="fragment">rekommendationer och annonser</li></ul>
+        <p class="fragment">Programmerade system påverkar både människor och samhälle.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.14</p><h2>Tänk som en programmerare</h2>
+        <ul><li class="fragment">Dela upp stora problem i mindre delar.</li><li class="fragment">Beskriv vad som händer först, sedan och sist.</li><li class="fragment">Testa ofta och rätta ett fel i taget.</li><li class="fragment">Använd tydliga namn och var noggrann.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Problemlösning</p><h2>Dela upp uppgiften</h2>
+        <p class="fragment">Problem: räkna ut ett medelvärde.</p>
+        <ol><li class="fragment">Läs in talen.</li><li class="fragment">Lägg ihop talen.</li><li class="fragment">Räkna hur många tal som finns.</li><li class="fragment">Dela summan med antalet.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">1.15 · Övning</p><h2>Skriv ditt första program</h2>
+        <ol><li class="fragment">Skapa en egen <code>.py</code>-fil.</li><li class="fragment">Skriv ut <code>Hej världen</code>.</li><li class="fragment">Skriv sedan ut tre rader med flera <code>print()</code>.</li><li class="fragment">Ändra en rad så att ditt namn skrivs ut.</li><li class="fragment">Kör efter varje ändring.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Övning · felsök</p><h2>Gör ett fel med flit</h2>
+        <pre class="code-block fragment"><code>print("Hej världen"</code></pre>
+        <ol><li class="fragment">Kör programmet.</li><li class="fragment">Läs hela felmeddelandet.</li><li class="fragment">Hitta raden och felets typ.</li><li class="fragment">Rätta koden och kör igen.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Program är tydliga instruktioner till datorn.</li><li class="fragment">Python tolkar och kör koden steg för steg.</li><li class="fragment">Spara program som <code>.py</code> och kör dem i IDLE eller VS Code.</li><li class="fragment">Syntax, citattecken, parenteser och indrag måste vara rätt.</li><li class="fragment">Programmering är att analysera, planera, testa och förbättra.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+</body>
+</html>

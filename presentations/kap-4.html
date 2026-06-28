@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 4 – Operatorer och beräkningar</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 4</p><h1>Operatorer och beräkningar</h1>
+        <p class="fragment">Räkna, jämför och kombinera villkor i Python.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">använda aritmetiska operatorer</li><li class="fragment">jämföra värden och tolka <code>True</code>/<code>False</code></li><li class="fragment">kombinera villkor med <code>and</code>, <code>or</code> och <code>not</code></li><li class="fragment">förstå prioriteringsregler och parenteser</li><li class="fragment">bygga enkla beräkningsprogram</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kärnidé</p><h2>En operator utför en operation</h2>
+        <div class="flow"><span class="fragment">Värde</span><b class="fragment">+</b><span class="fragment">Värde</span><b class="fragment">→</b><span class="fragment">Resultat</span></div>
+        <p class="fragment">Operatorer kan räkna, jämföra eller kombinera villkor.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">4.1</p><h2>Aritmetiska operatorer</h2>
+        <table class="comparison"><thead><tr><th>Operator</th><th>Operation</th><th>Exempel</th></tr></thead><tbody><tr class="fragment"><td><code>+</code></td><td>addition</td><td><code>5 + 3</code></td></tr><tr class="fragment"><td><code>-</code></td><td>subtraktion</td><td><code>10 - 4</code></td></tr><tr class="fragment"><td><code>*</code></td><td>multiplikation</td><td><code>6 * 7</code></td></tr><tr class="fragment"><td><code>/</code></td><td>division</td><td><code>10 / 2</code></td></tr><tr class="fragment"><td><code>//</code></td><td>heltalsdivision</td><td><code>10 // 3</code></td></tr><tr class="fragment"><td><code>%</code></td><td>modulus (rest)</td><td><code>10 % 3</code></td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Addition och subtraktion</p><h2>Lägg till eller dra ifrån</h2>
+        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>a = 5
+b = 3
+result = a + b
+print(result)</code></pre><p class="fragment">Utskrift: <code>8</code></p></div><div><pre class="code-block compact-code fragment"><code>a = 10
+b = 4
+result = a - b
+print(result)</code></pre><p class="fragment">Utskrift: <code>6</code></p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Multiplikation</p><h2>Python använder <code>*</code></h2>
+        <pre class="code-block fragment"><code>a = 6
+b = 7
+result = a * b
+print(result)</code></pre>
+        <p class="fragment">Utskrift: <code>42</code></p>
+        <p class="fragment">Tecknet <code>x</code> är inte en multiplikationsoperator i Python.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Division</p><h2><code>/</code> ger vanlig division</h2>
+        <pre class="code-block fragment"><code>a = 10
+b = 2
+result = a / b
+print(result)</code></pre>
+        <p class="fragment">Utskrift: <code>5.0</code></p>
+        <p class="fragment">Resultatet blir ett decimaltal även när divisionen går jämnt ut.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Heltalsdivision</p><h2><code>//</code> tar heltalsdelen</h2>
+        <pre class="code-block fragment"><code>a = 10
+b = 3
+result = a // b
+print(result)</code></pre>
+        <p class="fragment">Utskrift: <code>3</code></p>
+        <p class="fragment">Decimaldelen i <code>3.333...</code> tas bort.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Modulus</p><h2><code>%</code> ger resten</h2>
+        <pre class="code-block fragment"><code>a = 10
+b = 3
+rest = a % b
+print(rest)</code></pre>
+        <p class="fragment"><code>10</code> innehåller tre hela grupper med <code>3</code>: <code>3 + 3 + 3</code>.</p>
+        <p class="fragment">Då återstår <code>1</code>, så <code>10 % 3</code> blir <code>1</code>.</p>
+        <p class="fragment">Modulus används exempelvis för att kontrollera om ett tal är jämnt: <code>tal % 2 == 0</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2><code>/</code>, <code>//</code> eller <code>%</code>?</h2>
+        <pre class="code-block fragment"><code>print(17 / 5)
+print(17 // 5)
+print(17 % 5)</code></pre>
+        <p class="fragment">Tänk ut de tre resultaten.</p>
+        <pre class="code-block compact-code fragment"><code>3.4
+3
+2</code></pre>
+        <p class="fragment">Python använder punkt i decimaltal, alltså <code>3.4</code> och inte <code>3,4</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Operatorer och variabler</p><h2>Beräkna ett totalpris</h2>
+        <pre class="code-block fragment"><code>price = 50
+amount = 3
+total = price * amount
+print(f"Totalt pris är {total}")</code></pre>
+        <p class="fragment"><code>f</code> före citattecknet skapar en f-sträng. Värdet i <code>{total}</code> placeras i texten.</p>
+        <p class="fragment">Utskrift: <code>Totalt pris är 150</code></p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">4.2</p><h2>Jämförelser ger booleska värden</h2>
+        <p class="fragment">Python jämför två värden.</p>
+        <p class="fragment">Resultatet blir alltid <code>True</code> eller <code>False</code>.</p>
+        <pre class="code-block fragment"><code>print(5 == 5)  # True
+print(5 != 5)  # False</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Jämförelseoperatorer</p><h2>Sex vanliga jämförelser</h2>
+        <table class="comparison"><thead><tr><th>Operator</th><th>Betydelse</th></tr></thead><tbody><tr class="fragment"><td><code>==</code></td><td>lika med</td></tr><tr class="fragment"><td><code>!=</code></td><td>inte lika med</td></tr><tr class="fragment"><td><code>&lt;</code></td><td>mindre än</td></tr><tr class="fragment"><td><code>&lt;=</code></td><td>mindre än eller lika med</td></tr><tr class="fragment"><td><code>&gt;</code></td><td>större än</td></tr><tr class="fragment"><td><code>&gt;=</code></td><td>större än eller lika med</td></tr></tbody></table>
+        <p class="fragment"><code>&lt;</code> eller <code>&gt;</code> ska stå först: skriv <code>&lt;=</code> och <code>&gt;=</code>.</p>
+        <p class="fragment">Skriv inte <code>=&lt;</code> eller <code>=&gt;</code> – de operatorerna finns inte i Python.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Viktig skillnad</p><h2><code>=</code> är inte <code>==</code></h2>
+        <div class="two-column"><div><pre class="code-block fragment"><code>a = 5</code></pre><p class="fragment"><code>=</code> tilldelar värdet <code>5</code> till variabeln <code>a</code>.</p></div><div><pre class="code-block fragment"><code>a == 5</code></pre><p class="fragment"><code>==</code> frågar om <code>a</code> har värdet <code>5</code>.</p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Jämförelser · exempel</p><h2>Förutsäg resultatet</h2>
+        <pre class="code-block fragment"><code>print(4 &lt; 10)
+print(10 &lt;= 10)
+print(12 &gt; 7)
+print(9 &gt;= 10)</code></pre>
+        <p class="fragment"><strong>Svar:</strong> <code>True</code>, <code>True</code>, <code>True</code>, <code>False</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Spara resultatet</p><h2>En jämförelse kan bli en variabel</h2>
+        <pre class="code-block fragment"><code>age = 18
+adult = age &gt;= 18
+print(adult)</code></pre>
+        <p class="fragment"><code>adult</code> får värdet <code>True</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">4.3</p><h2>Logiska operatorer kombinerar villkor</h2>
+        <table class="comparison"><thead><tr><th>Operator</th><th>Blir sann när...</th></tr></thead><tbody><tr class="fragment"><td><code>and</code></td><td>båda villkoren är sanna</td></tr><tr class="fragment"><td><code>or</code></td><td>minst ett villkor är sant</td></tr><tr class="fragment"><td><code>not</code></td><td>det ursprungliga värdet är falskt</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Operatorn <code>and</code></p><h2>Båda måste vara sanna</h2>
+        <pre class="code-block fragment"><code>age = 20
+print(age &gt; 18 and age &lt; 30)</code></pre>
+        <p class="fragment"><code>20 &gt; 18</code> är <code>True</code>.</p>
+        <p class="fragment"><code>20 &lt; 30</code> är <code>True</code>.</p>
+        <p class="fragment"><code>True and True</code> blir <code>True</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Operatorn <code>or</code></p><h2>Minst ett måste vara sant</h2>
+        <pre class="code-block fragment"><code>age = 15
+print(age &lt; 18 or age &gt; 65)</code></pre>
+        <p class="fragment">Det första villkoret är sant och det andra är falskt.</p>
+        <p class="fragment"><code>True or False</code> blir <code>True</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Operatorn <code>not</code></p><h2>Vänd värdet</h2>
+        <pre class="code-block fragment"><code>is_student = True
+print(not is_student)</code></pre>
+        <p class="fragment"><code>not True</code> blir <code>False</code>.</p>
+        <p class="fragment"><code>not False</code> blir <code>True</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Flera villkor</p><h2>Myndig och har biljett</h2>
+        <pre class="code-block fragment"><code>age = 22
+has_ticket = True
+
+allowed = age &gt;= 18 and has_ticket
+print(allowed)</code></pre>
+        <p class="fragment">Båda villkoren är sanna, så resultatet blir <code>True</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vad blir resultatet?</h2>
+        <pre class="code-block fragment"><code>age = 40
+print(age &lt; 18 or age &gt; 65)</code></pre>
+        <p class="fragment">Båda jämförelserna är falska.</p>
+        <p class="fragment"><strong>Svar:</strong> <code>False</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">4.4</p><h2>Python följer prioriteringsregler</h2>
+        <pre class="code-block fragment"><code>result = 5 + 3 * 2
+print(result)</code></pre>
+        <p class="fragment">Multiplikationen räknas först: <code>3 * 2 = 6</code>.</p>
+        <p class="fragment">Sedan additionen: <code>5 + 6 = 11</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Parenteser</p><h2>Bestäm vad som räknas först</h2>
+        <pre class="code-block fragment"><code>result = (5 + 3) * 2
+print(result)</code></pre>
+        <p class="fragment">Parentesen räknas först: <code>5 + 3 = 8</code>.</p>
+        <p class="fragment">Sedan multiplikationen: <code>8 * 2 = 16</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Jämför</p><h2>Samma tal – olika resultat</h2>
+        <div class="two-column"><div><pre class="code-block fragment"><code>10 + 4 * 3</code></pre><p class="fragment">Resultat: <code>22</code></p></div><div><pre class="code-block fragment"><code>(10 + 4) * 3</code></pre><p class="fragment">Resultat: <code>42</code></p></div></div>
+        <p class="fragment">Använd parenteser när de gör din avsikt tydligare.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">4.5 · Hela programmet</p><h2>Enkel miniräknare</h2>
+        <pre class="code-block fragment"><code>number1 = float(input("Skriv första talet: "))
+number2 = float(input("Skriv andra talet: "))
+summa = number1 + number2
+print(f"Summan är {summa}")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Beräkningsprogram</p><h2>Fyra tydliga steg</h2>
+        <ol><li class="fragment">Läs in värden.</li><li class="fragment">Omvandla och spara värdena.</li><li class="fragment">Gör beräkningen.</li><li class="fragment">Skriv ut resultatet.</li></ol>
+        <p class="fragment">Strukturen är samma oavsett vilken beräkning programmet gör.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Beräkna ett pris</h2>
+        <pre class="code-block fragment"><code>price = float(input("Pris per vara: "))
+amount = int(input("Antal varor: "))
+total = price * amount
+print(f"Totalt pris är {total}")</code></pre>
+        <p class="fragment"><code>price</code> kan ha decimaler, men <code>amount</code> är ett heltal.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Hela programmet</p><h2>Celsius till Fahrenheit</h2>
+        <pre class="code-block fragment"><code>celsius = float(input("Temperatur i Celsius: "))
+fahrenheit = celsius * 9 / 5 + 32
+print(f"Temperaturen i Fahrenheit är {fahrenheit}")</code></pre>
+        <p class="fragment">Formeln följer Pythons vanliga prioriteringsregler.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">4.6 · Vanliga fel</p><h2>Operatorer och syntax</h2>
+        <table class="comparison"><thead><tr><th>Fel</th><th>Rätt</th></tr></thead><tbody><tr class="fragment"><td><code>print 5 + 3</code></td><td><code>print(5 + 3)</code></td></tr><tr class="fragment"><td><code>5 x 3</code></td><td><code>5 * 3</code></td></tr><tr class="fragment"><td><code>a = 5</code> som jämförelse</td><td><code>a == 5</code></td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Vanligt fel</p><h2><code>input()</code> ger text</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Fel kod</strong></p><pre class="code-block compact-code fragment"><code>age = input("Ålder: ")
+print(age + 5)</code></pre></div><div><p class="fragment"><strong>Terminalen</strong></p><pre class="code-block compact-code fragment"><code>Ålder: 17
+TypeError: can only concatenate
+str (not "int") to str</code></pre></div></div>
+        <div class="code-step fragment"><pre class="code-block compact-code"><code>age = int(input("Ålder: "))
+print(age + 5)</code></pre><p><strong>Rätt kod:</strong> <code>int()</code> omvandlar texten till ett heltal. Terminalen skriver då <code>22</code>.</p></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">4.7 · Övning</p><h2>Tre beräkningar</h2>
+        <ol><li class="fragment">Läs in två tal.</li><li class="fragment">Beräkna summan.</li><li class="fragment">Beräkna skillnaden.</li><li class="fragment">Beräkna produkten.</li><li class="fragment">Skriv ut alla tre resultaten tydligt.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Övning</p><h2>Medelvärdet av tre tal</h2>
+        <p class="fragment">Läs in tre tal från användaren.</p>
+        <pre class="code-block fragment"><code>average = (number1 + number2 + number3) / 3</code></pre>
+        <p class="fragment">Parentesen säkerställer att summan beräknas före divisionen.</p>
+        <p class="fragment">Testa med <code>10</code>, <code>20</code> och <code>30</code>. Förväntat svar är <code>20.0</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment"><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code> och <code>%</code> gör beräkningar.</li><li class="fragment">Jämförelser ger <code>True</code> eller <code>False</code>.</li><li class="fragment"><code>=</code> tilldelar, medan <code>==</code> jämför.</li><li class="fragment"><code>and</code>, <code>or</code> och <code>not</code> kombinerar eller vänder villkor.</li><li class="fragment">Multiplikation och division räknas före addition och subtraktion.</li><li class="fragment">Parenteser styr och förtydligar beräkningsordningen.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+</body>
+</html>
