@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kapitel 14 – Projekt</title><link rel="stylesheet" href="presentation.css"></head>
+<body class="presentation-body"><main class="presentation-shell">
+<header class="presentation-topbar"><a href="index.html">Presentationer</a><span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span></header>
+<div class="deck" aria-live="polite">
+<section class="slide is-active"><div class="slide-content"><p class="slide-kicker">Kapitel 14</p><h1>Projekt</h1><p class="fragment">Från idé och krav till testat, dokumenterat och redovisat program.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2><ul><li class="fragment">planera ett avgränsat program</li><li class="fragment">skriva testbara krav</li><li class="fragment">designa struktur och pseudokod</li><li class="fragment">implementera och testa stegvis</li><li class="fragment">dokumentera och redovisa arbetet</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Projektkedjan</p><h2>Arbeta i tydliga faser</h2><div class="flow"><span class="fragment">Plan</span><b class="fragment">→</b><span class="fragment">Krav</span><b class="fragment">→</b><span class="fragment">Design</span><b class="fragment">→</b><span class="fragment">Kod</span><b class="fragment">→</b><span class="fragment">Test</span><b class="fragment">→</b><span class="fragment">Dokumentation</span><b class="fragment">→</b><span class="fragment">Redovisning</span></div><p class="fragment">Nya insikter kan göra att du behöver gå tillbaka.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">14.1</p><h2>Planera innan du kodar</h2><p class="fragment">Beskriv problemet och målgruppen.</p><p class="fragment">Avgränsa vad första versionen ska kunna.</p><p class="fragment">Identifiera input, bearbetning och output.</p><p class="fragment">Välj textgränssnitt eller GUI.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Exempelprojekt</p><h2>Filmregister</h2><ul><li class="fragment">Läs in filmens namn.</li><li class="fragment">Läs in längden i minuter.</li><li class="fragment">Omvandla till timmar och minuter.</li><li class="fragment">Visa resultatet tydligt.</li><li class="fragment">Hantera felaktig input.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Planeringsfrågor</p><h2>Gör idén konkret</h2><ol><li class="fragment">Vem ska använda programmet?</li><li class="fragment">Vilket problem löser det?</li><li class="fragment">Vilken information behövs?</li><li class="fragment">Vilket resultat ska visas?</li><li class="fragment">Vad ingår inte?</li></ol></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">14.2 · VAD</p><h2>Krav beskriver beteendet</h2><p class="fragment">Kravspecifikationen säger vad programmet ska kunna.</p><p class="fragment">Varje krav ska gå att kontrollera genom testning.</p><p class="fragment">Kravet ska inte låsa implementationen i onödan.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Funktionella krav</p><h2>Skriv testbara meningar</h2><ul><li class="fragment">Programmet ska läsa in ett filmnamn.</li><li class="fragment">Programmet ska läsa in längd i minuter.</li><li class="fragment">Programmet ska beräkna timmar och återstående minuter.</li><li class="fragment">Programmet ska visa resultatet.</li><li class="fragment">Programmet ska visa tydliga felmeddelanden.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Svagt eller testbart?</p><h2>Undvik vaga krav</h2><div class="two-column"><div><p class="fragment"><strong>Vagt</strong></p><pre class="code-block compact-code fragment"><code>Programmet ska vara bra.</code></pre></div><div><p class="fragment"><strong>Testbart</strong></p><pre class="code-block compact-code fragment"><code>Om längden inte är ett heltal ska programmet visa ett felmeddelande.</code></pre></div></div></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">14.3 · HUR</p><h2>Design beskriver lösningen</h2><ul><li class="fragment">Dela upp programmet i funktioner.</li><li class="fragment">Planera dataflödet.</li><li class="fragment">Skriv pseudokod.</li><li class="fragment">Skissa gränssnittets ordning.</li><li class="fragment">Bestäm hur fel ska hanteras.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Pseudokod</p><h2>Filmprogrammets flöde</h2><pre class="code-block fragment"><code>starta programmet
+läs in filmnamn
+läs in längd i minuter
+kontrollera inmatningen
+beräkna timmar och minuter
+visa resultat
+annars visa felmeddelande</code></pre></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Dela upp ansvaret</p><h2>Funktioner före implementation</h2><table class="comparison"><thead><tr><th>Funktion</th><th>Ansvar</th></tr></thead><tbody><tr class="fragment"><td><code>get_movie()</code></td><td>hämta input</td></tr><tr class="fragment"><td><code>convert_minutes()</code></td><td>beräkna tid</td></tr><tr class="fragment"><td><code>validate_movie()</code></td><td>kontrollera värden</td></tr><tr class="fragment"><td><code>show_result()</code></td><td>visa output</td></tr></tbody></table></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">14.4</p><h2>Implementera en del i taget</h2><ol><li class="fragment">Skapa minsta fungerande version.</li><li class="fragment">Testa input.</li><li class="fragment">Lägg till beräkningen och testa.</li><li class="fragment">Lägg till validering och testa.</li><li class="fragment">Bygg gränssnittet och testa händelser.</li></ol></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Beräkningen</p><h2>Minuter till timmar och minuter</h2><pre class="code-block fragment"><code>def convert_minutes(total_minutes):
+    hours = total_minutes // 60
+    minutes = total_minutes % 60
+    return hours, minutes</code></pre><p class="fragment"><code>//</code> ger hela timmar och <code>%</code> ger resten.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Hela kärnan</p><h2>Textbaserad första version</h2><pre class="code-block tiny-code fragment"><code>def convert_minutes(total_minutes):
+    hours = total_minutes // 60
+    minutes = total_minutes % 60
+    return hours, minutes
+
+movie = input("Filmens namn: ")
+
+try:
+    length = int(input("Längd i minuter: "))
+    if movie and length &gt; 0:
+        hours, minutes = convert_minutes(length)
+        print(f"{movie}: {hours} tim {minutes} min")
+    else:
+        print("Namn saknas eller längden är ogiltig")
+except ValueError:
+    print("Längden måste vara ett heltal")</code></pre></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Testa under tiden</p><h2>Vänta inte till slutet</h2><p class="fragment">Kör varje ny del med ett normalt värde.</p><p class="fragment">Kör även ett felaktigt värde.</p><p class="fragment">Små teststeg gör orsaken till fel lättare att hitta.</p><p class="fragment">Spara fungerande delmål.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">14.5</p><h2>Ett testfall har tre delar</h2><table class="comparison"><thead><tr><th>Indata</th><th>Förväntat</th><th>Faktiskt</th></tr></thead><tbody><tr class="fragment"><td>Interstellar, 169</td><td>2 tim 49 min</td><td>fylls i efter körning</td></tr></tbody></table><p class="fragment">Testet är godkänt när faktiskt resultat matchar förväntat.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Testa olika vägar</p><h2>Normalfall och felfall</h2><ul><li class="fragment">Giltigt namn och positivt heltal.</li><li class="fragment">Tomt filmnamn.</li><li class="fragment">Bokstäver som längd.</li><li class="fragment">Längden 0 eller negativt tal.</li><li class="fragment">Gränser som 59, 60 och 61 minuter.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Interaktivt testfall</p><h2>Testa filmprogrammet</h2><div class="decision-simulator"><div class="decision-controls"><label for="project-movie">Filmnamn</label><input id="project-movie" value="Interstellar"><label for="project-length">Längd i minuter</label><input id="project-length" value="169"><button id="project-test" type="button">Kör testfall</button></div><div class="decision-output"><strong>Testprotokoll</strong><pre id="project-output" aria-live="polite">Kör ett test.</pre></div></div></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">14.6</p><h2>Dokumentation bevarar kunskap</h2><ul><li class="fragment">Vad programmet gör och vem det är till för.</li><li class="fragment">Hur programmet startas och används.</li><li class="fragment">Viktiga funktioner och beräkningar.</li><li class="fragment">Kända begränsningar.</li><li class="fragment">Genomförda tester och resultat.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Kommentarer i koden</p><h2>Förklara syfte</h2><pre class="code-block fragment"><code># Omvandlar total filmlängd till timmar och minuter
+def convert_minutes(total_minutes):
+    hours = total_minutes // 60
+    minutes = total_minutes % 60
+    return hours, minutes</code></pre></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">14.7</p><h2>Redovisa produkt och process</h2><ul><li class="fragment">Beskriv problemet och målgruppen.</li><li class="fragment">Visa krav och designval.</li><li class="fragment">Demonstrera programmets funktioner.</li><li class="fragment">Förklara problem och lösningar.</li><li class="fragment">Visa testfall och förbättringar.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Bra demonstration</p><h2>Visa mer än ett lyckat fall</h2><ol><li class="fragment">Visa en vanlig användning.</li><li class="fragment">Visa hur felaktig input hanteras.</li><li class="fragment">Koppla demonstrationen till ett krav.</li><li class="fragment">Förklara en förbättring du skulle göra.</li></ol></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2><ul><li class="fragment">Planering avgränsar problemet.</li><li class="fragment">Krav beskriver vad programmet ska göra.</li><li class="fragment">Design beskriver hur lösningen ska byggas.</li><li class="fragment">Implementation sker stegvis med löpande testning.</li><li class="fragment">Testfall jämför förväntat och faktiskt resultat.</li><li class="fragment">Dokumentation och redovisning förklarar produkt och process.</li></ul></div></section>
+</div><footer class="presentation-footer"></footer></main>
+<script src="presentation.js"></script>
+<script>(function(){const m=document.getElementById('project-movie'),l=document.getElementById('project-length'),b=document.getElementById('project-test'),o=document.getElementById('project-output');if(!m||!l||!b||!o)return;b.addEventListener('click',function(){const movie=m.value.trim(),raw=l.value.trim();let expected;if(!movie)expected='Fel: filmnamn saknas';else if(!/^[+-]?\d+$/.test(raw))expected='Fel: längden måste vara ett heltal';else{const minutes=Number(raw);if(minutes<=0)expected='Fel: längden måste vara större än 0';else expected=movie+': '+Math.floor(minutes/60)+' tim '+(minutes%60)+' min';}o.textContent='Indata: '+(movie||'[tomt]')+', '+(raw||'[tomt]')+'\nFörväntat resultat:\n'+expected+'\n\nKontrollera att programmet ger samma resultat.';});})();</script>
+</body></html>

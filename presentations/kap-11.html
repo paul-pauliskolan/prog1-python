@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kapitel 11 – Struktur och läsbar kod</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Kapitel 11</p><h1>Struktur och läsbar kod</h1>
+        <p class="fragment">Skriv kod som människor kan förstå, ändra och felsöka.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">välja tydliga namn på variabler och funktioner</li><li class="fragment">skriva kommentarer som tillför information</li><li class="fragment">dela upp program i funktioner</li><li class="fragment">organisera input, bearbetning och output</li><li class="fragment">förbättra kompakt eller otydlig kod</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kärnidé</p><h2>Kod läses oftare än den skrivs</h2>
+        <p class="fragment">Du behöver själv förstå koden senare.</p>
+        <p class="fragment">Andra kan behöva felsöka eller utveckla den.</p>
+        <p class="fragment">Läsbarhet minskar risken för missförstånd och fel.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">11.1</p><h2>Namn ska beskriva värdets betydelse</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Otydligt</strong></p><pre class="code-block compact-code fragment"><code>x = 10
+y = 20
+z = x + y</code></pre></div><div><p class="fragment"><strong>Tydligt</strong></p><pre class="code-block compact-code fragment"><code>width = 10
+height = 20
+area = width * height</code></pre></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Läs koden som en mening</p><h2>Tydliga namn förklarar beräkningen</h2>
+        <pre class="code-block fragment"><code>area = width * height</code></pre>
+        <p class="fragment">”Arean är bredden multiplicerad med höjden.”</p>
+        <p class="fragment">Jämför med <code>z = x * y</code>, där betydelsen saknas.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Funktionsnamn</p><h2>Beskriv vad funktionen gör</h2>
+        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>def f(a, b):
+    return a + b</code></pre><p class="fragment"><code>f</code> säger inget om uppgiften.</p></div><div><pre class="code-block compact-code fragment"><code>def add(a, b):
+    return a + b</code></pre><p class="fragment"><code>add</code> beskriver operationen.</p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Regler för namn</p><h2>Vad Python tillåter</h2>
+        <ul><li class="fragment">Börja med bokstav eller underscore.</li><li class="fragment">Fortsätt med bokstäver, siffror eller underscore.</li><li class="fragment">Använd inte reserverade ord som <code>if</code> eller <code>for</code>.</li><li class="fragment">Python skiljer på stora och små bokstäver.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Stil</p><h2>Använd <code>snake_case</code></h2>
+        <pre class="code-block fragment"><code>total_price = 100
+user_name = "Anna"
+future_age = age + 5</code></pre>
+        <p class="fragment">Små bokstäver och underscore mellan orden är vanlig Python-stil.</p>
+        <p class="fragment">Var konsekvent med språk och benämningar i hela programmet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vilka namn hjälper läsaren?</h2>
+        <table class="comparison"><thead><tr><th>Svagt namn</th><th>Tydligare namn</th></tr></thead><tbody><tr class="fragment"><td><code>a</code></td><td><code>price</code></td></tr><tr class="fragment"><td><code>n</code></td><td><code>user_name</code></td></tr><tr class="fragment"><td><code>calc()</code></td><td><code>calculate_discount()</code></td></tr></tbody></table>
+        <p class="fragment">Det bästa namnet beror på vad värdet eller funktionen betyder i programmet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">11.2</p><h2>Kommentarer förklarar kod</h2>
+        <pre class="code-block fragment"><code># Detta är en kommentar
+print("Hej")</code></pre>
+        <p class="fragment">Text efter <code>#</code> körs inte av Python.</p>
+        <p class="fragment">Kommentaren är till för människor som läser koden.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Bra kommentar</p><h2>Förklara varför</h2>
+        <pre class="code-block fragment"><code># Lägg till fem år för att visa framtida ålder
+future_age = age + 5</code></pre>
+        <p class="fragment">Koden visar redan vad som räknas ut.</p>
+        <p class="fragment">Kommentaren förklarar syftet med beräkningen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Onödig kommentar</p><h2>Upprepa inte självklar kod</h2>
+        <pre class="code-block fragment"><code># Sätt x till 10
+x = 10</code></pre>
+        <p class="fragment">Kommentaren ger ingen ny information.</p>
+        <p class="fragment">Ett tydligare namn kan vara bättre: <code>max_attempts = 10</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kod före kommentar</p><h2>Gör koden självklar när det går</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Kommentar kompenserar</strong></p><pre class="code-block compact-code fragment"><code># Räkna ut area
+a = w * h</code></pre></div><div><p class="fragment"><strong>Koden förklarar sig</strong></p><pre class="code-block compact-code fragment"><code>area = width * height</code></pre></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kommentarer måste stämma</p><h2>Fel kommentar är värre än ingen</h2>
+        <pre class="code-block fragment"><code># Lägg till fem år
+future_age = age + 10</code></pre>
+        <p class="fragment">Kommentaren och koden motsäger varandra.</p>
+        <p class="fragment">Uppdatera kommentaren när beteendet ändras – eller ta bort den.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">11.3</p><h2>Struktur gör programmets delar synliga</h2>
+        <div class="flow"><span class="fragment">Input</span><b class="fragment">→</b><span class="fragment">Bearbetning</span><b class="fragment">→</b><span class="fragment">Output</span></div>
+        <p class="fragment">Tomma rader och funktioner kan skilja delarna åt.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Tydliga steg</p><h2>Input, bearbetning, output</h2>
+        <pre class="code-block fragment"><code># Input
+age = int(input("Hur gammal är du? "))
+
+# Bearbetning
+future_age = age + 5
+
+# Output
+print(f"Om fem år är du {future_age} år")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Dela upp i funktioner</p><h2>Ge varje uppgift ett namn</h2>
+        <pre class="code-block compact-code fragment"><code>def greet(name):
+    print(f"Hej {name}")
+
+def calculate_future_age(age):
+    return age + 5
+
+name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+
+greet(name)
+future_age = calculate_future_age(age)
+print(f"Om fem år är du {future_age} år")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Undvik upprepning</p><h2>Samla samma beteende</h2>
+        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>print("Hej Anna")
+print("Hej Erik")
+print("Hej Sara")</code></pre></div><div><pre class="code-block compact-code fragment"><code>def greet(name):
+    print(f"Hej {name}")
+
+greet("Anna")
+greet("Erik")
+greet("Sara")</code></pre></div></div>
+        <p class="fragment">Ändra hälsningen på ett ställe i stället för tre.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv kodgranskning</p><h2>Gör koden läsbar</h2>
+        <div class="decision-simulator">
+          <div class="decision-controls"><button id="review-original" type="button">Visa originalet</button><button id="review-names" type="button">Förbättra namnen</button><button id="review-structure" type="button">Förbättra strukturen</button></div>
+          <div class="decision-output"><strong>Kod och granskning</strong><pre id="review-output" aria-live="polite">Välj ett steg.</pre></div>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">11.4</p><h2>Läsbar kod ger läsaren luft</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Svårläst</strong></p><pre class="code-block compact-code fragment"><code>n=input("namn")
+a=int(input("ålder"))
+print("hej",n,a+5)</code></pre></div><div><p class="fragment"><strong>Läsbar</strong></p><pre class="code-block compact-code fragment"><code>name = input("Vad heter du? ")
+age = int(input("Hur gammal är du? "))
+
+future_age = age + 5
+
+print(f"Hej {name}")
+print(f"Om fem år är du {future_age} år")</code></pre></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Konsekvent formatering</p><h2>Mellanrum och tomma rader hjälper</h2>
+        <ul><li class="fragment">Använd mellanrum runt operatorer: <code>total = price * amount</code>.</li><li class="fragment">Använd konsekventa indrag.</li><li class="fragment">Lämna tomma rader mellan programmets delar.</li><li class="fragment">Skriv inte flera instruktioner på samma rad.</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">En funktion – ett ansvar</p><h2>Avgränsa uppgiften</h2>
+        <table class="comparison"><thead><tr><th>Funktion</th><th>Ansvar</th></tr></thead><tbody><tr class="fragment"><td><code>calculate_subtotal()</code></td><td>beräkna delsumma</td></tr><tr class="fragment"><td><code>calculate_discount()</code></td><td>beräkna rabatt</td></tr><tr class="fragment"><td><code>print_receipt()</code></td><td>skriva kvittot</td></tr></tbody></table>
+        <p class="fragment">Små tydliga funktioner kan testas och ändras var för sig.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Större exempel · funktioner</p><h2>Ett strukturerat kassaprogram</h2>
+        <pre class="code-block compact-code fragment"><code>def calculate_subtotal(price, amount):
+    return price * amount
+
+def calculate_discount(subtotal, percent):
+    return subtotal * percent / 100
+
+def print_receipt(product, total):
+    print(f"Vara: {product}")
+    print(f"Att betala: {total} kr")</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Större exempel · huvudprogram</p><h2>Input och samarbete</h2>
+        <pre class="code-block compact-code fragment"><code>product = input("Vilken vara? ")
+price = int(input("Pris per vara: "))
+amount = int(input("Antal: "))
+discount_percent = int(input("Rabatt i procent: "))
+
+subtotal = calculate_subtotal(price, amount)
+discount = calculate_discount(subtotal, discount_percent)
+total = subtotal - discount
+
+print_receipt(product, total)</code></pre>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kodgranskning</p><h2>Fem frågor före du är klar</h2>
+        <ol><li class="fragment">Förstår jag namnen utan extra förklaring?</li><li class="fragment">Tillför kommentarerna något?</li><li class="fragment">Har varje funktion en tydlig uppgift?</li><li class="fragment">Är programmets delar lätta att hitta?</li><li class="fragment">Är stilen konsekvent?</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">11.5 · Övning</p><h2>Förbättra i tre omgångar</h2>
+        <pre class="code-block fragment"><code>n=input("namn")
+x=int(input("tal"))
+y=x*2
+print("hej",n)
+print(y)</code></pre>
+        <ol><li class="fragment">Förbättra namnen.</li><li class="fragment">Lägg till mellanrum och tomma rader.</li><li class="fragment">Dela upp hälsning och beräkning i funktioner.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Behövs kommentaren?</h2>
+        <pre class="code-block fragment"><code># Multiplicera priset med antalet
+total_price = price * amount</code></pre>
+        <p class="fragment">Variabelnamnen och uttrycket visar redan vad som händer.</p>
+        <p class="fragment">Kommentaren kan tas bort om det inte finns ett viktigt skäl bakom beräkningen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Namn ska beskriva värden och uppgifter.</li><li class="fragment">Använd konsekvent <code>snake_case</code> i Python.</li><li class="fragment">Kommentarer ska förklara sådant koden inte redan säger.</li><li class="fragment">Dela upp program i tydliga steg och funktioner.</li><li class="fragment">Undvik onödig upprepning.</li><li class="fragment">Mellanrum, tomma rader och konsekvent stil förbättrar läsbarheten.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    (function () {
+      const output = document.getElementById("review-output");
+      const views = {
+        "review-original": "n=input(\"namn\")\nx=int(input(\"tal\"))\ny=x*2\nprint(\"hej\",n)\nprint(y)\n\nGranskning:\n- Otydliga namn\n- Ingen luft mellan delar\n- Otydliga frågor och utskrifter",
+        "review-names": "user_name = input(\"Vad heter du? \")\nnumber = int(input(\"Skriv ett tal: \")\ndoubled_number = number * 2\nprint(\"Hej\", user_name)\nprint(doubled_number)\n\nFörbättring:\nNamnen visar vad värdena betyder.",
+        "review-structure": "def greet(name):\n    print(f\"Hej {name}\")\n\ndef double(number):\n    return number * 2\n\nuser_name = input(\"Vad heter du? \")\nnumber = int(input(\"Skriv ett tal: \"))\n\ngreet(user_name)\nresult = double(number)\nprint(f\"Ditt tal gånger två är {result}\")\n\nFörbättring:\nTydliga funktioner, namn och programdelar."
+      };
+      if (!output) return;
+      Object.keys(views).forEach(function (id) {
+        const button = document.getElementById(id);
+        if (button) button.addEventListener("click", function () { output.textContent = views[id]; });
+      });
+    })();
+  </script>
+</body>
+</html>

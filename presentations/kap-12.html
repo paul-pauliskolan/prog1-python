@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kapitel 12 – Användargränssnitt</title><link rel="stylesheet" href="presentation.css"></head>
+<body class="presentation-body"><main class="presentation-shell"><header class="presentation-topbar"><a href="index.html">Presentationer</a><span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span></header><div class="deck" aria-live="polite">
+<section class="slide is-active"><div class="slide-content"><p class="slide-kicker">Kapitel 12</p><h1>Användargränssnitt</h1><p class="fragment">Låt användaren förstå, styra och få svar från programmet.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2><ul><li class="fragment">förklara vad ett användargränssnitt är</li><li class="fragment">bygga en textbaserad meny</li><li class="fragment">skapa ett Tkinter-fönster</li><li class="fragment">använda Label, Entry och Button</li><li class="fragment">koppla händelser till funktioner</li><li class="fragment">validera input och uppdatera GUI</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">12.1</p><h2>Gränssnittet är mötet med användaren</h2><p class="fragment">Programmet visar information och instruktioner.</p><p class="fragment">Användaren matar in data eller väljer en åtgärd.</p><p class="fragment">Programmet svarar med ett begripligt resultat.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Tre typer</p><h2>Olika sätt att interagera</h2><table class="comparison"><thead><tr><th>Gränssnitt</th><th>Exempel</th></tr></thead><tbody><tr class="fragment"><td>Kommandorad</td><td>text via <code>input()</code></td></tr><tr class="fragment"><td>Grafiskt</td><td>fönster, knappar och fält</td></tr><tr class="fragment"><td>Webb</td><td>sidor i webbläsaren</td></tr></tbody></table></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Tydlighet</p><h2>Fråga konkret</h2><div class="two-column"><div><p class="fragment"><strong>Otydligt</strong></p><pre class="code-block fragment"><code>n = input("x: ")</code></pre></div><div><p class="fragment"><strong>Tydligt</strong></p><pre class="code-block fragment"><code>name = input("Skriv ditt namn: ")</code></pre></div></div><p class="fragment">Användaren ska förstå både vad som efterfrågas och i vilket format.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">12.2</p><h2>En textmeny visar alternativen</h2><pre class="code-block fragment"><code>print("1. Hälsa")
+print("2. Räkna")
+print("3. Avsluta")
+
+choice = input("Välj ett alternativ: ")</code></pre></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Hantera valet</p><h2><code>if</code>, <code>elif</code> och <code>else</code></h2><pre class="code-block compact-code fragment"><code>if choice == "1":
+    print("Hej!")
+elif choice == "2":
+    number = int(input("Skriv ett tal: "))
+    print(number * 2)
+elif choice == "3":
+    print("Programmet avslutas")
+else:
+    print("Ogiltigt val")</code></pre></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Återkommande meny</p><h2>Loop tills användaren avslutar</h2><pre class="code-block compact-code fragment"><code>while True:
+    print("1. Hälsa")
+    print("2. Räkna")
+    print("3. Avsluta")
+    choice = input("Välj: ")
+
+    if choice == "1":
+        print("Hej!")
+    elif choice == "3":
+        break
+    else:
+        print("Ogiltigt val")</code></pre></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">12.3</p><h2>Tkinter skapar grafiska program</h2><ul><li class="fragment"><code>Tk()</code> skapar ett fönster.</li><li class="fragment"><code>Label</code> visar text.</li><li class="fragment"><code>Entry</code> tar emot text.</li><li class="fragment"><code>Button</code> skapar en knapp.</li><li class="fragment"><code>mainloop()</code> väntar på händelser.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Hela programmet</p><h2>Skapa ett fönster</h2><pre class="code-block fragment"><code>import tkinter as tk
+
+window = tk.Tk()
+window.title("Mitt första program")
+
+window.mainloop()</code></pre><p class="fragment">Programmet stannar i händelseloopen tills fönstret stängs.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Visa text</p><h2>Skapa och placera en Label</h2><pre class="code-block fragment"><code>label = tk.Label(window, text="Hej världen")
+label.pack()</code></pre><p class="fragment">Widgeten skapas med fönstret som förälder.</p><p class="fragment"><code>pack()</code> placerar den i fönstret.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Knapp och funktion</p><h2><code>command</code> kopplar händelsen</h2><pre class="code-block fragment"><code>def say_hello():
+    print("Hej!")
+
+button = tk.Button(
+    window,
+    text="Klicka här",
+    command=say_hello
+)
+button.pack()</code></pre><p class="fragment">Skriv <code>command=say_hello</code> utan parenteser.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Händelsestyrning</p><h2>Programmet väntar på användaren</h2><div class="flow"><span class="fragment">mainloop()</span><b class="fragment">→</b><span class="fragment">knappklick</span><b class="fragment">→</b><span class="fragment">say_hello()</span><b class="fragment">→</b><span class="fragment">uppdatering</span></div></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">12.4</p><h2><code>Entry</code> tar emot input</h2><pre class="code-block fragment"><code>entry = tk.Entry(window)
+entry.pack()</code></pre><p class="fragment">Användaren kan skriva text i fältet.</p><p class="fragment"><code>entry.get()</code> hämtar den aktuella texten.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Uppdatera GUI</p><h2><code>config()</code> ändrar Label</h2><pre class="code-block compact-code fragment"><code>def greet():
+    name = entry.get()
+    label.config(text=f"Hej {name}")
+
+entry = tk.Entry(window)
+entry.pack()
+
+button = tk.Button(window, text="Säg hej", command=greet)
+button.pack()
+
+label = tk.Label(window, text="")
+label.pack()</code></pre></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Interaktiv simulering</p><h2>Säg hej</h2><div class="decision-simulator"><div class="decision-controls"><label for="gui-name">Namn</label><input id="gui-name" value="Anna"><button id="gui-greet" type="button">Säg hej</button><button id="gui-clear" type="button">Rensa</button></div><div class="decision-output"><strong>Simulerad Label</strong><pre id="gui-output" aria-live="polite"></pre></div></div></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Input och output</p><h2>Data går genom en funktion</h2><div class="flow"><span class="fragment">Entry</span><b class="fragment">→</b><span class="fragment"><code>.get()</code></span><b class="fragment">→</b><span class="fragment">funktion</span><b class="fragment">→</b><span class="fragment"><code>label.config()</code></span></div></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">12.5</p><h2>Validera innan beräkningen</h2><pre class="code-block compact-code fragment"><code>def calculate():
+    try:
+        number = int(entry.get())
+        result_label.config(text=str(number * 2))
+    except ValueError:
+        result_label.config(text="Skriv ett heltal")</code></pre><p class="fragment">Felmeddelandet visas i gränssnittet i stället för en krasch.</p></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Placering</p><h2><code>pack()</code> eller <code>grid()</code></h2><table class="comparison"><thead><tr><th><code>pack()</code></th><th><code>grid()</code></th></tr></thead><tbody><tr><td class="fragment">Enkel stapling av widgets.</td><td class="fragment">Placering i rader och kolumner.</td></tr><tr><td class="fragment">Bra för små exempel.</td><td class="fragment">Bra för formulär.</td></tr></tbody></table></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Fler widgets</p><h2>Olika typer av val</h2><table class="comparison"><thead><tr><th>Widget</th><th>Användning</th></tr></thead><tbody><tr class="fragment"><td>Radiobutton</td><td>ett val av flera</td></tr><tr class="fragment"><td>OptionMenu</td><td>dropdown-lista</td></tr><tr class="fragment"><td>Checkbutton</td><td>på/av-val</td></tr><tr class="fragment"><td>Text</td><td>flera textrader</td></tr></tbody></table></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">12.6</p><h2>Ett komplett GUI har flera ansvar</h2><ul><li class="fragment">Widgets samlar input.</li><li class="fragment">Funktioner validerar och beräknar.</li><li class="fragment">Labels visar resultat och fel.</li><li class="fragment">Layout gör arbetsordningen tydlig.</li></ul></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Övning</p><h2>Temperaturomvandlare</h2><ol><li class="fragment">Skapa Entry för Celsius.</li><li class="fragment">Koppla en knapp till en funktion.</li><li class="fragment">Hämta och omvandla input.</li><li class="fragment">Beräkna Fahrenheit.</li><li class="fragment">Visa resultat eller fel i en Label.</li></ol></div></section>
+<section class="slide"><div class="slide-content"><p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2><ul><li class="fragment">Gränssnittet ska göra nästa steg tydligt.</li><li class="fragment">Textmenyer använder val, villkor och loopar.</li><li class="fragment">Tkinter bygger GUI med widgets.</li><li class="fragment"><code>command</code> kopplar knapp till funktion.</li><li class="fragment"><code>.get()</code> hämtar input och <code>config()</code> uppdaterar output.</li><li class="fragment"><code>mainloop()</code> väntar på händelser.</li></ul></div></section>
+</div><footer class="presentation-footer"></footer></main><script src="presentation.js"></script><script>(function(){const n=document.getElementById('gui-name'),o=document.getElementById('gui-output'),g=document.getElementById('gui-greet'),c=document.getElementById('gui-clear');if(!n||!o||!g||!c)return;g.addEventListener('click',function(){const v=n.value.trim();o.textContent=v?'Hej '+v:'Skriv ett namn';});c.addEventListener('click',function(){n.value='';o.textContent='';});})();</script></body></html>
