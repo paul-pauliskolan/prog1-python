@@ -166,7 +166,7 @@ ZeroDivisionError: division by zero</code></pre>
 
       <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Tillfälliga utskrifter</p><h2>Se variablernas verkliga värden</h2>
-        <pre class="code-block fragment"><code>a = 10
+        <div class="two-column"><div><p class="fragment"><strong>Kod</strong></p><pre class="code-block compact-code fragment"><code>a = 10
 b = 20
 
 print(f"a = {a}")
@@ -174,7 +174,12 @@ print(f"b = {b}")
 print(f"a + b = {a + b}")
 print(f"b / 2 = {b / 2}")
 
-average = a + b / 2</code></pre>
+average = a + b / 2
+print(f"Medelvärdet är {average}")</code></pre></div><div><p class="fragment"><strong>Terminal</strong></p><pre class="code-block compact-code fragment"><code>a = 10
+b = 20
+a + b = 30
+b / 2 = 10.0
+Medelvärdet är 20.0</code></pre></div></div>
         <p class="fragment">Utskrifterna visar exakt vilka delresultat programmet använder.</p>
       </div></section>
 
