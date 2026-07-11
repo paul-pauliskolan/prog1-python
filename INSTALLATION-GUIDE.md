@@ -1,12 +1,25 @@
 # Anonym quizstatistik i en kurswebb
 
-Denna guide kopplar ett quiz pa en statisk kurswebb, till exempel GitHub Pages, till ett Google-kalkylark. Varje quizrattning sparas anonymt och kalkylarket visar vilka fragor som flest svarar fel pa.
+Denna guide kopplar ett quiz pa en statisk kurswebb, till exempel GitHub Pages, till ett Google-kalkylark. Varje quizrattning sparas anonymt och kalkylarket visar bade hur varje fraga fungerar och vilka felsvar som ar vanligast. Den ar en mall for varje kurs, till exempel Webb 1, Programmering 1 och Programmering 2.
 
-Skapa ett eget kalkylark och ett eget Apps Script-projekt for varje kurs. Da halls statistik, behorigheter och analys tydligt atskilda.
+Skapa ett eget kalkylark och ett eget Apps Script-projekt for varje kurs. Da halls statistik, behorigheter och analys tydligt atskilda. Losningen ska inte dela kalkylark eller webbappsadress mellan kurser.
+
+## 0. Kursinstallning per kurs
+
+Gor en separat installation for varje kurs. Byt ut dessa fyra varden i respektive kurs:
+
+| Installning | Exempel for Webb 1 | Exempel for Programmering 2 |
+| --- | --- | --- |
+| Kalkylarkets namn | `Quizstatistik Webb 1` | `Quizstatistik Programmering 2` |
+| `SPREADSHEET_ID` | ID:t fran Webb 1-kalkylarket | ID:t fran Programmering 2-kalkylarket |
+| `QUIZ_STATISTICS_ENDPOINT` | Webb 1:s egen `/exec`-adress | Programmering 2:s egen `/exec`-adress |
+| `quizId` | Till exempel `kapitel-1` | Till exempel `kapitel-1` |
+
+`quizId` ska vara stabilt inom samma kurs men behover inte vara unikt mellan olika kurser, eftersom varje kurs har ett eget kalkylark.
 
 ## 1. Skapa kalkylarket
 
-1. Skapa ett nytt Google-kalkylark med ett tydligt namn, till exempel `Quizstatistik Programmering 1`.
+1. Skapa ett nytt Google-kalkylark med ett tydligt namn, till exempel `Quizstatistik Webb 1` eller `Quizstatistik Programmering 2`.
 2. Byt namn pa den forsta fliken till `Svar`.
 3. Skriv dessa rubriker pa rad 1:
 
@@ -15,20 +28,37 @@ Tid | Quiz-ID | Kapitel | Fragenummer | Fraga | Valt svar | Ratt svar | Ratt (1/
 ```
 
 4. Frys rad 1 och aktivera filter pa rubrikraden.
-5. Skapa en andra flik med namnet `Vanligaste felsvaren`.
+5. Skapa en andra flik med namnet `Frageanalys`.
 6. Skriv dessa rubriker pa rad 1:
+
+```text
+Quiz-ID | Kapitel | Fragenummer | Antal svar | Andel ratt
+```
+
+7. Klistra in denna formel i cell `A2` pa fliken `Frageanalys`:
+
+```gs
+=IF(COUNTA(Svar!B2:B)=0;"";QUERY({Svar!B2:D\ARRAYFORMULA(N(Svar!H2:H))};"select Col1,Col2,Col3,count(Col4),avg(Col4) where Col1 is not null group by Col1,Col2,Col3 label count(Col4) '', avg(Col4) ''";0))
+```
+
+Formatera kolumn `E` som procent. Formeln uppdateras automatiskt och visar antal svar samt andelen ratt per fraga.
+
+8. Skapa en tredje flik med namnet `Vanligaste felsvaren`.
+9. Skriv dessa rubriker pa rad 1:
 
 ```text
 Kapitel | Fragenummer | Fraga | Felsvar | Antal svar | Andel fel
 ```
 
-7. Klistra in denna formel i cell `A2` pa fliken `Vanligaste felsvaren`:
+10. Klistra in denna formel i cell `A2` pa fliken `Vanligaste felsvaren`:
 
 ```gs
 =IF(COUNTA(Svar!B2:B)=0;"";QUERY({Svar!C2:E\ARRAYFORMULA(1-N(Svar!H2:H))\ARRAYFORMULA(N(Svar!H2:H))};"select Col1,Col2,Col3,sum(Col4),count(Col5),avg(Col4) where Col1 is not null group by Col1,Col2,Col3 order by sum(Col4) desc, avg(Col4) desc label sum(Col4) '', count(Col5) '', avg(Col4) ''";0))
 ```
 
-Formatera kolumn `F` som procent. Formeln uppdateras automatiskt nar nya svar kommer in och visar flest felsvar overst.
+Formatera kolumn `F` som procent. Formeln uppdateras automatiskt nar nya svar kommer in och visar samma oversikt som Teknik 2: antal felsvar, antal svar och andel fel per fraga.
+
+Frys rad 1 pa bada analysflikarna. Filter behovs bara pa fliken `Svar` eftersom analysflikarna styrs av sina formler.
 
 ## 2. Hamta kalkylarkets id
 
@@ -42,8 +72,8 @@ Kopiera bara delen `DETTA_AR_KALKYLARKETS_ID`.
 
 ## 3. Skapa Apps Script
 
-1. Oppna kalkylarket.
-2. Valj **Extensions > Apps Script**.
+1. Oppna det nya kalkylarket for just den aktuella kursen.
+2. Valj **Extensions > Apps Script**. Skapa inte ett fristaende Apps Script-projekt, eftersom menyn `Quizstatistik` da inte visas i kalkylarket.
 3. Ersatt allt innehall i `Code.gs` med koden nedan.
 4. Byt ut `KALKYLARKS_ID_HAR` mot kalkylarkets id fran steg 2.
 5. Spara projektet.
@@ -122,7 +152,7 @@ Adressen ser ut ungefar sa har:
 https://script.google.com/macros/s/AKfycb.../exec
 ```
 
-Om du senare andrar `doPost` eller `doGet` maste du skapa en ny version av webbappens implementering. Menyfunktionen `Quizstatistik` syns efter att kalkylarket har laddats om sedan skriptet sparats.
+Om du senare andrar `doPost` eller `doGet` maste du skapa en ny version av webbappens implementering. Menyfunktionen `Quizstatistik` syns efter att kalkylarket har laddats om sedan skriptet sparats. Menyn innehaller `Tom insamlade svar` och behaller alltid analysflikarna.
 
 ## 5. Lagg till rapportering i kurswebben
 
@@ -202,7 +232,7 @@ Ett fragasvar ska da laggas som en rad i fliken `Svar`.
 1. Oppna webbappsadressen i webblasaren. Texten `Quizstatistik ar aktiv.` ska visas.
 2. Ratta ett quiz pa den publicerade kurswebben.
 3. Kontrollera att en rad per fraga hamnar i `Svar`.
-4. Kontrollera att `Vanligaste felsvaren` uppdateras.
+4. Kontrollera att `Frageanalys` och `Vanligaste felsvaren` uppdateras.
 
 Om inga rader kommer in:
 
@@ -216,6 +246,19 @@ Om inga rader kommer in:
 Du kan andra fragetext, svarsalternativ och ratt svar utan att andra Apps Script eller kalkylarket. Den aktuella fragetexten sparas med varje svar.
 
 Behall ett stabilt `quizId` per kapitel, till exempel `kapitel-1`. Om du gor stora andringar i fragornas ordning ar det bast att valja **Quizstatistik > Tom insamlade svar** innan nasta klass arbetar med quizet. Da blandas inte gammal och ny statistik.
+
+## 9. Kontrollista for en ny kurs
+
+Innan en ny kurs publiceras ska allt nedan stamma:
+
+- Kalkylarket har flikarna `Svar`, `Frageanalys` och `Vanligaste felsvaren`.
+- Fliken `Svar` har exakt de nio rubrikerna i steg 1.
+- `SPREADSHEET_ID` i Apps Script pekar pa just denna kurs kalkylark.
+- Apps Script-projektet ar skapat via **Extensions > Apps Script** fran samma kalkylark.
+- Webbappen ar implementerad med atkomst `Alla` och adressen slutar med `/exec`.
+- `QUIZ_STATISTICS_ENDPOINT` i kurswebben pekar pa kursens egen `/exec`-adress.
+- Varje quiz skickar `quizId`, `chapter` och en rad per fraga med `questionNumber`, `questionText`, `selectedAnswer`, `correctAnswer` och `isCorrect`.
+- Ett provquiz skapar en rad per fraga i `Svar` och bada analysflikarna uppdateras.
 
 ## Integritet
 
