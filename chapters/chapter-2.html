@@ -618,6 +618,10 @@ Din favoritmat är pizza</code></pre>
                     : "<p>Alla svar är rätt.</p>";
 
                 result.innerHTML = `<h3>Resultat: ${score} av 5 rätt</h3>${feedbackHtml}`;
+                window.quizStatistics?.sendLegacyQuizStatistics(
+                    document.getElementById("chapter-2-quiz"),
+                    answers,
+                );
             });
         }
     </script>

@@ -2,6 +2,7 @@
 
 const BOOK_TITLE = "Programmering nivå 1 med Python";
 const BOOK_SHORT_TITLE = "Python";
+const QUIZ_STATISTICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzGXh735UHr8MFxxka9Z-yUrbfNXWJxpUrSd5Qxjftofn2cm5ada79G8C7_G2wuTh-HwQ/exec";
 const CHAPTER_EXTRAS = [
   {
     afterChapter: 4,
@@ -437,6 +438,93 @@ window.pythonbook = {
 
 window.spacesafari = window.pythonbook;
 
+function isQuizStatisticsEnabled() {
+  return Boolean(QUIZ_STATISTICS_ENDPOINT);
+}
+
+function getQuizStatisticsMetadata() {
+  const chapterMatch = window.location.pathname.match(/chapter-(\d+)\.html$/);
+  const chapterNumber = chapterMatch ? chapterMatch[1] : "okant";
+
+  return {
+    quizId: `kapitel-${chapterNumber}`,
+    chapter: chapterNumber === "okant" ? "Okant kapitel" : `Kapitel ${chapterNumber}`,
+  };
+}
+
+function getQuestionText(question) {
+  const legend = question.querySelector("legend");
+  return legend ? legend.textContent.replace(/^\s*\d+[.)]\s*/, "").trim() : "";
+}
+
+function recordQuizStatistics({ quizId, chapter, answers }) {
+  if (!isQuizStatisticsEnabled() || !Array.isArray(answers) || !answers.length) {
+    return;
+  }
+
+  fetch(QUIZ_STATISTICS_ENDPOINT, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({
+      quizId,
+      chapter,
+      pagePath: window.location.pathname,
+      answers,
+    }),
+  }).catch(() => {
+    // Rattningen ska fungera aven om statistik inte kan skickas.
+  });
+}
+
+function sendQuizStatistics(form, answers) {
+  if (form.dataset.statisticsSent || !answers.length) {
+    return;
+  }
+
+  recordQuizStatistics({
+    ...getQuizStatisticsMetadata(),
+    answers,
+  });
+  form.dataset.statisticsSent = "true";
+}
+
+function sendLegacyQuizStatistics(form, answerKey) {
+  if (!form) {
+    return;
+  }
+
+  const answers = Object.entries(answerKey).map(([questionName, data], index) => {
+    const question = form.querySelector(`input[name="${questionName}"]`)?.closest("fieldset");
+    const selected = question?.querySelector("input[type='radio']:checked");
+
+    return {
+      questionNumber: index + 1,
+      questionText: question ? getQuestionText(question) : "",
+      selectedAnswer: selected ? selected.value : "",
+      correctAnswer: data.correct,
+      isCorrect: Boolean(selected && selected.value === data.correct),
+    };
+  });
+
+  sendQuizStatistics(form, answers);
+}
+
+window.quizStatistics = { sendLegacyQuizStatistics };
+
+function addQuizStatisticsNotice(quiz) {
+  if (!isQuizStatisticsEnabled() || quiz.querySelector(".quiz-statistics-notice")) {
+    return;
+  }
+
+  const notice = document.createElement("p");
+  notice.className = "quiz-statistics-notice";
+  notice.textContent = "Anonyma svar används för att förbättra quizet.";
+  quiz.prepend(notice);
+}
+
+document.querySelectorAll("form[id^='chapter-'][id$='-quiz']").forEach(addQuizStatisticsNotice);
+
 document.querySelectorAll(".chapter-quiz").forEach((quiz) => {
   const button = quiz.querySelector(".check-quiz");
   const result = quiz.querySelector(".quiz-result");
@@ -445,17 +533,29 @@ document.querySelectorAll(".chapter-quiz").forEach((quiz) => {
     return;
   }
 
+  addQuizStatisticsNotice(quiz);
+
   button.addEventListener("click", () => {
     const questions = quiz.querySelectorAll("fieldset[data-correct]");
     let score = 0;
     const feedback = [];
+    const statisticsAnswers = [];
 
     questions.forEach((question, index) => {
       const selected = question.querySelector("input[type='radio']:checked");
       const correct = question.dataset.correct;
       const explanation = question.dataset.explanation;
+      const isCorrect = Boolean(selected && selected.value === correct);
 
-      if (selected && selected.value === correct) {
+      statisticsAnswers.push({
+        questionNumber: index + 1,
+        questionText: getQuestionText(question),
+        selectedAnswer: selected ? selected.value : "",
+        correctAnswer: correct,
+        isCorrect,
+      });
+
+      if (isCorrect) {
         score += 1;
       } else {
         feedback.push(`<li>Fråga ${index + 1}: ${explanation}</li>`);
@@ -467,5 +567,6 @@ document.querySelectorAll(".chapter-quiz").forEach((quiz) => {
       : "<p>Alla svar är rätt.</p>";
 
     result.innerHTML = `<h3>Resultat: ${score} av ${questions.length} rätt</h3>${feedbackHtml}`;
+    sendQuizStatistics(quiz, statisticsAnswers);
   });
 });
