@@ -3,17 +3,70 @@
 /* Programmering nivå 1 med Python */
 
 :root {
+  color-scheme: light;
+  --bg: #f5f7fc;
+  --bg-end: #e8edf7;
+  --bg-alt: #edf1f8;
+  --surface: #ffffff;
+  --surface-2: #f3f6fb;
+  --surface-translucent: rgba(255, 255, 255, 0.94);
+  --surface-subtle: rgba(22, 43, 77, 0.045);
+  --surface-hover: rgba(21, 121, 77, 0.1);
+  --accent: #147a4b;
+  --accent-strong: #8a5b00;
+  --accent-text: #ffffff;
+  --text: #182033;
+  --text-muted: #536078;
+  --border: rgba(41, 57, 84, 0.22);
+  --border-accent: rgba(20, 122, 75, 0.42);
+  --border-warm: rgba(138, 91, 0, 0.38);
+  --warm-subtle: rgba(184, 121, 0, 0.1);
+  --code-bg: #eef2f8;
+  --code-text: #172033;
+  --overlay: rgba(17, 23, 36, 0.52);
+  --shadow: 0 18px 48px rgba(27, 39, 63, 0.14);
+  --focus: #1769c2;
+  --success-bg: #dcfce7;
+  --success-border: #15803d;
+  --danger-bg: #fee2e2;
+  --danger-border: #b91c1c;
+  --option-bg: #f1f6ff;
+  --option-hover: #e0ebff;
+  --option-text: #172033;
+  --reading-width: 72ch;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #0f1220;
+  --bg-end: #11162a;
   --bg-alt: #151a2e;
   --surface: #1a2040;
   --surface-2: #20284a;
+  --surface-translucent: rgba(14, 18, 33, 0.98);
+  --surface-subtle: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(123, 211, 137, 0.1);
   --accent: #7bd389;
   --accent-strong: #f6c453;
+  --accent-text: #091016;
   --text: #f4f7fb;
-  --text-muted: #a8b0c7;
-  --border: rgba(168, 176, 199, 0.18);
+  --text-muted: #b6bed2;
+  --border: rgba(168, 176, 199, 0.24);
+  --border-accent: rgba(123, 211, 137, 0.45);
+  --border-warm: rgba(246, 196, 83, 0.4);
+  --warm-subtle: rgba(246, 196, 83, 0.1);
+  --code-bg: #090d18;
+  --code-text: #eef7ff;
+  --overlay: rgba(4, 6, 10, 0.62);
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
-  --reading-width: 72ch;
+  --focus: #9ac7ff;
+  --success-bg: #123c27;
+  --success-border: #5fd08a;
+  --danger-bg: #4a2025;
+  --danger-border: #ff9090;
+  --option-bg: #222c48;
+  --option-hover: #2b385b;
+  --option-text: #f4f7fb;
 }
 
 * {
@@ -41,7 +94,7 @@ body {
       rgba(246, 196, 83, 0.1),
       transparent 26%
     ),
-    linear-gradient(180deg, var(--bg) 0%, #11162a 100%);
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-end) 100%);
 }
 
 body.menu-open {
@@ -52,7 +105,7 @@ body.menu-open::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(4, 6, 10, 0.56);
+  background: var(--overlay);
   z-index: 95;
 }
 
@@ -1707,5 +1760,208 @@ th {
 @media (min-width: 1440px) {
   .container {
     max-width: 1200px;
+  }
+}
+
+/* Site-wide theme surfaces and accessible controls */
+.navbar {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+}
+
+.site-search .gsc-control-cse,
+.site-search .gsc-control-cse.gsc-control-cse-en,
+.site-search .gsc-control-cse.gsc-control-cse-sv,
+.hero-copy,
+.hero-card,
+.feature-card,
+.split-mode-panel,
+.chapter-main,
+.chapter-aside,
+.aside-card,
+.content-section,
+.chapter-header,
+.nav-button,
+.site-footer {
+  background: var(--surface-translucent) !important;
+}
+
+.side-menu,
+.site-search .gsc-completion-container,
+.site-search .gsc-resultsbox-visible {
+  background: var(--surface-translucent) !important;
+}
+
+.chapter-link,
+.secondary-link,
+.assignment-level,
+.python-workspace-tips,
+.python-input-guide,
+.practice-link,
+.chapter-focus-box,
+.chapter-keywords,
+.concept-card,
+.practice-part-link,
+.video-card,
+.resource-item,
+code,
+th,
+.practice-result,
+.chapter-header .chapter-meta span {
+  background: var(--surface-subtle);
+}
+
+.chapter-link:hover,
+.search-toggle:hover,
+.nav-button:hover {
+  border-color: var(--border-accent);
+  background: var(--surface-hover);
+}
+
+.toc-section,
+.practice-card,
+.python-workspace,
+.tkinter-simulator {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+.practice-home-section,
+.chapter-link-extra,
+.practice-answer,
+blockquote {
+  background: var(--warm-subtle);
+}
+
+.python-code-editor,
+.python-input-editor,
+.python-output,
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+.primary-link,
+.preview-link,
+.python-run-button,
+.site-search .gsc-search-button-v2 {
+  color: var(--accent-text) !important;
+}
+
+.option-button {
+  border-color: var(--border);
+  background: var(--option-bg);
+  color: var(--option-text);
+}
+
+.option-button:hover:not(:disabled) {
+  background: var(--option-hover);
+}
+
+.option-button.is-selected,
+.option-button.is-selected:hover:not(:disabled) {
+  background: var(--warm-subtle);
+  color: var(--text);
+}
+
+.option-button.is-correct {
+  border-color: var(--success-border);
+  background: var(--success-bg);
+}
+
+.option-button.is-wrong {
+  border-color: var(--danger-border);
+  background: var(--danger-bg);
+}
+
+.option-button:disabled {
+  color: var(--option-text);
+}
+
+.key-topics span {
+  color: var(--text);
+}
+
+.chapter-quiz fieldset {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-subtle);
+}
+
+.chapter-quiz legend {
+  padding: 0 0.35rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.check-quiz,
+[id^="check-chapter-"] {
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font: 700 0.95rem/1 "Trebuchet MS", "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.quiz-result:not(:empty) {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border-warm);
+  border-radius: 8px;
+  background: var(--warm-subtle);
+  color: var(--text);
+}
+
+input:not(.tkinter-entry):not(.tkinter-film-entry),
+textarea:not(.python-code-editor):not(.python-input-editor),
+select,
+dialog {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+dialog::backdrop {
+  background: var(--overlay);
+}
+
+.theme-toggle {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-subtle);
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-accent);
+  background: var(--surface-hover);
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus) !important;
+  outline-offset: 3px !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .navbar,
+  .side-menu,
+  .hero-copy,
+  .hero-card,
+  .content-section,
+  .chapter-aside,
+  .site-footer {
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
   }
 }

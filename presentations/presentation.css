@@ -7,6 +7,23 @@
   --slide-border: #dedbd2;
   --slide-code-bg: #f1efe9;
   --slide-shadow: rgba(23, 23, 23, 0.08);
+  --slide-surface: #ffffff;
+  --slide-focus: #1769c2;
+  --slide-button-text: #ffffff;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --slide-bg: #111522;
+  --slide-text: #f3f6fc;
+  --slide-muted: #b6bed0;
+  --slide-accent: #86b7ff;
+  --slide-border: #39435a;
+  --slide-code-bg: #090d18;
+  --slide-shadow: rgba(0, 0, 0, 0.34);
+  --slide-surface: #1b2131;
+  --slide-focus: #9ac7ff;
+  --slide-button-text: #101522;
 }
 
 * { box-sizing: border-box; }
@@ -40,7 +57,7 @@ body.presentation-body {
 .slide ul, .slide ol { display: grid; gap: 1rem; margin: 1.8rem 0 0; padding-left: 1.4em; }
 .fragment { opacity: 0; transform: translateY(10px); transition: opacity 180ms ease, transform 180ms ease; }
 .fragment.is-visible { opacity: 1; transform: translateY(0); }
-.fragment.is-dimmed { color: #8a8a8a; }
+.fragment.is-dimmed { color: var(--slide-muted); }
 .code-block {
   display: block; width: min(900px, 100%); margin: 2rem 0 0; padding: 1.4rem;
   border: 1px solid var(--slide-border); border-radius: 10px; background: var(--slide-code-bg);
@@ -54,7 +71,7 @@ body.presentation-body {
 .two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
 .two-column.diagram-emphasis { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); align-items: center; }
 .diagram-emphasis .slide-figure img { width: 100%; max-height: 62vh; object-fit: contain; }
-.prompt-card { margin-top: 2rem; padding: 1.4rem; border: 1px solid var(--slide-border); border-radius: 12px; background: #fff; }
+.prompt-card { margin-top: 2rem; padding: 1.4rem; border: 1px solid var(--slide-border); border-radius: 12px; background: var(--slide-surface); }
 .prompt-card p { margin-top: .6rem; font-size: clamp(1.1rem, 1.7vw, 1.35rem); }
 .presentation-index-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .presentation-index-card { margin-top: 0; padding: 1rem 1.15rem; }
@@ -64,18 +81,26 @@ body.presentation-body {
 .slide-figure { margin: 1.5rem 0 0; }
 .slide-figure img { display: block; max-width: 100%; max-height: 48vh; border: 1px solid var(--slide-border); border-radius: 10px; box-shadow: 0 14px 34px var(--slide-shadow); }
 .slide-figure figcaption { margin-top: .55rem; color: var(--slide-muted); font-size: clamp(.9rem, 1.3vw, 1.15rem); }
-.comparison { width: 100%; margin-top: 2rem; border-collapse: collapse; background: #fff; font-size: clamp(1rem, 1.6vw, 1.45rem); }
+.comparison { width: 100%; margin-top: 2rem; border-collapse: collapse; background: var(--slide-surface); font-size: clamp(1rem, 1.6vw, 1.45rem); }
 .comparison th, .comparison td { padding: 1rem; border: 1px solid var(--slide-border); text-align: left; vertical-align: top; }
 .comparison th { color: var(--slide-accent); }
 .flow { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-top: 2rem; }
-.flow span { padding: .8rem 1rem; border: 2px solid var(--slide-text); border-radius: 10px; background: #fff; font-size: clamp(1rem, 1.5vw, 1.35rem); font-weight: 800; }
+.flow span { padding: .8rem 1rem; border: 2px solid var(--slide-text); border-radius: 10px; background: var(--slide-surface); font-size: clamp(1rem, 1.5vw, 1.35rem); font-weight: 800; }
 .flow b { color: var(--slide-accent); font-size: 1.8rem; }
 .decision-simulator { display: grid; grid-template-columns: minmax(15rem, .8fr) minmax(0, 1.2fr); gap: 1.5rem; margin-top: 1.5rem; align-items: start; }
-.decision-controls, .decision-output { display: grid; gap: .8rem; padding: 1.2rem; border: 1px solid var(--slide-border); border-radius: 10px; background: #fff; }
+.decision-controls, .decision-output { display: grid; gap: .8rem; padding: 1.2rem; border: 1px solid var(--slide-border); border-radius: 10px; background: var(--slide-surface); }
 .decision-controls label { font-size: 1.15rem; font-weight: 700; }
 .decision-controls input { width: 100%; padding: .7rem; border: 1px solid var(--slide-border); border-radius: 6px; font: inherit; font-size: 1.1rem; }
-.decision-controls button { padding: .7rem 1rem; border: 0; border-radius: 6px; background: var(--slide-accent); color: #fff; font: inherit; font-weight: 800; cursor: pointer; }
+.decision-controls button { padding: .7rem 1rem; border: 0; border-radius: 6px; background: var(--slide-accent); color: var(--slide-button-text); font: inherit; font-weight: 800; cursor: pointer; }
 .decision-output pre { min-height: 5rem; margin: 0; white-space: pre-wrap; font: 1.1rem/1.5 "SFMono-Regular", Consolas, monospace; }
+
+.theme-toggle {
+  display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem;
+  margin-left: auto; border: 1px solid var(--slide-border); border-radius: 999px;
+  background: var(--slide-surface); color: var(--slide-text); font-size: 1.05rem; cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--slide-accent); }
+:where(a, button, input, [tabindex]):focus-visible { outline: 3px solid var(--slide-focus); outline-offset: 3px; }
 
 @media (max-width: 760px) {
   .two-column { grid-template-columns: 1fr; }
