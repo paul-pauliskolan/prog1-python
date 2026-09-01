@@ -1,0 +1,6 @@
+name = input("Vad heter du? ")
+city = input("I vilken stad bor du? ")
+food = input("Vilken är din favoritmat? ")
+print(f"Hej {name}")
+print(f"Du bor i {city}")
+print(f"Din favoritmat är {food}")

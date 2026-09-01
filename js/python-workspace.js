@@ -78,6 +78,9 @@ try:
     sys.settrace(_stop_long_programs)
     with contextlib.redirect_stdout(_output), contextlib.redirect_stderr(_output):
         exec(user_code, {"__name__": "__main__"})
+except EOFError:
+    print(file=_output)
+    print("Programmet stoppades eftersom inmatningen tog slut. Lägg till fler rader under Inmatning. Om programmet använder en loop med break behöver du även skriva stoppvärdet, till exempel 0.", file=_output)
 except Exception:
     traceback.print_exc(file=_output)
 finally:

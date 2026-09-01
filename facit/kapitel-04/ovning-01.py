@@ -1,0 +1,5 @@
+first = int(input("Skriv det första talet: "))
+second = int(input("Skriv det andra talet: "))
+print(f"Summan är {first + second}")
+print(f"Skillnaden är {first - second}")
+print(f"Produkten är {first * second}")
