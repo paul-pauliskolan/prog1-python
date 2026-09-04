@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fem muntliga snabbfrågor om variabler, datatyper och input i Python.">
+    <title>Snabbfrågor 02 – Variabler, datatyper och input</title>
+    <link rel="stylesheet" href="snabbfragor.css">
+</head>
+<body class="deck-body">
+<main class="deck-shell">
+    <header class="topbar"><a href="index.html">← Välj kapitel</a><span><span data-card-type>Fråga</span> · <span data-question-number>1</span> av 5</span></header>
+    <div class="deck" aria-live="polite">
+        <section class="slide question-slide is-active" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Fråga 1</p><h1>Vad är en variabel?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+        <section class="slide answer-slide" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Facit 1</p><h1>En variabel har ett namn och lagrar ett värde som programmet kan använda.</h1><pre><code>name = "Anna"</code></pre><p>Variabeln heter <code>name</code> och innehåller texten <code>Anna</code>.</p></div></section>
+
+        <section class="slide question-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Fråga 2</p><h1>Vilken datatyp har varje värde: 17, 21.5, "Hej" och True?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+        <section class="slide answer-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Facit 2</p><h1>17 är int, 21.5 är float, "Hej" är str och True är bool.</h1><pre><code>print(type(17))
+print(type("Hej"))</code></pre><p><code>type()</code> visar vilken datatyp ett värde har.</p></div></section>
+
+        <section class="slide question-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Fråga 3</p><h1>Vad returnerar input() i Python?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+        <section class="slide answer-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Facit 3</p><h1>input() returnerar alltid användarens svar som text, alltså datatypen str.</h1><pre><code>age = input("Ålder: ")
+print(type(age))</code></pre><p>Även om användaren skriver <code>17</code> blir värdet texten <code>"17"</code>.</p></div></section>
+
+        <section class="slide question-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Fråga 4</p><h1>Varför behövs typomvandling när två inmatade tal ska adderas?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+        <section class="slide answer-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Facit 4</p><h1>input() ger text. Texten måste omvandlas till tal innan Python kan räkna med den.</h1><pre><code>age = int(input("Ålder: "))
+print(age + 1)</code></pre><p><code>int()</code> omvandlar svaret till ett heltal.</p></div></section>
+
+        <section class="slide question-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Fråga 5</p><h1>Hur skriver man ut text och ett variabelvärde med en f-sträng?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+        <section class="slide answer-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 02 · Facit 5</p><h1>Sätt bokstaven f före texten och variabelns namn inom klammerparenteser.</h1><pre><code>name = "Anna"
+print(f"Hej {name}")</code></pre><p>Programmet skriver ut <code>Hej Anna</code>.</p></div></section>
+    </div>
+    <footer class="deck-footer"><button type="button" data-previous>← Föregående</button><p><kbd>←</kbd> <kbd>→</kbd> byter slide · <kbd>Mellanslag</kbd> visar nästa</p><button type="button" data-next>Nästa →</button></footer>
+</main>
+<script src="snabbfragor.js"></script>
+</body>
+</html>
