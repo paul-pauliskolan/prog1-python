@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulering: tilldelning och jämförelse i Python</title>
+    <meta name="description" content="Kör två separata Python-exempel rad för rad. Följ variabler och utskrift från print.">
+    <script src="../js/theme.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tilldelning.css">
+</head>
+<body class="chapter-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">🐍 Python</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="#" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2><nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+    <main class="container sim-page">
+        <header class="chapter-hero">
+            <p class="eyebrow">Interaktiv övning</p>
+            <h1 data-preserve-title>Tilldela eller jämföra?</h1>
+            <p class="subtitle"><code>=</code> ger en variabel ett värde. <code>==</code> frågar om två värden är lika.</p>
+        </header>
+        <p class="sim-intro">Kör ett program i taget. Varje klick kör en kodrad. Bara <code>print(...)</code> skriver ut något.</p>
+        <section id="assignment" class="sim-card sim-runner" aria-label="Exempel 1: tilldelning"></section>
+        <section id="comparison" class="sim-card sim-runner" aria-label="Exempel 2: jämförelse"></section>
+        <details class="sim-card sim-more">
+            <summary>Fler exempel: öka x, följ a och b, och hitta syntaxfelet</summary>
+            <section id="increment" class="sim-runner" aria-label="Öka x med ett"></section>
+            <section id="copy" class="sim-runner" aria-label="Följ a och b"></section>
+            <section id="direction" class="sim-runner" aria-label="Tilldelningens riktning"></section>
+        </details>
+        <details class="sim-card">
+            <summary>Testa din förståelse · 16 frågor</summary>
+            <p>Du får en förklaring efter varje svar.</p>
+            <div id="quiz"></div>
+        </details>
+        <nav class="chapter-nav">
+            <a class="nav-button" href="chapter-19.html">← Kapitel 19</a>
+            <a class="nav-button" href="../index.html">Alla kapitel →</a>
+        </nav>
+        <noscript><p>Aktivera JavaScript för att använda simuleringen.</p></noscript>
+    </main>
+    <script src="../js/main.js"></script>
+    <script src="../js/tilldelning.js"></script>
+</body>
+</html>

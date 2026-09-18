@@ -5,6 +5,13 @@ const BOOK_SHORT_TITLE = "Python";
 const QUIZ_STATISTICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzGXh735UHr8MFxxka9Z-yUrbfNXWJxpUrSd5Qxjftofn2cm5ada79G8C7_G2wuTh-HwQ/exec";
 const CHAPTER_EXTRAS = [
   {
+    afterChapter: 19,
+    number: "SIM",
+    title: "Simulering: = och ==",
+    hrefFromHome: "chapters/tilldelning-jamforelse.html",
+    hrefFromChapter: "tilldelning-jamforelse.html",
+  },
+  {
     afterChapter: 4,
     number: "INL",
     title: "Inlämningsuppgift 1 - kap 1-4",
@@ -65,7 +72,7 @@ function applyBranding() {
   const chapterHomeTitle = document.querySelector(
     ".chapter-page header h1 a, .chapter-page header h1",
   );
-  if (chapterHomeTitle) {
+  if (chapterHomeTitle && !chapterHomeTitle.hasAttribute("data-preserve-title")) {
     chapterHomeTitle.textContent = `🐍 ${BOOK_SHORT_TITLE}`;
   }
 }
