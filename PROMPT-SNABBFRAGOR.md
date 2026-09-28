@@ -1,12 +1,12 @@
 # Prompt: skapa snabbfrågor till en kurswebbplats
 
-Den här prompten kan användas när du vill be en AI-kodassistent att skapa ett liknande system med muntliga snabbfrågor i en annan kurs. Kopiera texten under rubriken **Färdig prompt** och ersätt informationen inom hakparenteser.
+Den här prompten kan användas när du vill be en AI-kodassistent att skapa ett liknande system med muntliga snabbfrågor i en annan **kurs**. Kopiera texten under rubriken **Färdig prompt** och ersätt informationen inom hakparenteser.
 
 ## Förberedelser
 
 Ta fram följande information innan du använder prompten:
 
-- kursens namn;
+- kursens **namn**;
 - sökvägen till kursens projektmapp;
 - vilka kapitel som ska ingå;
 - var kapitlens HTML- eller Markdown-filer finns;
