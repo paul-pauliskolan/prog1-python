@@ -820,7 +820,7 @@ Alla övningar finns som kod som du kan ladda ner från denna sida: [https://git
 
 [7.8 Reflektionsfrågor](#7.8-reflektionsfrågor)
 
-[Kapitel 8 Funktioner](#8---funktioner)
+[Kapitel 8 Funktioner och random](#8---funktioner)
 
 [8.1 Varför funktioner används](#8.1-varför-funktioner-används)
 
@@ -6703,7 +6703,7 @@ Programmet ska skriva ut resultatet.
 
 Gör nu inlämningsuppgifter till kapitel 1-7
 
-# **8 \- Funktioner** {#8---funktioner}
+# **8 \- Funktioner och random** {#8---funktioner}
 
 ## **8.1 Varför funktioner används** {#8.1-varför-funktioner-används}
 

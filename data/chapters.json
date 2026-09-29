@@ -163,22 +163,24 @@
     {
       "id": 8,
       "number": 8,
-      "title": "Funktioner",
-      "description": "Dela upp program i återanvändbara delar.",
+      "title": "Funktioner och random",
+      "description": "Dela upp program i återanvändbara delar och skapa slumptal.",
       "sections": [
         "Definiera funktioner",
         "Parametrar",
         "Returvärden",
+        "Slumptal med random",
         "Lokala variabler",
         "Anropa funktioner",
         "Övningar",
         "Sammanfattning"
       ],
-      "summary": "Eleverna lär sig hur kod kan delas upp i mindre delar som går att återanvända. Funktioner gör program lättare att läsa, testa och bygga vidare på.",
+      "summary": "Eleverna lär sig hur kod kan delas upp i mindre delar som går att återanvända och hur random används för att skapa slumptal. Funktioner gör program lättare att läsa, testa och bygga vidare på.",
       "keyTopics": [
         "funktioner",
         "parametrar",
         "returvärden",
+        "random",
         "återanvändning",
         "struktur"
       ],
