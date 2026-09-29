@@ -866,7 +866,17 @@ Alla övningar finns som kod som du kan ladda ner från denna sida: [https://git
 
 [Övning](#övning-18)
 
-[8.5 Strukturera program](#8.5-strukturera-program)
+[8.5 Slumptal i funktioner](#8.5-slumptal-i-funktioner)
+
+[Importera en modul](#importera-en-modul)
+
+[Slumpa ett heltal med randint](#slumpa-ett-heltal-med-randint)
+
+[Returnera ett slumptal från en egen funktion](#returnera-ett-slumptal-från-en-egen-funktion)
+
+[Övning](#övning-slumptal)
+
+[8.6 Strukturera program](#8.6-strukturera-program)
 
 [Exempel](#exempel-17)
 
@@ -876,7 +886,7 @@ Alla övningar finns som kod som du kan ladda ner från denna sida: [https://git
 
 [Övning](#övning-19)
 
-[8.6 Större program](#8.6-större-program)
+[8.7 Större program](#8.7-större-program)
 
 [Exempel](#exempel-18)
 
@@ -886,7 +896,7 @@ Alla övningar finns som kod som du kan ladda ner från denna sida: [https://git
 
 [Övning](#övning-20)
 
-[8.7 Övningar](#8.7-övningar)
+[8.8 Övningar](#8.8-övningar)
 
 [Övning 1](#övning-1-4)
 
@@ -900,7 +910,9 @@ Alla övningar finns som kod som du kan ladda ner från denna sida: [https://git
 
 [Övning 6](#övning-6-4)
 
-[8.8 Reflektionsfrågor](#8.8-reflektionsfrågor)
+[Övning 7](#övning-7-4)
+
+[8.9 Reflektionsfrågor](#8.9-reflektionsfrågor)
 
 [Kapitel 9 Felsökning](#9---felsökning)
 
@@ -6949,7 +6961,52 @@ Funktionen ska
 
 Använd sedan funktionen och skriv ut resultatet.
 
-## **8.5 Strukturera program** {#8.5-strukturera-program}
+## **8.5 Slumptal i funktioner** {#8.5-slumptal-i-funktioner}
+
+Ibland ska ett program välja ett tal utan att användaren bestämmer vilket. Då kan man använda Pythons färdiga modul `random`.
+
+### **Importera en modul** {#importera-en-modul}
+
+En **modul** innehåller färdig kod som kan användas i andra program. För att använda modulen `random` importerar man den högst upp i programmet.
+
+`import random`
+
+Importen behöver bara skrivas en gång i programmet.
+
+### **Slumpa ett heltal med randint** {#slumpa-ett-heltal-med-randint}
+
+Funktionen `random.randint(minsta, största)` ger ett slumpat heltal. Båda gränserna kan komma med i resultatet.
+
+```python
+import random
+
+number = random.randint(1, 100)
+print(number)
+```
+
+Här kan `number` bli vilket heltal som helst från `1` till och med `100`. Ett nytt slumptal skapas varje gång raden med `randint()` körs.
+
+### **Returnera ett slumptal från en egen funktion** {#returnera-ett-slumptal-från-en-egen-funktion}
+
+Slumpningen kan läggas i en egen funktion. Parametrarna bestämmer intervallet och `return` skickar tillbaka det slumpade talet.
+
+```python
+import random
+
+def random_number(lowest, highest):
+    return random.randint(lowest, highest)
+
+secret_number = random_number(1, 100)
+print(secret_number)
+```
+
+### **Övning** {#övning-slumptal}
+
+Skapa en funktion som heter `random_number`. Funktionen ska ta emot ett minsta och ett största värde och returnera ett slumpat heltal inom intervallet med `random.randint()`.
+
+Anropa funktionen med argumenten `1` och `100` och skriv ut resultatet.
+
+## **8.6 Strukturera program** {#8.6-strukturera-program}
 
 När program blir större är det viktigt att **strukturera koden**.  
 Det innebär att dela upp programmet i **mindre delar** som är lättare att läsa och förstå.
@@ -7010,7 +7067,7 @@ Den andra funktionen ska räkna ut summan av två tal.
 
 Använd funktionerna i programmet.
 
-## **8.6 Större program** {#8.6-större-program}
+## **8.7 Större program** {#8.7-större-program}
 
 När program växer blir det viktigt att **dela upp programmet i flera funktioner**.
 
@@ -7088,7 +7145,7 @@ Programmet ska
  använda funktionerna  
  skriva ut resultaten.
 
-## **8.7 Övningar** {#8.7-övningar}
+## **8.8 Övningar** {#8.8-övningar}
 
 I dessa övningar ska du använda
 
@@ -7098,6 +7155,7 @@ I dessa övningar ska du använda
  variabler  
  input  
  f-strängar
+ `random.randint()`
 
 ### **Övning 1** {#övning-1-4}
 
@@ -7175,7 +7233,15 @@ Programmet ska
  använda funktionerna  
  skriva ut resultatet.
 
-## **8.8 Reflektionsfrågor** {#8.8-reflektionsfrågor}
+### **Övning 7** {#övning-7-4}
+
+Skapa en funktion som heter `roll_die`.
+
+Funktionen ska ta emot antal sidor och returnera ett slumpat heltal från `1` till och med antalet sidor.
+
+Anropa funktionen för en sexsidig tärning och skriv ut resultatet.
+
+## **8.9 Reflektionsfrågor** {#8.9-reflektionsfrågor}
 
 1 \- Vad är en funktion i Python?
 
@@ -7196,6 +7262,10 @@ Programmet ska
 9 \- Ge ett exempel på en uppgift där en funktion kan vara användbar.
 
 10 \- Varför blir program ofta lättare att läsa när man använder funktioner?
+
+11 \- Varför måste `random` importeras innan `random.randint()` används?
+
+12 \- Vilka värden kan `random.randint(1, 6)` returnera?
 
 # **9 \- Felsökning** {#9---felsökning}
 

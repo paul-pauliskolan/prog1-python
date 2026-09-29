@@ -21,7 +21,7 @@
 
       <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Mål</p><h2>Efter kapitlet ska du kunna...</h2>
-        <ul><li class="fragment">förklara varför funktioner används</li><li class="fragment">definiera och anropa egna funktioner</li><li class="fragment">skilja mellan parametrar och argument</li><li class="fragment">returnera och använda värden</li><li class="fragment">strukturera ett program med flera funktioner</li></ul>
+        <ul><li class="fragment">förklara varför funktioner används</li><li class="fragment">definiera och anropa egna funktioner</li><li class="fragment">skilja mellan parametrar och argument</li><li class="fragment">returnera och använda värden</li><li class="fragment">skapa heltal med <code>random.randint()</code></li><li class="fragment">strukturera ett program med flera funktioner</li></ul>
       </div></section>
 
       <section class="slide"><div class="slide-content">
@@ -171,7 +171,34 @@ result = square(4)</code></pre>
       </div></section>
 
       <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">8.5</p><h2>Funktioner överst – huvudprogram nederst</h2>
+        <p class="slide-kicker">8.5 · Slumptal</p><h2>Importera modulen <code>random</code></h2>
+        <pre class="code-block fragment"><code>import random
+
+number = random.randint(1, 100)
+print(number)</code></pre>
+        <p class="fragment"><code>randint(1, 100)</code> kan ge alla heltal från <code>1</code> till och med <code>100</code>.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Slumptal och funktioner</p><h2>Returnera ett slumpat värde</h2>
+        <pre class="code-block fragment"><code>import random
+
+def random_number(lowest, highest):
+    return random.randint(lowest, highest)
+
+secret_number = random_number(1, 100)</code></pre>
+        <p class="fragment">Parametrarna bestämmer intervallet. Funktionen returnerar slumptalet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vilka värden är möjliga?</h2>
+        <pre class="code-block fragment"><code>random.randint(1, 6)</code></pre>
+        <p class="fragment"><strong>Svar:</strong> heltalen <code>1, 2, 3, 4, 5</code> och <code>6</code>.</p>
+        <p class="fragment">Båda gränserna ingår.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">8.6</p><h2>Funktioner överst – huvudprogram nederst</h2>
         <pre class="code-block compact-code fragment"><code>def greet(name):
     print(f"Hej {name}")
 
@@ -197,7 +224,7 @@ print(f"Summan är {result}")</code></pre>
       </div></section>
 
       <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">8.6</p><h2>Flera funktioner kan samarbeta</h2>
+        <p class="slide-kicker">8.7</p><h2>Flera funktioner kan samarbeta</h2>
         <pre class="code-block fragment"><code>def greet(name):
     print(f"Hej {name}")
 
@@ -259,7 +286,7 @@ print_receipt(product, subtotal, discount, total)</code></pre>
       </div></section>
 
       <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">8.7 · Övning</p><h2>Skapa tre funktioner</h2>
+        <p class="slide-kicker">8.8 · Övning</p><h2>Skapa tre funktioner</h2>
         <ul><li class="fragment"><code>greet(name)</code> skriver en hälsning.</li><li class="fragment"><code>square(number)</code> returnerar talet i kvadrat.</li><li class="fragment"><code>double(number)</code> returnerar talet gånger två.</li></ul>
         <p class="fragment">Huvudprogrammet ska fråga efter namn och tal, anropa funktionerna och skriva ut resultaten.</p>
       </div></section>
@@ -273,7 +300,7 @@ print_receipt(product, subtotal, discount, total)</code></pre>
 
       <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
-        <ul><li class="fragment"><code>def</code> definierar en funktion; namnet med parenteser anropar den.</li><li class="fragment">Parametrar står i definitionen, argument skickas vid anropet.</li><li class="fragment"><code>return</code> skickar tillbaka ett värde.</li><li class="fragment"><code>print()</code> visar något men ersätter inte <code>return</code>.</li><li class="fragment">Funktioner bör ha tydliga namn och avgränsade uppgifter.</li><li class="fragment">Funktionsdefinitioner överst och huvudprogram nederst ger tydlig struktur.</li></ul>
+        <ul><li class="fragment"><code>def</code> definierar en funktion; namnet med parenteser anropar den.</li><li class="fragment">Parametrar står i definitionen, argument skickas vid anropet.</li><li class="fragment"><code>return</code> skickar tillbaka ett värde.</li><li class="fragment"><code>random.randint(a, b)</code> ger ett heltal där båda gränserna ingår.</li><li class="fragment"><code>print()</code> visar något men ersätter inte <code>return</code>.</li><li class="fragment">Funktioner bör ha tydliga namn och avgränsade uppgifter.</li><li class="fragment">Funktionsdefinitioner överst och huvudprogram nederst ger tydlig struktur.</li></ul>
       </div></section>
     </div>
     <footer class="presentation-footer"></footer>

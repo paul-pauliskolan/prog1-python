@@ -28,7 +28,7 @@
                 <p class="eyebrow">Programmering nivå 1 med Python</p>
                 <h1>Kapitel 8: Funktioner</h1>
                 <p class="subtitle">I detta kapitel lär du dig att skapa egna funktioner, använda parametrar och
-                    returnera värden för att strukturera program bättre.</p>
+                    returnera värden, använda slumptal och strukturera program bättre.</p>
             </header>
 
             <section class="toc-section">
@@ -41,11 +41,12 @@
                     <li><a href="#s82">8.2 Definiera funktioner</a></li>
                     <li><a href="#s83">8.3 Parametrar</a></li>
                     <li><a href="#s84">8.4 Return</a></li>
-                    <li><a href="#s85">8.5 Strukturera program</a></li>
-                    <li><a href="#s86">8.6 Större program</a></li>
-                    <li><a href="#s87">8.7 Övningar</a></li>
+                    <li><a href="#s85">8.5 Slumptal i funktioner</a></li>
+                    <li><a href="#s86">8.6 Strukturera program</a></li>
+                    <li><a href="#s87">8.7 Större program</a></li>
+                    <li><a href="#s88">8.8 Övningar</a></li>
                     <li><a href="#s87-quiz">Quiz</a></li>
-                    <li><a href="#s88">8.8 Reflektionsfrågor</a></li>
+                    <li><a href="#s89">8.9 Reflektionsfrågor</a></li>
                 </ul>
             </section>
 
@@ -362,7 +363,83 @@ print(f"Dubbla summan är {total * 2}")</textarea>
             </section>
 
             <section class="content-section" id="s85">
-                <h2>8.5 Strukturera program</h2>
+                <h2>8.5 Slumptal i funktioner</h2>
+                <p>Ibland ska ett program välja ett tal utan att användaren bestämmer vilket. Då kan man använda
+                    Pythons färdiga modul <code>random</code>.</p>
+
+                <h3>Importera en modul</h3>
+                <p>En <strong>modul</strong> innehåller färdig kod som kan användas i andra program. För att använda
+                    modulen <code>random</code> importerar man den högst upp i programmet.</p>
+                <pre><code>import random</code></pre>
+                <p>Importen behöver bara skrivas en gång i programmet.</p>
+
+                <h3>Slumpa ett heltal med randint</h3>
+                <p>Funktionen <code>random.randint(minsta, största)</code> ger ett slumpat heltal. Båda gränserna kan
+                    komma med i resultatet.</p>
+                <pre><code>import random
+
+number = random.randint(1, 100)
+print(number)</code></pre>
+                <p>Här kan <code>number</code> bli vilket heltal som helst från <code>1</code> till och med
+                    <code>100</code>. Ett nytt slumptal skapas varje gång raden med <code>randint()</code> körs.</p>
+
+                <h3>Returnera ett slumptal från en egen funktion</h3>
+                <p>Slumpningen kan läggas i en egen funktion. Parametrarna bestämmer intervallet och
+                    <code>return</code> skickar tillbaka det slumpade talet.</p>
+                <pre><code>import random
+
+def random_number(lowest, highest):
+    return random.randint(lowest, highest)
+
+secret_number = random_number(1, 100)
+print(secret_number)</code></pre>
+                <p><code>random_number(1, 100)</code> anropar den egna funktionen. Inuti funktionen anropas den färdiga
+                    funktionen <code>random.randint()</code>.</p>
+
+                <div class="python-workspace" data-python-workspace>
+                    <div class="python-workspace-header">
+                        <div>
+                            <h3>Interaktiv övning: tärningsfunktion</h3>
+                            <p>Kör programmet flera gånger och se hur funktionen kan returnera olika resultat.</p>
+                        </div>
+                        <button type="button" class="python-run-button" data-python-run>Kör kod</button>
+                    </div>
+                    <div class="python-workspace-tips">
+                        <p>Prova till exempel att:</p>
+                        <ul>
+                            <li>ändra antalet sidor från <code>6</code> till <code>20</code></li>
+                            <li>anropa <code>roll_die()</code> flera gånger</li>
+                            <li>skapa två tärningar och addera deras resultat</li>
+                        </ul>
+                    </div>
+                    <label for="chapter-8-random-code">Kod</label>
+                    <textarea id="chapter-8-random-code" class="python-code-editor" spellcheck="false" data-python-code>import random
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+result = roll_die(6)
+print(f"Tärningen visar {result}")</textarea>
+                    <label for="chapter-8-random-input">Inmatning</label>
+                    <textarea id="chapter-8-random-input" class="python-input-editor" spellcheck="false" data-python-input></textarea>
+                    <div class="python-output-wrap">
+                        <div class="python-output-label">Resultat</div>
+                        <pre class="python-output" data-python-output>Tryck på Kör kod för att testa programmet.</pre>
+                    </div>
+                </div>
+
+                <h3>Övning</h3>
+                <p>Skapa en funktion som heter <code>random_number</code>.</p>
+                <p>Funktionen ska</p>
+                <ul>
+                    <li>ta emot ett minsta och ett största värde</li>
+                    <li>returnera ett slumpat heltal inom intervallet med <code>random.randint()</code></li>
+                </ul>
+                <p>Anropa funktionen med argumenten <code>1</code> och <code>100</code> och skriv ut resultatet.</p>
+            </section>
+
+            <section class="content-section" id="s86">
+                <h2>8.6 Strukturera program</h2>
                 <p>När program blir större är det viktigt att <strong>strukturera koden</strong>.</p>
                 <p>Det innebär att dela upp programmet i <strong>mindre delar</strong> som är lättare att läsa och
                     förstå.</p>
@@ -447,8 +524,8 @@ print(f"Summan är {result}")</textarea>
                 <p>Använd funktionerna i programmet.</p>
             </section>
 
-            <section class="content-section" id="s86">
-                <h2>8.6 Större program</h2>
+            <section class="content-section" id="s87">
+                <h2>8.7 Större program</h2>
                 <p>När program växer blir det viktigt att <strong>dela upp programmet i flera funktioner</strong>.</p>
                 <p>Varje funktion ska göra <strong>en tydlig uppgift</strong>.</p>
                 <p>Det gör programmet</p>
@@ -566,8 +643,8 @@ print_receipt(product, quantity, subtotal, discount, total)</textarea>
                 </ul>
             </section>
 
-            <section class="content-section" id="s87">
-                <h2>8.7 Övningar</h2>
+            <section class="content-section" id="s88">
+                <h2>8.8 Övningar</h2>
                 <p>I dessa övningar ska du använda</p>
                 <ul>
                     <li>funktioner</li>
@@ -576,6 +653,7 @@ print_receipt(product, quantity, subtotal, discount, total)</textarea>
                     <li>variabler</li>
                     <li>input</li>
                     <li>f-strängar</li>
+                    <li><code>random.randint()</code></li>
                 </ul>
 
                 <h3>Övning 1</h3>
@@ -646,6 +724,15 @@ print_receipt(product, quantity, subtotal, discount, total)</textarea>
                 </ul>
 
                 <p class="github-solution"><a href="https://github.com/paul-pauliskolan/prog1-python/blob/master/facit/kapitel-08/ovning-06.py" target="_blank" rel="noopener noreferrer">Visa lösningsförslag för övning 6 på GitHub (.py)</a></p>
+
+                <h3>Övning 7</h3>
+
+                <p>Skapa en funktion som heter <code>roll_die</code>.</p>
+                <p>Funktionen ska ta emot antal sidor och returnera ett slumpat heltal från <code>1</code> till och med
+                    antalet sidor.</p>
+                <p>Anropa funktionen för en sexsidig tärning och skriv ut resultatet.</p>
+
+                <p class="github-solution"><a href="https://github.com/paul-pauliskolan/prog1-python/blob/master/facit/kapitel-08/ovning-07.py" target="_blank" rel="noopener noreferrer">Visa lösningsförslag för övning 7 på GitHub (.py)</a></p>
             </section>
 
             <section class="content-section" id="s87-quiz">
@@ -687,13 +774,20 @@ print_receipt(product, quantity, subtotal, discount, total)</textarea>
                         <label><input type="radio" name="ch8q5" value="c"> De ersätter alla variabler</label><br>
                         <label><input type="radio" name="ch8q5" value="d"> De fungerar bara i IDLE</label>
                     </fieldset>
+                    <fieldset data-correct="c" data-explanation="random.randint(1, 100) kan ge alla heltal från 1 till och med 100.">
+                        <legend>6. Vad gör <code>random.randint(1, 100)</code>?</legend>
+                        <label><input type="radio" name="ch8q6" value="a"> Returnerar alltid talet 100</label><br>
+                        <label><input type="radio" name="ch8q6" value="b"> Ger ett decimaltal mellan 1 och 100</label><br>
+                        <label><input type="radio" name="ch8q6" value="c"> Ger ett heltal från 1 till och med 100</label><br>
+                        <label><input type="radio" name="ch8q6" value="d"> Skriver ut alla tal från 1 till 100</label>
+                    </fieldset>
                     <button type="button" class="check-quiz">Rätta quizet</button>
                     <div class="quiz-result" aria-live="polite"></div>
                 </form>
             </section>
 
-            <section class="content-section" id="s88">
-                <h2>8.8 Reflektionsfrågor</h2>
+            <section class="content-section" id="s89">
+                <h2>8.9 Reflektionsfrågor</h2>
                 <ol>
                     <li>Vad är en funktion i Python?</li>
                     <li>Varför använder man funktioner i program?</li>
@@ -707,6 +801,8 @@ print_receipt(product, quantity, subtotal, discount, total)</textarea>
                         funktion?</li>
                     <li>Ge ett exempel på en uppgift där en funktion kan vara användbar.</li>
                     <li>Varför blir program ofta lättare att läsa när man använder funktioner?</li>
+                    <li>Varför måste <code>random</code> importeras innan <code>random.randint()</code> används?</li>
+                    <li>Vilka värden kan <code>random.randint(1, 6)</code> returnera?</li>
                 </ol>
             </section>
 
