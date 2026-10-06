@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Fem muntliga snabbfrågor om loopar i Python."><title>Snabbfrågor 06 – Loopar</title><link rel="stylesheet" href="snabbfragor.css"></head>
+<body class="deck-body"><main class="deck-shell"><header class="topbar"><a href="index.html">← Välj frågeläge</a><span><span data-card-type>Fråga</span> · <span data-question-number>1</span> av 5</span></header><div class="deck" aria-live="polite">
+<section class="slide question-slide is-active" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Fråga 1</p><h1>När passar en for-loop respektive en while-loop bäst?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Facit 1</p><h1>for passar när man vet vad eller hur många gånger man ska gå igenom. while upprepar så länge ett villkor är sant.</h1><pre><code>for i in range(5):
+    print(i)
+
+while count &lt;= 5:
+    count += 1</code></pre></div></section>
+<section class="slide question-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Fråga 2</p><h1>Vilka tal skapar range(5), och varför ingår inte 5?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Facit 2</p><h1>range(5) skapar 0, 1, 2, 3 och 4. Stoppvärdet ingår inte.</h1><pre><code>for i in range(5):
+    print(i)</code></pre><p>Loopen körs fem gånger.</p></div></section>
+<section class="slide question-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Fråga 3</p><h1>Hur fungerar range(start, stopp, steg)?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Facit 3</p><h1>start är första talet, stopp är gränsen som inte tas med och steg anger hur mycket talet ändras.</h1><pre><code>for i in range(2, 11, 2):
+    print(i)</code></pre><p>Exemplet skriver ut 2, 4, 6, 8 och 10.</p></div></section>
+<section class="slide question-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Fråga 4</p><h1>Hur uppstår en oändlig while-loop, och hur kan den undvikas?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Facit 4</p><h1>Den uppstår när villkoret aldrig blir False. Ändra variabeln som styr villkoret i loopen.</h1><pre><code>count = 1
+while count &lt;= 5:
+    print(count)
+    count += 1</code></pre><p>Utan ökningen skulle count alltid vara 1.</p></div></section>
+<section class="slide question-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Fråga 5</p><h1>Vad gör break i en loop?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 06 · Facit 5</p><h1>break avslutar loopen direkt, även om loopens villkor fortfarande är sant.</h1><pre><code>while True:
+    number = int(input("Tal: "))
+    if number == 0:
+        break</code></pre><p>Här fungerar 0 som stoppvärde.</p></div></section>
+</div><footer class="deck-footer"><button type="button" data-previous>← Föregående</button><p><kbd>←</kbd> <kbd>→</kbd> byter slide · <kbd>Mellanslag</kbd> visar nästa</p><button type="button" data-next>Nästa →</button></footer></main><script src="snabbfragor.js"></script></body></html>

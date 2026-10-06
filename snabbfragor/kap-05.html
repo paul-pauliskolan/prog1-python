@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Fem muntliga snabbfrågor om villkor i Python."><title>Snabbfrågor 05 – Villkor</title><link rel="stylesheet" href="snabbfragor.css"></head>
+<body class="deck-body"><main class="deck-shell"><header class="topbar"><a href="index.html">← Välj frågeläge</a><span><span data-card-type>Fråga</span> · <span data-question-number>1</span> av 5</span></header><div class="deck" aria-live="polite">
+<section class="slide question-slide is-active" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Fråga 1</p><h1>Vad gör en if-sats, och när körs den indragna koden?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Facit 1</p><h1>En if-sats kontrollerar ett villkor. Den indragna koden körs bara när villkoret är True.</h1><pre><code>age = 18
+if age &gt;= 18:
+    print("Du är myndig")</code></pre><p>Kolonet och indraget visar vilken kod som hör till villkoret.</p></div></section>
+<section class="slide question-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Fråga 2</p><h1>Vad är skillnaden mellan if, elif och else?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Facit 2</p><h1>if testar första villkoret, elif testar fler villkor och else körs om inget villkor var sant.</h1><pre><code>if temperature &lt; 10:
+    print("Kallt")
+elif temperature &lt;= 20:
+    print("Lagom")
+else:
+    print("Varmt")</code></pre><p>Villkoren kontrolleras uppifrån och ner.</p></div></section>
+<section class="slide question-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Fråga 3</p><h1>Hur kan operatorn % användas för att avgöra om ett tal är jämnt?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Facit 3</p><h1>Ett tal är jämnt om resten vid division med 2 är 0.</h1><pre><code>if number % 2 == 0:
+    print("Jämnt")
+else:
+    print("Udda")</code></pre><p>% ger resten efter en division.</p></div></section>
+<section class="slide question-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Fråga 4</p><h1>Vad betyder and, or och not i ett villkor?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Facit 4</p><h1>and kräver båda villkoren, or minst ett och not vänder sanningsvärdet.</h1><pre><code>if age &gt;= 18 and has_ticket == "ja":
+    print("Välkommen")</code></pre></div></section>
+<section class="slide question-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Fråga 5</p><h1>Vad är ett nästlat villkor?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
+<section class="slide answer-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 05 · Facit 5</p><h1>Det är en if-sats inuti en annan if-sats. Det inre villkoret kontrolleras bara om det yttre leder dit.</h1><pre><code>if age &gt;= 18:
+    if has_license == "ja":
+        print("Du får köra")</code></pre><p>Varje nivå får ytterligare ett indrag.</p></div></section>
+</div><footer class="deck-footer"><button type="button" data-previous>← Föregående</button><p><kbd>←</kbd> <kbd>→</kbd> byter slide · <kbd>Mellanslag</kbd> visar nästa</p><button type="button" data-next>Nästa →</button></footer></main><script src="snabbfragor.js"></script></body></html>
