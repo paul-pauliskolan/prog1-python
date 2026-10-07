@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Fem muntliga snabbfrågor om listor i Python."><title>Snabbfrågor 07 – Listor</title><link rel="stylesheet" href="snabbfragor.css"></head>
-<body class="deck-body"><main class="deck-shell"><header class="topbar"><a href="index.html">← Välj frågeläge</a><span><span data-card-type>Fråga</span> · <span data-question-number>1</span> av 5</span></header><div class="deck" aria-live="polite">
-<section class="slide question-slide is-active" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Fråga 1</p><h1>Vad är en lista, och hur skapas en lista med tre tal?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Facit 1</p><h1>En lista är en datastruktur som kan lagra flera värden i en variabel.</h1><pre><code>numbers = [2, 4, 6]</code></pre><p>Hakparenteser används för att skapa listan.</p></div></section>
-<section class="slide question-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Fråga 2</p><h1>Vad betyder index i en lista, och vilka index har första och sista värdet?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Facit 2</p><h1>Index är ett värdes position. Det första värdet har index 0 och det sista kan hämtas med index -1.</h1><pre><code>colors = ["röd", "grön", "blå"]
-print(colors[0])
-print(colors[-1])</code></pre></div></section>
-<section class="slide question-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Fråga 3</p><h1>Hur går man igenom alla värden i en lista?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Facit 3</p><h1>Använd en for-loop där loopvariabeln får ett värde ur listan i taget.</h1><pre><code>numbers = [2, 4, 6]
-for number in numbers:
-    print(number)</code></pre></div></section>
-<section class="slide question-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Fråga 4</p><h1>Vad gör append() med en lista?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Facit 4</p><h1>append() lägger till ett nytt värde sist i listan.</h1><pre><code>numbers = []
-numbers.append(7)
-print(numbers)</code></pre><p>Listan ändras från tom till [7].</p></div></section>
-<section class="slide question-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Fråga 5</p><h1>Hur räknar man ut medelvärdet av talen i en lista?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 07 · Facit 5</p><h1>Dividera summan av talen med antalet värden i listan.</h1><pre><code>numbers = [4, 6, 8]
-average = sum(numbers) / len(numbers)
-print(average)</code></pre><p>sum() ger summan och len() ger antalet värden.</p></div></section>
-</div><footer class="deck-footer"><button type="button" data-previous>← Föregående</button><p><kbd>←</kbd> <kbd>→</kbd> byter slide · <kbd>Mellanslag</kbd> visar nästa</p><button type="button" data-next>Nästa →</button></footer></main><script src="snabbfragor.js"></script></body></html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fem muntliga snabbfrågor för kapitel 7 i Programmering 1.">
+    <title>Snabbfrågor – Kapitel 7</title>
+    <link rel="stylesheet" href="snabbfragor.css">
+</head>
+<body class="deck-body" data-chapter="7">
+<main class="deck-shell" data-chapter-deck>
+    <header class="topbar"><a href="index.html">← Välj frågeläge</a><span><span data-card-type>Fråga</span> · <span data-question-number>1</span> av <span data-total>5</span></span></header>
+    <section class="single-slide" aria-live="polite">
+        <div class="slide-content">
+            <p class="eyebrow" data-chapter-name>Kapitel 07</p>
+            <h1 data-question></h1>
+            <h1 data-answer hidden></h1>
+            <pre data-code-wrap hidden><code data-code></code></pre>
+            <p data-explanation></p>
+            <p class="think-prompt">Tänk ut svaret först. Mellanslag eller högerpil visar facit och går vidare.</p>
+        </div>
+    </section>
+    <footer class="deck-footer"><button type="button" data-previous>← Föregående</button><p><kbd>←</kbd> tillbaka · <kbd>→</kbd> eller <kbd>Mellanslag</kbd> vidare</p><button type="button" data-next>Visa facit →</button></footer>
+</main>
+<script src="slumpfragor.js?v=20261007"></script>
+<script src="snabbfragor.js?v=20261007"></script>
+</body>
+</html>

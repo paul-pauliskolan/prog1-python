@@ -19,11 +19,14 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-
 .deck { min-height:0; position:relative; }
 .slide { display:none; min-height:calc(100vh - 9rem); padding:clamp(2rem,6vw,5rem); place-items:center; }
 .slide.is-active { display:grid; }
+.single-slide { min-height:calc(100vh - 9rem); padding:clamp(2rem,6vw,5rem); display:grid; place-items:center; }
 .slide-content { width:min(1050px,100%); }
-.slide h1 { max-width:20ch; margin:0; font-size:clamp(2.5rem,5.5vw,5.4rem); line-height:1.08; }
+.slide h1,.single-slide h1 { max-width:20ch; margin:0; font-size:clamp(2.5rem,5.5vw,5.4rem); line-height:1.08; }
 .slide p { max-width:65ch; font-size:clamp(1.15rem,2vw,1.7rem); }
+.single-slide p { max-width:65ch; font-size:clamp(1.15rem,2vw,1.7rem); }
 .think-prompt { margin-top:2.5rem; color:var(--muted); }
 .answer-slide h1 { font-size:clamp(2rem,4.3vw,4.3rem); }
+.single-slide h1[data-answer] { font-size:clamp(2rem,4.3vw,4.3rem); }
 pre { width:min(760px,100%); margin:2rem 0 0; padding:1.2rem 1.4rem; overflow-x:auto; border:1px solid var(--border); border-radius:12px; background:var(--code); font-size:clamp(1.15rem,2vw,1.65rem); box-shadow:0 12px 30px var(--shadow); }
 .deck-footer { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.8rem clamp(1rem,4vw,3rem); border-top:1px solid var(--border); }
 .deck-footer p { margin:0; color:var(--muted); text-align:center; }

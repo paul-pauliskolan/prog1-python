@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Fem muntliga snabbfrågor om undantagshantering i Python."><title>Snabbfrågor 10 – Undantagshantering</title><link rel="stylesheet" href="snabbfragor.css"></head>
-<body class="deck-body"><main class="deck-shell"><header class="topbar"><a href="index.html">← Välj frågeläge</a><span><span data-card-type>Fråga</span> · <span data-question-number>1</span> av 5</span></header><div class="deck" aria-live="polite">
-<section class="slide question-slide is-active" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Fråga 1</p><h1>Vad är ett undantag i Python?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="1"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Facit 1</p><h1>Ett undantag är ett fel som uppstår när programmet körs. Det kan fångas och hanteras så att programmet inte kraschar.</h1><pre><code>try:
-    age = int(input("Ålder: "))
-except ValueError:
-    print("Skriv ett heltal")</code></pre><p>Felaktig talinmatning ger här ett ValueError.</p></div></section>
-<section class="slide question-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Fråga 2</p><h1>Hur samarbetar try och except?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="2"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Facit 2</p><h1>Python försöker köra koden i try. Om ett matchande fel uppstår avbryts try-delen och except-delen körs.</h1><pre><code>try:
-    print(10 / number)
-except ZeroDivisionError:
-    print("Kan inte dela med noll")</code></pre><p>Programmet kan då ge ett begripligt meddelande.</p></div></section>
-<section class="slide question-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Fråga 3</p><h1>Hur kan en loop och try–except låta användaren försöka igen?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="3"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Facit 3</p><h1>Lägg inmatningen i en loop, fånga fel med except och använd break först när inmatningen är giltig.</h1><pre><code>while True:
-    try:
-        number = int(input("Tal: "))
-        break
-    except ValueError:
-        print("Försök igen")</code></pre><p>Loopen fortsätter efter ogiltig inmatning.</p></div></section>
-<section class="slide question-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Fråga 4</p><h1>Vad kännetecknar ett robust program?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="4"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Facit 4</p><h1>Det hanterar felaktig inmatning och oväntade situationer, ger tydliga meddelanden och kraschar inte i onödan.</h1><pre><code>if divisor == 0:
-    print("Talet får inte vara 0")
-else:
-    print(100 / divisor)</code></pre><p>Kontroller kan förebygga fel innan en beräkning görs.</p></div></section>
-<section class="slide question-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Fråga 5</p><h1>Vilka två problem måste ett robust divisionsprogram hantera?</h1><p class="think-prompt">Tänk på svaret först. Tryck sedan på mellanslag för att visa facit.</p></div></section>
-<section class="slide answer-slide" data-question="5"><div class="slide-content"><p class="eyebrow">Kapitel 10 · Facit 5</p><h1>Det måste hantera värden som inte kan omvandlas till tal och förhindra division med noll.</h1><pre><code>try:
-    divisor = int(input("Delare: "))
-    print(100 / divisor)
-except ValueError:
-    print("Skriv ett heltal")
-except ZeroDivisionError:
-    print("Noll är inte tillåtet")</code></pre><p>Olika undantag kan få olika felmeddelanden.</p></div></section>
-</div><footer class="deck-footer"><button type="button" data-previous>← Föregående</button><p><kbd>←</kbd> <kbd>→</kbd> byter slide · <kbd>Mellanslag</kbd> visar nästa</p><button type="button" data-next>Nästa →</button></footer></main><script src="snabbfragor.js"></script></body></html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fem muntliga snabbfrågor för kapitel 10 i Programmering 1.">
+    <title>Snabbfrågor – Kapitel 10</title>
+    <link rel="stylesheet" href="snabbfragor.css">
+</head>
+<body class="deck-body" data-chapter="10">
+<main class="deck-shell" data-chapter-deck>
+    <header class="topbar"><a href="index.html">← Välj frågeläge</a><span><span data-card-type>Fråga</span> · <span data-question-number>1</span> av <span data-total>5</span></span></header>
+    <section class="single-slide" aria-live="polite">
+        <div class="slide-content">
+            <p class="eyebrow" data-chapter-name>Kapitel 10</p>
+            <h1 data-question></h1>
+            <h1 data-answer hidden></h1>
+            <pre data-code-wrap hidden><code data-code></code></pre>
+            <p data-explanation></p>
+            <p class="think-prompt">Tänk ut svaret först. Mellanslag eller högerpil visar facit och går vidare.</p>
+        </div>
+    </section>
+    <footer class="deck-footer"><button type="button" data-previous>← Föregående</button><p><kbd>←</kbd> tillbaka · <kbd>→</kbd> eller <kbd>Mellanslag</kbd> vidare</p><button type="button" data-next>Visa facit →</button></footer>
+</main>
+<script src="slumpfragor.js?v=20261007"></script>
+<script src="snabbfragor.js?v=20261007"></script>
+</body>
+</html>
 

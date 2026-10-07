@@ -1,5 +1,10 @@
 (function () {
-    const questions = [
+    const questions = window.SNABBFRAGOR = [
+        { chapter:"Kapitel 01", question:"Vad är ett program?", answer:"Ett program är en serie instruktioner som en dator följer steg för steg." },
+        { chapter:"Kapitel 01", question:"Vilka fem delar ingår i programmeringsarbetet enligt kapitlet?", answer:"Att analysera problem, planera en lösning, skriva kod, testa programmet och förbättra det." },
+        { chapter:"Kapitel 01", question:"Varför måste kod vara tydlig och exakt?", answer:"Datorn tänker inte själv utan följer instruktionerna exakt som de är skrivna." },
+        { chapter:"Kapitel 01", question:"Vad är skillnaden mellan ett kompilerat och ett interpreterat programspråk?", answer:"I ett kompilerat språk översätts hela programmet först. I ett interpreterat språk körs koden rad för rad." },
+        { chapter:"Kapitel 01", question:"Vad gör Python-tolken när ett Pythonprogram körs?", answer:"Den läser programkoden och utför instruktionerna steg för steg." },
         { chapter:"Kapitel 02", question:"Vad är en variabel?", answer:"En variabel har ett namn och lagrar ett värde som programmet kan använda.", code:'name = "Anna"', explanation:"Variabeln name innehåller texten Anna." },
         { chapter:"Kapitel 02", question:'Vilken datatyp har varje värde: 17, 21.5, "Hej" och True?', answer:'17 är int, 21.5 är float, "Hej" är str och True är bool.', code:'print(type(17))\nprint(type("Hej"))', explanation:"type() visar datatypen." },
         { chapter:"Kapitel 02", question:"Vad returnerar input() i Python?", answer:"input() returnerar alltid användarens svar som text, alltså datatypen str.", code:'age = input("Ålder: ")\nprint(type(age))', explanation:"Även siffror blir text när de läses in." },
@@ -44,7 +49,52 @@
         { chapter:"Kapitel 10", question:"Hur samarbetar try och except?", answer:"Python försöker köra koden i try. Om ett matchande fel uppstår avbryts try-delen och except-delen körs.", code:'try:\n    print(10 / number)\nexcept ZeroDivisionError:\n    print("Kan inte dela med noll")', explanation:"Programmet kan då ge ett begripligt meddelande." },
         { chapter:"Kapitel 10", question:"Hur kan en loop och try–except låta användaren försöka igen?", answer:"Lägg inmatningen i en loop, fånga fel med except och använd break först när inmatningen är giltig.", code:'while True:\n    try:\n        number = int(input("Tal: "))\n        break\n    except ValueError:\n        print("Försök igen")', explanation:"Loopen fortsätter efter ogiltig inmatning." },
         { chapter:"Kapitel 10", question:"Vad kännetecknar ett robust program?", answer:"Det hanterar felaktig inmatning och oväntade situationer, ger tydliga meddelanden och kraschar inte i onödan.", code:'if divisor == 0:\n    print("Talet får inte vara 0")\nelse:\n    print(100 / divisor)', explanation:"Kontroller kan förebygga fel innan en beräkning görs." },
-        { chapter:"Kapitel 10", question:"Vilka två problem måste ett robust divisionsprogram hantera?", answer:"Det måste hantera värden som inte kan omvandlas till tal och förhindra division med noll.", code:'try:\n    divisor = int(input("Delare: "))\n    print(100 / divisor)\nexcept ValueError:\n    print("Skriv ett heltal")\nexcept ZeroDivisionError:\n    print("Noll är inte tillåtet")', explanation:"Olika undantag kan få olika felmeddelanden." }
+        { chapter:"Kapitel 10", question:"Vilka två problem måste ett robust divisionsprogram hantera?", answer:"Det måste hantera värden som inte kan omvandlas till tal och förhindra division med noll.", code:'try:\n    divisor = int(input("Delare: "))\n    print(100 / divisor)\nexcept ValueError:\n    print("Skriv ett heltal")\nexcept ZeroDivisionError:\n    print("Noll är inte tillåtet")', explanation:"Olika undantag kan få olika felmeddelanden." },
+        { chapter:"Kapitel 11", question:"Varför är tydliga namn på variabler och funktioner viktiga?", answer:"De gör koden lättare att läsa, förstå, felsöka och arbeta vidare med.", code:'width = 10\nheight = 20\narea = width * height' },
+        { chapter:"Kapitel 11", question:"Vilka regler gäller för variabelnamn i Python?", answer:"De ska börja med en bokstav eller underscore, får innehålla bokstäver och siffror och får inte vara reserverade ord." },
+        { chapter:"Kapitel 11", question:"Hur skrivs en kommentar i Python, och körs den av programmet?", answer:"En kommentar börjar med # och körs inte av programmet.", code:'# Förklara varför koden behövs\nprint("Hej")' },
+        { chapter:"Kapitel 11", question:"När är en kommentar användbar?", answer:"När den förklarar programmets syfte eller en svår del som inte framgår tydligt av själva koden." },
+        { chapter:"Kapitel 11", question:"Hur kan funktioner förbättra strukturen i ett program?", answer:"De delar upp programmet i tydliga delar, minskar upprepning och gör delarna lättare att testa och återanvända." },
+        { chapter:"Kapitel 12", question:"Vad är ett användargränssnitt?", answer:"Det är den del av programmet som användaren ser och interagerar med." },
+        { chapter:"Kapitel 12", question:"Hur kan en textbaserad meny fortsätta visas tills användaren väljer att avsluta?", answer:"Lägg menyn i en loop och använd break när användaren väljer avsluta.", code:'while True:\n    choice = input("Val: ")\n    if choice == "3":\n        break' },
+        { chapter:"Kapitel 12", question:"Vad gör tkinter.Tk() i ett Tkinterprogram?", answer:"Det skapar programmets huvudfönster.", code:'import tkinter as tk\nwindow = tk.Tk()' },
+        { chapter:"Kapitel 12", question:"Vilka Tkinter-widgets används för text, inmatning och en klickbar knapp?", answer:"Label visar text, Entry tar emot inmatning och Button skapar en knapp." },
+        { chapter:"Kapitel 12", question:"Hur hämtar man text från ett Entry-fält och ändrar texten i en Label?", answer:"Använd Entry-widgetens get() och Label-widgetens config().", code:'name = entry.get()\nresult_label.config(text=f"Hej {name}")' },
+        { chapter:"Kapitel 13", question:"Varför finns det flera olika programspråk?", answer:"Språk är byggda för olika typer av problem och väljs efter vad programmet ska göra och var det ska köras." },
+        { chapter:"Kapitel 13", question:"Vad betyder händelsestyrd programmering?", answer:"Programmet väntar på och reagerar på händelser, till exempel en knapptryckning." },
+        { chapter:"Kapitel 13", question:"Vad innebär validering av användarens inmatning?", answer:"Att programmet kontrollerar att inmatningen är rimlig innan den används." },
+        { chapter:"Kapitel 13", question:"Vad är en datorsimulering?", answer:"En modell av något verkligt som körs i ett program för att undersöka olika situationer." },
+        { chapter:"Kapitel 13", question:"Vad förändras inom programmering, och vilka grunder består?", answer:"Språk, verktyg och arbetssätt förändras, medan grunder som variabler, villkor, loopar och funktioner består." },
+        { chapter:"Kapitel 14", question:"Vilka tre frågor ska planeringen av ett program besvara?", answer:"Vad programmet ska göra, vem som ska använda det och hur det ska fungera." },
+        { chapter:"Kapitel 14", question:"Vad beskriver en kravspecifikation?", answer:"Den beskriver konkret vad programmet ska kunna göra och hur det ska bete sig." },
+        { chapter:"Kapitel 14", question:"Vad är skillnaden mellan kravspecifikation och design?", answer:"Kravspecifikationen beskriver vad som ska byggas, medan designen beskriver hur det ska byggas." },
+        { chapter:"Kapitel 14", question:"Vad betyder implementering i ett programmeringsprojekt?", answer:"Att skriva programkoden utifrån designen och testa delarna under arbetets gång." },
+        { chapter:"Kapitel 14", question:"Vad ska ett dokumenterat testfall innehålla?", answer:"Inmatning, förväntat resultat och vad som faktiskt hände." },
+        { chapter:"Kapitel 15", question:"Vad betyder automatisering?", answer:"Att en uppgift utförs automatiskt med hjälp av teknik." },
+        { chapter:"Kapitel 15", question:"Hur skiljer sig ett vanligt regelstyrt program från AI enligt kapitlet?", answer:"Ett vanligt program följer regler som en människa skrivit, medan AI kan tränas på data och hitta mönster." },
+        { chapter:"Kapitel 15", question:"Vilka mänskliga uppgifter är fortfarande viktiga när AI används i IT-arbete?", answer:"Att planera, förstå användarbehov, granska resultat, testa kvalitet och ta ansvar för säkerhet och etik." },
+        { chapter:"Kapitel 15", question:"Vad betyder bias i ett digitalt system?", answer:"Att systemet kan ge snedvridna eller orättvisa resultat, till exempel på grund av ofullständig eller sned data." },
+        { chapter:"Kapitel 15", question:"Vilka frågor om integritet bör ställas när ett program samlar in data?", answer:"Vilken information som samlas in, varför, hur länge den sparas och vem som får tillgång till den." },
+        { chapter:"Kapitel 16", question:"Vad är versionshantering?", answer:"Ett arbetssätt för att spara och följa olika versioner av filer när ett projekt förändras." },
+        { chapter:"Kapitel 16", question:"Hur ska en bra commit-kommentar vara?", answer:"Kort, tydlig och konkret, och den ska berätta vad som ändrats.", code:'Fix error in while loop' },
+        { chapter:"Kapitel 16", question:"Vad är ett repository på GitHub?", answer:"Projektets mapp på GitHub där filer och deras versioner sparas." },
+        { chapter:"Kapitel 16", question:"Varför är det bättre att ladda upp kod ofta än att vänta tills allt är klart?", answer:"Då sparas arbetet stegvis och det blir lättare att gå tillbaka till en tidigare fungerande version." },
+        { chapter:"Kapitel 16", question:"Vad är syftet med README.md i ett projekt?", answer:"Att förklara vad projektet gör, hur det startas och vilka filer som ingår." },
+        { chapter:"Kapitel 17", question:"Vad ska du kontrollera innan du bygger en app med PyInstaller?", answer:"Att Pythonfilen fungerar när den körs vanligt." },
+        { chapter:"Kapitel 17", question:"Vilket kommando installerar PyInstaller enligt kapitlet?", answer:"python3 -m pip install pyinstaller", code:'python3 -m pip install pyinstaller' },
+        { chapter:"Kapitel 17", question:"Vad betyder alternativen --windowed och --onedir?", answer:"--windowed öppnar appen utan terminalfönster och --onedir samlar appens filer i en mapp." },
+        { chapter:"Kapitel 17", question:"I vilken mapp hittar du normalt den färdiga appen?", answer:"I dist-mappen, till exempel dist/main.app." },
+        { chapter:"Kapitel 17", question:"Varför bör en Mac-app byggas på en Mac?", answer:"Appen bör byggas på samma typ av system som den ska köras på." },
+        { chapter:"Kapitel 18", question:"Vilka delar tränas i ett större programmeringsprojekt utöver själva kodningen?", answer:"Planering, problemlösning, testning, dokumentation och redovisning." },
+        { chapter:"Kapitel 18", question:"Vad är ordningen mellan problem, krav, design och implementering?", answer:"Först identifieras problemet, sedan skrivs kraven, därefter planeras designen och till sist implementeras programmet." },
+        { chapter:"Kapitel 18", question:"Vad bör testningen omfatta?", answer:"Både rätt och fel inmatning, rimliga resultat och om programmet är lätt att förstå." },
+        { chapter:"Kapitel 18", question:"Vilka riskfrågor bör man ställa om ett program?", answer:"Vad som händer vid fel inmatning eller fel beräkning, om information kan hanteras fel och om resultatet verkar rimligt." },
+        { chapter:"Kapitel 18", question:"Vad ska dokumentationen av projektet förklara?", answer:"Problemet, planeringen och byggandet, testningen och förbättringarna samt det färdiga resultatet." },
+        { chapter:"Kapitel 19", question:"Vad kännetecknar ett projekt på E-nivå i appendixet?", answer:"En enklare lösning med en funktion, få inmatningar och ett tydligt resultat." },
+        { chapter:"Kapitel 19", question:"Vad tillkommer vanligtvis på C-nivå?", answer:"Flera funktioner, tydligare struktur och användning av listor eller filer." },
+        { chapter:"Kapitel 19", question:"Vad kännetecknar ett projekt på A-nivå?", answer:"En större helhet med tydlig användaranpassning, robustare kod och fler delar." },
+        { chapter:"Kapitel 19", question:"Nämn två projektförslag på E-nivå.", answer:"Exempel är hälsningsapp, åldersräknare, temperatur-omvandlare, enkel miniräknare eller tärningskastare." },
+        { chapter:"Kapitel 19", question:"Nämn ett projektförslag på C-nivå och ett på A-nivå.", answer:"Exempel: en att-göra-lista på C-nivå och ett bokningssystem med flera val på A-nivå." }
     ];
     const chapter = document.querySelector("[data-chapter]");
     const position = document.querySelector("[data-position]");
@@ -56,10 +106,25 @@
     const explanation = document.querySelector("[data-explanation]");
     const showButton = document.querySelector("[data-show-answer]");
     const nextButton = document.querySelector("[data-next-random]");
+    if (!chapter) return;
+    const params = new URLSearchParams(location.search);
+    const chapterNumbers = (params.get("chapters") || "")
+        .split(",")
+        .map(value => Number(value))
+        .filter(Number.isInteger);
+    const selectedQuestions = chapterNumbers.length
+        ? questions.filter(item => chapterNumbers.includes(Number(item.chapter.slice(-2))))
+        : questions;
+    const selectionTitle = document.querySelector("[data-selection-title]");
+    if (selectionTitle) {
+        selectionTitle.textContent = chapterNumbers.length
+            ? `Kapitel ${Math.min(...chapterNumbers)}–${Math.max(...chapterNumbers)}`
+            : "Alla kapitel";
+    }
     let order = [];
     let index = 0;
     function shuffle() {
-        order = questions.slice();
+        order = selectedQuestions.slice();
         for (let i = order.length - 1; i > 0; i -= 1) {
             const j = Math.floor(Math.random() * (i + 1));
             [order[i], order[j]] = [order[j], order[i]];
