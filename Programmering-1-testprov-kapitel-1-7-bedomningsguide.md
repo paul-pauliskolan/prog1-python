@@ -20,6 +20,24 @@ Poänggränserna nedan är stöd för återkoppling, inte automatisk betygssätt
 
 Ett enskilt resultat ska inte tolkas som permanent behärskning. Bedöm tillsammans med elevens resonemang, kodarbete och senare kontroller.
 
+### Kort allmän sammanställning efter provet
+
+Sammanställ först antalet fel per kapitel och prioritera de högst placerade områdena. Beskriv vad eleven behöver träna på med konkreta kunskaper och handlingar, inte personliga egenskaper.
+
+| Om felen främst finns i | Eleven behöver öva mer på | Rekommenderad repetition |
+|---|---|---|
+| Kapitel 1 | Körordning, text kontra uttryck och enkel syntax | Förutsäg utskriften från korta program och rätta citattecken- och parentesfel. |
+| Kapitel 2 | Datatyper, tilldelning, `input()` och typomvandling | Skriv små inmatningsprogram som räknar med heltal och decimaltal. |
+| Kapitel 3 | Pseudokod, informationsflöde och testfall | Planera lösningar före kod och testa under, på och över viktiga gränser. |
+| Kapitel 4 | Operatorer, prioriteringsregler och logiska uttryck | Räkna för hand med `/`, `//` och `%` och jämför uttryck med och utan parenteser. |
+| Kapitel 5 | Villkorsflöde, intervall, `and`/`or` och indrag | Spåra `if`–`elif`–`else` rad för rad och prova gränsvärden. |
+| Kapitel 6 | `range`, avslutningsvillkor och ackumulatorer | Gör spårtabeller för loopar och kontrollera hur styrvariabel och summa ändras. |
+| Kapitel 7 | Index, negativa index och bearbetning av listor | Hämta och ändra listvärden och skriv loopar som räknar utvalda värden. |
+
+Exempel på kort återkoppling:
+
+> Du behöver främst öva mer på kapitel [X], [Y] och [Z]. Börja med området där du hade flest fel. Gör de rekommenderade kortövningarna och avsluta med nya kontrollfrågor eller kodexempel, så att kontrollen mäter förståelse i stället för minnet av provsvaren.
+
 ## 2. Facit
 
 | Fråga | Kapitel | Kunskapsområde | Rätt svar | Kort förklaring |

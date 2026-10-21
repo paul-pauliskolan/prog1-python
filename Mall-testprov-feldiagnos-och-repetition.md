@@ -80,6 +80,24 @@ Skriv diagnosen som en prövbar kunskapslucka, inte som en personlig egenskap. E
 - Muntlig förklaring i par av [KUNSKAPSOMRÅDE].
 - Ny kontroll efter [TIDSPERIOD] för att undersöka om kunskapen består.
 
+## Kort allmän sammanställning och repetitionsrekommendation
+
+**Områden med flest fel:** [KAPITEL/KUNSKAPSOMRÅDE]
+
+**Kort sammanfattning:**
+
+Eleverna behöver främst öva mer på [KUNSKAPSOMRÅDE]. Resultaten tyder särskilt på [KONKRET KUNSKAPSLUCKA].
+
+**Detta bör läraren repetera:**
+
+1. [BEGREPP ELLER METOD] med ett tydligt genomgånget exempel.
+2. [VANLIGT FEL] genom gemensam felsökning eller jämförelse.
+3. [TILLÄMPNING] med nya värden eller en ny situation.
+
+**Rekommenderad elevaktivitet:** [REKOMMENDERAD ÖVNING]
+
+**Ny kontroll:** [HUR OCH NÄR KUNSKAPEN SKA KONTROLLERAS IGEN]
+
 ## Mall för individuell elevsammanfattning
 
 # Resultatsammanfattning – [KURSNAMN]
