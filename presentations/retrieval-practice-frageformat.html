@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="presentation.css">
   <style>
     .source-note { margin-top: 1rem !important; color: var(--slide-muted); font-size: clamp(.9rem, 1.25vw, 1.1rem) !important; }
-    .fragment.is-dimmed { opacity: .28; }
+    .fragment.is-dimmed { opacity: 1; color: #9a9a9a; }
+    html[data-theme="dark"] .fragment.is-dimmed { color: #a8b0c0; }
     .compact-list { gap: .55rem !important; }
     .compact-list li { font-size: clamp(1.05rem, 1.55vw, 1.45rem); }
     .evidence-scale { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
@@ -26,7 +27,6 @@
 <body class="presentation-body">
   <main class="presentation-shell">
     <header class="presentation-topbar">
-      <a href="../index.html">Till kursen</a>
       <span class="slide-counter">Slide <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
     </header>
     <div class="deck" aria-live="polite">
