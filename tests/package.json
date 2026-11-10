@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "scripts": {"test": "cd .. && node tests/test-p1-kap1-13.cjs"},
+  "devDependencies": {"linkedom": "0.18.12"}
+}

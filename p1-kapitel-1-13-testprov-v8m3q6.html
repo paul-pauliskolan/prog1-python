@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Olistat testprov för kapitel 1–13 i Programmering 1.">
+  <title>Testprov – Programmering 1, kapitel 1–13</title>
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .test-shell{max-width:900px;margin:0 auto}.test-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:clamp(1rem,3vw,2rem);box-shadow:var(--shadow)}
+    .test-meta,.test-actions,.question-nav{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}.test-meta{color:var(--text-muted);margin:1rem 0}.test-meta span{background:var(--surface-2);border-radius:999px;padding:.3rem .75rem}
+    .progress-track{height:.7rem;background:var(--surface-2);border-radius:999px;overflow:hidden;margin:1rem 0}.progress-bar{height:100%;background:var(--accent);transition:width .2s ease}
+    fieldset{border:0;padding:0;margin:0}legend{font:700 clamp(1.2rem,3vw,1.65rem)/1.25 "Trebuchet MS","Segoe UI",sans-serif;margin-bottom:1rem;width:100%}
+    .question-kind{color:var(--accent);font-weight:700;margin-bottom:.4rem}.code-block{white-space:pre-wrap;background:var(--code-bg);color:var(--code-text);border-radius:12px;padding:1rem;overflow:auto;font:1rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+    .option{display:flex;gap:.7rem;align-items:flex-start;background:var(--option-bg);border:2px solid transparent;border-radius:12px;padding:.85rem;margin:.6rem 0;cursor:pointer}.option:hover{background:var(--option-hover)}.option:has(input:checked){border-color:var(--accent)}.option input{margin-top:.3rem;accent-color:var(--accent)}
+    button{font:700 1rem "Trebuchet MS","Segoe UI",sans-serif;border:1px solid var(--border);border-radius:999px;padding:.7rem 1.1rem;cursor:pointer;background:var(--surface-2);color:var(--text)}button.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+    .question-nav{justify-content:space-between;margin-top:1.5rem}.status-message{min-height:1.7rem;color:var(--danger-border);font-weight:700}.hidden{display:none!important}
+    .result-score{font:700 clamp(2rem,7vw,4rem)/1 "Trebuchet MS","Segoe UI",sans-serif;color:var(--accent);margin:.5rem 0}.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.25rem 0}.result-panel{background:var(--surface-2);border-radius:14px;padding:1rem}.result-panel h3{margin-bottom:.75rem}.review-item{border-left:5px solid var(--danger-border);background:var(--surface-2);padding:1rem;margin:1rem 0;border-radius:0 12px 12px 0}.review-item h3{margin-bottom:.5rem}.summary-text{width:100%;min-height:12rem;background:var(--code-bg);color:var(--code-text);border:1px solid var(--border);border-radius:12px;padding:1rem;font:1rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+    .saved-result{border:1px dashed var(--border-accent);border-radius:12px;padding:1rem;margin:1rem 0}.student-name{display:grid;gap:.4rem;max-width:28rem;margin:1.25rem 0}.student-name label{font-weight:700}.student-name input{font:inherit;color:var(--text);background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:.75rem}.noscript{background:var(--danger-bg);border:1px solid var(--danger-border);padding:1rem}
+    @media(max-width:560px){.question-nav button{flex:1}.test-actions button{width:100%}}
+    @media(prefers-reduced-motion:reduce){.progress-bar{transition:none}}
+    @media print{.navbar,.question-nav,.test-actions,.progress-track,.saved-result{display:none!important}body{background:#fff;color:#000}.test-card,.result-panel,.review-item{box-shadow:none;background:#fff;color:#000}.test-shell{max-width:none}}
+  </style>
+</head>
+<body class="chapter-page">
+  <nav class="navbar" aria-label="Provhuvud"><span class="logo">🐍 Programmering 1</span></nav>
+  <main class="container test-shell" id="main-content">
+    <noscript><p class="noscript">JavaScript måste vara aktiverat för att provet ska kunna rättas.</p></noscript>
+    <article class="test-card" id="intro-view">
+      <p class="eyebrow">Olistat testprov · version 1.0</p>
+      <h1>Testprov: kapitel 1–13</h1>
+      <p>Provet innehåller 20 frågor om grunder, variabler, problemlösning, operatorer, villkor, loopar, listor, funktioner, felsökning, undantagshantering, kodstruktur, Tkinter samt användare och simuleringar. Alla frågor måste besvaras innan provet kan rättas. Rätt svar visas först efter inlämning.</p>
+      <div class="test-meta"><span>20 frågor</span><span>Rekommenderad tid: 35–45 minuter</span><span>En fråga i taget</span></div>
+      <p>Provet är repetitionsstöd och används inte för automatisk betygssättning. Olistat betyder att provet saknar navigationslänk, inte att det är lösenordsskyddat. Ett provresultat är ett ögonblicksmått. Använd återkopplingen för att välja vad du ska repetera och kontrollera kunskapen igen senare.</p>
+      <div class="saved-result hidden" id="saved-result" aria-live="polite"></div>
+      <div class="student-name">
+        <label for="student-name">Elevens förnamn</label>
+        <input id="student-name" name="given-name" type="text" autocomplete="given-name" maxlength="50" required aria-describedby="name-help name-status">
+        <small id="name-help">Förnamnet sparas i din MD-fil och tillsammans med antal rätt och repetitionsråd hos läraren. Inga enskilda provsvar skickas dit. På den här enheten sparas också det senaste resultatet.</small>
+        <span class="status-message" id="name-status" role="alert"></span>
+      </div>
+      <button class="primary" id="start-button" type="button">Starta provet</button>
+    </article>
+
+    <article class="test-card hidden" id="quiz-view">
+      <p class="eyebrow" id="question-position"></p>
+      <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+      <form id="quiz-form"><div id="question-root"></div></form>
+      <p class="status-message" id="status-message" role="alert"></p>
+      <div class="question-nav">
+        <button id="previous-button" type="button">← Föregående</button>
+        <button id="next-button" type="button">Nästa →</button>
+        <button class="primary hidden" id="submit-button" type="button">Lämna in hela provet</button>
+      </div>
+    </article>
+
+    <article class="test-card hidden" id="result-view" tabindex="-1">
+      <p class="eyebrow">Resultat och återkoppling</p>
+      <h1>Testprovet är rättat</h1>
+      <p class="result-score" id="result-score"></p>
+      <p id="result-note"></p>
+      <div class="result-grid">
+        <section class="result-panel"><h3>Rekommenderad repetition</h3><ul id="chapter-recommendations"></ul></section>
+        <section class="result-panel"><h3>Felaktiga frågor</h3><p id="wrong-numbers"></p></section>
+      </div>
+      <section class="result-panel" aria-labelledby="overall-heading">
+        <h2 id="overall-heading">Kort sammanfattning</h2>
+        <p id="overall-summary"></p>
+        <h3>Så kan du repetera</h3>
+        <ul id="practice-recommendations"></ul>
+      </section>
+      <section id="review-list" aria-labelledby="review-heading"><h2 id="review-heading">Förklaringar till felaktiga svar</h2></section>
+      <section aria-labelledby="summary-heading"><h2 id="summary-heading">Enkel resultatsammanfattning</h2><textarea class="summary-text" id="summary-text" readonly></textarea></section>
+      <div class="test-actions">
+        <button class="primary" id="download-md-button" type="button">Ladda ner allt i MD-fil</button>
+        <button id="copy-button" type="button">Kopiera sammanfattning</button>
+      </div>
+      <p class="status-message" id="result-status" aria-live="polite"></p>
+    </article>
+  </main>
+  <script>
+  (function(){
+    "use strict";
+    const TEST_ID="kapitel-1-13-v8m3q6";
+    const STORAGE_KEY="p1-testprov-kap1-13-v8m3q6-latest";
+    const TEST_SUMMARY_ENDPOINT="https://script.google.com/macros/s/AKfycbwdlGtmCrbMTOC_ZDc5tmCt3bZ1tX9Db0suTtQpE9tasnLDGpTRo9NQz1kj3LtwqC81wA/exec";
+    const TEST_SUMMARY_COLLECTION_ENABLED=true;
+    const chapters={"1": "Vad är programmering", "2": "Variabler, datatyper och input", "3": "Problemlösning i programmering", "4": "Operatorer och beräkningar", "5": "Villkor", "6": "Loopar", "7": "Listor", "8": "Funktioner och random", "9": "Felsökning", "10": "Undantagshantering", "11": "Struktur och läsbar kod", "12": "Användargränssnitt", "13": "Programmering, användare och framtid"};
+    const practiceAdvice={"1": "Skriv en utskrift med radbrytning och förklara skillnaden mellan text och kod.", "2": "Läs in ett antal, kontrollera typen med type() och jämför textupprepning med multiplikation efter int().", "3": "Skriv pseudokod för att packa föremål i lådor och kontrollera med ett exempel som ger en rest.", "4": "Beräkna uttryck med *, + och % för hand och kontrollera dem sedan i Python.", "5": "Gör en spårtabell för if–elif–else och testa värden under, på och över båda intervallgränserna.", "6": "Spåra styrvariabel och summa för varje loopvarv. Skriv upp vilka värden range faktiskt ger och när while avslutas.", "7": "Skapa en lista, använd append, ändra index 0 och läs index -1. Förklara varje förändring före körning.", "8": "Skriv en funktion med parametrar och return. Använd returvärdet i en ny beräkning och jämför gränserna i randint med range.", "9": "Skriv ut variabelvärden före och efter en beräkning, kontrollera tilldelningen och ändra en sak i taget.", "10": "Testa en inmatningsloop med text och sedan heltal. Spåra övergången från try till except och var break körs.", "11": "Samla en upprepad beräkning i en funktion med tydligt namn och testa funktionen med två olika indata.", "12": "Bygg en liten Tkinter-app med Entry, Button och Label. Förklara command, get, int och config och testa flera klick.", "13": "Granska ett gränssnitts instruktioner och felmeddelanden. Beskriv sedan två antaganden i en simulering och hur de kan kontrolleras."};
+    const questions=[
+  {
+    "id": "p1-13-01",
+    "chapter": 1,
+    "area": "syntax och text",
+    "kind": "Begrepp",
+    "prompt": "Vad betyder tecknen \\n inuti textsträngen?",
+    "options": [
+      "En radbrytning i utskriften.",
+      "Bokstäverna n och n skrivs ut.",
+      "Programmet avslutas.",
+      "Texten efter tecknen blir en kommentar."
+    ],
+    "answer": 0,
+    "explanation": "\\n är en escape-sekvens som ger en ny rad i texten.",
+    "code": "print(\"Norr\\nSöder\")",
+    "misconception": "Att specialtecken alltid skrivs ut bokstavligt."
+  },
+  {
+    "id": "p1-13-02",
+    "chapter": 2,
+    "area": "input och typomvandling",
+    "kind": "Felsökning",
+    "prompt": "Användaren skriver 7. Programmet ska visa 21 men visar 777. Vilken ändring behövs?",
+    "options": [
+      "Byt första raden till antal = int(input(\"Antal: \")).",
+      "Byt 3 mot \"3\".",
+      "Byt print mot input.",
+      "Lägg till citattecken runt antal i sista raden."
+    ],
+    "answer": 0,
+    "explanation": "input ger text. Text gånger 3 upprepar texten; int omvandlar den till ett heltal före multiplikationen.",
+    "code": "antal = input(\"Antal: \")\nprint(antal * 3)",
+    "misconception": "Att siffertext automatiskt blir ett tal."
+  },
+  {
+    "id": "p1-13-03",
+    "chapter": 2,
+    "area": "tilldelning och datatyper",
+    "kind": "Kodförståelse",
+    "prompt": "Vad skrivs ut?",
+    "options": [
+      "9 och False",
+      "6 och False",
+      "9 och True",
+      "Programmet ger fel vid tilldelningen."
+    ],
+    "answer": 0,
+    "explanation": "kopior får det dåvarande heltalsvärdet 9. Att senare ändra antal ändrar inte kopior; False är ett booleskt värde.",
+    "code": "antal = 9\nkopior = antal\nantal = 6\nklar = False\nprint(kopior, klar)",
+    "misconception": "Att en tilldelning skapar en bestående koppling mellan variabler."
+  },
+  {
+    "id": "p1-13-04",
+    "chapter": 3,
+    "area": "algoritmer och problemlösning",
+    "kind": "Tillämpning",
+    "prompt": "Ett program ska beräkna hur många hela lådor med 6 muggar som kan fyllas. Vilken pseudokod beskriver rätt lösning?",
+    "options": [
+      "Läs antal muggar; heltalsdividera antalet med 6; skriv ut antalet hela lådor.",
+      "Läs antal muggar; multiplicera med 6; skriv ut resultatet.",
+      "Skriv ut 6; läs antal muggar; avsluta.",
+      "Läs antal muggar; dividera 6 med antalet; avrunda uppåt."
+    ],
+    "answer": 0,
+    "explanation": "En algoritm beskriver lösningens steg. Heltalsdivision av antalet muggar med 6 ger antalet helt fyllda lådor.",
+    "misconception": "Att välja en beräkning innan man har förstått vad resultatet ska representera."
+  },
+  {
+    "id": "p1-13-05",
+    "chapter": 4,
+    "area": "operatorer och prioritet",
+    "kind": "Kodförståelse",
+    "prompt": "Vad skrivs ut?",
+    "options": [
+      "10 och 3",
+      "10 och 5",
+      "16 och 3",
+      "16 och 5"
+    ],
+    "answer": 0,
+    "explanation": "Multiplikation utförs före addition: 4 + 6 = 10. Resten vid 23 delat med 4 är 3.",
+    "code": "print(4 + 2 * 3)\nprint(23 % 4)",
+    "misconception": "Att alla uttryck räknas strikt från vänster eller att % ger kvoten."
+  },
+  {
+    "id": "p1-13-06",
+    "chapter": 5,
+    "area": "if och elif",
+    "kind": "Kodförståelse",
+    "prompt": "Vilken text skrivs ut?",
+    "options": [
+      "Kort",
+      "Snabb och Kort",
+      "Lång",
+      "Ingen text"
+    ],
+    "answer": 0,
+    "explanation": "Första villkoret är falskt och elif-villkoret är sant. Bara Kort skrivs ut.",
+    "code": "minuter = 24\nif minuter < 15:\n    print(\"Snabb\")\nelif minuter < 30:\n    print(\"Kort\")\nelse:\n    print(\"Lång\")",
+    "misconception": "Att alla grenar i en if–elif–else-sats körs."
+  },
+  {
+    "id": "p1-13-07",
+    "chapter": 5,
+    "area": "intervall och logik",
+    "kind": "Tillämpning",
+    "prompt": "En sensor ska visa OK från och med 8 till och med 12 grader. Vilket villkor ska ersätta frågetecknen?",
+    "options": [
+      "temperatur >= 8 and temperatur <= 12",
+      "temperatur >= 8 or temperatur <= 12",
+      "temperatur > 8 and temperatur < 12",
+      "temperatur <= 8 and temperatur >= 12"
+    ],
+    "answer": 0,
+    "explanation": "Båda gränserna måste gälla samtidigt. >= och <= inkluderar även 8 och 12.",
+    "code": "if ???:\n    print(\"OK\")",
+    "misconception": "Att or avgränsar ett intervall eller att gränsvärden inte spelar roll."
+  },
+  {
+    "id": "p1-13-08",
+    "chapter": 6,
+    "area": "for och ackumulator",
+    "kind": "Kodförståelse",
+    "prompt": "Vilket tal skrivs ut?",
+    "options": [
+      "18",
+      "28",
+      "10",
+      "6"
+    ],
+    "answer": 0,
+    "explanation": "range(2, 8, 2) ger 2, 4 och 6. Summan börjar på 6 och blir 6 + 2 + 4 + 6 = 18.",
+    "code": "summa = 6\nfor tal in range(2, 8, 2):\n    summa += tal\nprint(summa)",
+    "misconception": "Att stoppvärdet i range ingår eller att summans startvärde ignoreras."
+  },
+  {
+    "id": "p1-13-09",
+    "chapter": 6,
+    "area": "while och avslut",
+    "kind": "Felsökning",
+    "prompt": "Loopen fastnar på talet 4. Vilken rad ska läggas till indraget sist i loopen för att utskriften ska bli 4, 3, 2, 1?",
+    "options": [
+      "kvar -= 1",
+      "kvar = 4",
+      "kvar += 1",
+      "break"
+    ],
+    "answer": 0,
+    "explanation": "kvar måste minska varje varv. När kvar blir 0 blir villkoret falskt. break skulle bara ge en utskrift.",
+    "code": "kvar = 4\nwhile kvar > 0:\n    print(kvar)",
+    "misconception": "Att ett while-villkor själv förändrar styrvariabeln."
+  },
+  {
+    "id": "p1-13-10",
+    "chapter": 7,
+    "area": "listor, index och append",
+    "kind": "Kodförståelse",
+    "prompt": "Vad skrivs ut?",
+    "options": [
+      "11",
+      "8",
+      "5",
+      "IndexError"
+    ],
+    "answer": 0,
+    "explanation": "append lägger till 11 sist. Index 0 ändras till 8, men index -1 pekar på det sista värdet 11.",
+    "code": "matningar = [3, 5]\nmatningar.append(11)\nmatningar[0] = 8\nprint(matningar[-1])",
+    "misconception": "Att append ersätter ett värde eller att -1 är ett ogiltigt index."
+  },
+  {
+    "id": "p1-13-11",
+    "chapter": 8,
+    "area": "parametrar och return",
+    "kind": "Kodförståelse",
+    "prompt": "Vad skrivs ut?",
+    "options": [
+      "25",
+      "23",
+      "15",
+      "Ingenting, eftersom funktionen bara returnerar."
+    ],
+    "answer": 0,
+    "explanation": "Funktionen returnerar 3 * 7 = 21. Därefter adderas 4 och print skriver ut 25.",
+    "code": "def kostnad(antal, styckpris):\n    return antal * styckpris\n\ntotal = kostnad(3, 7) + 4\nprint(total)",
+    "misconception": "Att return och print är samma sak eller att returvärdet inte kan användas vidare."
+  },
+  {
+    "id": "p1-13-12",
+    "chapter": 8,
+    "area": "random och intervall",
+    "kind": "Begrepp",
+    "prompt": "Vilka värden kan sparas i drag?",
+    "options": [
+      "Heltalen 4, 5, 6 och 7.",
+      "Bara heltalen 4, 5 och 6.",
+      "Alla decimaltal mellan 4 och 7.",
+      "Alltid heltalet 7."
+    ],
+    "answer": 0,
+    "explanation": "randint ger ett heltal och båda gränserna ingår. Till skillnad från range kan även den övre gränsen 7 väljas.",
+    "code": "import random\ndrag = random.randint(4, 7)",
+    "misconception": "Att randint har samma stoppregel som range."
+  },
+  {
+    "id": "p1-13-13",
+    "chapter": 9,
+    "area": "logiska fel och felsökning",
+    "kind": "Felsökning",
+    "prompt": "Programmet ska öka saldot med bonusen men skriver ut 30. Vilken ändring rättar felet?",
+    "options": [
+      "Ersätt saldo + bonus med saldo = saldo + bonus.",
+      "Ersätt bonus = 8 med bonus = \"8\".",
+      "Sätt citattecken runt saldo i print.",
+      "Byt + mot ==."
+    ],
+    "answer": 0,
+    "explanation": "Uttrycket saldo + bonus beräknas men sparas inte. Tilldelning behövs för att uppdatera saldo; felet är logiskt.",
+    "code": "saldo = 30\nbonus = 8\nsaldo + bonus\nprint(saldo)",
+    "misconception": "Att en beräkning automatiskt uppdaterar sin variabel."
+  },
+  {
+    "id": "p1-13-14",
+    "chapter": 10,
+    "area": "try och except",
+    "kind": "Kodförståelse",
+    "prompt": "Användaren skriver citron. Vilka texter skrivs ut, i ordning?",
+    "options": [
+      "Skriv heltal, sedan Klar.",
+      "12, sedan Klar.",
+      "Bara Klar.",
+      "Programmet kraschar innan någon text skrivs ut."
+    ],
+    "answer": 0,
+    "explanation": "int kan inte omvandla citron. Körningen hoppar till except och fortsätter därefter efter hela try–except-blocket.",
+    "code": "try:\n    antal = int(input(\"Antal: \"))\n    print(antal + 2)\nexcept:\n    print(\"Skriv heltal\")\nprint(\"Klar\")",
+    "misconception": "Att except avslutar hela programmet eller att resten av try körs efter felet."
+  },
+  {
+    "id": "p1-13-15",
+    "chapter": 10,
+    "area": "robust inmatning och loop",
+    "kind": "Tillämpning",
+    "prompt": "Användaren skriver först katt och sedan 4. Vad gör programmet?",
+    "options": [
+      "Visar Försök igen, frågar på nytt, skriver 8 och avslutar loopen.",
+      "Visar Försök igen och avslutar direkt.",
+      "Skriver 8 och fortsätter fråga utan slut.",
+      "Försöker omvandla katt igen utan att fråga."
+    ],
+    "answer": 0,
+    "explanation": "Efter felet fortsätter while-loopen med en ny inmatning. Vid 4 lyckas omvandlingen, 8 skrivs ut och break avslutar loopen.",
+    "code": "while True:\n    try:\n        tal = int(input(\"Tal: \"))\n        print(tal * 2)\n        break\n    except:\n        print(\"Försök igen\")",
+    "misconception": "Att try automatiskt upprepar inmatning eller att break körs även när ett tidigare steg misslyckas."
+  },
+  {
+    "id": "p1-13-16",
+    "chapter": 11,
+    "area": "struktur och läsbarhet",
+    "kind": "Tillämpning",
+    "prompt": "Samma fraktberäkning finns kopierad på fyra ställen. Vilken ändring gör programmet lättare att underhålla?",
+    "options": [
+      "Samla beräkningen i en funktion med tydligt namn och anropa den där den behövs.",
+      "Byt alla variabelnamn till en enda bokstav.",
+      "Skriv en kommentar som lovar att kopiorna alltid stämmer, men behåll dem.",
+      "Ta bort indrag och tomma rader så att filen blir kortare."
+    ],
+    "answer": 0,
+    "explanation": "En funktion med tydligt ansvar minskar upprepning. En ändring kan göras på ett ställe och funktionen blir lättare att testa.",
+    "misconception": "Att kortare kod eller fler kommentarer alltid gör strukturen bättre."
+  },
+  {
+    "id": "p1-13-17",
+    "chapter": 12,
+    "area": "Tkinter och händelser",
+    "kind": "Felsökning",
+    "prompt": "Knappen ska anropa visa först när den klickas. Vilken rad kopplar funktionen rätt? Anta att window och visa redan är definierade.",
+    "options": [
+      "knapp = tk.Button(window, text=\"Visa\", command=visa)",
+      "knapp = tk.Button(window, text=\"Visa\", command=visa())",
+      "knapp = tk.Button(window, text=\"Visa\", command=\"visa\")",
+      "knapp = tk.Button(window, text=\"Visa\", command=print(\"visa\"))"
+    ],
+    "answer": 0,
+    "explanation": "command ska få själva funktionen. visa() anropar funktionen direkt när knappen skapas, i stället för vid klick.",
+    "code": "import tkinter as tk\n# window är ett Tk-fönster.\n# visa är en funktion utan parametrar.",
+    "misconception": "Att command=visa och command=visa() betyder samma sak."
+  },
+  {
+    "id": "p1-13-18",
+    "chapter": 12,
+    "area": "Tkinter input och output",
+    "kind": "Kodförståelse",
+    "prompt": "Entry-fältet innehåller texten 6. Vad visar resultatetiketten efter ett klick, om funktionen är kopplad till knappen?",
+    "options": [
+      "18",
+      "666",
+      "6",
+      "Etiketten ändras inte, eftersom config bara skriver i terminalen."
+    ],
+    "answer": 0,
+    "explanation": "get hämtar text, int omvandlar till tal och config ändrar etikettens text till 18.",
+    "code": "def berakna():\n    antal = int(entry.get())\n    resultat.config(text=str(antal * 3))",
+    "misconception": "Att get ger ett tal eller att config bara skriver till terminalen."
+  },
+  {
+    "id": "p1-13-19",
+    "chapter": 13,
+    "area": "användare och tillgänglighet",
+    "kind": "Tillämpning",
+    "prompt": "En app frågar efter sträckan till skolan. Vilken lösning hjälper användaren bäst?",
+    "options": [
+      "Etiketten \"Sträcka i km\", läsbar kontrast och ett felmeddelande som ber om ett tal större än eller lika med 0.",
+      "Etiketten \"Värde\", svag kontrast och meddelandet \"Fel\" vid alla problem.",
+      "Ingen etikett och bara en röd bakgrund som felmeddelande.",
+      "Acceptera alla texter utan kontroll och visa ett godtyckligt resultat."
+    ],
+    "answer": 0,
+    "explanation": "Enhet, tydliga instruktioner, läsbarhet och hjälpsam validering gör gränssnittet mer begripligt och tillgängligt.",
+    "misconception": "Att ett tekniskt fungerande program automatiskt är lätt att använda."
+  },
+  {
+    "id": "p1-13-20",
+    "chapter": 13,
+    "area": "simulering och modeller",
+    "kind": "Begrepp",
+    "prompt": "En simulering visar att en ny busstidtabell minskar väntetiden. Vilken slutsats är rimlig?",
+    "options": [
+      "Resultatet behöver granskas mot modellens antaganden och verkliga data innan tidtabellen ändras.",
+      "Simuleringen bevisar att väntetiden alltid minskar för alla resenärer.",
+      "Om programmet saknar syntaxfel måste modellen beskriva verkligheten exakt.",
+      "En simulering kan aldrig användas som beslutsstöd."
+    ],
+    "answer": 0,
+    "explanation": "En simulering bygger på regler, antaganden och förenklingar. Den kan ge användbart beslutsunderlag, men resultatet behöver granskas och jämföras med verkligheten.",
+    "misconception": "Att kod som körs utan fel också garanterar en korrekt modell av verkligheten."
+  }
+];
+    const intro=document.getElementById("intro-view"),quiz=document.getElementById("quiz-view"),result=document.getElementById("result-view"),root=document.getElementById("question-root"),position=document.getElementById("question-position"),bar=document.getElementById("progress-bar"),status=document.getElementById("status-message"),previous=document.getElementById("previous-button"),next=document.getElementById("next-button"),submit=document.getElementById("submit-button");
+    let current=0;let quizQuestions=[];let answers=[];let studentName="";let markdownResult="";let teacherSummarySent=false;
+    function show(view){[intro,quiz,result].forEach(item=>item.classList.add("hidden"));view.classList.remove("hidden");}
+    function shuffleArray(items){for(let i=items.length-1;i>0;i-=1){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}return items;}
+    function shuffleQuestions(){const correctPositions=shuffleArray(questions.map((_,index)=>index%4));quizQuestions=shuffleArray(questions.map((question,sourceIndex)=>({...question,sourceIndex:sourceIndex+1}))).map((question,index)=>{const correctOption=question.options[question.answer],otherOptions=shuffleArray(question.options.filter((_,optionIndex)=>optionIndex!==question.answer)),answer=correctPositions[index],options=[...otherOptions];options.splice(answer,0,correctOption);return {...question,options,answer};});answers=Array(quizQuestions.length).fill(null);current=0;}
+    function render(){const q=quizQuestions[current];position.textContent=`Fråga ${current+1} av ${quizQuestions.length} · Kapitel ${q.chapter}`;bar.style.width=`${((current+1)/quizQuestions.length)*100}%`;root.replaceChildren();const fieldset=document.createElement("fieldset"),legend=document.createElement("legend"),kind=document.createElement("p");kind.className="question-kind";kind.textContent=`${q.kind} · ${q.area}`;legend.textContent=q.prompt;legend.tabIndex=-1;fieldset.append(kind,legend);if(q.code){const pre=document.createElement("pre"),code=document.createElement("code");pre.className="code-block";code.textContent=q.code;pre.append(code);fieldset.append(pre);}q.options.forEach((option,index)=>{const label=document.createElement("label"),input=document.createElement("input"),span=document.createElement("span");label.className="option";input.type="radio";input.name=`question-${current}`;input.value=String(index);input.checked=answers[current]===index;input.addEventListener("change",()=>{answers[current]=index;status.textContent="";});span.textContent=`${"ABCD"[index]}. ${option}`;span.style.whiteSpace="pre-wrap";label.append(input,span);fieldset.append(label);});root.append(fieldset);previous.disabled=current===0;next.classList.toggle("hidden",current===quizQuestions.length-1);submit.classList.toggle("hidden",current!==quizQuestions.length-1);status.textContent="";legend.focus?.();}
+    function move(step){if(answers[current]===null){status.textContent="Välj ett svar innan du går vidare.";return;}current+=step;render();window.scrollTo({top:0,behavior:"smooth"});}
+    function formatList(numbers){if(!numbers.length)return "Inga";if(numbers.length===1)return String(numbers[0]);return `${numbers.slice(0,-1).join(", ")} och ${numbers[numbers.length-1]}`;}
+    function sendTeacherSummary(recommendations){if(!TEST_SUMMARY_COLLECTION_ENABLED||teacherSummarySent||!TEST_SUMMARY_ENDPOINT)return;const score=quizQuestions.reduce((sum,question,index)=>sum+(answers[index]===question.answer?1:0),0),total=quizQuestions.length,percent=Math.round(score/total*100);teacherSummarySent=true;document.getElementById("result-status").textContent="Försöker skicka sammanfattningen till läraren…";fetch(TEST_SUMMARY_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({type:"testSummary",testId:TEST_ID,studentName,score,total,percent,recommendations,pagePath:window.location.pathname})}).then(()=>{document.getElementById("result-status").textContent="Sändningen är genomförd, men sidan kan inte bekräfta att Google har sparat resultatet. Ladda ner MD-filen som egen kopia.";}).catch(()=>{teacherSummarySent=false;document.getElementById("result-status").textContent="Sammanfattningen kunde inte skickas automatiskt. Ladda ner MD-filen och lämna den till läraren.";});}
+    function grade(){if(answers[current]===null){status.textContent="Välj ett svar innan du lämnar in.";return;}const unanswered=answers.map((a,i)=>a===null?i+1:null).filter(Boolean);if(unanswered.length){status.textContent=`Besvara först fråga ${formatList(unanswered)}.`;current=unanswered[0]-1;render();status.textContent=`Besvara först fråga ${formatList(unanswered)}.`;return;}const wrong=quizQuestions.map((q,i)=>answers[i]===q.answer?null:i).filter(i=>i!==null),score=quizQuestions.length-wrong.length,percent=Math.round(score/quizQuestions.length*100),chapterMisses={};wrong.forEach(i=>{chapterMisses[quizQuestions[i].chapter]=(chapterMisses[quizQuestions[i].chapter]||0)+1;});const timestamp=new Date();const saved={testId:TEST_ID,studentName,score,total:quizQuestions.length,percent,wrong:wrong.map(i=>i+1),date:timestamp.toISOString()};
+      document.getElementById("result-score").textContent=`${studentName}: ${score} av ${quizQuestions.length} rätt · ${percent} %`;document.getElementById("result-note").textContent="Resultatet är repetitionsstöd, inte automatisk betygssättning. Det visar vad du kunde vid detta tillfälle. Repetera osäkra områden och gör en ny kontroll senare.";document.getElementById("wrong-numbers").textContent=wrong.length?formatList(wrong.map(i=>i+1)):"Inga – alla svar var rätt.";
+      const recommendations=document.getElementById("chapter-recommendations");recommendations.replaceChildren();const chapterEntries=Object.entries(chapterMisses).sort((a,b)=>b[1]-a[1]);if(!chapterEntries.length){const li=document.createElement("li");li.textContent="Ingen omedelbar repetition utpekad. Kontrollera kunskapen igen vid ett senare tillfälle.";recommendations.append(li);}else chapterEntries.slice(0,3).forEach(([chapter,count])=>{const li=document.createElement("li");li.textContent=`Kapitel ${chapter}: ${chapters[chapter]} (${count} fel)`;recommendations.append(li);});
+      const overall=document.getElementById("overall-summary"),practice=document.getElementById("practice-recommendations");practice.replaceChildren();const priority=chapterEntries.slice(0,3);if(!priority.length){overall.textContent="Du visar en god överblick över kapitel 1–13. För att befästa kunskapen bör du ändå göra en ny kontroll senare och lösa minst en ny koduppgift utan stöd.";const li=document.createElement("li");li.textContent="Välj en blandad tillämpningsuppgift och förklara lösningen steg för steg innan du kontrollkör.";practice.append(li);}else{const names=priority.map(([chapter])=>`kapitel ${chapter} (${chapters[chapter].toLowerCase()})`);overall.textContent=`Du behöver främst öva mer på ${formatList(names)}. Börja med området där du hade flest fel och kontrollera sedan kunskapen med nya exempel, inte genom att memorera provsvaren.`;priority.forEach(([chapter])=>{const li=document.createElement("li");li.textContent=`Kapitel ${chapter}: ${practiceAdvice[chapter]}`;practice.append(li);});}
+      const review=document.getElementById("review-list");review.querySelectorAll(".review-item").forEach(item=>item.remove());wrong.forEach(i=>{const q=quizQuestions[i],section=document.createElement("section"),heading=document.createElement("h3"),choice=document.createElement("p"),correct=document.createElement("p"),explanation=document.createElement("p");section.className="review-item";heading.textContent=`Fråga ${i+1} · Kapitel ${q.chapter}: ${q.area}`;choice.textContent=`Ditt svar: ${q.options[answers[i]]}`;correct.textContent=`Rätt svar: ${q.options[q.answer]}`;explanation.textContent=q.explanation;const prompt=document.createElement("p");prompt.textContent=q.prompt;section.append(heading,prompt);if(q.code){const pre=document.createElement("pre");pre.className="code-block";pre.textContent=q.code;section.append(pre);}const allOptions=document.createElement("ol");allOptions.type="A";q.options.forEach(text=>{const li=document.createElement("li");li.textContent=text;li.style.whiteSpace="pre-wrap";allOptions.append(li);});section.append(allOptions,choice,correct,explanation);review.append(section);});
+      const recLines=chapterEntries.length?chapterEntries.slice(0,3).map(([c])=>`- Kapitel ${c}: ${chapters[c]}`).join("\n"):"- Ingen omedelbar repetition utpekad; följ upp senare.";const adviceLines=priority.length?priority.map(([c])=>`- Kapitel ${c}: ${practiceAdvice[c]}`).join("\n"):"- Lös en ny blandad koduppgift och gör en ny kontroll senare.";const summary=`Elev: ${studentName}\nResultat: ${score} av ${quizQuestions.length} rätt, ${percent} %\nDatum: ${timestamp.toLocaleDateString("sv-SE")}\n\nKort sammanfattning:\n${overall.textContent}\n\nRekommenderad repetition:\n${recLines}\n\nSå kan eleven repetera:\n${adviceLines}\n\nFelaktiga frågor: ${wrong.length?formatList(wrong.map(i=>i+1)):"Inga"}\n\nObservera: Resultatet är ett ögonblicksmått och visar inte permanent behärskning.`;const errorSections=wrong.length?wrong.map(i=>{const q=quizQuestions[i];return `## Fråga ${i+1} – Kapitel ${q.chapter}: ${q.area}\n\n${q.prompt}\n\n${q.code?"```python\n"+q.code+"\n```\n\n":""}${q.options.map((text,j)=>`${"ABCD"[j]}. ${text.replace(/\n/g,"\n   ")}`).join("\n")}\n\n- **Frågetyp:** ${q.kind}\n- **Elevens svar:** ${q.options[answers[i]]}\n- **Rätt svar:** ${q.options[q.answer]}\n- **Förklaring:** ${q.explanation}\n- **Rekommenderad träning:** ${practiceAdvice[q.chapter]}`;}).join("\n\n"):"## Felaktiga frågor\n\nInga felaktiga svar.";markdownResult=`# Individuell återkoppling – Programmering 1\n\n- **Elev:** ${studentName}\n- **Datum:** ${timestamp.toLocaleDateString("sv-SE")}\n- **Resultat:** ${score} av ${quizQuestions.length} rätt (${percent} %)\n\n## Sammanfattning\n\n${overall.textContent}\n\n## Kapitel att repetera\n\n${recLines}\n\n## Rekommenderad träning\n\n${adviceLines}\n\n## Felaktiga frågor\n\n${wrong.length?formatList(wrong.map(i=>i+1)):"Inga"}\n\n${errorSections}\n\n## Nästa steg\n\nGör övningarna ovan och kontrollera sedan kunskapen med nya frågor eller kodexempel. Resultatet är ett ögonblicksmått och visar inte permanent behärskning.\n`;Object.assign(saved,{summary,markdown:markdownResult,recommendations:adviceLines});try{localStorage.setItem(STORAGE_KEY,JSON.stringify(saved));}catch(_error){}document.getElementById("summary-text").value=summary;show(result);sendTeacherSummary(adviceLines.replace(/^- /gm,"").replace(/\n/g," | "));result.focus();window.scrollTo({top:0});}
+    function loadSaved(){let saved=null;try{saved=JSON.parse(localStorage.getItem(STORAGE_KEY));}catch(_error){}if(!saved)return;const box=document.getElementById("saved-result");box.classList.remove("hidden");const date=new Date(saved.date).toLocaleDateString("sv-SE");box.textContent=`Senaste lokala resultat: ${saved.score} av 20 rätt (${saved.percent} %) den ${date}. Det är ett tidigare ögonblicksmått, inte permanent behärskning.`;}
+    document.getElementById("start-button").addEventListener("click",()=>{const input=document.getElementById("student-name"),nameStatus=document.getElementById("name-status");studentName=input.value.trim().replace(/\s+/g," ");if(!studentName){nameStatus.textContent="Skriv elevens förnamn innan provet startar.";input.focus();return;}nameStatus.textContent="";teacherSummarySent=false;shuffleQuestions();show(quiz);render();});previous.addEventListener("click",()=>{current-=1;render();});next.addEventListener("click",()=>move(1));submit.addEventListener("click",grade);document.getElementById("download-md-button").addEventListener("click",()=>{const safeName=studentName.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"elev";const blob=new Blob([markdownResult],{type:"text/markdown;charset=utf-8"}),url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download=`resultat-${safeName}-prog1-kap1-13.md`;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);document.getElementById("result-status").textContent=`Markdown-filen för ${studentName} har laddats ner.`;});document.getElementById("copy-button").addEventListener("click",async()=>{const text=document.getElementById("summary-text").value,out=document.getElementById("result-status");try{await navigator.clipboard.writeText(text);out.textContent="Sammanfattningen har kopierats.";}catch(_error){document.getElementById("summary-text").select();out.textContent="Kopiera den markerade texten med Ctrl+C eller Cmd+C.";}});document.addEventListener("keydown",event=>{if(quiz.classList.contains("hidden")||event.target.matches("input,button,textarea"))return;if(event.key==="ArrowLeft"&&!previous.disabled)previous.click();if(event.key==="ArrowRight"&&!next.classList.contains("hidden"))next.click();});loadSaved();
+  }());
+  </script>
+</body>
+</html>
