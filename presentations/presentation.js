@@ -7,6 +7,7 @@
 
   let slideIndex = 0;
   let fragmentIndex = 0;
+  const arrowsOnly = document.body.dataset.navigation === "arrows-only";
 
   function fragmentsFor(slide) {
     return Array.from(slide.querySelectorAll(".fragment"));
@@ -52,16 +53,17 @@
   }
 
   document.addEventListener("keydown", (event) => {
-    if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+    if (event.key === "ArrowRight" || (!arrowsOnly && ["PageDown", " "].includes(event.key))) {
       event.preventDefault();
       nextStep();
-    } else if (["ArrowLeft", "PageUp", "Backspace"].includes(event.key)) {
+    } else if (event.key === "ArrowLeft" || (!arrowsOnly && ["PageUp", "Backspace"].includes(event.key))) {
       event.preventDefault();
       previousStep();
     }
   });
 
   document.addEventListener("click", (event) => {
+    if (arrowsOnly) return;
     const target = event.target;
     if (target instanceof Element && target.closest("a, button, input, textarea, select")) return;
     if (event.button === 0) nextStep();
